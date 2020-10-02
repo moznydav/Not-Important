@@ -1,4 +1,4 @@
-# team 10
+# Not Important - team 10
 
 Vyvíjíme 2D rogue-like survival pixel art hru.
 
