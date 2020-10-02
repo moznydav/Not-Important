@@ -1,6 +1,6 @@
 # team 10
 
-Vyvíjíme 2D rogue-like survival pixel art game.
+Vyvíjíme 2D rogue-like survival pixel art hru.
 
 více info na **[WIKI](https://gitlab.fel.cvut.cz/b201_b4b39hry/team10/-/wikis)**
 
