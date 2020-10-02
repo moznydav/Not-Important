@@ -1,4 +1,4 @@
-# teaml 10
+# team 10
 
 Vyvíjíme 2D rogue-like survival pixel art game.
 
