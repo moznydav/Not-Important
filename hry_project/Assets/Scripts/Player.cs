@@ -45,7 +45,8 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-        rigidBody.velocity = new Vector2(moveDirection.x * movementSpeed, moveDirection.y * movementSpeed);
+        rigidBody.velocity = new Vector2(moveDirection.x * movementSpeed * Time.fixedDeltaTime,
+                                         moveDirection.y * movementSpeed * Time.fixedDeltaTime);
     }
 
     void HandleMovement()
