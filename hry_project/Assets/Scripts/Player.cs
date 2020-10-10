@@ -14,11 +14,13 @@ public class Player : MonoBehaviour
     // Cached components
     Rigidbody2D rigidBody;
     SpriteRenderer spriteRenderer;
+    Animator anim;
 
     void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -48,6 +50,15 @@ public class Player : MonoBehaviour
 
     void HandleMovement()
     {
+        if (Mathf.Abs(moveDirection.x) > 0 || Mathf.Abs(moveDirection.y) > 0)
+        {
+            anim.SetBool("Running", true);
+        }
+        else
+        {
+            anim.SetBool("Running", false);
+        }
+
         if (moveDirection.x < 0)
         {
             spriteRenderer.flipX = true;
@@ -56,6 +67,7 @@ public class Player : MonoBehaviour
         {
             spriteRenderer.flipX = false;
         }
+        
     }
 
 }
