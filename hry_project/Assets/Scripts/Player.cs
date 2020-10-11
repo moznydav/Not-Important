@@ -5,7 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Config
-    [SerializeField] float movementSpeed = 5f;
+    [SerializeField] float movementSpeed = 300f;
+    [SerializeField] float rollSpeed = 2000f;
+
+    // State
+    bool rolling = false;
 
     // Cached variables
 
@@ -32,15 +36,34 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
+        if (rolling)
+        {
+            HandleRoll();
+        }
+        else
+        {
+            Move();
+        }
+        
     }
 
     void ProccesInputs()
     {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
+        if (!rolling)
+        {
+            float moveX = Input.GetAxisRaw("Horizontal");
+            float moveY = Input.GetAxisRaw("Vertical");
 
-        moveDirection = new Vector2(moveX, moveY).normalized;
+            moveDirection = new Vector2(moveX, moveY).normalized;
+        }
+        
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            rolling = true;
+            anim.SetBool("Roll", true);
+        }
+
     }
 
     void Move()
@@ -71,4 +94,17 @@ public class Player : MonoBehaviour
         
     }
 
+    void HandleRoll()
+    {
+        rigidBody.velocity = new Vector2(moveDirection.x * rollSpeed * Time.fixedDeltaTime,
+                                         moveDirection.y * rollSpeed * Time.fixedDeltaTime);
+
+        //TODO: invicibility while rolling ?
+    }
+
+    public void StopRoll()  // Used only in animation
+    {
+        rolling = false;
+        anim.SetBool("Roll", false);
+    }
 }
