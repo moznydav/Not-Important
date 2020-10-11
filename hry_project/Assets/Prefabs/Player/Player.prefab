@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 300
+  rollSpeed: 700
 --- !u!95 &2121430080
 Animator:
   serializedVersion: 3

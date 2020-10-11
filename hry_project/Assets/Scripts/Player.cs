@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
     {
         if (rolling)
         {
-            HandleRoll();
+            Roll();
         }
         else
         {
@@ -56,7 +56,6 @@ public class Player : MonoBehaviour
 
             moveDirection = new Vector2(moveX, moveY).normalized;
         }
-        
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -94,7 +93,7 @@ public class Player : MonoBehaviour
         
     }
 
-    void HandleRoll()
+    void Roll()
     {
         rigidBody.velocity = new Vector2(moveDirection.x * rollSpeed * Time.fixedDeltaTime,
                                          moveDirection.y * rollSpeed * Time.fixedDeltaTime);
