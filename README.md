@@ -1,4 +1,4 @@
-# **Not Important** - team 10
+# **Not Important** - Team X
 
 **Not Important** je 2D rogue-like survival pixel art hra.
 
