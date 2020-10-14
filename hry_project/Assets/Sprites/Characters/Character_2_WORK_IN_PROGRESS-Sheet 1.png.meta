@@ -1,64 +1,64 @@
 fileFormatVersion: 2
-guid: dcc676eefed450f479000560e5f7b730
+guid: 11b8bda817bcd35439aa4d01dcda12de
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2899374104615781105
-    second: Character_2_WORK_IN_PROGRESS-Sheet_0
+      213: -4875700107499583619
+    second: Character_2_WORK_IN_PROGRESS-Sheet 1_0
   - first:
-      213: 9196277254966421059
-    second: Character_2_WORK_IN_PROGRESS-Sheet_1
+      213: -4922922095552737727
+    second: Character_2_WORK_IN_PROGRESS-Sheet 1_1
   - first:
-      213: -6969387035164362537
-    second: Character_2_WORK_IN_PROGRESS-Sheet_2
+      213: -4259853154724316417
+    second: Character_2_WORK_IN_PROGRESS-Sheet 1_2
   - first:
-      213: -8108420809327793232
-    second: Character_2_WORK_IN_PROGRESS-Sheet_3
+      213: 7014810055831916163
+    second: Character_2_WORK_IN_PROGRESS-Sheet 1_3
   - first:
-      213: 2852727310626417191
-    second: Character_2_WORK_IN_PROGRESS-Sheet_4
+      213: 8162762405293004750
+    second: Character_2_WORK_IN_PROGRESS-Sheet 1_4
   - first:
-      213: 657720133914047727
-    second: Character_2_WORK_IN_PROGRESS-Sheet_5
+      213: -1305850421943859190
+    second: Character_2_WORK_IN_PROGRESS-Sheet 1_5
   - first:
-      213: -2684751056981536875
-    second: Character_2_WORK_IN_PROGRESS-Sheet_6
+      213: -2617110215013054580
+    second: Character_2_WORK_IN_PROGRESS-Sheet 1_6
   - first:
-      213: 8381732845832862663
-    second: Character_2_WORK_IN_PROGRESS-Sheet_7
+      213: 131110736072196830
+    second: Character_2_WORK_IN_PROGRESS-Sheet 1_7
   - first:
-      213: -5799487637749933653
-    second: Character_2_WORK_IN_PROGRESS-Sheet_8
+      213: -6004265866434048495
+    second: Character_2_WORK_IN_PROGRESS-Sheet 1_8
   - first:
-      213: 4776754176364642304
-    second: Character_2_WORK_IN_PROGRESS-Sheet_9
+      213: -1641859032781121026
+    second: Character_2_WORK_IN_PROGRESS-Sheet 1_9
   - first:
-      213: -8907796822690724778
-    second: Character_2_WORK_IN_PROGRESS-Sheet_10
+      213: -7344060494343902046
+    second: Character_2_WORK_IN_PROGRESS-Sheet 1_10
   - first:
-      213: 5995245884241176242
-    second: Character_2_WORK_IN_PROGRESS-Sheet_11
+      213: 5675099177578642898
+    second: Character_2_WORK_IN_PROGRESS-Sheet 1_11
   - first:
-      213: 8243165086987655471
-    second: Character_2_WORK_IN_PROGRESS-Sheet_12
+      213: -482343056609908965
+    second: Character_2_WORK_IN_PROGRESS-Sheet 1_12
   - first:
-      213: 2542740741261822010
-    second: Character_2_WORK_IN_PROGRESS-Sheet_13
+      213: 1576103131759843986
+    second: Character_2_WORK_IN_PROGRESS-Sheet 1_13
   - first:
-      213: -7092306684836051893
-    second: Character_2_WORK_IN_PROGRESS-Sheet_14
+      213: -79518776441439013
+    second: Character_2_WORK_IN_PROGRESS-Sheet 1_14
   - first:
-      213: 6849993783494184216
-    second: Character_2_WORK_IN_PROGRESS-Sheet_15
+      213: 1092455850240168253
+    second: Character_2_WORK_IN_PROGRESS-Sheet 1_15
   - first:
-      213: -3986538724742629378
-    second: Character_2_WORK_IN_PROGRESS-Sheet_16
+      213: 7000795064040184984
+    second: Character_2_WORK_IN_PROGRESS-Sheet 1_16
   - first:
-      213: 7973475157227636803
-    second: Character_2_WORK_IN_PROGRESS-Sheet_17
+      213: -6942599487925205835
+    second: Character_2_WORK_IN_PROGRESS-Sheet 1_17
   - first:
-      213: 2258901019313297669
-    second: Character_2_WORK_IN_PROGRESS-Sheet_18
+      213: -6127014793204749548
+    second: Character_2_WORK_IN_PROGRESS-Sheet 1_18
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -146,7 +146,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet_0
+      name: Character_2_WORK_IN_PROGRESS-Sheet 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -160,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f20798f265ac3820800000000000000
-      internalID: 2899374104615781105
+      spriteID: d774725b598065cb0800000000000000
+      internalID: -4875700107499583619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet_1
+      name: Character_2_WORK_IN_PROGRESS-Sheet 1_1
       rect:
         serializedVersion: 2
         x: 40
@@ -181,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 346274e707dbf9f70800000000000000
-      internalID: 9196277254966421059
+      spriteID: 14e48a5df644eabb0800000000000000
+      internalID: -4922922095552737727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet_2
+      name: Character_2_WORK_IN_PROGRESS-Sheet 1_2
       rect:
         serializedVersion: 2
         x: 80
@@ -202,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d8b0daba63c74f90800000000000000
-      internalID: -6969387035164362537
+      spriteID: ffa745d1026f1e4c0800000000000000
+      internalID: -4259853154724316417
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet_3
+      name: Character_2_WORK_IN_PROGRESS-Sheet 1_3
       rect:
         serializedVersion: 2
         x: 120
@@ -223,14 +223,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bba1a2fb3a197f80800000000000000
-      internalID: -8108420809327793232
+      spriteID: 38e03b8649c995160800000000000000
+      internalID: 7014810055831916163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet_4
+      name: Character_2_WORK_IN_PROGRESS-Sheet 1_4
       rect:
         serializedVersion: 2
         x: 0
@@ -244,14 +244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72a61f6ef5ce69720800000000000000
-      internalID: 2852727310626417191
+      spriteID: ec71761d825f74170800000000000000
+      internalID: 8162762405293004750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet_5
+      name: Character_2_WORK_IN_PROGRESS-Sheet 1_5
       rect:
         serializedVersion: 2
         x: 40
@@ -265,14 +265,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe4b19f1af0b02900800000000000000
-      internalID: 657720133914047727
+      spriteID: a080e3eb5ffa0ede0800000000000000
+      internalID: -1305850421943859190
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet_6
+      name: Character_2_WORK_IN_PROGRESS-Sheet 1_6
       rect:
         serializedVersion: 2
         x: 80
@@ -286,14 +286,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59fc24a5329ddbad0800000000000000
-      internalID: -2684751056981536875
+      spriteID: c87c91020282eabd0800000000000000
+      internalID: -2617110215013054580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet_7
+      name: Character_2_WORK_IN_PROGRESS-Sheet 1_7
       rect:
         serializedVersion: 2
         x: 120
@@ -307,14 +307,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cb771e6d95e15470800000000000000
-      internalID: 8381732845832862663
+      spriteID: ed2c2d1158cc1d100800000000000000
+      internalID: 131110736072196830
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet_8
+      name: Character_2_WORK_IN_PROGRESS-Sheet 1_8
       rect:
         serializedVersion: 2
         x: 160
@@ -328,14 +328,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba955a078b4148fa0800000000000000
-      internalID: -5799487637749933653
+      spriteID: 11e0236a1009caca0800000000000000
+      internalID: -6004265866434048495
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet_9
+      name: Character_2_WORK_IN_PROGRESS-Sheet 1_9
       rect:
         serializedVersion: 2
         x: 200
@@ -349,14 +349,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00004957d907a4240800000000000000
-      internalID: 4776754176364642304
+      spriteID: ef990db98e1f639e0800000000000000
+      internalID: -1641859032781121026
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet_10
+      name: Character_2_WORK_IN_PROGRESS-Sheet 1_10
       rect:
         serializedVersion: 2
         x: 240
@@ -370,14 +370,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6548a2c3cf5216480800000000000000
-      internalID: -8907796822690724778
+      spriteID: 2ace6a114e7a41a90800000000000000
+      internalID: -7344060494343902046
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet_11
+      name: Character_2_WORK_IN_PROGRESS-Sheet 1_11
       rect:
         serializedVersion: 2
         x: 280
@@ -391,14 +391,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b661571e54633350800000000000000
-      internalID: 5995245884241176242
+      spriteID: 2ddbfa052a002ce40800000000000000
+      internalID: 5675099177578642898
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet_12
+      name: Character_2_WORK_IN_PROGRESS-Sheet 1_12
       rect:
         serializedVersion: 2
         x: 0
@@ -412,14 +412,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f291dc2f8fa956270800000000000000
-      internalID: 8243165086987655471
+      spriteID: b17e3eaab8f5e49f0800000000000000
+      internalID: -482343056609908965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet_13
+      name: Character_2_WORK_IN_PROGRESS-Sheet 1_13
       rect:
         serializedVersion: 2
         x: 40
@@ -433,14 +433,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3803de6b31a94320800000000000000
-      internalID: 2542740741261822010
+      spriteID: 29a1de1a2717fd510800000000000000
+      internalID: 1576103131759843986
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet_14
+      name: Character_2_WORK_IN_PROGRESS-Sheet 1_14
       rect:
         serializedVersion: 2
         x: 80
@@ -454,14 +454,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b44083495a0139d90800000000000000
-      internalID: -7092306684836051893
+      spriteID: bdcfb39181e75eef0800000000000000
+      internalID: -79518776441439013
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet_15
+      name: Character_2_WORK_IN_PROGRESS-Sheet 1_15
       rect:
         serializedVersion: 2
         x: 120
@@ -475,14 +475,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81d0ec2ad01101f50800000000000000
-      internalID: 6849993783494184216
+      spriteID: d31dc56cece292f00800000000000000
+      internalID: 1092455850240168253
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet_16
+      name: Character_2_WORK_IN_PROGRESS-Sheet 1_16
       rect:
         serializedVersion: 2
         x: 160
@@ -496,14 +496,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef77064c628fca8c0800000000000000
-      internalID: -3986538724742629378
+      spriteID: 89c5c69d402d72160800000000000000
+      internalID: 7000795064040184984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet_17
+      name: Character_2_WORK_IN_PROGRESS-Sheet 1_17
       rect:
         serializedVersion: 2
         x: 200
@@ -517,14 +517,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34884f3096977ae60800000000000000
-      internalID: 7973475157227636803
+      spriteID: 5b4c8689c8ee6af90800000000000000
+      internalID: -6942599487925205835
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet_18
+      name: Character_2_WORK_IN_PROGRESS-Sheet 1_18
       rect:
         serializedVersion: 2
         x: 240
@@ -538,8 +538,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 509dfe6428a395f10800000000000000
-      internalID: 2258901019313297669
+      spriteID: 41ba775028878faa0800000000000000
+      internalID: -6127014793204749548
       vertices: []
       indices: 
       edges: []
@@ -547,7 +547,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 4cf2b4ef88e666d478343640735b50e0
+    spriteID: c797c401b8f933a42b64cbd73649c030
     internalID: 0
     vertices: []
     indices: 
