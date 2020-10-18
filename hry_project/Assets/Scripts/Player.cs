@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
         {
             Move();
         }
-        
+
     }
 
     void ProccesInputs()
@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
             moveDirection = new Vector2(moveX, moveY).normalized;
         }
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && anim.GetBool("Running"))
         {
             rolling = true;
             anim.SetBool("Roll", true);
@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
         {
             spriteRenderer.flipX = false;
         }
-        
+
     }
 
     void Roll()
