@@ -180,6 +180,11 @@ PrefabInstance:
       propertyPath: tilemap
       value: 
       objectReference: {fileID: 479981779}
+    - target: {fileID: 6187242406622413118, guid: 1c15db2161e383be19aa2d248c88e991,
+        type: 3}
+      propertyPath: movementSpeed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 7638966089646652388, guid: 1c15db2161e383be19aa2d248c88e991,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -255,7 +260,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3635413701095461973, guid: 1c15db2161e383be19aa2d248c88e991, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1c15db2161e383be19aa2d248c88e991, type: 3}
 --- !u!1 &425210444
 GameObject:
