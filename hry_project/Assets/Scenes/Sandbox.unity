@@ -183,12 +183,12 @@ PrefabInstance:
     - target: {fileID: 7638966089646652388, guid: 1c15db2161e383be19aa2d248c88e991,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.227386
+      value: 12.99
       objectReference: {fileID: 0}
     - target: {fileID: 7638966089646652388, guid: 1c15db2161e383be19aa2d248c88e991,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.48444104
+      value: 9.42
       objectReference: {fileID: 0}
     - target: {fileID: 7638966089646652388, guid: 1c15db2161e383be19aa2d248c88e991,
         type: 3}
@@ -234,6 +234,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638966089646652391, guid: 1c15db2161e383be19aa2d248c88e991,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638966089646652391, guid: 1c15db2161e383be19aa2d248c88e991,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.1509434
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638966089646652391, guid: 1c15db2161e383be19aa2d248c88e991,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.1509434
       objectReference: {fileID: 0}
     - target: {fileID: 7638966089646652392, guid: 1c15db2161e383be19aa2d248c88e991,
         type: 3}
@@ -2524,7 +2539,7 @@ GameObject:
   - component: {fileID: 871841990}
   m_Layer: 0
   m_Name: PathFinding
-  m_TagString: Untagged
+  m_TagString: PathFinding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -13656,6 +13671,11 @@ PrefabInstance:
     - target: {fileID: 6000552227410383350, guid: aae3c97dee8d4294f85d3f9e861ce6f7,
         type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000552227410383350, guid: aae3c97dee8d4294f85d3f9e861ce6f7,
+        type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6000552227410383354, guid: aae3c97dee8d4294f85d3f9e861ce6f7,
