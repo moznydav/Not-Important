@@ -10,8 +10,11 @@ public class Enemy : MonoBehaviour
 
     AStar pathfinding;
     GameObject player;
-    Rigidbody2D rigidBody;
     Vector2 moveDirection;
+
+    Rigidbody2D rigidBody;
+    SpriteRenderer spriteRenderer;
+    Animator anim;
 
     List<Vector3> path;
     int lastPathIndex;
@@ -21,6 +24,9 @@ public class Enemy : MonoBehaviour
     void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+
         pathfinding = (AStar) GameObject.FindWithTag("PathFinding").GetComponent(typeof(AStar));
         player = GameObject.FindWithTag("Player");
     }
@@ -28,6 +34,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         FollowPlayer();
+        HandleMovement();
     }
 
     private void FixedUpdate()
@@ -75,6 +82,28 @@ public class Enemy : MonoBehaviour
             lastPathIndex = 0;
             moveDirection = new Vector3(0, 0, 0);
         }
+    }
+
+    void HandleMovement()
+    {
+        if (Mathf.Abs(moveDirection.x) > 0 || Mathf.Abs(moveDirection.y) > 0)
+        {
+            anim.SetBool("Running", true);
+        }
+        else
+        {
+            anim.SetBool("Running", false);
+        }
+
+        if (moveDirection.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if( moveDirection.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+
     }
 
     void Move()
