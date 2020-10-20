@@ -33,24 +33,26 @@ public class AStar : MonoBehaviour
         }
     }
 
+    private Tuple<int, int> WorldToCell(Vector3 vec)
+    {
+        var cell = tilemap.WorldToCell(vec) - tilemap.origin;
+        return Tuple.Create(cell.x, cell.y);
+    }
+
+    private Vector3 CellToWorld(Tuple<int, int> tuple)
+    {
+        return tilemap.CellToWorld(new Vector3Int(tuple.Item1, tuple.Item2, 0)) + tilemap.origin;
+    }
+
     public List<Vector3> GetPath(Vector3 from, Vector3 to)
     {
-        var tileFrom = tilemap.WorldToCell(from);
-        var tileTo = tilemap.WorldToCell(to);
-
-        var start = Tuple.Create<int, int>(tileFrom.x, tileFrom.y); // TODO: use struct?
-        var end = Tuple.Create<int, int>(tileTo.x, tileTo.y);
+        var start = WorldToCell(from); // TODO: use struct?
+        var end = WorldToCell(to);
 
         var open = new List<Tuple<int, int>>() { start };
-        var score = new int[width * height];
-        var parents = new Tuple<int, int>[width * height];
         var inOpen = new HashSet<Tuple<int, int>>() { start };
-
-        for (int x = 0; x < width; x++) {
-            for (int y = 0; y < height; y++) {
-                score[x + y * width] = Int16.MaxValue;
-            }
-        }
+        var score = CreateScoreArray();
+        var parents = new Tuple<int, int>[width * height];
 
         score[start.Item1 + start.Item2 * width] = 0;
 
@@ -67,6 +69,8 @@ public class AStar : MonoBehaviour
             {
                 return BuildPath(parents, end);
             }
+
+            bool newAdded = false;
 
             foreach (var neighbor in GetNeighbors(current))
             {
@@ -88,7 +92,11 @@ public class AStar : MonoBehaviour
 
                 inOpen.Add(neighbor);
                 open.Add(neighbor);
+                newAdded = true;
+            }
 
+            if (newAdded)
+            {
                 open.Sort((a, b) => {
                     int sa = score[a.Item1 + a.Item2 * width];
                     int sb = score[b.Item1 + b.Item2 * width];
@@ -98,7 +106,7 @@ public class AStar : MonoBehaviour
                         return 0;
                     }
 
-                    return sa > sb ? 1 : -1;
+                    return sa > sb ? -1 : 1;
                 });
             }
         }
@@ -108,12 +116,12 @@ public class AStar : MonoBehaviour
 
     private List<Vector3> BuildPath(Tuple<int, int>[] parents, Tuple<int, int> end)
     {
-        var path = new List<Vector3>() { tilemap.CellToWorld(new Vector3Int(end.Item1, end.Item2, 0)) };
+        var path = new List<Vector3>() { CellToWorld(end) };
 
         while (parents[end.Item1 + end.Item2 * width] != null)
         {
             end = parents[end.Item1 + end.Item2 * width];
-            path.Add(tilemap.CellToWorld(new Vector3Int(end.Item1, end.Item2, 0)));
+            path.Add(CellToWorld(end));
         }
 
         return path;
@@ -121,11 +129,14 @@ public class AStar : MonoBehaviour
 
     private IEnumerable<Tuple<int, int>> GetNeighbors(Tuple<int, int> point)
     {
-        for (int i = Math.Max(0, point.Item1 - 1); i < Math.Min(width, point.Item1 + 1); i++)
+        int jStart = Math.Max(0, point.Item2 - 1);
+        int jEnd = Math.Min(height - 1, point.Item2 + 1);
+
+        for (int i = Math.Max(0, point.Item1 - 1); i <= Math.Min(width - 1, point.Item1 + 1); i++)
         {
-            for (int j = Math.Max(0, point.Item2 - 1); j < Math.Min(height, point.Item2 + 1); j++)
+            for (int j = jStart; j <= jEnd; j++)
             {
-                if (i == 0 && j == 0)
+                if (map[i, j] || (i == point.Item1 && j == point.Item2))
                 {
                     continue;
                 }
@@ -138,5 +149,18 @@ public class AStar : MonoBehaviour
     private List<Vector3> SimplifyPath(List<Vector3> path)
     {
         return path; //TODO: Try to simplify path using Bresenham line or whatever
+    }
+
+    private int[] CreateScoreArray()
+    {
+        var score = new int[width * height];
+
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                score[x + y * width] = Int16.MaxValue;
+            }
+        }
+
+        return score;
     }
 }
