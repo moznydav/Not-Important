@@ -14,6 +14,14 @@ public class AStar : MonoBehaviour
 
     private int height;
 
+    private static int[,] offsets = new int[4,2] {
+        {-1, 0}, {1, 0}, {0, 1}, {0, -1}
+    };
+
+    private static int[,] cornerOffsets = new int[4,2] {
+        {-1, -1}, {1, 1}, {1, -1}, {-1, 1}
+    };
+
     void Start()
     {
         BoundsInt bounds = tilemap.cellBounds;
@@ -36,15 +44,15 @@ public class AStar : MonoBehaviour
         }
     }
 
-    private Tuple<int, int> WorldToCell(Vector3 vec)
+    public Tuple<int, int> WorldToCell(Vector3 vec)
     {
         var cell = tilemap.WorldToCell(vec) - tilemap.origin;
         return Tuple.Create(cell.x, cell.y);
     }
 
-    private Vector3 CellToWorld(Tuple<int, int> tuple)
+    public Vector3 CellToWorld(Tuple<int, int> tuple)
     {
-        return tilemap.CellToWorld(new Vector3Int(tuple.Item1, tuple.Item2, 0)) + tilemap.origin;
+        return tilemap.GetCellCenterWorld(new Vector3Int(tuple.Item1, tuple.Item2, 0)) + tilemap.origin;
     }
 
     public List<Vector3> GetPath(Vector3 from, Vector3 to)
@@ -77,7 +85,7 @@ public class AStar : MonoBehaviour
 
             foreach (var neighbor in GetNeighbors(current))
             {
-                int gscore = score[x + y * width] + 1; //TODO: Use better heuristic, diagonals should be 1.6 etc.
+                double gscore = score[x + y * width] + GetWeight(current, neighbor);
                 int index = neighbor.Item1 + neighbor.Item2 * width;
 
                 if (gscore >= score[index])
@@ -101,8 +109,8 @@ public class AStar : MonoBehaviour
             if (newAdded)
             {
                 open.Sort((a, b) => {
-                    int sa = score[a.Item1 + a.Item2 * width];
-                    int sb = score[b.Item1 + b.Item2 * width];
+                    double sa = score[a.Item1 + a.Item2 * width];
+                    double sb = score[b.Item1 + b.Item2 * width];
 
                     if (sa == sb)
                     {
@@ -130,21 +138,43 @@ public class AStar : MonoBehaviour
         return path;
     }
 
+    private double GetWeight(Tuple<int, int> from, Tuple<int, int> to)
+    {
+        if (from.Item1 != to.Item1 && from.Item2 != to.Item2)
+        {
+            return 1.6;
+        }
+
+        return 1;
+    }
+
     private IEnumerable<Tuple<int, int>> GetNeighbors(Tuple<int, int> point)
     {
-        int jStart = Math.Max(0, point.Item2 - 1);
-        int jEnd = Math.Min(height - 1, point.Item2 + 1);
+        int x = point.Item1;
+        int y = point.Item2;
 
-        for (int i = Math.Max(0, point.Item1 - 1); i <= Math.Min(width - 1, point.Item1 + 1); i++)
+        bool[,] neighbors = new bool[3, 3];
+
+        for (int i = 0; i < offsets.GetLength(0); i++)
         {
-            for (int j = jStart; j <= jEnd; j++)
-            {
-                if (map[i, j] || (i == point.Item1 && j == point.Item2))
-                {
-                    continue;
-                }
+            int tmpX = x + offsets[i, 0];
+            int tmpY = y + offsets[i, 1];
 
-                yield return Tuple.Create(i, j);
+            if (tmpX >= 0 && tmpX < width && tmpY >= 0 && tmpY < height && !map[tmpX, tmpY])
+            {
+                neighbors[1 + offsets[i, 0], 1 + offsets[i, 1]] = true;
+                yield return Tuple.Create(tmpX, tmpY);
+            }
+        }
+
+        for (int i = 0; i < cornerOffsets.GetLength(0); i++)
+        {
+            int tmpX = x + cornerOffsets[i, 0];
+            int tmpY = y + cornerOffsets[i, 1];
+
+            if (neighbors[1, 1 + cornerOffsets[i, 1]] && neighbors[1 + cornerOffsets[i, 0], 1] && !map[tmpX, tmpY])
+            {
+                yield return Tuple.Create(tmpX, tmpY);
             }
         }
     }
@@ -154,15 +184,15 @@ public class AStar : MonoBehaviour
         return path; //TODO: Try to simplify path using Bresenham line or whatever
     }
 
-    private int[] CreateScoreArray()
+    private double[] CreateScoreArray()
     {
-        var score = new int[width * height];
+        var score = new double[width * height];
 
         for (int x = 0; x < width; x++)
         {
             for (int y = 0; y < height; y++)
             {
-                score[x + y * width] = Int16.MaxValue;
+                score[x + y * width] = Double.MaxValue;
             }
         }
 
