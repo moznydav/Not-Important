@@ -24,9 +24,12 @@ public class AStar : MonoBehaviour
 
         map = new bool[width, height];
 
-        for (int x = 0; x < width; x++) {
-            for (int y = 0; y < height; y++) {
-                if (allTiles[x + y * width] != null) {
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                if (allTiles[x + y * width] != null)
+                {
                     map[x, y] = true;
                 }
             }
@@ -49,7 +52,7 @@ public class AStar : MonoBehaviour
         var start = WorldToCell(from); // TODO: use struct?
         var end = WorldToCell(to);
 
-        var open = new List<Tuple<int, int>>() { start };
+        var open = new List<Tuple<int, int>>() { start }; // TODO: Cache `open`, `inOpen`, `score` and `parents` until `from` change
         var inOpen = new HashSet<Tuple<int, int>>() { start };
         var score = CreateScoreArray();
         var parents = new Tuple<int, int>[width * height];
@@ -58,7 +61,7 @@ public class AStar : MonoBehaviour
 
         while (open.Count != 0)
         {
-            var current = open[0];
+            var current = open[open.Count - 1];
             open.RemoveAt(open.Count - 1); // TODO: Use priority queue
             inOpen.Remove(current);
 
@@ -74,7 +77,7 @@ public class AStar : MonoBehaviour
 
             foreach (var neighbor in GetNeighbors(current))
             {
-                int gscore = score[x + y * width] + 1; // Use better heuristic, diagonals should be 1.6 etc.
+                int gscore = score[x + y * width] + 1; //TODO: Use better heuristic, diagonals should be 1.6 etc.
                 int index = neighbor.Item1 + neighbor.Item2 * width;
 
                 if (gscore >= score[index])
@@ -116,12 +119,12 @@ public class AStar : MonoBehaviour
 
     private List<Vector3> BuildPath(Tuple<int, int>[] parents, Tuple<int, int> end)
     {
-        var path = new List<Vector3>() { CellToWorld(end) };
+        var path = new List<Vector3>();
 
         while (parents[end.Item1 + end.Item2 * width] != null)
         {
-            end = parents[end.Item1 + end.Item2 * width];
             path.Add(CellToWorld(end));
+            end = parents[end.Item1 + end.Item2 * width];
         }
 
         return path;
@@ -155,8 +158,10 @@ public class AStar : MonoBehaviour
     {
         var score = new int[width * height];
 
-        for (int x = 0; x < width; x++) {
-            for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
                 score[x + y * width] = Int16.MaxValue;
             }
         }
