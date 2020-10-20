@@ -52,7 +52,7 @@ public class AStar : MonoBehaviour
 
     public Vector3 CellToWorld(Tuple<int, int> tuple)
     {
-        return tilemap.GetCellCenterWorld(new Vector3Int(tuple.Item1, tuple.Item2, 0)) + tilemap.origin;
+        return tilemap.GetCellCenterWorld(new Vector3Int(tuple.Item1, tuple.Item2, 0) + tilemap.origin);
     }
 
     public List<Vector3> GetPath(Vector3 from, Vector3 to)
