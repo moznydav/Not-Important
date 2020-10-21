@@ -25,13 +25,18 @@ public class GameManager : Singleton<GameManager>
 
     public void ToMainMenu()
     {
-
+        Resume();
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 
     public void Quit()
     {
         Application.Quit();
+    }
+
+    void Start()
+    {
+        Resume();
     }
 
     // Update is called once per frame
