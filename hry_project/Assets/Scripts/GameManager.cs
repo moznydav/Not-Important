@@ -8,14 +8,14 @@ public class GameManager : Singleton<GameManager>
     private bool isGamePaused = false;
     public GameObject pauseMenu;
 
-    void Pause()
+    public void Pause()
     {
         isGamePaused = true;
         Time.timeScale = 0f;
         pauseMenu.SetActive(true);
     }
 
-    void Resume()
+    public void Resume()
     {
         isGamePaused = false;
         Time.timeScale = 1f;
