@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    private bool isGamePaused = false;
+    public bool isGamePaused = false;
     public GameObject pauseMenu;
 
     public void Pause()
