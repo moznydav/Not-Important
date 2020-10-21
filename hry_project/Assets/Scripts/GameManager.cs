@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -24,7 +25,8 @@ public class GameManager : Singleton<GameManager>
 
     public void ToMainMenu()
     {
-        print("Going to main menu");
+
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 
     public void Quit()
