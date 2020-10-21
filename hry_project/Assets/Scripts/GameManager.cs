@@ -22,6 +22,16 @@ public class GameManager : Singleton<GameManager>
         pauseMenu.SetActive(false);
     }
 
+    public void ToMainMenu()
+    {
+        print("Going to main menu");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
     // Update is called once per frame
     void Update()
     {
