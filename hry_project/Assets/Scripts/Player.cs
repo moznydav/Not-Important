@@ -73,6 +73,7 @@ public class Player : MonoBehaviour
 
     void HandleMovement()
     {
+        if (GameManager.Instance.isGamePaused) return;
         if (Mathf.Abs(moveDirection.x) > 0 || Mathf.Abs(moveDirection.y) > 0)
         {
             anim.SetBool("Running", true);
