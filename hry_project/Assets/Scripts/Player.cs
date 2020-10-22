@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     // Cached variables
 
     Vector2 moveDirection;
+    Vector3 aimDirection;
 
     // Cached components
     Rigidbody2D rigidBody;
@@ -84,6 +85,8 @@ public class Player : MonoBehaviour
 
     void HandleMovement()
     {
+        // Rework the Direction changes
+        // Flip attacking body towards the aim position
         if (Mathf.Abs(moveDirection.x) > 0 || Mathf.Abs(moveDirection.y) > 0)
         {
             anim.SetBool("Running", true);
@@ -123,7 +126,7 @@ public class Player : MonoBehaviour
         Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
                                                                           Input.mousePosition.y,
                                                                           0f));
-        Vector3 aimDirection = (worldMousePosition - transform.position).normalized;
+        aimDirection = (worldMousePosition - transform.position).normalized;
         float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
         crossHair.transform.eulerAngles = new Vector3(0, 0, angle);
 
