@@ -67,11 +67,11 @@ public class Player : MonoBehaviour
             moveDirection = new Vector2(moveX, moveY).normalized;
         }
 
-        if (Input.GetButtonDown("Jump") && anim.GetBool("Running"))
+        if (Input.GetButtonDown("Jump") && (moveDirection.magnitude > 0))
         {
             isRolling = true;
             anim.SetBool("Roll", true);
-            ShowLegs(false);
+            legs.GetComponent<Animator>().SetBool("Roll", true);
         }
 
         
@@ -87,27 +87,13 @@ public class Player : MonoBehaviour
     {
         // Rework the Direction changes
         // Flip attacking body towards the aim position
-        if (Mathf.Abs(moveDirection.x) > 0 || Mathf.Abs(moveDirection.y) > 0)
-        {
-            anim.SetBool("Running", true);
-            legs.GetComponent<Animator>().SetBool("Running", true);
-        }
-        else
-        {
-            anim.SetBool("Running", false);
-            legs.GetComponent<Animator>().SetBool("Running", false);
-        }
-
-        if (moveDirection.x < 0)
-        {
-            spriteRenderer.flipX = true;
-            legs.GetComponent<SpriteRenderer>().flipX = true;
-        }
-        else if( moveDirection.x > 0)
-        {
-            spriteRenderer.flipX = false;
-            legs.GetComponent<SpriteRenderer>().flipX = false;
-        }
+        anim.SetFloat("Vertical", moveDirection.y);
+        anim.SetFloat("Horizontal", moveDirection.x);
+        anim.SetFloat("Magnitude", moveDirection.magnitude);
+      
+        legs.GetComponent<Animator>().SetFloat("Vertical", moveDirection.y);
+        legs.GetComponent<Animator>().SetFloat("Horizontal", moveDirection.x);
+        legs.GetComponent<Animator>().SetFloat("Magnitude", moveDirection.magnitude);
 
     }
 
@@ -134,6 +120,12 @@ public class Player : MonoBehaviour
         {
             if (!isShooting)
             {
+                if(aimDirection.x < 0)
+                {
+                    
+                }
+
+
                 isShooting = true;
                 anim.SetBool("Attacking", true);
                 StartCoroutine(AttackCooldown());
@@ -159,15 +151,11 @@ public class Player : MonoBehaviour
         isShooting = false;
     }
 
-    public void ShowLegs(bool show)
-    {
-        legs.SetActive(show);
-    }
-
     public void StopRoll()  // Used only in animation
     {
         isRolling = false;
         anim.SetBool("Roll", false);
-        ShowLegs(true);
+        legs.GetComponent<Animator>().SetBool("Roll", false);
+        
     }
 }

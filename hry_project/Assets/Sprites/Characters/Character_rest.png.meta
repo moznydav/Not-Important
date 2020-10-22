@@ -74,6 +74,66 @@ TextureImporter:
   - first:
       213: 2089268967329383002
     second: Character_rest_23
+  - first:
+      213: 4138520940343615566
+    second: Character_rest_24
+  - first:
+      213: 3549545113317320047
+    second: Character_rest_25
+  - first:
+      213: 2384708820234286660
+    second: Character_rest_26
+  - first:
+      213: 9071653653589801016
+    second: Character_rest_27
+  - first:
+      213: 3258517244280511817
+    second: Character_rest_28
+  - first:
+      213: -6577888858927743522
+    second: Character_rest_29
+  - first:
+      213: -919697200216545814
+    second: Character_rest_30
+  - first:
+      213: 1233004775538371442
+    second: Character_rest_31
+  - first:
+      213: -2073110390273210598
+    second: Character_rest_32
+  - first:
+      213: 4720928684465122794
+    second: Character_rest_33
+  - first:
+      213: 8439406725389861651
+    second: Character_rest_34
+  - first:
+      213: -7195189503642962916
+    second: Character_rest_35
+  - first:
+      213: 3306462592684204007
+    second: Character_rest_36
+  - first:
+      213: -6169358505838617074
+    second: Character_rest_37
+  - first:
+      213: 1288794262206396500
+    second: Character_rest_38
+  - first:
+      213: -2986874403960411239
+    second: Character_rest_39
+  - first:
+      213: -3273727113058675021
+    second: Character_rest_40
+  - first:
+      213: 6632890612051441759
+    second: Character_rest_41
+  - first:
+      213: 8658480153613503794
+    second: Character_rest_42
+  - first:
+      213: -97343487152755687
+    second: Character_rest_43
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -165,8 +225,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 120
-        width: 40
+        y: 240
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -185,9 +245,9 @@ TextureImporter:
       name: Character_rest_1
       rect:
         serializedVersion: 2
-        x: 40
-        y: 120
-        width: 40
+        x: 60
+        y: 240
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -206,9 +266,9 @@ TextureImporter:
       name: Character_rest_2
       rect:
         serializedVersion: 2
-        x: 80
-        y: 120
-        width: 40
+        x: 120
+        y: 240
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -227,9 +287,9 @@ TextureImporter:
       name: Character_rest_3
       rect:
         serializedVersion: 2
-        x: 120
-        y: 120
-        width: 40
+        x: 180
+        y: 240
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -249,8 +309,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 80
-        width: 40
+        y: 200
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -269,9 +329,9 @@ TextureImporter:
       name: Character_rest_5
       rect:
         serializedVersion: 2
-        x: 40
-        y: 80
-        width: 40
+        x: 60
+        y: 200
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -290,9 +350,9 @@ TextureImporter:
       name: Character_rest_6
       rect:
         serializedVersion: 2
-        x: 80
-        y: 80
-        width: 40
+        x: 120
+        y: 200
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -311,9 +371,9 @@ TextureImporter:
       name: Character_rest_7
       rect:
         serializedVersion: 2
-        x: 120
-        y: 80
-        width: 40
+        x: 180
+        y: 200
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -332,9 +392,9 @@ TextureImporter:
       name: Character_rest_8
       rect:
         serializedVersion: 2
-        x: 160
-        y: 80
-        width: 40
+        x: 240
+        y: 200
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -353,9 +413,9 @@ TextureImporter:
       name: Character_rest_9
       rect:
         serializedVersion: 2
-        x: 200
-        y: 80
-        width: 40
+        x: 300
+        y: 200
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -374,9 +434,9 @@ TextureImporter:
       name: Character_rest_10
       rect:
         serializedVersion: 2
-        x: 240
-        y: 80
-        width: 40
+        x: 360
+        y: 200
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -395,9 +455,9 @@ TextureImporter:
       name: Character_rest_11
       rect:
         serializedVersion: 2
-        x: 280
-        y: 80
-        width: 40
+        x: 420
+        y: 200
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -417,8 +477,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 40
-        width: 40
+        y: 160
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -437,9 +497,9 @@ TextureImporter:
       name: Character_rest_13
       rect:
         serializedVersion: 2
-        x: 40
-        y: 40
-        width: 40
+        x: 60
+        y: 160
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -458,9 +518,9 @@ TextureImporter:
       name: Character_rest_14
       rect:
         serializedVersion: 2
-        x: 80
-        y: 40
-        width: 40
+        x: 120
+        y: 160
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -479,9 +539,9 @@ TextureImporter:
       name: Character_rest_15
       rect:
         serializedVersion: 2
-        x: 120
-        y: 40
-        width: 40
+        x: 180
+        y: 160
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -500,9 +560,9 @@ TextureImporter:
       name: Character_rest_16
       rect:
         serializedVersion: 2
-        x: 160
-        y: 40
-        width: 40
+        x: 240
+        y: 160
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -521,9 +581,9 @@ TextureImporter:
       name: Character_rest_17
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 40
+        x: 300
+        y: 160
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -542,9 +602,9 @@ TextureImporter:
       name: Character_rest_18
       rect:
         serializedVersion: 2
-        x: 40
-        y: 0
-        width: 40
+        x: 360
+        y: 160
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -563,9 +623,9 @@ TextureImporter:
       name: Character_rest_19
       rect:
         serializedVersion: 2
-        x: 80
-        y: 0
-        width: 40
+        x: 420
+        y: 160
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -584,9 +644,9 @@ TextureImporter:
       name: Character_rest_20
       rect:
         serializedVersion: 2
-        x: 120
-        y: 0
-        width: 40
+        x: 0
+        y: 120
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -605,9 +665,9 @@ TextureImporter:
       name: Character_rest_21
       rect:
         serializedVersion: 2
-        x: 160
-        y: 0
-        width: 40
+        x: 60
+        y: 120
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -626,9 +686,9 @@ TextureImporter:
       name: Character_rest_22
       rect:
         serializedVersion: 2
-        x: 200
-        y: 0
-        width: 40
+        x: 120
+        y: 120
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -647,9 +707,9 @@ TextureImporter:
       name: Character_rest_23
       rect:
         serializedVersion: 2
-        x: 240
-        y: 0
-        width: 40
+        x: 180
+        y: 120
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -664,10 +724,430 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Character_rest_24
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 120
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4062b05edafe6930800000000000000
+      internalID: 4138520940343615566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_rest_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f65a0896974824130800000000000000
+      internalID: 3549545113317320047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_rest_26
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 80
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4463eca8900381120800000000000000
+      internalID: 2384708820234286660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_rest_27
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 80
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 838389b2fecf4ed70800000000000000
+      internalID: 9071653653589801016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_rest_28
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 80
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94d13d75b24983d20800000000000000
+      internalID: 3258517244280511817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_rest_29
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 80
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eddbc971fe4a6b4a0800000000000000
+      internalID: -6577888858927743522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_rest_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 40
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae5eb28e4449c33f0800000000000000
+      internalID: -919697200216545814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_rest_31
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 40
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27b23548f438c1110800000000000000
+      internalID: 1233004775538371442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_rest_32
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 40
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1708977515da33e0800000000000000
+      internalID: -2073110390273210598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_rest_33
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 40
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aedee7f30ab148140800000000000000
+      internalID: 4720928684465122794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_rest_34
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 40
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 313c7ede3bbce1570800000000000000
+      internalID: 8439406725389861651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_rest_35
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 40
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c14fdb7a44d852c90800000000000000
+      internalID: -7195189503642962916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_rest_36
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 40
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ef1f0ca53ae2ed20800000000000000
+      internalID: 3306462592684204007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_rest_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0e54772029026aa0800000000000000
+      internalID: -6169358505838617074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_rest_38
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 458bf5b9d87b2e110800000000000000
+      internalID: 1288794262206396500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_rest_39
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99bab330e8d7c86d0800000000000000
+      internalID: -2986874403960411239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_rest_40
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b6929e19826192d0800000000000000
+      internalID: -3273727113058675021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_rest_41
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f58795d7ed2cc0c50800000000000000
+      internalID: 6632890612051441759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_rest_42
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23d07ea33d9192870800000000000000
+      internalID: 8658480153613503794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_rest_43
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91cef0b3d9a26aef0800000000000000
+      internalID: -97343487152755687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 13b02281d7695ed48bd3b4750e50179a
     internalID: 0
     vertices: []
     indices: 

@@ -160,7 +160,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1.25}
+  m_Size: {x: 3.75, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -298,6 +298,8 @@ MonoBehaviour:
   projectile: {fileID: 5102771910098208509, guid: 5272e22764d227c4a88eec247a4b7bb1,
     type: 3}
   crossHair: {fileID: 4992653142888655057}
+  body: {fileID: 0}
+  legs: {fileID: 0}
 --- !u!95 &2121430080
 Animator:
   serializedVersion: 3
@@ -397,7 +399,7 @@ SpriteRenderer:
   m_Size: {x: 2.5, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &3893464623970290658
