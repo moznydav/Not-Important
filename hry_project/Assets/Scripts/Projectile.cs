@@ -5,23 +5,31 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] float projectileSpeed = 20f;
-
+    [SerializeField] float lifespan = 1f;
     float damage;
+
+    bool attackDone = false;
 
     private void Awake()
     {
         StartCoroutine(HandleLifeTime());
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Stats stats = other.GetComponent<Stats>();
-        if (stats)
+        if (!attackDone)
         {
-            stats.DealDamage(damage);
+            attackDone = true;
+            Stats stats = other.GetComponent<Stats>();
+            if (stats)
+            {
+                stats.DealDamage(damage);
+            }
+            Debug.Log("HIT " + other.name);
+            Destroy(gameObject);
         }
-        Debug.Log("HIT " + other.name);
-        Destroy(gameObject);
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -44,7 +52,7 @@ public class Projectile : MonoBehaviour
 
     private IEnumerator HandleLifeTime()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(lifespan);
         Destroy(gameObject);
     }
 }

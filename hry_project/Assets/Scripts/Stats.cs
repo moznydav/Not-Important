@@ -17,7 +17,7 @@ public class Stats : MonoBehaviour
     public CharacterStat damage;
 
     public bool isAlive = true;
-    private float currentHealth;
+    [SerializeField] private float currentHealth;
     
     private void Awake()
     {
@@ -28,20 +28,15 @@ public class Stats : MonoBehaviour
         damage = new CharacterStat(baseDamage);
     }
 
-    private void Update()
-    {
-        if (!isAlive)
-        {
-            Debug.Log(gameObject.name + "is dead");
-        }
-    }
-
     public void DealDamage(float damage)
     {
         currentHealth -= damage;
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
             isAlive = false;
+            Destroy(gameObject);
+            //Change this
+            //Add animations
         }
 
         Debug.Log(gameObject.name + " health reduced to " + currentHealth);

@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     // Cached variables
 
     Vector2 moveDirection;
-    Vector3 aimDirection;
+    Vector2 aimDirection;
 
     // Cached components
     Rigidbody2D rigidBody;
@@ -70,6 +70,7 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Jump") && (moveDirection.magnitude > 0) && !isRolling)
         {
             isRolling = true;
+            anim.SetBool("Attacking", false);
             anim.SetBool("Roll", true);
             legs.GetComponent<Animator>().SetBool("Roll", true);
         }
@@ -109,10 +110,11 @@ public class Player : MonoBehaviour
 
     private void HandleShoot()
     {
-        Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
-                                                                          Input.mousePosition.y,
-                                                                          0f));
-        aimDirection = (worldMousePosition - transform.position).normalized;
+        Vector2 worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x,
+                                                                          Input.mousePosition.y));
+        aimDirection.x = (worldMousePosition.x - transform.position.x);
+        aimDirection.y = (worldMousePosition.y - transform.position.y);
+        aimDirection.Normalize();
         float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
         crossHair.transform.eulerAngles = new Vector3(0, 0, angle);
 
@@ -120,7 +122,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetButton("Fire1") && !isShooting)
         {
-            isShooting = true;
+            
             anim.SetBool("Attacking", true);
             
         }
@@ -132,17 +134,24 @@ public class Player : MonoBehaviour
 
     private void Shoot()
     {
-        
-        StartCoroutine(AttackCooldown());
-        Debug.Log("Spawning projectile");
-        GameObject shot = Instantiate(projectile, transform.position, Quaternion.identity);
-        shot.GetComponent<Rigidbody2D>().velocity = aimDirection * shot.GetComponent<Projectile>().GetProjectileSPeed();
+        if (!isShooting)
+        {
+            isShooting = true;
+            Debug.Log("Spawning projectile");
+            Debug.Log("Aim direction : " + aimDirection);
+            GameObject shot = Instantiate(projectile, transform.position, Quaternion.identity);
+            shot.GetComponent<Rigidbody2D>().velocity = aimDirection * shot.GetComponent<Projectile>().GetProjectileSPeed();
+            shot.GetComponent<Projectile>().SetDamage(stats.damage.value);
+            StartCoroutine(AttackCooldown());
+        }
+       
 
 
     }
 
     private IEnumerator AttackCooldown()
     {
+        
         anim.SetBool("Attack Cooldown", true);
         yield return new WaitForSeconds(stats.attackSpeed.value);
         anim.SetBool("Attack Cooldown", false);
