@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1438411034}
   - component: {fileID: 1438411033}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Crosshair sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5257715934522326267}
   - component: {fileID: 1579607771904927055}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 647662019798335062}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Crosshair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,8 +210,9 @@ GameObject:
   - component: {fileID: 6000552227410383351}
   - component: {fileID: 808013662437457483}
   - component: {fileID: 2121430080}
-  - component: {fileID: 244215842}
-  m_Layer: 0
+  - component: {fileID: 1999740435}
+  - component: {fileID: 1999740434}
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -293,9 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6729aad2e64d62d4abe776e13d3387c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 300
   rollSpeed: 700
-  attackSpeed: 5
   projectile: {fileID: 5102771910098208509, guid: 5272e22764d227c4a88eec247a4b7bb1,
     type: 3}
   crossHair: {fileID: 4992653142888655057}
@@ -320,7 +319,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!212 &244215842
+--- !u!212 &1999740435
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -365,12 +364,29 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.5, y: 2.5}
+  m_Size: {x: 3.75, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1999740434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6000552227410383350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10457ac6c3a1b0b45a817ab6c10ec4a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseMaxHealth: 100
+  baseAttackSpeed: 0.75
+  baseMoveSpeed: 300
+  baseDamage: 25
+  isAlive: 1
 --- !u!1 &8000891693078247934
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +398,7 @@ GameObject:
   - component: {fileID: 3831899066621219602}
   - component: {fileID: 3584843980734656987}
   - component: {fileID: 3893464623970290658}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}

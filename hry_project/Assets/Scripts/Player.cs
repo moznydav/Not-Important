@@ -6,9 +6,7 @@ public class Player : MonoBehaviour
 {
     // Config
     [Header("Config")]
-    [SerializeField] float movementSpeed = 300f;
     [SerializeField] float rollSpeed = 2000f;
-    [SerializeField] float attackSpeed = 5f;
 
     [Header("Parts")]
     [SerializeField] GameObject projectile;
@@ -28,12 +26,14 @@ public class Player : MonoBehaviour
     Rigidbody2D rigidBody;
     SpriteRenderer spriteRenderer;
     Animator anim;
+    Stats stats;
 
     void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = body.GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        stats = GetComponent<Stats>();
     }
 
     // Update is called once per frame
@@ -79,8 +79,8 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-        rigidBody.velocity = new Vector2(moveDirection.x * movementSpeed * Time.fixedDeltaTime,
-                                         moveDirection.y * movementSpeed * Time.fixedDeltaTime );
+        rigidBody.velocity = new Vector2(moveDirection.x * stats.moveSpeed.value * Time.fixedDeltaTime,
+                                         moveDirection.y * stats.moveSpeed.value * Time.fixedDeltaTime );
     }
 
     void HandleMovement()
@@ -120,13 +120,9 @@ public class Player : MonoBehaviour
 
         if (Input.GetButton("Fire1") && !isShooting)
         {
-                isShooting = true;
-                anim.SetBool("Attacking", true);
-                StartCoroutine(AttackCooldown());
-                Debug.Log("Spawning projectile");
-                GameObject shot = Instantiate(projectile, transform.position, Quaternion.identity);
-                shot.GetComponent<Rigidbody2D>().velocity = aimDirection * shot.GetComponent<Projectile>().GetProjectileSPeed();
-
+            isShooting = true;
+            anim.SetBool("Attacking", true);
+            
         }
         else if(!Input.GetButton("Fire1"))
         {
@@ -134,10 +130,22 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void Shoot()
+    {
+        
+        StartCoroutine(AttackCooldown());
+        Debug.Log("Spawning projectile");
+        GameObject shot = Instantiate(projectile, transform.position, Quaternion.identity);
+        shot.GetComponent<Rigidbody2D>().velocity = aimDirection * shot.GetComponent<Projectile>().GetProjectileSPeed();
+
+
+    }
 
     private IEnumerator AttackCooldown()
     {
-        yield return new WaitForSeconds(2f / attackSpeed);
+        anim.SetBool("Attack Cooldown", true);
+        yield return new WaitForSeconds(stats.attackSpeed.value);
+        anim.SetBool("Attack Cooldown", false);
         isShooting = false;
     }
 
