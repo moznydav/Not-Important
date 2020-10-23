@@ -67,7 +67,7 @@ public class Player : MonoBehaviour
             moveDirection = new Vector2(moveX, moveY).normalized;
         }
 
-        if (Input.GetButtonDown("Jump") && (moveDirection.magnitude > 0))
+        if (Input.GetButtonDown("Jump") && (moveDirection.magnitude > 0) && !isRolling)
         {
             isRolling = true;
             anim.SetBool("Roll", true);
@@ -116,16 +116,10 @@ public class Player : MonoBehaviour
         float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
         crossHair.transform.eulerAngles = new Vector3(0, 0, angle);
 
-        if (Input.GetButtonDown("Fire1"))
+        anim.SetFloat("Aim Horizontal", aimDirection.x);
+
+        if (Input.GetButton("Fire1") && !isShooting)
         {
-            if (!isShooting)
-            {
-                if(aimDirection.x < 0)
-                {
-                    
-                }
-
-
                 isShooting = true;
                 anim.SetBool("Attacking", true);
                 StartCoroutine(AttackCooldown());
@@ -133,17 +127,13 @@ public class Player : MonoBehaviour
                 GameObject shot = Instantiate(projectile, transform.position, Quaternion.identity);
                 shot.GetComponent<Rigidbody2D>().velocity = aimDirection * shot.GetComponent<Projectile>().GetProjectileSPeed();
 
-            }
-
-
         }
-     
+        else if(!Input.GetButton("Fire1"))
+        {
+            anim.SetBool("Attacking", false);
+        }
     }
 
-    public void StopShootingAnimation()
-    {
-        anim.SetBool("Attacking", false);
-    }
 
     private IEnumerator AttackCooldown()
     {
@@ -151,11 +141,15 @@ public class Player : MonoBehaviour
         isShooting = false;
     }
 
-    public void StopRoll()  // Used only in animation
+    public void StopRollAnimation()  // Used only in animation
     {
-        isRolling = false;
         anim.SetBool("Roll", false);
         legs.GetComponent<Animator>().SetBool("Roll", false);
         
+    }
+
+    public void StopRoll()
+    {
+        isRolling = false;
     }
 }
