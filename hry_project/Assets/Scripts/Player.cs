@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
         spriteRenderer = body.GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         stats = GetComponent<Stats>();
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
