@@ -5,26 +5,36 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Config
-    [SerializeField] float movementSpeed = 300f;
+    [Header("Config")]
     [SerializeField] float rollSpeed = 2000f;
 
-    // State
-    bool rolling = false;
+    [Header("Parts")]
+    [SerializeField] GameObject projectile;
+    [SerializeField] GameObject crossHair;
+    [SerializeField] GameObject body;
+    [SerializeField] GameObject legs;
 
+    // State
+    bool isRolling = false;
+    bool isShooting = false;
     // Cached variables
 
     Vector2 moveDirection;
+    Vector2 aimDirection;
 
     // Cached components
     Rigidbody2D rigidBody;
     SpriteRenderer spriteRenderer;
     Animator anim;
+    Stats stats;
 
     void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = body.GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        stats = GetComponent<Stats>();
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -36,20 +46,21 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (rolling)
+        if (isRolling)
         {
             Roll();
         }
         else
         {
             Move();
+            HandleShoot();
         }
 
     }
 
     void ProccesInputs()
     {
-        if (!rolling)
+        if (!isRolling)
         {
             float moveX = Input.GetAxisRaw("Horizontal");
             float moveY = Input.GetAxisRaw("Vertical");
@@ -57,40 +68,34 @@ public class Player : MonoBehaviour
             moveDirection = new Vector2(moveX, moveY).normalized;
         }
 
-        if (Input.GetButtonDown("Jump") && anim.GetBool("Running"))
+        if (Input.GetButtonDown("Jump") && (moveDirection.magnitude > 0) && !isRolling)
         {
-            rolling = true;
+            isRolling = true;
+            anim.SetBool("Attacking", false);
             anim.SetBool("Roll", true);
+            legs.GetComponent<Animator>().SetBool("Roll", true);
         }
+
 
     }
 
     void Move()
     {
-        rigidBody.velocity = new Vector2(moveDirection.x * movementSpeed * Time.fixedDeltaTime,
-                                         moveDirection.y * movementSpeed * Time.fixedDeltaTime );
+        rigidBody.velocity = new Vector2(moveDirection.x * stats.moveSpeed.value * Time.fixedDeltaTime,
+                                         moveDirection.y * stats.moveSpeed.value * Time.fixedDeltaTime );
     }
 
     void HandleMovement()
     {
-        if (GameManager.Instance.isGamePaused) return;
-        if (Mathf.Abs(moveDirection.x) > 0 || Mathf.Abs(moveDirection.y) > 0)
-        {
-            anim.SetBool("Running", true);
-        }
-        else
-        {
-            anim.SetBool("Running", false);
-        }
+        // Rework the Direction changes
+        // Flip attacking body towards the aim position
+        anim.SetFloat("Vertical", moveDirection.y);
+        anim.SetFloat("Horizontal", moveDirection.x);
+        anim.SetFloat("Magnitude", moveDirection.magnitude);
 
-        if (moveDirection.x < 0)
-        {
-            spriteRenderer.flipX = true;
-        }
-        else if( moveDirection.x > 0)
-        {
-            spriteRenderer.flipX = false;
-        }
+        legs.GetComponent<Animator>().SetFloat("Vertical", moveDirection.y);
+        legs.GetComponent<Animator>().SetFloat("Horizontal", moveDirection.x);
+        legs.GetComponent<Animator>().SetFloat("Magnitude", moveDirection.magnitude);
 
     }
 
@@ -102,9 +107,67 @@ public class Player : MonoBehaviour
         //TODO: invicibility while rolling ?
     }
 
-    public void StopRoll()  // Used only in animation
+
+
+    private void HandleShoot()
     {
-        rolling = false;
+        Vector2 worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x,
+                                                                          Input.mousePosition.y));
+        aimDirection.x = (worldMousePosition.x - transform.position.x);
+        aimDirection.y = (worldMousePosition.y - transform.position.y);
+        aimDirection.Normalize();
+        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+        crossHair.transform.eulerAngles = new Vector3(0, 0, angle);
+
+        anim.SetFloat("Aim Horizontal", aimDirection.x);
+
+        if (Input.GetButton("Fire1") && !isShooting)
+        {
+
+            anim.SetBool("Attacking", true);
+
+        }
+        else if(!Input.GetButton("Fire1"))
+        {
+            anim.SetBool("Attacking", false);
+        }
+    }
+
+    private void Shoot()
+    {
+        if (!isShooting)
+        {
+            isShooting = true;
+            Debug.Log("Spawning projectile");
+            Debug.Log("Aim direction : " + aimDirection);
+            GameObject shot = Instantiate(projectile, transform.position, Quaternion.identity);
+            shot.GetComponent<Rigidbody2D>().velocity = aimDirection * shot.GetComponent<Projectile>().GetProjectileSPeed();
+            shot.GetComponent<Projectile>().SetDamage(stats.damage.value);
+            StartCoroutine(AttackCooldown());
+        }
+
+
+
+    }
+
+    private IEnumerator AttackCooldown()
+    {
+
+        anim.SetBool("Attack Cooldown", true);
+        yield return new WaitForSeconds(stats.attackSpeed.value);
+        anim.SetBool("Attack Cooldown", false);
+        isShooting = false;
+    }
+
+    public void StopRollAnimation()  // Used only in animation
+    {
         anim.SetBool("Roll", false);
+        legs.GetComponent<Animator>().SetBool("Roll", false);
+
+    }
+
+    public void StopRoll()
+    {
+        isRolling = false;
     }
 }

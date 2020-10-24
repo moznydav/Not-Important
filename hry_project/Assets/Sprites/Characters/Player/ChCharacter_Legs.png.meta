@@ -1,64 +1,58 @@
 fileFormatVersion: 2
-guid: 11b8bda817bcd35439aa4d01dcda12de
+guid: 0de3cf919d9a2dc4c9a579a103f6dede
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4875700107499583619
-    second: Character_2_WORK_IN_PROGRESS-Sheet 1_0
+      213: 6917576078545907462
+    second: ChCharacter_Legs_0
   - first:
-      213: -4922922095552737727
-    second: Character_2_WORK_IN_PROGRESS-Sheet 1_1
+      213: 3433095031482246058
+    second: ChCharacter_Legs_1
   - first:
-      213: -4259853154724316417
-    second: Character_2_WORK_IN_PROGRESS-Sheet 1_2
+      213: -2456308022792989719
+    second: ChCharacter_Legs_2
   - first:
-      213: 7014810055831916163
-    second: Character_2_WORK_IN_PROGRESS-Sheet 1_3
+      213: 3434671002498883499
+    second: ChCharacter_Legs_3
   - first:
-      213: 8162762405293004750
-    second: Character_2_WORK_IN_PROGRESS-Sheet 1_4
+      213: 2957092450638268198
+    second: ChCharacter_Legs_4
   - first:
-      213: -1305850421943859190
-    second: Character_2_WORK_IN_PROGRESS-Sheet 1_5
+      213: -8655592438563771057
+    second: ChCharacter_Legs_5
   - first:
-      213: -2617110215013054580
-    second: Character_2_WORK_IN_PROGRESS-Sheet 1_6
+      213: 3026005640815216590
+    second: ChCharacter_Legs_6
   - first:
-      213: 131110736072196830
-    second: Character_2_WORK_IN_PROGRESS-Sheet 1_7
+      213: 3251699521918608745
+    second: ChCharacter_Legs_7
   - first:
-      213: -6004265866434048495
-    second: Character_2_WORK_IN_PROGRESS-Sheet 1_8
+      213: -1093470755533293900
+    second: ChCharacter_Legs_8
   - first:
-      213: -1641859032781121026
-    second: Character_2_WORK_IN_PROGRESS-Sheet 1_9
+      213: 3619602396954696183
+    second: ChCharacter_Legs_9
   - first:
-      213: -7344060494343902046
-    second: Character_2_WORK_IN_PROGRESS-Sheet 1_10
+      213: -5388072784350525492
+    second: ChCharacter_Legs_10
   - first:
-      213: 5675099177578642898
-    second: Character_2_WORK_IN_PROGRESS-Sheet 1_11
+      213: 3099029359598753850
+    second: ChCharacter_Legs_11
   - first:
-      213: -482343056609908965
-    second: Character_2_WORK_IN_PROGRESS-Sheet 1_12
+      213: 4545164133180339999
+    second: ChCharacter_Legs_12
   - first:
-      213: 1576103131759843986
-    second: Character_2_WORK_IN_PROGRESS-Sheet 1_13
+      213: 277786059261105891
+    second: ChCharacter_Legs_13
   - first:
-      213: -79518776441439013
-    second: Character_2_WORK_IN_PROGRESS-Sheet 1_14
+      213: 1429682172455169779
+    second: ChCharacter_Legs_14
   - first:
-      213: 1092455850240168253
-    second: Character_2_WORK_IN_PROGRESS-Sheet 1_15
+      213: -2800111778168757698
+    second: ChCharacter_Legs_15
   - first:
-      213: 7000795064040184984
-    second: Character_2_WORK_IN_PROGRESS-Sheet 1_16
-  - first:
-      213: -6942599487925205835
-    second: Character_2_WORK_IN_PROGRESS-Sheet 1_17
-  - first:
-      213: -6127014793204749548
-    second: Character_2_WORK_IN_PROGRESS-Sheet 1_18
+      213: -7046708362506662527
+    second: ChCharacter_Legs_16
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -146,12 +140,33 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet 1_0
+      name: ChCharacter_Legs_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60fe774eaca200060800000000000000
+      internalID: 6917576078545907462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChCharacter_Legs_1
       rect:
         serializedVersion: 2
         x: 0
         y: 80
-        width: 40
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -160,19 +175,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d774725b598065cb0800000000000000
-      internalID: -4875700107499583619
+      spriteID: aa368a7edbdc4af20800000000000000
+      internalID: 3433095031482246058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet 1_1
+      name: ChCharacter_Legs_2
       rect:
         serializedVersion: 2
-        x: 40
+        x: 60
         y: 80
-        width: 40
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -181,40 +196,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14e48a5df644eabb0800000000000000
-      internalID: -4922922095552737727
+      spriteID: 9e35b7a0ed079edd0800000000000000
+      internalID: -2456308022792989719
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet 1_2
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 80
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ffa745d1026f1e4c0800000000000000
-      internalID: -4259853154724316417
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet 1_3
+      name: ChCharacter_Legs_3
       rect:
         serializedVersion: 2
         x: 120
         y: 80
-        width: 40
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -223,19 +217,124 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38e03b8649c995160800000000000000
-      internalID: 7014810055831916163
+      spriteID: bafd74044176aaf20800000000000000
+      internalID: 3434671002498883499
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet 1_4
+      name: ChCharacter_Legs_4
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 80
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6278840aae3b90920800000000000000
+      internalID: 2957092450638268198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChCharacter_Legs_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 80
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4d69d2598821e780800000000000000
+      internalID: -8655592438563771057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChCharacter_Legs_6
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 80
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec78e1d09188ef920800000000000000
+      internalID: 3026005640815216590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChCharacter_Legs_7
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 80
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9652448ac7b502d20800000000000000
+      internalID: 3251699521918608745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChCharacter_Legs_8
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 80
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b6f82c242633d0f0800000000000000
+      internalID: -1093470755533293900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChCharacter_Legs_9
       rect:
         serializedVersion: 2
         x: 0
         y: 40
-        width: 40
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -244,19 +343,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec71761d825f74170800000000000000
-      internalID: 8162762405293004750
+      spriteID: 7f913aad3396b3230800000000000000
+      internalID: 3619602396954696183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet 1_5
+      name: ChCharacter_Legs_10
       rect:
         serializedVersion: 2
-        x: 40
+        x: 60
         y: 40
-        width: 40
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -265,40 +364,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a080e3eb5ffa0ede0800000000000000
-      internalID: -1305850421943859190
+      spriteID: cc746d09958b935b0800000000000000
+      internalID: -5388072784350525492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet 1_6
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 40
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c87c91020282eabd0800000000000000
-      internalID: -2617110215013054580
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet 1_7
+      name: ChCharacter_Legs_11
       rect:
         serializedVersion: 2
         x: 120
         y: 40
-        width: 40
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -307,19 +385,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed2c2d1158cc1d100800000000000000
-      internalID: 131110736072196830
+      spriteID: a38d36f78c6f10b20800000000000000
+      internalID: 3099029359598753850
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet 1_8
+      name: ChCharacter_Legs_12
       rect:
         serializedVersion: 2
-        x: 160
+        x: 180
         y: 40
-        width: 40
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -328,40 +406,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11e0236a1009caca0800000000000000
-      internalID: -6004265866434048495
+      spriteID: f177f04a2baa31f30800000000000000
+      internalID: 4545164133180339999
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet 1_9
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 40
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef990db98e1f639e0800000000000000
-      internalID: -1641859032781121026
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet 1_10
+      name: ChCharacter_Legs_13
       rect:
         serializedVersion: 2
         x: 240
         y: 40
-        width: 40
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -370,19 +427,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ace6a114e7a41a90800000000000000
-      internalID: -7344060494343902046
+      spriteID: 3e650d9f2f4ead300800000000000000
+      internalID: 277786059261105891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet 1_11
+      name: ChCharacter_Legs_14
       rect:
         serializedVersion: 2
-        x: 280
+        x: 300
         y: 40
-        width: 40
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -391,19 +448,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ddbfa052a002ce40800000000000000
-      internalID: 5675099177578642898
+      spriteID: 3fe26ee6c5047d310800000000000000
+      internalID: 1429682172455169779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet 1_12
+      name: ChCharacter_Legs_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 40
+        x: 360
+        y: 40
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -412,19 +469,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b17e3eaab8f5e49f0800000000000000
-      internalID: -482343056609908965
+      spriteID: e322dd26c210429d0800000000000000
+      internalID: -2800111778168757698
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet 1_13
+      name: ChCharacter_Legs_16
       rect:
         serializedVersion: 2
-        x: 40
-        y: 0
-        width: 40
+        x: 420
+        y: 40
+        width: 60
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -433,113 +490,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29a1de1a2717fd510800000000000000
-      internalID: 1576103131759843986
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet 1_14
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bdcfb39181e75eef0800000000000000
-      internalID: -79518776441439013
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet 1_15
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d31dc56cece292f00800000000000000
-      internalID: 1092455850240168253
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet 1_16
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 89c5c69d402d72160800000000000000
-      internalID: 7000795064040184984
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet 1_17
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5b4c8689c8ee6af90800000000000000
-      internalID: -6942599487925205835
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_2_WORK_IN_PROGRESS-Sheet 1_18
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 41ba775028878faa0800000000000000
-      internalID: -6127014793204749548
+      spriteID: 18d04015410153e90800000000000000
+      internalID: -7046708362506662527
       vertices: []
       indices: 
       edges: []
@@ -547,7 +499,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c797c401b8f933a42b64cbd73649c030
+    spriteID: 706a578b9e035b7438c96e5d93c8c0f2
     internalID: 0
     vertices: []
     indices: 
