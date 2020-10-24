@@ -14,6 +14,7 @@ public class GameManager : Singleton<GameManager>
         isGamePaused = true;
         Time.timeScale = 0f;
         pauseMenu.SetActive(true);
+        Cursor.visible = true;
     }
 
     public void Resume()
@@ -21,6 +22,7 @@ public class GameManager : Singleton<GameManager>
         isGamePaused = false;
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
+        Cursor.visible = false;
     }
 
     public void ToMainMenu()
