@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
             Move();
             HandleShoot();
         }
-       
+
     }
 
     void ProccesInputs()
@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
             legs.GetComponent<Animator>().SetBool("Roll", true);
         }
 
-        
+
     }
 
     void Move()
@@ -92,7 +92,7 @@ public class Player : MonoBehaviour
         anim.SetFloat("Vertical", moveDirection.y);
         anim.SetFloat("Horizontal", moveDirection.x);
         anim.SetFloat("Magnitude", moveDirection.magnitude);
-      
+
         legs.GetComponent<Animator>().SetFloat("Vertical", moveDirection.y);
         legs.GetComponent<Animator>().SetFloat("Horizontal", moveDirection.x);
         legs.GetComponent<Animator>().SetFloat("Magnitude", moveDirection.magnitude);
@@ -107,7 +107,7 @@ public class Player : MonoBehaviour
         //TODO: invicibility while rolling ?
     }
 
-   
+
 
     private void HandleShoot()
     {
@@ -123,9 +123,9 @@ public class Player : MonoBehaviour
 
         if (Input.GetButton("Fire1") && !isShooting)
         {
-            
+
             anim.SetBool("Attacking", true);
-            
+
         }
         else if(!Input.GetButton("Fire1"))
         {
@@ -145,14 +145,14 @@ public class Player : MonoBehaviour
             shot.GetComponent<Projectile>().SetDamage(stats.damage.value);
             StartCoroutine(AttackCooldown());
         }
-       
+
 
 
     }
 
     private IEnumerator AttackCooldown()
     {
-        
+
         anim.SetBool("Attack Cooldown", true);
         yield return new WaitForSeconds(stats.attackSpeed.value);
         anim.SetBool("Attack Cooldown", false);
@@ -163,7 +163,7 @@ public class Player : MonoBehaviour
     {
         anim.SetBool("Roll", false);
         legs.GetComponent<Animator>().SetBool("Roll", false);
-        
+
     }
 
     public void StopRoll()
