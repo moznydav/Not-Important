@@ -6,40 +6,76 @@ using UnityEngine.Tilemaps;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] float movementSpeed = 200f;
+    [SerializeField] float movementSpeed = 3f;
+    [SerializeField] float keepDistance = 5f;
+    [SerializeField] float keepDistanceError = 5f;
 
     AStar pathfinding;
     GameObject player;
-    Vector2 moveDirection;
+    Vector3 moveDirection;
 
-    Rigidbody2D rigidBody;
     SpriteRenderer spriteRenderer;
-    Animator anim;
 
     List<Vector3> path;
     int lastPathIndex;
+    bool distancing;
 
     Tuple<int, int> lastPlayerCell;
 
     void Awake()
     {
-        rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animator>();
+        // anim = GetComponent<Animator>();
 
-        pathfinding = (AStar) GameObject.FindWithTag("PathFinding").GetComponent(typeof(AStar));
-        player = GameObject.FindWithTag("Player");
+        pathfinding = (AStar) GameObject.FindWithTag(Constants.ASTAR_TAG).GetComponent(typeof(AStar));
+        player = GameObject.FindWithTag(Constants.PLAYER_TAG);
     }
 
     void Update()
     {
-        FollowPlayer();
         HandleMovement();
+        distancing = KeepDistance();
+
+        if (!distancing)
+        {
+            FollowPlayer();
+        }
+        else
+        {
+            moveDirection = new Vector3(0, 0, 0);
+        }
     }
 
     private void FixedUpdate()
     {
         Move();
+    }
+
+    private bool KeepDistance()
+    {
+        if (keepDistance == 0.0)
+        {
+            return false;
+        }
+
+        var position = transform.position;
+        var playerPos = player.transform.position;
+
+        bool isPathClear = pathfinding.IsPathClear(position, playerPos);
+
+        if (!isPathClear)
+        {
+            return false;
+        }
+
+        var dst = Vector3.Distance(position, playerPos);
+
+        if (distancing)
+        {
+            return dst <= keepDistance + keepDistanceError;
+        }
+
+        return dst <= keepDistance;
     }
 
     void FollowPlayer()
@@ -88,11 +124,11 @@ public class Enemy : MonoBehaviour
     {
         if (Mathf.Abs(moveDirection.x) > 0 || Mathf.Abs(moveDirection.y) > 0)
         {
-            anim.SetBool("Running", true);
+            // anim.SetBool("Running", true);
         }
         else
         {
-            anim.SetBool("Running", false);
+            // anim.SetBool("Running", false);
         }
 
         if (moveDirection.x < 0)
@@ -108,7 +144,6 @@ public class Enemy : MonoBehaviour
 
     void Move()
     {
-        rigidBody.velocity = new Vector2(moveDirection.x * movementSpeed * Time.fixedDeltaTime,
-                                         moveDirection.y * movementSpeed * Time.fixedDeltaTime);
+        transform.Translate(moveDirection * movementSpeed * Time.deltaTime);
     }
 }

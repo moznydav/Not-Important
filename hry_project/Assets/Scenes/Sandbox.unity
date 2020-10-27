@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 102938949}
   - component: {fileID: 102938951}
   - component: {fileID: 102938952}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Minotaur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3070,7 +3070,7 @@ GameObject:
   - component: {fileID: 500421802}
   - component: {fileID: 500421804}
   - component: {fileID: 500421805}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Goblin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3185,7 +3185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 569682370}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3268,7 +3268,7 @@ GameObject:
   - component: {fileID: 954906024}
   - component: {fileID: 954906026}
   - component: {fileID: 954906027}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Golem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3571,7 +3571,7 @@ GameObject:
   - component: {fileID: 1334250352}
   - component: {fileID: 1334250351}
   - component: {fileID: 1334250354}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Beholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3689,7 +3689,7 @@ GameObject:
   - component: {fileID: 1354736228}
   - component: {fileID: 1354736230}
   - component: {fileID: 1354736231}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Dark Mage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3882,7 +3882,7 @@ GameObject:
   - component: {fileID: 1574116041}
   - component: {fileID: 1574116042}
   - component: {fileID: 1574116043}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Shaman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4000,7 +4000,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74819e43e22b28119946ea5a67ce6539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 200
+  movementSpeed: 3
+  keepDistance: 5
+  keepDistanceError: 1
 --- !u!114 &1601568156 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4719806750646184786, guid: 3e2c3cad60483d341a516de669eaa9e1,
