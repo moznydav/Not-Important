@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 20
   lifespan: 1
+  ricochet: 1
 --- !u!50 &254868739
 Rigidbody2D:
   serializedVersion: 4
@@ -150,7 +151,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.027172327, y: 0}
