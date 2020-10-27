@@ -14,6 +14,8 @@ public class AStar : MonoBehaviour
 
     private int height;
 
+    static readonly double sqrt2 = Math.Sqrt(2);
+
     private static int[,] offsets = new int[4,2] {
         {-1, 0}, {1, 0}, {0, 1}, {0, -1}
     };
@@ -142,7 +144,7 @@ public class AStar : MonoBehaviour
     {
         if (from.Item1 != to.Item1 && from.Item2 != to.Item2)
         {
-            return 1.6;
+            return sqrt2;
         }
 
         return 1;
