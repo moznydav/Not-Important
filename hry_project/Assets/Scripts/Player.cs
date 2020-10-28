@@ -143,6 +143,7 @@ public class Player : MonoBehaviour
             GameObject shot = Instantiate(projectile, transform.position, Quaternion.identity);
             shot.GetComponent<Rigidbody2D>().velocity = aimDirection * shot.GetComponent<Projectile>().GetProjectileSPeed();
             shot.GetComponent<Projectile>().SetDamage(stats.damage.value);
+            shot.GetComponent<Projectile>().SetDirection(aimDirection);
             StartCoroutine(AttackCooldown());
         }
 
