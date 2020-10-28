@@ -14,6 +14,8 @@ public class AStar : MonoBehaviour
 
     private int height;
 
+    static readonly double sqrt2 = Math.Sqrt(2);
+
     private static int[,] offsets = new int[4,2] {
         {-1, 0}, {1, 0}, {0, 1}, {0, -1}
     };
@@ -42,6 +44,21 @@ public class AStar : MonoBehaviour
                 }
             }
         }
+    }
+
+    public bool IsPathClear(Vector3 from, Vector3 to)
+    {
+        var line = GetBresenhamLine(WorldToCell(from), WorldToCell(to));
+
+        foreach (var pos in line)
+        {
+            if (map[pos.Item1, pos.Item2])
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public Tuple<int, int> WorldToCell(Vector3 vec)
@@ -142,7 +159,7 @@ public class AStar : MonoBehaviour
     {
         if (from.Item1 != to.Item1 && from.Item2 != to.Item2)
         {
-            return 1.6;
+            return sqrt2;
         }
 
         return 1;
@@ -197,5 +214,54 @@ public class AStar : MonoBehaviour
         }
 
         return score;
+    }
+
+    /* Method taken from UIR course (https://cw.fel.cvut.cz/wiki/courses/b4m36uir/hw/t1c-map) */
+    private List<Tuple<int, int>> GetBresenhamLine(Tuple<int, int> start, Tuple<int, int> end)
+    {
+        var line = new List<Tuple<int, int>>();
+
+        int x0 = start.Item1;
+        int y0 = start.Item2;
+
+        int x1 = end.Item1;
+        int y1 = end.Item2;
+
+        var dx = Math.Abs(x1 - x0);
+        var dy = Math.Abs(y1 - y0);
+
+        var x = x0;
+        var y = y0;
+
+        var sx = x0 > x1 ? -1 : 1;
+        var sy = y0 > y1 ? -1 : 1;
+
+        if (dx > dy) {
+            var err = dx / 2.0;
+
+            while (x != x1) {
+                line.Add(Tuple.Create(x, y));
+                err -= dy;
+                if (err < 0) {
+                    y += sy;
+                    err += dx;
+                }
+                x += sx;
+            }
+        } else {
+            var err = dy / 2.0;
+
+            while (y != y1) {
+                line.Add(Tuple.Create(x, y));
+                err -= dx;
+                if (err < 0) {
+                    x += sx;
+                    err += dy;
+                }
+                y += sy;
+            }
+        }
+
+        return line;
     }
 }
