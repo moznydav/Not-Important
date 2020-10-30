@@ -15090,10 +15090,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1999740434, guid: aae3c97dee8d4294f85d3f9e861ce6f7, type: 3}
-      propertyPath: baseAttackSpeed
-      value: 0.75
-      objectReference: {fileID: 0}
+    - target: {fileID: 1579607771904927055, guid: aae3c97dee8d4294f85d3f9e861ce6f7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6874504565857425583, guid: 9c4c888384532ca4c95f40d114dcb3df,
+        type: 3}
+    - target: {fileID: 3584843980734656987, guid: aae3c97dee8d4294f85d3f9e861ce6f7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8187283231347527578, guid: 2245d89c99eb6a048913ed02f6f4640f,
+        type: 3}
     - target: {fileID: 6000552227410383350, guid: aae3c97dee8d4294f85d3f9e861ce6f7,
         type: 3}
       propertyPath: m_Name
