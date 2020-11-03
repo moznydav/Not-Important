@@ -17,6 +17,7 @@ public class Stats : MonoBehaviour
     public CharacterStat damage;
 
     public bool isAlive = true;
+    public bool isPlayer = false;
     [SerializeField] private float currentHealth;
     
     private void Awake()
@@ -58,5 +59,10 @@ public class Stats : MonoBehaviour
     public void HealToMax()
     {
         currentHealth = maxHealth.value;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
     }
 }

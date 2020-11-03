@@ -6,35 +6,45 @@ using UnityEngine.Tilemaps;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] float movementSpeed = 3f;
     [SerializeField] float keepDistance = 5f;
     [SerializeField] float keepDistanceError = 5f;
 
     AStar pathfinding;
     GameObject player;
+    Rigidbody2D rigidBody;
     Vector3 moveDirection;
+    Stats stats;
+
 
     SpriteRenderer spriteRenderer;
 
     List<Vector3> path;
     int lastPathIndex;
     bool distancing;
+    bool canRun = true;
 
     Tuple<int, int> lastPlayerCell;
 
     void Awake()
     {
+        stats = GetComponent<Stats>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         // anim = GetComponent<Animator>();
-
+        rigidBody = GetComponent<Rigidbody2D>();
         pathfinding = (AStar) GameObject.FindWithTag(Constants.ASTAR_TAG).GetComponent(typeof(AStar));
         player = GameObject.FindWithTag(Constants.PLAYER_TAG);
     }
 
     void Update()
     {
-        HandleMovement();
-        distancing = KeepDistance();
+        if (player)
+        {
+            distancing = KeepDistance();
+        }
+        else
+        {
+            distancing = true;
+        }
 
         if (!distancing)
         {
@@ -59,8 +69,10 @@ public class Enemy : MonoBehaviour
         }
 
         var position = transform.position;
+       
         var playerPos = player.transform.position;
-
+        
+       
         bool isPathClear = pathfinding.IsPathClear(position, playerPos);
 
         if (!isPathClear)
@@ -120,30 +132,29 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void HandleMovement()
+    private void Move()
     {
-        if (Mathf.Abs(moveDirection.x) > 0 || Mathf.Abs(moveDirection.y) > 0)
+        if (canRun)
         {
-            // anim.SetBool("Running", true);
+            rigidBody.velocity = (moveDirection * stats.moveSpeed.value * Time.deltaTime);
         }
-        else
-        {
-            // anim.SetBool("Running", false);
-        }
-
-        if (moveDirection.x < 0)
-        {
-            spriteRenderer.flipX = true;
-        }
-        else if( moveDirection.x > 0)
-        {
-            spriteRenderer.flipX = false;
-        }
-
+                   
     }
 
-    void Move()
+    public bool CanAttack()
     {
-        transform.Translate(moveDirection * movementSpeed * Time.deltaTime);
+        return distancing;
     }
+
+
+    public Vector3 GetMoveDirection()
+    {
+        return moveDirection;
+    }
+
+    public void SetCanRun(bool canRun)
+    {
+        this.canRun = canRun;
+    }
+
 }
