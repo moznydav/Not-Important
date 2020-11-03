@@ -43,6 +43,7 @@ public class Beholder : MonoBehaviour
             {
                 attackOnCooldown = true;
                 anim.SetBool("Attacking", true);
+                legs.GetComponent<Animator>().SetBool("Attacking", true);
                 StartCoroutine(ShootingCooldown());
 
             }
@@ -68,7 +69,7 @@ public class Beholder : MonoBehaviour
             aimDirection.Normalize();
 
             anim.SetFloat("AimHorizontal", aimDirection.x);
-
+            legs.GetComponent<Animator>().SetFloat("AimHorizontal", aimDirection.x);
         }
     }
 
@@ -80,6 +81,7 @@ public class Beholder : MonoBehaviour
         shot.GetComponent<Projectile>().SetDamage(stats.damage.value);
         shot.GetComponent<Projectile>().SetDirection(aimDirection);
         shot.transform.eulerAngles = new Vector3(0, 0, angle);
+        legs.GetComponent<Animator>().SetBool("Attacking", false);
         anim.SetBool("Attacking", false);
     }
 

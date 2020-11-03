@@ -150,9 +150,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: -1758626483
+  m_SortingLayer: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 8dbc045b5dae0bb47a77e4cdea3ea662, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -236,7 +236,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -8570790118375049753, guid: 5004c79517f82d847b8aae3f83b2df18,
+  m_Sprite: {fileID: -6874504565857425583, guid: 9c4c888384532ca4c95f40d114dcb3df,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -349,7 +349,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.050197184, y: -0.050863028}
@@ -447,7 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6729aad2e64d62d4abe776e13d3387c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rollSpeed: 700
+  rollSpeed: 800
   projectile: {fileID: 5102771910098208509, guid: 5272e22764d227c4a88eec247a4b7bb1,
     type: 3}
   crossHair: {fileID: 4992653142888655057}
@@ -467,12 +467,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMaxHealth: 100
   baseAttackSpeed: 0.75
-  baseMoveSpeed: 300
+  baseMoveSpeed: 350
   baseDamage: 25
-  VFX: {fileID: 0}
-  isAlive: 1
-  isPlayer: 0
+  VFX: {fileID: 3165420064654571523, guid: 993068677e258bc4daab65b24f33976a, type: 3}
+  immuneDuration: 0.2
   currentHealth: 0
+  isAlive: 1
+  isPlayer: 1
 --- !u!1 &8000891693078247934
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +485,8 @@ GameObject:
   - component: {fileID: 3831899066621219602}
   - component: {fileID: 3584843980734656987}
   - component: {fileID: 3893464623970290658}
-  m_Layer: 9
+  - component: {fileID: 2046334532}
+  m_Layer: 13
   m_Name: Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +547,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 6917576078545907462, guid: 0de3cf919d9a2dc4c9a579a103f6dede,
+  m_Sprite: {fileID: -8187283231347527578, guid: 2245d89c99eb6a048913ed02f6f4640f,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -576,3 +578,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &2046334532
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8000891693078247934}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.35113382}
+  m_Size: {x: 1.3406572, y: 1.5094347}
+  m_Direction: 0

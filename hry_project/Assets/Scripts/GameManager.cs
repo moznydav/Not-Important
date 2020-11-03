@@ -28,6 +28,7 @@ public class GameManager : Singleton<GameManager>
     public void ToMainMenu()
     {
         Resume();
+        Cursor.visible = true;
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 
