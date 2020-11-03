@@ -51,6 +51,23 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!attackDone)
+        {
+            Stats stats = other.GetComponent<Stats>();
+
+            if (stats)
+            {
+                stats.DealDamage(damage);
+            }
+
+            attackDone = true;
+            Debug.Log("HIT " + other.name);
+
+            Destroy(gameObject);
+        }
+    }
 
     public void SetDamage(float damage)
     {

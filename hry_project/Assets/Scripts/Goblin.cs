@@ -6,7 +6,7 @@ public class Goblin : MonoBehaviour
 {
     // Config
     [Header("Config")]
-    [SerializeField] float loungeSpeed = 1000f;
+    [SerializeField] float loungeSpeed = 500f;
     [SerializeField] float attackCooldown = 0.7f;
     [SerializeField] float damageCooldown = 1f;
 

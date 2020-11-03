@@ -13,16 +13,20 @@ public class Stats : MonoBehaviour
 
     [Header("Config")]
     [SerializeField] GameObject VFX;
+    [SerializeField] float immuneDuration = 0.2f;
     // Stats
     public CharacterStat maxHealth;
     public CharacterStat attackSpeed;
     public CharacterStat moveSpeed;
     public CharacterStat damage;
 
+    
+    [Header("For Debug")]
+    [SerializeField] private float currentHealth;
     public bool isAlive = true;
     public bool isPlayer = false;
-    [SerializeField] private float currentHealth;
-    
+
+    private bool immune = false;
     private void Awake()
     {
         currentHealth = baseMaxHealth; 
@@ -34,17 +38,27 @@ public class Stats : MonoBehaviour
 
     public void DealDamage(float damage)
     {
-        currentHealth -= damage;
-        StartCoroutine(HandleHit());
-        if (currentHealth <= 0)
+        if (!immune)
         {
-            isAlive = false;
-            Destroy(gameObject);
-            //Change this
-            //Add animations
-        }
+            currentHealth -= damage;
+            StartCoroutine(HandleHit());
+            if (currentHealth <= 0)
+            {
+                isAlive = false;
+                Destroy(gameObject);
+                //Change this
+                //Add animations
+            }
 
-        Debug.Log(gameObject.name + " health reduced to " + currentHealth);
+            if (isPlayer)
+            {
+                immune = true;
+                StartCoroutine(StartImmuneFrames());
+            }
+
+            Debug.Log(gameObject.name + " health reduced to " + currentHealth);
+        }
+        
 
     }
 
@@ -70,5 +84,11 @@ public class Stats : MonoBehaviour
         GameObject hitVFX = Instantiate(VFX, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(0.2f);
         Destroy(hitVFX);
+    }
+
+    private IEnumerator StartImmuneFrames()
+    {
+        yield return new WaitForSeconds(immuneDuration);
+        immune = false;
     }
 }

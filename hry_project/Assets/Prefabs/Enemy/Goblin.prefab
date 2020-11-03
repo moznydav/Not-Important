@@ -12,13 +12,17 @@ GameObject:
   - component: {fileID: 196022626036479523}
   - component: {fileID: 196022626036479525}
   - component: {fileID: 196022626036479524}
+  - component: {fileID: 500421802}
+  - component: {fileID: 500421809}
+  - component: {fileID: 500421806}
+  - component: {fileID: 500421807}
   m_Layer: 11
   m_Name: Goblin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &196022626036479522
 Transform:
   m_ObjectHideFlags: 0
@@ -26,7 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196022626036479520}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -145.37155, y: 162.85095, z: 35.870613}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -70,12 +74,12 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1758626483
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4f1fc34d30587f64a8a0d7245fa41e08, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2.5, y: 1.875}
@@ -98,9 +102,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMaxHealth: 50
   baseAttackSpeed: 1
-  baseMoveSpeed: 300
+  baseMoveSpeed: 350
   baseDamage: 20
+  VFX: {fileID: 3165420064654571523, guid: 993068677e258bc4daab65b24f33976a, type: 3}
   isAlive: 1
+  isPlayer: 0
   currentHealth: 0
 --- !u!70 &196022626036479524
 CapsuleCollider2D:
@@ -118,3 +124,72 @@ CapsuleCollider2D:
   m_Offset: {x: 0.084794044, y: -0.04237318}
   m_Size: {x: 0.9737091, y: 1.5112963}
   m_Direction: 0
+--- !u!50 &500421802
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196022626036479520}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!95 &500421809
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196022626036479520}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ea2f614e43bedb14ea4629eede54f93c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &500421806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196022626036479520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74819e43e22b28119946ea5a67ce6539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keepDistance: 1.8
+  keepDistanceError: 5
+--- !u!114 &500421807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196022626036479520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aba447e3079e915488c6731043d10429, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loungeSpeed: 425
+  attackCooldown: 0.5
+  damageCooldown: 1
