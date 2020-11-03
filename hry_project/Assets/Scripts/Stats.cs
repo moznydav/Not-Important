@@ -5,11 +5,14 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     //Config base stats
+    [Header("Base stats")]
     [SerializeField] float baseMaxHealth;
     [SerializeField] float baseAttackSpeed;
     [SerializeField] float baseMoveSpeed;
     [SerializeField] float baseDamage;
 
+    [Header("Config")]
+    [SerializeField] GameObject VFX;
     // Stats
     public CharacterStat maxHealth;
     public CharacterStat attackSpeed;
@@ -32,6 +35,7 @@ public class Stats : MonoBehaviour
     public void DealDamage(float damage)
     {
         currentHealth -= damage;
+        StartCoroutine(HandleHit());
         if (currentHealth <= 0)
         {
             isAlive = false;
@@ -61,8 +65,10 @@ public class Stats : MonoBehaviour
         currentHealth = maxHealth.value;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private IEnumerator HandleHit()
     {
-        
+        GameObject hitVFX = Instantiate(VFX, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.2f);
+        Destroy(hitVFX);
     }
 }

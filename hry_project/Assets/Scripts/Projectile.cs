@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] float projectileSpeed = 20f;
     [SerializeField] float lifespan = 1f;
     [SerializeField] int ricochet = 1;
+
     float damage;
 
     bool attackDone = false;
