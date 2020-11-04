@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] float projectileSpeed = 20f;
     [SerializeField] float lifespan = 1f;
     [SerializeField] int ricochet = 1;
+
     float damage;
 
     bool attackDone = false;
@@ -50,6 +51,23 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!attackDone)
+        {
+            Stats stats = other.GetComponent<Stats>();
+
+            if (stats)
+            {
+                stats.DealDamage(damage);
+            }
+
+            attackDone = true;
+            Debug.Log("HIT " + other.name);
+
+            Destroy(gameObject);
+        }
+    }
 
     public void SetDamage(float damage)
     {
