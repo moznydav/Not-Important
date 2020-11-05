@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Aim();
         if (isRolling)
         {
             Roll();
@@ -108,8 +109,7 @@ public class Player : MonoBehaviour
     }
 
 
-
-    private void HandleShoot()
+    private void Aim()
     {
         Vector2 worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x,
                                                                           Input.mousePosition.y));
@@ -120,7 +120,10 @@ public class Player : MonoBehaviour
         crossHair.transform.eulerAngles = new Vector3(0, 0, angle);
 
         anim.SetFloat("Aim Horizontal", aimDirection.x);
+    }
 
+    private void HandleShoot()
+    {
         if (Input.GetButton("Fire1") && !isShooting)
         {
 
