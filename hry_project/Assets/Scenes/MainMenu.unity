@@ -399,6 +399,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2384b8bdd8ae54380f632d5438018e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settings: {fileID: 1437953012}
+  mainMenu: {fileID: 1718469413}
 --- !u!4 &822920495
 Transform:
   m_ObjectHideFlags: 0
@@ -519,7 +521,7 @@ PrefabInstance:
     - target: {fileID: 6294191560235021666, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -60.077126
+      value: -69.39
       objectReference: {fileID: 0}
     - target: {fileID: 6294191560235021666, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
@@ -579,12 +581,12 @@ PrefabInstance:
     - target: {fileID: 6294191560235021667, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
       propertyPath: m_Name
-      value: QuitButton (1)
+      value: QuitButton
       objectReference: {fileID: 0}
     - target: {fileID: 6294191560235021667, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 774e346f9135d044caac0e90fa1cd96d, type: 3}
@@ -675,7 +677,7 @@ PrefabInstance:
     - target: {fileID: 6294191559353108692, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
       propertyPath: m_Text
-      value: QUIT
+      value: BACK
       objectReference: {fileID: 0}
     - target: {fileID: 6294191560235021665, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
@@ -690,7 +692,7 @@ PrefabInstance:
     - target: {fileID: 6294191560235021665, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Quit
+      value: CloseSettings
       objectReference: {fileID: 0}
     - target: {fileID: 6294191560235021665, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
@@ -825,7 +827,7 @@ PrefabInstance:
     - target: {fileID: 6294191560235021667, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
       propertyPath: m_Name
-      value: QuitButton (1)
+      value: BackButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 774e346f9135d044caac0e90fa1cd96d, type: 3}
@@ -1045,7 +1047,7 @@ PrefabInstance:
     - target: {fileID: 6294191559353108692, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
       propertyPath: m_Text
-      value: QUIT
+      value: SETTINGS
       objectReference: {fileID: 0}
     - target: {fileID: 6294191560235021665, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
@@ -1060,7 +1062,7 @@ PrefabInstance:
     - target: {fileID: 6294191560235021665, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Quit
+      value: OpenSettings
       objectReference: {fileID: 0}
     - target: {fileID: 6294191560235021665, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
@@ -1195,7 +1197,7 @@ PrefabInstance:
     - target: {fileID: 6294191560235021667, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
       propertyPath: m_Name
-      value: QuitButton
+      value: SettingsButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 774e346f9135d044caac0e90fa1cd96d, type: 3}
