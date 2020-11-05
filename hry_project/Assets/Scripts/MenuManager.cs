@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -12,6 +14,15 @@ public class MenuManager : Singleton<MenuManager>
     void Start()
     {
         fullscreenToggle.isOn = Screen.fullScreen;
+
+        resDropdown.ClearOptions();
+        List<string> resOptions = new List<string>();
+        for (int i = 0; i < Screen.resolutions.Length; i++) {
+            Resolution currRes = Screen.resolutions[i];
+            string resOption = currRes.width + " x " + currRes.height;
+            resOptions.Add(resOption);
+        }
+        resDropdown.AddOptions(resOptions);
     }
 
     public void Play()
