@@ -48,7 +48,12 @@ public class MenuManager : Singleton<MenuManager>
 
     public void SetFullscreen(bool isFullscreen)
     {
-        print(isFullscreen);
         Screen.fullScreen = isFullscreen;
+    }
+
+    public void SetResolution(int resIndex)
+    {
+        Resolution res = Screen.resolutions[resIndex];
+        Screen.SetResolution(res.width, res.height, Screen.fullScreen);
     }
 }
