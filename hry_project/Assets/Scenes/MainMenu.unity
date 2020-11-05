@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 3124904}
   - component: {fileID: 3124903}
   m_Layer: 5
-  m_Name: Dropdown
+  m_Name: ResDropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -962,6 +962,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings: {fileID: 1437953012}
   mainMenu: {fileID: 1718469413}
+  fullscreenToggle: {fileID: 1400583716}
+  resDropdown: {fileID: 3124903}
 --- !u!4 &822920495
 Transform:
   m_ObjectHideFlags: 0
@@ -1762,7 +1764,7 @@ GameObject:
   - component: {fileID: 1400583715}
   - component: {fileID: 1400583716}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: FullscreenToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

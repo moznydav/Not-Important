@@ -1,10 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuManager : Singleton<MenuManager>
 {
     public GameObject settings;
     public GameObject mainMenu;
+    public Toggle fullscreenToggle;
+    public Dropdown resDropdown;
+
+    void Start()
+    {
+        fullscreenToggle.isOn = Screen.fullScreen;
+    }
 
     public void Play()
     {
