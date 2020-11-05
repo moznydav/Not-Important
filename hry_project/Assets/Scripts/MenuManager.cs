@@ -26,4 +26,10 @@ public class MenuManager : Singleton<MenuManager>
         settings.SetActive(false);
         mainMenu.SetActive(true);
     }
+
+    public void SetFullscreen(bool isFullscreen)
+    {
+        print(isFullscreen);
+        Screen.fullScreen = isFullscreen;
+    }
 }
