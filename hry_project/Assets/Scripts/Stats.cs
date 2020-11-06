@@ -37,7 +37,7 @@ public class Stats : MonoBehaviour
         damage = new CharacterStat(baseDamage);
     }
 
-    private void Update()
+    private void UpdateHealthbar()
     {
         if (healthbar)
         {
@@ -67,8 +67,7 @@ public class Stats : MonoBehaviour
 
             Debug.Log(gameObject.name + " health reduced to " + currentHealth);
         }
-        
-
+        UpdateHealthbar();
     }
 
     public void Heal(float heal)
@@ -81,11 +80,13 @@ public class Stats : MonoBehaviour
         {
             currentHealth += heal;
         }
+        UpdateHealthbar();
     }
 
     public void HealToMax()
     {
         currentHealth = maxHealth.value;
+        UpdateHealthbar();
     }
 
     private IEnumerator HandleHit()

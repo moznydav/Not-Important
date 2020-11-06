@@ -4011,18 +4011,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1132150808}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1109247229 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1109247229, guid: aae3c97dee8d4294f85d3f9e861ce6f7,
-    type: 3}
-  m_PrefabInstance: {fileID: 6000552226187604464}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1132150808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15999,11 +15987,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 815750380754616202, guid: aae3c97dee8d4294f85d3f9e861ce6f7,
-        type: 3}
-      propertyPath: slider
-      value: 
-      objectReference: {fileID: 1109247229}
     - target: {fileID: 6000552227410383350, guid: aae3c97dee8d4294f85d3f9e861ce6f7,
         type: 3}
       propertyPath: m_Name
