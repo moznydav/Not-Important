@@ -14,6 +14,8 @@ public class AStar : MonoBehaviour
 
     private int height;
 
+    private bool updated;
+
     static readonly double sqrt2 = Math.Sqrt(2);
 
     private static int[,] offsets = new int[4,2] {
@@ -24,7 +26,7 @@ public class AStar : MonoBehaviour
         {-1, -1}, {1, 1}, {1, -1}, {-1, 1}
     };
 
-    void Start()
+    void Awake()
     {
         BoundsInt bounds = tilemap.cellBounds;
         TileBase[] allTiles = tilemap.GetTilesBlock(bounds);
@@ -44,6 +46,13 @@ public class AStar : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SetWall(int cellX, int cellY, bool isWall)
+    {
+        Debug.Log(cellY + " : " + cellX);
+        map[cellX, cellY] = isWall;
+        updated = true;
     }
 
     public bool IsPathClear(Vector3 from, Vector3 to)

@@ -44,6 +44,12 @@ public class Projectile : MonoBehaviour
                 return;
             }
 
+            if (other.tag == Constants.DESTROYABLE_TAG)
+            {
+                var destroyable = other.GetComponent<Destroyable>();
+                destroyable.Destroy();
+            }
+
             attackDone = true;
             Debug.Log("HIT " + other.name);
 
