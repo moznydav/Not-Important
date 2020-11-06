@@ -5,6 +5,8 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     public Healthbar healthbar;
+    public Dashbars dashbars;
+
     //Config base stats
     [Header("Base stats")]
     [SerializeField] float baseMaxHealth;
@@ -32,6 +34,11 @@ public class Stats : MonoBehaviour
     private void Awake()
     {
         rollsRemaining = 3;
+        if (dashbars)
+        {
+            dashbars.InitializeDashbars(rollsRemaining);
+        }
+
         currentHealth = baseMaxHealth; 
         maxHealth = new CharacterStat(baseMaxHealth);
         attackSpeed = new CharacterStat(baseAttackSpeed);
