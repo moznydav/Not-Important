@@ -51,6 +51,10 @@ public class Stats : MonoBehaviour
     {
         if (rollsRemaining > 0)
         {
+            if (dashbars)
+            {
+                dashbars.SubtractRoll();
+            }
             rollsRemaining -= 1;
         }
     }
