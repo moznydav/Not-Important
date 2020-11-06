@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
+    public Healthbar healthbar;
     //Config base stats
     [Header("Base stats")]
     [SerializeField] float baseMaxHealth;
@@ -34,6 +35,14 @@ public class Stats : MonoBehaviour
         attackSpeed = new CharacterStat(baseAttackSpeed);
         moveSpeed = new CharacterStat(baseMoveSpeed);
         damage = new CharacterStat(baseDamage);
+    }
+
+    private void Update()
+    {
+        if (healthbar)
+        {
+            healthbar.SetHealthPercentage(currentHealth, baseMaxHealth);
+        }
     }
 
     public void DealDamage(float damage)
