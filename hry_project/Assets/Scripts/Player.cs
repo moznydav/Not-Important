@@ -67,17 +67,17 @@ public class Player : MonoBehaviour
             float moveY = Input.GetAxisRaw("Vertical");
 
             moveDirection = new Vector2(moveX, moveY).normalized;
+
+            if (Input.GetButtonDown("Jump") &&
+                moveDirection.magnitude > 0 &&
+                stats.GetRollsRemaining() > 0) {
+                isRolling = true;
+                anim.SetBool("Attacking", false);
+                anim.SetBool("Roll", true);
+                legs.GetComponent<Animator>().SetBool("Roll", true);
+                stats.SubtractRoll();
+            }
         }
-
-        if (Input.GetButtonDown("Jump") && (moveDirection.magnitude > 0) && !isRolling)
-        {
-            isRolling = true;
-            anim.SetBool("Attacking", false);
-            anim.SetBool("Roll", true);
-            legs.GetComponent<Animator>().SetBool("Roll", true);
-        }
-
-
     }
 
     void Move()

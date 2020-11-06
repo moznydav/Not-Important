@@ -21,6 +21,7 @@ public class Stats : MonoBehaviour
     public CharacterStat moveSpeed;
     public CharacterStat damage;
 
+    private int rollsRemaining;
     
     [Header("For Debug")]
     [SerializeField] private float currentHealth;
@@ -30,11 +31,21 @@ public class Stats : MonoBehaviour
     private bool immune = false;
     private void Awake()
     {
+        rollsRemaining = 3;
         currentHealth = baseMaxHealth; 
         maxHealth = new CharacterStat(baseMaxHealth);
         attackSpeed = new CharacterStat(baseAttackSpeed);
         moveSpeed = new CharacterStat(baseMoveSpeed);
         damage = new CharacterStat(baseDamage);
+    }
+
+    public int GetRollsRemaining() { return rollsRemaining; }
+    public void SubtractRoll()
+    {
+        if (rollsRemaining > 0)
+        {
+            rollsRemaining -= 1;
+        }
     }
 
     private void UpdateHealthbar()
