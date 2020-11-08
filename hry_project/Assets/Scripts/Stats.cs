@@ -26,9 +26,9 @@ public class Stats : MonoBehaviour
     [Header("For Debug")]
     [SerializeField] private float currentHealth;
     public bool isAlive = true;
-    public bool isPlayer = false;
-
     private bool immune = false;
+
+    public void SetImmune(bool isImmune) { immune = isImmune; }
 
     private void Awake()
     {
@@ -66,13 +66,6 @@ public class Stats : MonoBehaviour
                 //Change this
                 //Add animations
             }
-
-            if (isPlayer)
-            {
-                immune = true;
-                StartCoroutine(StartImmuneFrames());
-            }
-
             Debug.Log(gameObject.name + " health reduced to " + currentHealth);
         }
         UpdateHealthbar();
@@ -104,7 +97,7 @@ public class Stats : MonoBehaviour
         Destroy(hitVFX);
     }
 
-    private IEnumerator StartImmuneFrames()
+    public IEnumerator StartImmuneFrames()
     {
         yield return new WaitForSeconds(immuneDuration);
         immune = false;

@@ -27,4 +27,11 @@ public class PlayerStats : Stats
             rollsRemaining -= 1;
         }
     }
+
+    public void DealDamage(float damage)
+    {
+        base.DealDamage(damage);
+        SetImmune(true);
+        StartCoroutine(StartImmuneFrames());
+    }
 }

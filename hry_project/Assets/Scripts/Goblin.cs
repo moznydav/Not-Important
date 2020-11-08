@@ -85,7 +85,7 @@ public class Goblin : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Stats otherStats = other.GetComponent<Stats>();
-        if (otherStats.isPlayer && !attackDone)
+        if (otherStats is Player && !attackDone)
         {
             otherStats.DealDamage(stats.damage.value);
             StartCoroutine(DamageCooldown());
