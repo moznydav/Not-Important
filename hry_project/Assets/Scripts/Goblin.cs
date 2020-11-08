@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Goblin : MonoBehaviour
+public class Goblin : Enemy
 {
     // Config
     [Header("Config")]
@@ -10,13 +10,8 @@ public class Goblin : MonoBehaviour
     [SerializeField] float attackCooldown = 0.7f;
     [SerializeField] float damageCooldown = 1f;
 
-
     // Cached variable
-    Enemy enemy;
-    GameObject player;
-    Rigidbody2D rigidBody;
     Animator anim;
-    Stats stats;
     
     bool attacking = false;
     bool attackDone = false;
@@ -25,39 +20,28 @@ public class Goblin : MonoBehaviour
 
     private void Awake()
     {
-        stats = GetComponent<Stats>();
+        InitializeEnemy();
         anim = GetComponent<Animator>();
-        enemy = GetComponent<Enemy>();
-        player = GameObject.FindWithTag(Constants.PLAYER_TAG);
-        rigidBody = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
         HandleMovement();
-        if (enemy.CanAttack())
+        if (!attacking)
         {
-            if (!attacking)
+            anim.SetFloat("Horizontal", GetMoveDirection().x);
+            anim.SetFloat("Magnitude", GetMoveDirection().magnitude);
+            if (CanAttack())
             {
                 attacking = true;
                 StartCoroutine(StartCooldown());
-
             }
-        }
-    }
-
-    void HandleMovement()
-    {
-        if (!attacking)
-        {
-            anim.SetFloat("Horizontal", enemy.GetMoveDirection().x);
-            anim.SetFloat("Magnitude", enemy.GetMoveDirection().magnitude);
         }
     }
 
     private IEnumerator StartCooldown()
     {
-        enemy.SetCanRun(false);
+        SetCanRun(false);
         if (player)
         {
             attackDirection.x = player.transform.position.x - transform.position.x;
@@ -72,7 +56,7 @@ public class Goblin : MonoBehaviour
         yield return new WaitForSeconds(attackCooldown);
         anim.SetBool("Attacking", false);
         attacking = false;
-        enemy.SetCanRun(true);
+        SetCanRun(true);
 
     }
 
@@ -85,7 +69,7 @@ public class Goblin : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Stats otherStats = other.GetComponent<Stats>();
-        if (otherStats is Player && !attackDone)
+        if (otherStats is PlayerStats && !attackDone)
         {
             otherStats.DealDamage(stats.damage.value);
             StartCoroutine(DamageCooldown());

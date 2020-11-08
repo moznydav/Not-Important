@@ -10,10 +10,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] float keepDistanceError = 5f;
 
     AStar pathfinding;
-    GameObject player;
-    Rigidbody2D rigidBody;
+    public GameObject player;
+    public Rigidbody2D rigidBody;
     Vector3 moveDirection;
-    Stats stats;
+    public Stats stats;
 
 
     SpriteRenderer spriteRenderer;
@@ -27,15 +27,20 @@ public class Enemy : MonoBehaviour
 
     void Awake()
     {
+        InitializeEnemy();
+    }
+
+    public void InitializeEnemy()
+    {
         stats = GetComponent<Stats>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         // anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
-        pathfinding = (AStar) GameObject.FindWithTag(Constants.ASTAR_TAG).GetComponent(typeof(AStar));
+        pathfinding = (AStar)GameObject.FindWithTag(Constants.ASTAR_TAG).GetComponent(typeof(AStar));
         player = GameObject.FindWithTag(Constants.PLAYER_TAG);
     }
 
-    void Update()
+    public void HandleMovement()
     {
         if (player)
         {

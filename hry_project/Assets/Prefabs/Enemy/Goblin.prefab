@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 196022626036479524}
   - component: {fileID: 500421802}
   - component: {fileID: 500421809}
-  - component: {fileID: 500421806}
   - component: {fileID: 500421807}
   m_Layer: 11
   m_Name: Goblin
@@ -100,14 +99,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10457ac6c3a1b0b45a817ab6c10ec4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthbar: {fileID: 0}
   baseMaxHealth: 50
   baseAttackSpeed: 1
   baseMoveSpeed: 350
   baseDamage: 20
   VFX: {fileID: 3165420064654571523, guid: 993068677e258bc4daab65b24f33976a, type: 3}
-  isAlive: 1
-  isPlayer: 0
+  immuneDuration: 0.2
   currentHealth: 0
+  isAlive: 1
 --- !u!70 &196022626036479524
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -164,20 +164,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &500421806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 196022626036479520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74819e43e22b28119946ea5a67ce6539, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keepDistance: 1.8
-  keepDistanceError: 5
 --- !u!114 &500421807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,6 +176,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba447e3079e915488c6731043d10429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keepDistance: 5
+  keepDistanceError: 5
+  player: {fileID: 0}
+  rigidBody: {fileID: 0}
+  stats: {fileID: 0}
   loungeSpeed: 425
   attackCooldown: 0.5
   damageCooldown: 1
