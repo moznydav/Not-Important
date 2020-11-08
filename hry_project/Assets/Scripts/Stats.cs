@@ -56,6 +56,7 @@ public class Stats : MonoBehaviour
     {
         if (!immune)
         {
+            print("took damage");
             currentHealth -= damage;
             StartCoroutine(HandleHit());
             if (currentHealth <= 0)

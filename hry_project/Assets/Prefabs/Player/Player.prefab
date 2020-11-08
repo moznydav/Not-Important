@@ -615,17 +615,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6278bb446a9bc44479a7e4deebe9620c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthbar: {fileID: 0}
-  baseMaxHealth: 0
-  baseAttackSpeed: 0
-  baseMoveSpeed: 0
-  baseDamage: 0
-  VFX: {fileID: 0}
+  healthbar: {fileID: 5617675635311616193}
+  baseMaxHealth: 100
+  baseAttackSpeed: 0.75
+  baseMoveSpeed: 350
+  baseDamage: 25
+  VFX: {fileID: 3165420064654571523, guid: 993068677e258bc4daab65b24f33976a, type: 3}
   immuneDuration: 0.2
   currentHealth: 0
   isAlive: 1
-  isPlayer: 0
-  rollSupply: {fileID: 0}
+  isPlayer: 1
+  rollSupply: {fileID: 6000552226187604467}
 --- !u!114 &5617675635311616193
 MonoBehaviour:
   m_ObjectHideFlags: 0
