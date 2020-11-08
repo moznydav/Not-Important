@@ -30,6 +30,18 @@ public class RollSupply : MonoBehaviour
             Slider currentSlider = (Slider) rollbarList[activeRollbarCount - 1].GetComponent("Slider");
             currentSlider.value = 0;
             activeRollbarCount -= 1;
+            print("rolls: " + activeRollbarCount);
+        }
+    }
+
+    public void RegenerateRoll()
+    {
+        if (activeRollbarCount < rollbarCount)
+        {
+            Slider currentSlider = (Slider)rollbarList[activeRollbarCount].GetComponent("Slider");
+            currentSlider.value = 1;
+            activeRollbarCount += 1;
+            print("rolls: " + activeRollbarCount);
         }
     }
 }

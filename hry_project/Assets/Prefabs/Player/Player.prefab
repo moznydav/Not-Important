@@ -624,7 +624,8 @@ MonoBehaviour:
   immuneDuration: 0.2
   currentHealth: 0
   isAlive: 1
-  isPlayer: 1
+  rollRegenTime: 2
+  maxRolls: 3
   rollSupply: {fileID: 6000552226187604467}
 --- !u!114 &5617675635311616193
 MonoBehaviour:

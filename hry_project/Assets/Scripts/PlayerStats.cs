@@ -4,14 +4,31 @@ using UnityEngine;
 
 public class PlayerStats : Stats
 {
+    [SerializeField] float rollRegenTime;
+    [SerializeField] int maxRolls;
     public RollSupply rollSupply;
     private int rollsRemaining;
+    private float lastRollTime;
 
     private void Awake() {
-        
+        lastRollTime = Time.time;
         base.InitializeStats();
-        rollsRemaining = 3;
-        rollSupply.InitializeRollSupply(rollsRemaining);
+        rollsRemaining = maxRolls;
+        rollSupply.InitializeRollSupply(maxRolls);
+    }
+
+    private void Update()
+    {
+        float now = Time.time;
+        if (now - lastRollTime > rollRegenTime)
+        {
+            if (rollsRemaining < maxRolls)
+            {
+                rollsRemaining += 1;
+                rollSupply.RegenerateRoll();
+            }
+            lastRollTime = now;
+        }
     }
 
     public int GetRollsRemaining() { return rollsRemaining; }
