@@ -17,21 +17,27 @@ public class PlayerStats : Stats
         rollSupply.InitializeRollSupply(maxRolls);
     }
 
-    private void Update()
+    private void HandleRollRegen()
     {
         float now = Time.time;
         if (rollsRemaining < maxRolls)
         {
-            if (now - lastRollTime > rollRegenTime)
+            if (now - lastRegenTime > rollRegenTime)
             {
                 rollsRemaining += 1;
                 rollSupply.RegenerateRoll();
-                lastRollTime = now;
-            } else
+                lastRegenTime = now;
+            }
+            else
             {
                 rollSupply.UpdateRollRegen(now - lastRollTime, rollRegenTime);
             }
         }
+    }
+
+    private void Update()
+    {
+        HandleRollRegen();
     }
 
     public int GetRollsRemaining() { return rollsRemaining; }

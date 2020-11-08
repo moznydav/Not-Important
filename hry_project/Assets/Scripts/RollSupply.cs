@@ -42,9 +42,9 @@ public class RollSupply : MonoBehaviour
     {
         if (activeRollbarCount < rollbarCount)
         {
-            Slider currentSlider = (Slider)rollbarList[activeRollbarCount].GetComponent("Slider");
-            currentSlider.value = 1;
             activeRollbarCount += 1;
+            Slider currentSlider = (Slider)rollbarList[activeRollbarCount - 1].GetComponent("Slider");
+            currentSlider.value = 1;
         }
     }
 
