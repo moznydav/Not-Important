@@ -20,14 +20,17 @@ public class PlayerStats : Stats
     private void Update()
     {
         float now = Time.time;
-        if (now - lastRollTime > rollRegenTime)
+        if (rollsRemaining < maxRolls)
         {
-            if (rollsRemaining < maxRolls)
+            if (now - lastRollTime > rollRegenTime)
             {
                 rollsRemaining += 1;
                 rollSupply.RegenerateRoll();
+                lastRollTime = now;
+            } else
+            {
+                rollSupply.UpdateRollRegen(now - lastRollTime, rollRegenTime);
             }
-            lastRollTime = now;
         }
     }
 

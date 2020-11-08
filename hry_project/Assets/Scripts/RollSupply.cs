@@ -28,9 +28,13 @@ public class RollSupply : MonoBehaviour
         if (activeRollbarCount > 0)
         {
             Slider currentSlider = (Slider) rollbarList[activeRollbarCount - 1].GetComponent("Slider");
+            if (activeRollbarCount < rollbarCount)
+            {
+                Slider lastSlider = (Slider)rollbarList[activeRollbarCount].GetComponent("Slider");
+                lastSlider.value = 0;
+            }
             currentSlider.value = 0;
             activeRollbarCount -= 1;
-            print("rolls: " + activeRollbarCount);
         }
     }
 
@@ -41,7 +45,15 @@ public class RollSupply : MonoBehaviour
             Slider currentSlider = (Slider)rollbarList[activeRollbarCount].GetComponent("Slider");
             currentSlider.value = 1;
             activeRollbarCount += 1;
-            print("rolls: " + activeRollbarCount);
+        }
+    }
+
+    public void UpdateRollRegen(float timePassed, float timeNeeded)
+    {
+        if (activeRollbarCount < rollbarCount)
+        {
+            Slider currentSlider = (Slider)rollbarList[activeRollbarCount].GetComponent("Slider");
+            currentSlider.value = timePassed / timeNeeded;
         }
     }
 }
