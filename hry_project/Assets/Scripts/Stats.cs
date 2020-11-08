@@ -5,7 +5,6 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     public Healthbar healthbar;
-    public RollSupply rollSupply;
 
     //Config base stats
     [Header("Base stats")]
@@ -23,7 +22,6 @@ public class Stats : MonoBehaviour
     public CharacterStat moveSpeed;
     public CharacterStat damage;
 
-    private int rollsRemaining;
     
     [Header("For Debug")]
     [SerializeField] private float currentHealth;
@@ -31,32 +29,19 @@ public class Stats : MonoBehaviour
     public bool isPlayer = false;
 
     private bool immune = false;
+
     private void Awake()
     {
-        rollsRemaining = 3;
-        if (rollSupply)
-        {
-            rollSupply.InitializeRollSupply(rollsRemaining);
-        }
+        InitializeStats();
+    }
 
+    public void InitializeStats()
+    {
         currentHealth = baseMaxHealth; 
         maxHealth = new CharacterStat(baseMaxHealth);
         attackSpeed = new CharacterStat(baseAttackSpeed);
         moveSpeed = new CharacterStat(baseMoveSpeed);
         damage = new CharacterStat(baseDamage);
-    }
-
-    public int GetRollsRemaining() { return rollsRemaining; }
-    public void SubtractRoll()
-    {
-        if (rollsRemaining > 0)
-        {
-            if (rollSupply)
-            {
-                rollSupply.SubtractRoll();
-            }
-            rollsRemaining -= 1;
-        }
     }
 
     private void UpdateHealthbar()

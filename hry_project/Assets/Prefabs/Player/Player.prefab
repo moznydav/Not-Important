@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 2121430080}
   - component: {fileID: 1999740435}
   - component: {fileID: 808013662437457483}
-  - component: {fileID: 1999740434}
+  - component: {fileID: 2716789046835122914}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -603,7 +603,7 @@ MonoBehaviour:
   crossHair: {fileID: 4992653142888655057}
   body: {fileID: 362514959755084783}
   legs: {fileID: 8000891693078247934}
---- !u!114 &1999740434
+--- !u!114 &2716789046835122914
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -612,20 +612,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 6000552227410383350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10457ac6c3a1b0b45a817ab6c10ec4a2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6278bb446a9bc44479a7e4deebe9620c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthbar: {fileID: 5617675635311616193}
-  rollSupply: {fileID: 6000552226187604467}
-  baseMaxHealth: 100
-  baseAttackSpeed: 0.75
-  baseMoveSpeed: 350
-  baseDamage: 25
-  VFX: {fileID: 3165420064654571523, guid: 993068677e258bc4daab65b24f33976a, type: 3}
+  healthbar: {fileID: 0}
+  baseMaxHealth: 0
+  baseAttackSpeed: 0
+  baseMoveSpeed: 0
+  baseDamage: 0
+  VFX: {fileID: 0}
   immuneDuration: 0.2
   currentHealth: 0
   isAlive: 1
-  isPlayer: 1
+  isPlayer: 0
+  rollSupply: {fileID: 0}
 --- !u!114 &5617675635311616193
 MonoBehaviour:
   m_ObjectHideFlags: 0

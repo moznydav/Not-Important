@@ -26,14 +26,14 @@ public class Player : MonoBehaviour
     Rigidbody2D rigidBody;
     SpriteRenderer spriteRenderer;
     Animator anim;
-    Stats stats;
+    PlayerStats playerStats;
 
     void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = body.GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        stats = GetComponent<Stats>();
+        playerStats = GetComponent<PlayerStats>();
         Cursor.visible = false;
     }
 
@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
 
             if (Input.GetButtonDown("Jump") &&
                 moveDirection.magnitude > 0 &&
-                stats.GetRollsRemaining() > 0) {
+                playerStats.GetRollsRemaining() > 0) {
                 StartRoll();
             }
         }
@@ -82,13 +82,13 @@ public class Player : MonoBehaviour
         anim.SetBool("Attacking", false);
         anim.SetBool("Roll", true);
         legs.GetComponent<Animator>().SetBool("Roll", true);
-        stats.SubtractRoll();
+        playerStats.SubtractRoll();
     }
 
     void Move()
     {
-        rigidBody.velocity = new Vector2(moveDirection.x * stats.moveSpeed.value * Time.fixedDeltaTime,
-                                         moveDirection.y * stats.moveSpeed.value * Time.fixedDeltaTime );
+        rigidBody.velocity = new Vector2(moveDirection.x * playerStats.moveSpeed.value * Time.fixedDeltaTime,
+                                         moveDirection.y * playerStats.moveSpeed.value * Time.fixedDeltaTime );
     }
 
     void HandleMovement()
@@ -150,7 +150,7 @@ public class Player : MonoBehaviour
             Debug.Log("Aim direction : " + aimDirection);
             GameObject shot = Instantiate(projectile, transform.position, Quaternion.identity);
             shot.GetComponent<Rigidbody2D>().velocity = aimDirection * shot.GetComponent<Projectile>().GetProjectileSPeed();
-            shot.GetComponent<Projectile>().SetDamage(stats.damage.value);
+            shot.GetComponent<Projectile>().SetDamage(playerStats.damage.value);
             shot.GetComponent<Projectile>().SetDirection(aimDirection);
             StartCoroutine(AttackCooldown());
         }
@@ -163,7 +163,7 @@ public class Player : MonoBehaviour
     {
 
         anim.SetBool("Attack Cooldown", true);
-        yield return new WaitForSeconds(stats.attackSpeed.value);
+        yield return new WaitForSeconds(playerStats.attackSpeed.value);
         anim.SetBool("Attack Cooldown", false);
         isShooting = false;
     }
