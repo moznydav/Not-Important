@@ -5,7 +5,7 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     public Healthbar healthbar;
-    public Dashbars dashbars;
+    public RollSupply rollSupply;
 
     //Config base stats
     [Header("Base stats")]
@@ -34,9 +34,9 @@ public class Stats : MonoBehaviour
     private void Awake()
     {
         rollsRemaining = 3;
-        if (dashbars)
+        if (rollSupply)
         {
-            dashbars.InitializeDashbars(rollsRemaining);
+            rollSupply.InitializeRollSupply(rollsRemaining);
         }
 
         currentHealth = baseMaxHealth; 
@@ -51,9 +51,9 @@ public class Stats : MonoBehaviour
     {
         if (rollsRemaining > 0)
         {
-            if (dashbars)
+            if (rollSupply)
             {
-                dashbars.SubtractRoll();
+                rollSupply.SubtractRoll();
             }
             rollsRemaining -= 1;
         }

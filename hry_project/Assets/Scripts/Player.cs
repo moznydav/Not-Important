@@ -71,13 +71,18 @@ public class Player : MonoBehaviour
             if (Input.GetButtonDown("Jump") &&
                 moveDirection.magnitude > 0 &&
                 stats.GetRollsRemaining() > 0) {
-                isRolling = true;
-                anim.SetBool("Attacking", false);
-                anim.SetBool("Roll", true);
-                legs.GetComponent<Animator>().SetBool("Roll", true);
-                stats.SubtractRoll();
+                StartRoll();
             }
         }
+    }
+
+    void StartRoll()
+    {
+        isRolling = true;
+        anim.SetBool("Attacking", false);
+        anim.SetBool("Roll", true);
+        legs.GetComponent<Animator>().SetBool("Roll", true);
+        stats.SubtractRoll();
     }
 
     void Move()
