@@ -259,7 +259,6 @@ GameObject:
   - component: {fileID: 6558459434810071103}
   - component: {fileID: 1298788699539332595}
   - component: {fileID: 8551619868542897457}
-  - component: {fileID: 6255568232009053275}
   - component: {fileID: 685385632928557537}
   m_Layer: 11
   m_Name: Beholder
@@ -354,6 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10457ac6c3a1b0b45a817ab6c10ec4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthbar: {fileID: 0}
   baseMaxHealth: 50
   baseAttackSpeed: 2
   baseMoveSpeed: 225
@@ -362,21 +362,6 @@ MonoBehaviour:
   immuneDuration: 0.2
   currentHealth: 0
   isAlive: 1
-  isPlayer: 0
---- !u!114 &6255568232009053275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8551619868542897456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74819e43e22b28119946ea5a67ce6539, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keepDistance: 8
-  keepDistanceError: 8
 --- !u!114 &685385632928557537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,6 +374,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7a121c4e3b061f4496fca4a66c4a6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keepDistance: 5
+  keepDistanceError: 5
+  player: {fileID: 0}
+  rigidBody: {fileID: 0}
+  stats: {fileID: 0}
   projectile: {fileID: 4238911258481400033, guid: 53c32ab4012996d40b0254a08bc8c2b1,
     type: 3}
   legs: {fileID: 43699600377942906}

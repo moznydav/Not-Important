@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
+    public Healthbar healthbar;
+
     //Config base stats
     [Header("Base stats")]
     [SerializeField] float baseMaxHealth;
@@ -24,10 +26,16 @@ public class Stats : MonoBehaviour
     [Header("For Debug")]
     [SerializeField] private float currentHealth;
     public bool isAlive = true;
-    public bool isPlayer = false;
-
     private bool immune = false;
+
+    public void SetImmune(bool isImmune) { immune = isImmune; }
+
     private void Awake()
+    {
+        InitializeStats();
+    }
+
+    public void InitializeStats()
     {
         currentHealth = baseMaxHealth; 
         maxHealth = new CharacterStat(baseMaxHealth);
@@ -36,10 +44,19 @@ public class Stats : MonoBehaviour
         damage = new CharacterStat(baseDamage);
     }
 
+    private void UpdateHealthbar()
+    {
+        if (healthbar)
+        {
+            healthbar.SetHealthPercentage(currentHealth, baseMaxHealth);
+        }
+    }
+
     public void DealDamage(float damage)
     {
         if (!immune)
         {
+            print("took damage");
             currentHealth -= damage;
             StartCoroutine(HandleHit());
             if (currentHealth <= 0)
@@ -49,17 +66,9 @@ public class Stats : MonoBehaviour
                 //Change this
                 //Add animations
             }
-
-            if (isPlayer)
-            {
-                immune = true;
-                StartCoroutine(StartImmuneFrames());
-            }
-
             Debug.Log(gameObject.name + " health reduced to " + currentHealth);
         }
-        
-
+        UpdateHealthbar();
     }
 
     public void Heal(float heal)
@@ -72,11 +81,13 @@ public class Stats : MonoBehaviour
         {
             currentHealth += heal;
         }
+        UpdateHealthbar();
     }
 
     public void HealToMax()
     {
         currentHealth = maxHealth.value;
+        UpdateHealthbar();
     }
 
     private IEnumerator HandleHit()
@@ -86,7 +97,7 @@ public class Stats : MonoBehaviour
         Destroy(hitVFX);
     }
 
-    private IEnumerator StartImmuneFrames()
+    public IEnumerator StartImmuneFrames()
     {
         yield return new WaitForSeconds(immuneDuration);
         immune = false;

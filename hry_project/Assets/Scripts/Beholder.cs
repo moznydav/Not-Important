@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Beholder : MonoBehaviour
+public class Beholder : Enemy
 {
     // Config
     [Header("Config")]
@@ -13,11 +13,7 @@ public class Beholder : MonoBehaviour
 
 
     // Cached variable
-    Enemy enemy;
-    GameObject player;
-    Rigidbody2D rigidBody;
     Animator anim;
-    Stats stats;
 
     [SerializeField] bool attackOnCooldown = false;
     bool attackDone = false;
@@ -26,18 +22,15 @@ public class Beholder : MonoBehaviour
 
     private void Awake()
     {
-        stats = GetComponent<Stats>();
+        InitializeEnemy();
         anim = GetComponent<Animator>();
-        enemy = GetComponent<Enemy>();
-        player = GameObject.FindWithTag(Constants.PLAYER_TAG);
-        rigidBody = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
         HandleAim();
         HandleMovement();
-        if (enemy.CanAttack())
+        if (CanAttack())
         {
             if (!attackOnCooldown)
             {
@@ -52,10 +45,9 @@ public class Beholder : MonoBehaviour
 
     void HandleMovement()
     {
-        anim.SetFloat("Horizontal", enemy.GetMoveDirection().x);
-        anim.SetFloat("Magnitude", enemy.GetMoveDirection().magnitude);
-        legs.GetComponent<Animator>().SetFloat("Horizontal", enemy.GetMoveDirection().x);
-        legs.GetComponent<Animator>().SetFloat("Magnitude", enemy.GetMoveDirection().magnitude);
+        base.HandleMovement();
+        legs.GetComponent<Animator>().SetFloat("Horizontal", GetMoveDirection().x);
+        legs.GetComponent<Animator>().SetFloat("Magnitude", GetMoveDirection().magnitude);
 
     }
 
@@ -100,7 +92,7 @@ public class Beholder : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Stats otherStats = other.GetComponent<Stats>();
-        if (otherStats.isPlayer && !attackDone)
+        if (otherStats is PlayerStats && !attackDone)
         {
             otherStats.DealDamage(stats.damage.value);
             StartCoroutine(MeleeDamageCooldown());
