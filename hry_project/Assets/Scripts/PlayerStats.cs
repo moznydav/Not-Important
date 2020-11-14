@@ -9,8 +9,10 @@ public class PlayerStats : Stats
     public RollSupply rollSupply;
     private int rollsRemaining;
     private float lastRollTime;
+    private float lastRegenTime;
 
     private void Awake() {
+        lastRegenTime = 0f;
         lastRollTime = Time.time;
         base.InitializeStats();
         rollsRemaining = maxRolls;
