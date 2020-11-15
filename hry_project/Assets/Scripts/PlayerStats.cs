@@ -8,10 +8,10 @@ public class PlayerStats : Stats
     [SerializeField] int maxRolls;
     public RollSupply rollSupply;
     private int rollsRemaining;
-    private float lastRollTime;
+    private float lastRegenTime;
 
     private void Awake() {
-        lastRollTime = Time.time;
+        lastRegenTime = Time.time;
         base.InitializeStats();
         rollsRemaining = maxRolls;
         rollSupply.InitializeRollSupply(maxRolls);
@@ -30,7 +30,7 @@ public class PlayerStats : Stats
             }
             else
             {
-                rollSupply.UpdateRollRegen(now - lastRollTime, rollRegenTime);
+                rollSupply.UpdateRollRegen(now - lastRegenTime, rollRegenTime);
             }
         }
     }
