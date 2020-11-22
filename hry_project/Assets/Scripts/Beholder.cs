@@ -29,7 +29,7 @@ public class Beholder : Enemy
     private void Update()
     {
         HandleAim();
-        HandleMovement();
+        HandleBeholderMovement();
         if (CanAttack())
         {
             if (!attackOnCooldown)
@@ -43,7 +43,7 @@ public class Beholder : Enemy
         }
     }
 
-    void HandleMovement()
+    void HandleBeholderMovement()
     {
         base.HandleMovement();
         legs.GetComponent<Animator>().SetFloat("Horizontal", GetMoveDirection().x);

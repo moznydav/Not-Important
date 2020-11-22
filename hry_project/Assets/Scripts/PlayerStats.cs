@@ -9,8 +9,10 @@ public class PlayerStats : Stats
     public RollSupply rollSupply;
     private int rollsRemaining;
     private float lastRollTime;
+    private float lastRegenTime;
 
     private void Awake() {
+        lastRegenTime =Time.time;
         lastRollTime = Time.time;
         base.InitializeStats();
         rollsRemaining = maxRolls;
@@ -59,5 +61,22 @@ public class PlayerStats : Stats
         base.DealDamage(damage);
         SetImmune(true);
         StartCoroutine(StartImmuneFrames());
+    }
+
+    public CharacterStat GetHealthStat()
+    {
+        return maxHealth;
+    }
+    public CharacterStat GetDamageStat()
+    {
+        return damage;
+    }
+    public CharacterStat GetAttackSpeedStat()
+    {
+        return attackSpeed;
+    }
+    public CharacterStat GetMoveSpeedStat()
+    {
+        return moveSpeed;
     }
 }
