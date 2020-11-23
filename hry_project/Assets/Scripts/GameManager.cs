@@ -10,8 +10,10 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] public GameObject pauseMenu;
     [SerializeField] public GameObject upgradeMenu;
     [SerializeField] List<GameObject> listOfUpgrades;
+    public bool canUpgrade;
     public void Pause()
     {
+        canUpgrade = false;
         isGamePaused = true;
         Time.timeScale = 0f;
         pauseMenu.SetActive(true);
@@ -73,12 +75,20 @@ public class GameManager : Singleton<GameManager>
             }
         }
 
-        if (Input.GetButtonDown("Upgrade"))
-        {
-            if (!isGamePaused)
+        if (canUpgrade) {
+            if (Input.GetButtonDown("Upgrade"))
             {
-                ActivateUpgradeMenu();
+                if (!isGamePaused)
+                {
+                    ActivateUpgradeMenu();
+                }
             }
         }
+        
+    }
+
+    public void SetCanUpgrade( bool canUpgrade)
+    {
+        this.canUpgrade = canUpgrade;
     }
 }

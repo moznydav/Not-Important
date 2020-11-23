@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class UpgradeChest : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] GameObject popUpScreen;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        Player player = collision.GetComponent<Player>();
+        if (player)
+        {
+            popUpScreen.SetActive(true);
+            FindObjectOfType<GameManager>().GetComponent<GameManager>().SetCanUpgrade(true);
+
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Player player = collision.GetComponent<Player>();
+        if (player)
+        {
+            popUpScreen.SetActive(false);
+            FindObjectOfType<GameManager>().GetComponent<GameManager>().SetCanUpgrade(false);
+        }
     }
 }
