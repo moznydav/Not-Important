@@ -15,12 +15,11 @@ public class Enemy : MonoBehaviour
     Vector3 moveDirection;
     public Stats stats;
 
-
     SpriteRenderer spriteRenderer;
 
     List<Vector3> path;
     int lastPathIndex;
-    bool distancing;
+    [SerializeField] bool distancing;
     bool canRun = true;
 
     Tuple<int, int> lastPlayerCell;

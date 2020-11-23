@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &196022626036479522
 Transform:
   m_ObjectHideFlags: 0
@@ -176,11 +176,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba447e3079e915488c6731043d10429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keepDistance: 5
-  keepDistanceError: 5
+  keepDistance: 2
+  keepDistanceError: 2
   player: {fileID: 0}
   rigidBody: {fileID: 0}
   stats: {fileID: 0}
+  distancing: 0
   loungeSpeed: 425
   attackCooldown: 0.5
   damageCooldown: 1
