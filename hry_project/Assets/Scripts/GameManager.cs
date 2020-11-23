@@ -10,7 +10,9 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] public GameObject pauseMenu;
     [SerializeField] public GameObject upgradeMenu;
     [SerializeField] List<GameObject> listOfUpgrades;
+    [SerializeField] GameObject upgradeChest;
     public bool canUpgrade;
+    GameObject spawnedChest;
     public void Pause()
     {
         canUpgrade = false;
@@ -60,6 +62,17 @@ public class GameManager : Singleton<GameManager>
 
     }
 
+    public void SpawnChest()
+    {
+        if (spawnedChest)
+        {
+            Destroy(spawnedChest);
+        }
+        Vector3 chestPosition = GameObject.FindWithTag(Constants.PLAYER_TAG).transform.position;
+        chestPosition.x += 5;
+        spawnedChest = Instantiate(upgradeChest, chestPosition, Quaternion.identity);
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -81,10 +94,16 @@ public class GameManager : Singleton<GameManager>
                 if (!isGamePaused)
                 {
                     ActivateUpgradeMenu();
+                    Destroy(spawnedChest); // start destroy animation
                 }
+                
             }
         }
-        
+        // rework 
+        if (Input.GetButtonDown("Fire3"))
+        {
+            SpawnChest();
+        }
     }
 
     public void SetCanUpgrade( bool canUpgrade)

@@ -45,3 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGamePaused: 0
   pauseMenu: {fileID: 0}
+  upgradeMenu: {fileID: 0}
+  listOfUpgrades: []
+  upgradeChest: {fileID: 6652047907670060175, guid: 41c400b2ed1ac5b4c86a007d44a1ab65,
+    type: 3}
+  canUpgrade: 0

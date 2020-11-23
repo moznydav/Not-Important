@@ -5,6 +5,7 @@ using UnityEngine;
 public class UpgradeChest : MonoBehaviour
 {
     [SerializeField] GameObject popUpScreen;
+    [SerializeField] GameObject arrow;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,6 +13,7 @@ public class UpgradeChest : MonoBehaviour
         if (player)
         {
             popUpScreen.SetActive(true);
+            arrow.SetActive(false);
             FindObjectOfType<GameManager>().GetComponent<GameManager>().SetCanUpgrade(true);
 
         }
@@ -22,6 +24,7 @@ public class UpgradeChest : MonoBehaviour
         if (player)
         {
             popUpScreen.SetActive(false);
+            arrow.SetActive(true);
             FindObjectOfType<GameManager>().GetComponent<GameManager>().SetCanUpgrade(false);
         }
     }
