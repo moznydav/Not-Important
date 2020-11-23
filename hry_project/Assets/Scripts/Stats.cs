@@ -16,28 +16,40 @@ public class Stats : MonoBehaviour
     [Header("Config")]
     [SerializeField] GameObject VFX;
     [SerializeField] float immuneDuration = 0.2f;
+    [SerializeField] GameObject[] blinkBody;
+    [SerializeField] float blinkDuration = 0.1f;
+
     // Stats
     public CharacterStat maxHealth;
     public CharacterStat attackSpeed;
     public CharacterStat moveSpeed;
     public CharacterStat damage;
 
-    
     [Header("For Debug")]
     [SerializeField] public float currentHealth;
     public bool isAlive = true;
     private bool immune = false;
+    private bool blink = false;
+
+    private SpriteRenderer[] spriteRenderer;
 
     public void SetImmune(bool isImmune) { immune = isImmune; }
 
-    private void Awake()
+    private void Start()
     {
+        spriteRenderer = new SpriteRenderer[blinkBody.Length];
+
+        for (int i = 0; i < blinkBody.Length; i++)
+        {
+            spriteRenderer[i] = blinkBody[i].GetComponent<SpriteRenderer>();
+        }
+
         InitializeStats();
     }
 
     public void InitializeStats()
     {
-        currentHealth = baseMaxHealth; 
+        currentHealth = baseMaxHealth;
         maxHealth = new CharacterStat(baseMaxHealth);
         attackSpeed = new CharacterStat(baseAttackSpeed);
         moveSpeed = new CharacterStat(baseMoveSpeed);
@@ -59,6 +71,13 @@ public class Stats : MonoBehaviour
             print("took damage");
             currentHealth -= damage;
             StartCoroutine(HandleHit());
+
+            if (!blink)
+            {
+                blink = true;
+                StartCoroutine(Flash());
+            }
+
             if (currentHealth <= 0)
             {
                 isAlive = false;
@@ -103,6 +122,20 @@ public class Stats : MonoBehaviour
         immune = false;
     }
 
+    private IEnumerator Flash()
+    {
+        for (int i = 0; i < spriteRenderer.Length; i++)
+        {
+            spriteRenderer[i].color = Color.red;
+        }
 
+        yield return new WaitForSeconds(blinkDuration);
 
+        for (int i = 0; i < spriteRenderer.Length; i++)
+        {
+            spriteRenderer[i].color = Color.white;
+        }
+
+        blink = false;
+    }
 }

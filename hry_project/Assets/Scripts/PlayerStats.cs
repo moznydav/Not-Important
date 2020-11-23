@@ -12,7 +12,7 @@ public class PlayerStats : Stats
     private float lastRegenTime;
 
     private void Awake() {
-        lastRegenTime =Time.time;
+        lastRegenTime = Time.time;
         lastRollTime = Time.time;
         base.InitializeStats();
         rollsRemaining = maxRolls;
