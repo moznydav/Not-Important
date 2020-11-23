@@ -63,9 +63,11 @@ public class PlayerStats : Stats
         StartCoroutine(StartImmuneFrames());
     }
 
-    public CharacterStat GetHealthStat()
+    public void UpdateHealthStat(float value)
     {
-        return maxHealth;
+        maxHealth.AddModifier(new StatModifier(value));
+        base.currentHealth += value;
+        base.UpdateHealthbar();
     }
     public CharacterStat GetDamageStat()
     {

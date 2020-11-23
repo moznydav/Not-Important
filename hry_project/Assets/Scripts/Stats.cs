@@ -24,7 +24,7 @@ public class Stats : MonoBehaviour
 
     
     [Header("For Debug")]
-    [SerializeField] private float currentHealth;
+    [SerializeField] public float currentHealth;
     public bool isAlive = true;
     private bool immune = false;
 
@@ -44,11 +44,11 @@ public class Stats : MonoBehaviour
         damage = new CharacterStat(baseDamage);
     }
 
-    private void UpdateHealthbar()
+    public void UpdateHealthbar()
     {
         if (healthbar)
         {
-            healthbar.SetHealthPercentage(currentHealth, baseMaxHealth);
+            healthbar.SetHealthPercentage(currentHealth, maxHealth.value);
         }
     }
 

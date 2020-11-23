@@ -19,14 +19,14 @@ public class UpgradeScreen : MonoBehaviour
 
     public void Init()
     {
-        int randomIndex = Mathf.RoundToInt(Random.Range(0, offensiveUpgrades.Length - 1));
+        int randomIndex = Mathf.RoundToInt(Random.Range(0, offensiveUpgrades.Length));
         currentOffensive = Instantiate(offensiveUpgrades[randomIndex], offensivePlace.transform);
 
-        randomIndex = Mathf.RoundToInt(Random.Range(0, healthUpgrades.Length - 1));
+        randomIndex = Mathf.RoundToInt(Random.Range(0, healthUpgrades.Length));
         currentHealth = Instantiate(healthUpgrades[randomIndex], healthPlace.transform);
 
-        randomIndex = Mathf.RoundToInt(Random.Range(0, movementUpgrades.Length - 1));
-        currentMovement = Instantiate(movementUpgrades[randomIndex], healthPlace.transform);
+        randomIndex = Mathf.RoundToInt(Random.Range(0, movementUpgrades.Length));
+        currentMovement = Instantiate(movementUpgrades[randomIndex], movementPlace.transform);
 
     }
 

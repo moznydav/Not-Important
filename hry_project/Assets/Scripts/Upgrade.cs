@@ -22,7 +22,7 @@ public class Upgrade : ScriptableObject
         switch (upgradeType)
         {
             case UpgradeType.HEALTH:
-                playerStats.GetHealthStat().AddModifier(new StatModifier(value));
+                playerStats.UpdateHealthStat(value);
                 break;
 
             case UpgradeType.DAMAGE:
