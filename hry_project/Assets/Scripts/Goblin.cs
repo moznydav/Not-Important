@@ -15,6 +15,7 @@ public class Goblin : Enemy
     
     bool attacking = false;
     bool attackDone = false;
+    bool spawning = true;
     Vector3 attackDirection = new Vector3(0f, 0f, 0f);
 
 
@@ -26,17 +27,21 @@ public class Goblin : Enemy
 
     private void Update()
     {
-        HandleMovement();
-        if (!attacking)
+        if (!spawning)
         {
-            anim.SetFloat("Horizontal", GetMoveDirection().x);
-            anim.SetFloat("Magnitude", GetMoveDirection().magnitude);
-            if (CanAttack())
+            HandleMovement();
+            if (!attacking)
             {
-                attacking = true;
-                StartCoroutine(StartCooldown());
+                anim.SetFloat("Horizontal", GetMoveDirection().x);
+                anim.SetFloat("Magnitude", GetMoveDirection().magnitude);
+                if (CanAttack())
+                {
+                    attacking = true;
+                    StartCoroutine(StartCooldown());
+                }
             }
         }
+        
     }
 
     private IEnumerator StartCooldown()
@@ -75,5 +80,11 @@ public class Goblin : Enemy
             StartCoroutine(DamageCooldown());
         }
     }
+
+    private void DoneSpawning()
+    {
+        spawning = false;
+    }
+
 }
 ;

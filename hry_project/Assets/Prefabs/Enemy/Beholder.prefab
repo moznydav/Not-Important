@@ -360,6 +360,8 @@ MonoBehaviour:
   baseDamage: 20
   VFX: {fileID: 3165420064654571523, guid: 993068677e258bc4daab65b24f33976a, type: 3}
   immuneDuration: 0.2
+  blinkBody: []
+  blinkDuration: 0.1
   currentHealth: 0
   isAlive: 1
 --- !u!114 &685385632928557537
@@ -379,9 +381,13 @@ MonoBehaviour:
   player: {fileID: 0}
   rigidBody: {fileID: 0}
   stats: {fileID: 0}
+  distancing: 0
   projectile: {fileID: 4238911258481400033, guid: 53c32ab4012996d40b0254a08bc8c2b1,
     type: 3}
-  legs: {fileID: 43699600377942906}
   attackCooldown: 0.7
   meleeDamageCooldown: 1
+  anim: {fileID: 0}
   attackOnCooldown: 0
+  attackDone: 0
+  aimDirection: {x: 0, y: 0, z: 0}
+  legs: {fileID: 43699600377942906}
