@@ -34,6 +34,12 @@ public class ExplosiveBarrel : Destroyable
         StartCoroutine(HandleExplosion());
     }
 
+    private bool CanHit(Vector3 pos)
+    {
+        Vector3 position = transform.position;
+        return Vector3.Distance(pos, position) <= radius && pathfinding.IsPathClear(pos, position, true);
+    }
+
     private IEnumerator HandleDamage()
     {
         collider.enabled = false;
@@ -47,12 +53,19 @@ public class ExplosiveBarrel : Destroyable
 
         foreach(Stats item in entities)
         {
-            if (Vector3.Distance(item.transform.position, transform.position) <= radius)
+            if (CanHit(item.transform.position))
             {
-                if (pathfinding.IsPathClear(item.transform.position, transform.position))
-                {
-                    item.DealDamage(damage);
-                }
+                item.DealDamage(damage);
+            }
+        }
+
+        var destroyables = FindObjectsOfType(typeof(Destroyable)) as Destroyable[];
+
+        foreach(Destroyable item in destroyables)
+        {
+            if (CanHit(item.transform.position))
+            {
+                item.Destroy();
             }
         }
     }
