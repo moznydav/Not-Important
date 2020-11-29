@@ -44,6 +44,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGamePaused: 0
+  waveInterval: 1
+  enemyCountMultiplier: 3
+  enemySpawners:
+  - {fileID: 0}
+  - {fileID: 0}
+  enemyTypes:
+  - {fileID: 196022626036479520, guid: 31488a0371cabb44dbaeae6068867ae3, type: 3}
+  - {fileID: 8551619868542897456, guid: 1efc1a62e73f0294a861f55b13152c34, type: 3}
+  - {fileID: 7029322731654212296, guid: 20f21937a21a5984ea119ce7efca40b4, type: 3}
+  enemyTypeInterval: 1
   pauseMenu: {fileID: 0}
   upgradeMenu: {fileID: 0}
   listOfUpgrades: []

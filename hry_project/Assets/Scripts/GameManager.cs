@@ -63,6 +63,7 @@ public class GameManager : Singleton<GameManager>
     {
         // TODO: Show upgrade menu
         print("Wave " + waveNumber + " ended");
+        SpawnChest();
         ScheduleWaveStart();
     }
 
@@ -80,7 +81,10 @@ public class GameManager : Singleton<GameManager>
         waveNumber += 1;
         print("Wave " + waveNumber + " started");
         if (waveNumber % enemyTypeInterval == 0)
-            activeEnemyTypes += 1;
+            //if(activeEnemyTypes + 1 < enemyTypes.Capacity)
+            //{
+                activeEnemyTypes += 1;
+           // }
         List<GameObject> availableTypes = enemyTypes.GetRange(0, activeEnemyTypes);
         int typesToChoose = (int)Math.Ceiling((double)availableTypes.Count / 2);
         // TODO: randomly choose enemy types
