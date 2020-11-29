@@ -4271,7 +4271,7 @@ PrefabInstance:
     - target: {fileID: 3462057104725022264, guid: 938d386fdd14eca41bfe2452c8d5427c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3462057104725022264, guid: 938d386fdd14eca41bfe2452c8d5427c,
         type: 3}
@@ -4358,7 +4358,7 @@ PrefabInstance:
     - target: {fileID: 3462057104725022264, guid: 938d386fdd14eca41bfe2452c8d5427c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3462057104725022264, guid: 938d386fdd14eca41bfe2452c8d5427c,
         type: 3}
@@ -16966,6 +16966,21 @@ PrefabInstance:
       propertyPath: enemyCountMultiplier
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4719806750646184786, guid: 3e2c3cad60483d341a516de669eaa9e1,
+        type: 3}
+      propertyPath: waveInterval
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719806750646184786, guid: 3e2c3cad60483d341a516de669eaa9e1,
+        type: 3}
+      propertyPath: isGamePaused
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719806750646184786, guid: 3e2c3cad60483d341a516de669eaa9e1,
+        type: 3}
+      propertyPath: enemyTypeInterval
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4719806750646184787, guid: 3e2c3cad60483d341a516de669eaa9e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17085,6 +17100,11 @@ PrefabInstance:
       propertyPath: blinkBody.Array.data[1]
       value: 
       objectReference: {fileID: 806462160}
+    - target: {fileID: 2716789046835122914, guid: aae3c97dee8d4294f85d3f9e861ce6f7,
+        type: 3}
+      propertyPath: baseMaxHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6000552227410383350, guid: aae3c97dee8d4294f85d3f9e861ce6f7,
         type: 3}
       propertyPath: m_Name

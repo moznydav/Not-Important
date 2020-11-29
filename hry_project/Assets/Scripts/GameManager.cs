@@ -59,12 +59,19 @@ public class GameManager : Singleton<GameManager>
         Application.Quit();
     }
 
+    void WaveEnded()
+    {
+        // TODO: Show upgrade menu
+        print("Wave " + waveNumber + " ended");
+        ScheduleWaveStart();
+    }
+
     public void EnemyKilled()
     {
         currentEnemyCount -= 1;
-        print("Enemies remaining: " + currentEnemyCount);
+        print("Current enemy count: " + currentEnemyCount);
         if (currentEnemyCount == 0) {
-            ScheduleWaveStart();
+            WaveEnded();
         }
     }
 
@@ -78,7 +85,8 @@ public class GameManager : Singleton<GameManager>
         int typesToChoose = (int)Math.Ceiling((double)availableTypes.Count / 2);
         // TODO randomly choose enemy types
         List<GameObject> chosenTypes = availableTypes.GetRange(0, typesToChoose);
-        currentEnemyCount = chosenTypes.Count * waveNumber * enemyCountMultiplier;
+        currentEnemyCount = chosenTypes.Count * waveNumber * enemyCountMultiplier * enemySpawners.Count;
+        print("spawning... current enemy count: " + currentEnemyCount);
         foreach (EnemySpawner spawner in enemySpawners) {
             spawner.Spawn(chosenTypes, waveNumber * enemyCountMultiplier);
         }
