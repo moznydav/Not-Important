@@ -75,8 +75,8 @@ public class Enemy : MonoBehaviour
         var position = transform.position;
        
         var playerPos = player.transform.position;
-        
-       
+
+
         bool isPathClear = pathfinding.IsPathClear(position, playerPos);
 
         if (!isPathClear)
