@@ -1,0 +1,478 @@
+fileFormatVersion: 2
+guid: ad16db5378cc622f9a20e374fc43f0c1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5552996171959570876
+    second: barrel explosion-Sheet_0
+  - first:
+      213: -3352065969478601315
+    second: barrel explosion-Sheet_1
+  - first:
+      213: -3266897639036916139
+    second: barrel explosion-Sheet_2
+  - first:
+      213: -5368902726508213085
+    second: barrel explosion-Sheet_3
+  - first:
+      213: 2651040335469895495
+    second: barrel explosion-Sheet_4
+  - first:
+      213: -3238495094353798934
+    second: barrel explosion-Sheet_5
+  - first:
+      213: -4395183348452017041
+    second: barrel explosion-Sheet_6
+  - first:
+      213: 1363258459142780090
+    second: barrel explosion-Sheet_7
+  - first:
+      213: 7379692640219206058
+    second: barrel explosion-Sheet_8
+  - first:
+      213: -1228740057930374692
+    second: barrel explosion-Sheet_9
+  - first:
+      213: 2562919934594406087
+    second: barrel explosion-Sheet_10
+  - first:
+      213: -3046211176289923797
+    second: barrel explosion-Sheet_11
+  - first:
+      213: -394671392373935459
+    second: barrel explosion-Sheet_12
+  - first:
+      213: -2258636204242124620
+    second: barrel explosion-Sheet_13
+  - first:
+      213: 6480465109737192392
+    second: barrel explosion-Sheet_14
+  - first:
+      213: -2196418048731457156
+    second: barrel explosion-Sheet_15
+  - first:
+      213: -6487281156267370987
+    second: barrel explosion-Sheet_16
+  - first:
+      213: 1234543567577701825
+    second: barrel explosion-Sheet_17
+  - first:
+      213: 2069081630896573206
+    second: barrel explosion-Sheet_18
+  - first:
+      213: 8552887114922168456
+    second: barrel explosion-Sheet_19
+  - first:
+      213: -3899437631013922482
+    second: barrel explosion-Sheet_20
+  - first:
+      213: 3818798853766627353
+    second: barrel explosion-Sheet_21
+  - first:
+      213: 4072606202656299855
+    second: barrel explosion-Sheet_22
+  - first:
+      213: -2625946597227739859
+    second: barrel explosion-Sheet_23
+  - first:
+      213: 5614959638675068123
+    second: barrel explosion-Sheet_24
+  - first:
+      213: -5625659751604779974
+    second: barrel explosion-Sheet_25
+  - first:
+      213: -3478567986857168992
+    second: barrel explosion-Sheet_26
+  - first:
+      213: -9033116737758162013
+    second: barrel explosion-Sheet_27
+  - first:
+      213: -6151920116711883326
+    second: barrel explosion-Sheet_28
+  - first:
+      213: -7190306432619179274
+    second: barrel explosion-Sheet_29
+  - first:
+      213: 7118929618542879744
+    second: barrel explosion-Sheet_30
+  - first:
+      213: -3112517867696230870
+    second: barrel explosion-Sheet_31
+  - first:
+      213: -1863289293209777110
+    second: barrel explosion-Sheet_32
+  - first:
+      213: 474556752199650141
+    second: barrel explosion-Sheet_33
+  - first:
+      213: -5451768021368067676
+    second: barrel explosion-Sheet_34
+  - first:
+      213: -6998293431129622848
+    second: barrel explosion-Sheet_35
+  - first:
+      213: -4102183245093869859
+    second: barrel explosion-Sheet_36
+  - first:
+      213: -2795160370024532792
+    second: barrel explosion-Sheet_37
+  - first:
+      213: -3958843078104032168
+    second: barrel explosion-Sheet_38
+  - first:
+      213: 1184638639250890654
+    second: barrel explosion-Sheet_39
+  - first:
+      213: -6397007892387421612
+    second: barrel explosion-Sheet_40
+  - first:
+      213: 2231021687017947265
+    second: barrel explosion-Sheet_41
+  - first:
+      213: 1997710747454108738
+    second: barrel explosion-Sheet_42
+  - first:
+      213: 1222484783317031528
+    second: barrel explosion-Sheet_43
+  - first:
+      213: 3140925185325194813
+    second: barrel explosion-Sheet_44
+  - first:
+      213: -6097032407334013737
+    second: barrel explosion-Sheet_45
+  - first:
+      213: -626874740607077199
+    second: barrel explosion-Sheet_46
+  - first:
+      213: 7575478904839936878
+    second: barrel explosion-Sheet_47
+  - first:
+      213: 4022250213517206510
+    second: barrel explosion-Sheet_48
+  - first:
+      213: 4190031677005991045
+    second: barrel explosion-Sheet_49
+  - first:
+      213: -2042292116761162565
+    second: barrel explosion-Sheet_50
+  - first:
+      213: -2894558736084199971
+    second: barrel explosion-Sheet_51
+  - first:
+      213: -4498430180208162751
+    second: barrel explosion-Sheet_52
+  - first:
+      213: 5639184254692178143
+    second: barrel explosion-Sheet_53
+  - first:
+      213: 2863989939349854590
+    second: barrel explosion-Sheet_54
+  - first:
+      213: -5098180886867423202
+    second: barrel explosion-Sheet_55
+  - first:
+      213: 6888934846532373737
+    second: barrel explosion-Sheet_56
+  - first:
+      213: -4677059226387612964
+    second: barrel explosion-Sheet_57
+  - first:
+      213: -2077340495081556599
+    second: barrel explosion-Sheet_58
+  - first:
+      213: 5229121223401791835
+    second: barrel explosion-Sheet_59
+  - first:
+      213: 87663038720047902
+    second: barrel explosion-Sheet_60
+  - first:
+      213: 591423043842287228
+    second: barrel explosion-Sheet_61
+  - first:
+      213: -4684336725145152108
+    second: barrel explosion-Sheet_62
+  - first:
+      213: 8598725078843721705
+    second: barrel explosion-Sheet_63
+  - first:
+      213: -3305507392713076356
+    second: barrel explosion-Sheet_64
+  - first:
+      213: 8577290724008888247
+    second: barrel explosion-Sheet_65
+  - first:
+      213: 2311423513224058611
+    second: barrel explosion-Sheet_66
+  - first:
+      213: 8698435642506527822
+    second: barrel explosion-Sheet_67
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 12
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: barrel explosion-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44eee33176bcfe2b0800000000000000
+      internalID: -5552996171959570876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barrel explosion-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d957d81c2c11b71d0800000000000000
+      internalID: -3352065969478601315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barrel explosion-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e64a3f7e5a9a2d0800000000000000
+      internalID: -3266897639036916139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barrel explosion-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ac0ad87a63dd75b0800000000000000
+      internalID: -5368902726508213085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barrel explosion-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74f5ae8a3236ac420800000000000000
+      internalID: 2651040335469895495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barrel explosion-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae85236bedd8e03d0800000000000000
+      internalID: -3238495094353798934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barrel explosion-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6c3ec0080c2103c0800000000000000
+      internalID: -4395183348452017041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barrel explosion-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab4704288544be210800000000000000
+      internalID: 1363258459142780090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
