@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         // anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
-        pathfinding = (AStar)GameObject.FindWithTag(Constants.ASTAR_TAG).GetComponent(typeof(AStar));
+        pathfinding = (AStar) GameObject.FindWithTag(Constants.ASTAR_TAG).GetComponent(typeof(AStar));
         player = GameObject.FindWithTag(Constants.PLAYER_TAG);
     }
 
@@ -73,10 +73,10 @@ public class Enemy : MonoBehaviour
         }
 
         var position = transform.position;
-       
+
         var playerPos = player.transform.position;
-        
-       
+
+
         bool isPathClear = pathfinding.IsPathClear(position, playerPos);
 
         if (!isPathClear)
@@ -142,7 +142,6 @@ public class Enemy : MonoBehaviour
         {
             rigidBody.velocity = (moveDirection * stats.moveSpeed.value * Time.deltaTime);
         }
-                   
     }
 
     public bool CanAttack()

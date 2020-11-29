@@ -18,9 +18,18 @@ public class Destroyable : MonoBehaviour
 
     public void Destroy()
     {
+        OnDestroy();
+    }
+
+    public virtual void OnDestroy()
+    {
+        ClearMap();
+        Destroy(gameObject);
+    }
+
+    public void ClearMap()
+    {
         var cell = pathfinding.WorldToCell(transform.position);
         pathfinding.SetWall(cell.Item1, cell.Item2, false);
-
-        Destroy(gameObject);
     }
 }
