@@ -68,7 +68,6 @@ public class Stats : MonoBehaviour
     {
         if (!immune)
         {
-            print("took damage");
             currentHealth -= damage;
             StartCoroutine(HandleHit());
 
@@ -82,10 +81,11 @@ public class Stats : MonoBehaviour
             {
                 isAlive = false;
                 Destroy(gameObject);
+                GameManager.Instance.EnemyKilled();
                 //Change this
                 //Add animations
             }
-            Debug.Log(gameObject.name + " health reduced to " + currentHealth);
+            // Debug.Log(gameObject.name + " health reduced to " + currentHealth);
         }
         UpdateHealthbar();
     }

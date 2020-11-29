@@ -51,7 +51,7 @@ public class Projectile : MonoBehaviour
             }
 
             attackDone = true;
-            Debug.Log("HIT " + other.name);
+            // Debug.Log("HIT " + other.name);
 
             Destroy(gameObject);
         }
@@ -69,7 +69,7 @@ public class Projectile : MonoBehaviour
             }
 
             attackDone = true;
-            Debug.Log("HIT " + other.name);
+            // Debug.Log("HIT " + other.name);
 
             Destroy(gameObject);
         }

@@ -53,7 +53,6 @@ public class RollSupply : MonoBehaviour
         if (activeRollbarCount < rollbarCount)
         {
             Slider currentSlider = (Slider)rollbarList[activeRollbarCount].GetComponent("Slider");
-            print(timePassed / timeNeeded);
             currentSlider.value = timePassed / timeNeeded;
         }
     }
