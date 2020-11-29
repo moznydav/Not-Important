@@ -82,6 +82,7 @@ public class Stats : MonoBehaviour
             {
                 isAlive = false;
                 Destroy(gameObject);
+                GameManager.Instance.EnemyKilled();
                 //Change this
                 //Add animations
             }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
@@ -7,12 +8,23 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
     public bool isGamePaused = false;
+    [SerializeField] float waveInterval;
+    [SerializeField] int enemyCountMultiplier = 3;
+    [SerializeField] List<EnemySpawner> enemySpawners;
+    [SerializeField] List<GameObject> enemyTypes;
+    [SerializeField] int enemyTypeInterval = 3;
     [SerializeField] public GameObject pauseMenu;
     [SerializeField] public GameObject upgradeMenu;
     [SerializeField] List<GameObject> listOfUpgrades;
     [SerializeField] GameObject upgradeChest;
     public bool canUpgrade;
     GameObject spawnedChest;
+
+    private int activeEnemyTypes = 1;
+    private int currentWaveNumber;
+    private int currentEnemyCount = 0;
+    private int waveNumber = 0;
+
     public void Pause()
     {
         canUpgrade = false;
@@ -47,9 +59,38 @@ public class GameManager : Singleton<GameManager>
         Application.Quit();
     }
 
+    public void EnemyKilled()
+    {
+        print("Enemy killed");
+        currentEnemyCount -= 1;
+        if (currentEnemyCount == 0) {
+            ScheduleWaveStart();
+        }
+    }
+
+    void WaveStart()
+    {
+        waveNumber += 1;
+        if (waveNumber % enemyTypeInterval == 0)
+            activeEnemyTypes += 1;
+        List<GameObject> availableTypes = enemyTypes.GetRange(0, activeEnemyTypes);
+        int typesToChoose = (int)Math.Ceiling((double)availableTypes.Count / 2);
+        // TODO randomly choose enemy types
+        List<GameObject> chosenTypes = availableTypes.GetRange(0, typesToChoose);
+        foreach (EnemySpawner spawner in enemySpawners) {
+            spawner.Spawn(chosenTypes, waveNumber * enemyCountMultiplier);
+        }
+    }
+
+    void ScheduleWaveStart()
+    {
+        Invoke("WaveStart", waveInterval);
+    }
+
     void Start()
     {
         Resume();
+        ScheduleWaveStart();
     }
 
     public void ActivateUpgradeMenu()

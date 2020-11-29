@@ -4053,7 +4053,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &879772653 stripped
 Transform:
@@ -5137,7 +5137,7 @@ Transform:
   - {fileID: 604730888}
   - {fileID: 1321666839}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1601568156 stripped
 MonoBehaviour:
@@ -16553,6 +16553,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 15763279711760286, guid: 938d386fdd14eca41bfe2452c8d5427c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1231628131625915496, guid: 938d386fdd14eca41bfe2452c8d5427c,
         type: 3}
       propertyPath: goblin
@@ -16597,7 +16602,7 @@ PrefabInstance:
     - target: {fileID: 3462057104725022264, guid: 938d386fdd14eca41bfe2452c8d5427c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3462057104725022264, guid: 938d386fdd14eca41bfe2452c8d5427c,
         type: 3}
@@ -16701,7 +16706,7 @@ PrefabInstance:
     - target: {fileID: 4680559371431853811, guid: b4adae8395b5f3442ba2ae8123a9157c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4680559371431853811, guid: b4adae8395b5f3442ba2ae8123a9157c,
         type: 3}
@@ -16779,6 +16784,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4719806750646184786, guid: 3e2c3cad60483d341a516de669eaa9e1,
         type: 3}
+      propertyPath: enemyTypes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719806750646184786, guid: 3e2c3cad60483d341a516de669eaa9e1,
+        type: 3}
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 353463116}
@@ -16787,6 +16797,24 @@ PrefabInstance:
       propertyPath: upgradeMenu
       value: 
       objectReference: {fileID: 1321109449}
+    - target: {fileID: 4719806750646184786, guid: 3e2c3cad60483d341a516de669eaa9e1,
+        type: 3}
+      propertyPath: enemyTypes.Array.data[0]
+      value: 
+      objectReference: {fileID: 196022626036479520, guid: 31488a0371cabb44dbaeae6068867ae3,
+        type: 3}
+    - target: {fileID: 4719806750646184786, guid: 3e2c3cad60483d341a516de669eaa9e1,
+        type: 3}
+      propertyPath: enemyTypes.Array.data[1]
+      value: 
+      objectReference: {fileID: 8551619868542897456, guid: 1efc1a62e73f0294a861f55b13152c34,
+        type: 3}
+    - target: {fileID: 4719806750646184786, guid: 3e2c3cad60483d341a516de669eaa9e1,
+        type: 3}
+      propertyPath: enemyTypes.Array.data[2]
+      value: 
+      objectReference: {fileID: 1692508926896011952, guid: 878d79d8ceac77a46a54aabd52ee8566,
+        type: 3}
     - target: {fileID: 4719806750646184787, guid: 3e2c3cad60483d341a516de669eaa9e1,
         type: 3}
       propertyPath: m_LocalPosition.x
