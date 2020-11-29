@@ -83,7 +83,8 @@ public class GameManager : Singleton<GameManager>
             activeEnemyTypes += 1;
         List<GameObject> availableTypes = enemyTypes.GetRange(0, activeEnemyTypes);
         int typesToChoose = (int)Math.Ceiling((double)availableTypes.Count / 2);
-        // TODO randomly choose enemy types
+        // TODO: randomly choose enemy types
+        // and distribute them evenly across all spawners
         List<GameObject> chosenTypes = availableTypes.GetRange(0, typesToChoose);
         currentEnemyCount = chosenTypes.Count * waveNumber * enemyCountMultiplier * enemySpawners.Count;
         print("spawning... current enemy count: " + currentEnemyCount);
