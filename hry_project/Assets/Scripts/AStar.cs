@@ -55,12 +55,17 @@ public class AStar : MonoBehaviour
         updated = true;
     }
 
-    public bool IsPathClear(Vector3 from, Vector3 to)
+    public bool IsPathClear(Vector3 from, Vector3 to, bool clearMap = false)
     {
         var line = GetBresenhamLine(WorldToCell(from), WorldToCell(to));
 
-        foreach (var pos in line)
+        int size = line.Count;
+        int start = clearMap && size > 0 ? 1 : 0;
+        int end = clearMap ? size - 1 : size;
+
+        for (int i = start; i < end; i++)
         {
+            var pos = line[i];
             if (map[pos.Item1, pos.Item2])
             {
                 return false;
