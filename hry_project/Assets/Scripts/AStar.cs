@@ -50,7 +50,7 @@ public class AStar : MonoBehaviour
 
     public void SetWall(int cellX, int cellY, bool isWall)
     {
-        Debug.Log(cellY + " : " + cellX);
+        // Debug.Log(cellY + " : " + cellX);
         map[cellX, cellY] = isWall;
         updated = true;
     }

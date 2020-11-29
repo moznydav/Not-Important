@@ -61,8 +61,8 @@ public class GameManager : Singleton<GameManager>
 
     public void EnemyKilled()
     {
-        print("Enemy killed");
         currentEnemyCount -= 1;
+        print("Enemies remaining: " + currentEnemyCount);
         if (currentEnemyCount == 0) {
             ScheduleWaveStart();
         }
@@ -71,12 +71,14 @@ public class GameManager : Singleton<GameManager>
     void WaveStart()
     {
         waveNumber += 1;
+        print("Wave " + waveNumber + " started");
         if (waveNumber % enemyTypeInterval == 0)
             activeEnemyTypes += 1;
         List<GameObject> availableTypes = enemyTypes.GetRange(0, activeEnemyTypes);
         int typesToChoose = (int)Math.Ceiling((double)availableTypes.Count / 2);
         // TODO randomly choose enemy types
         List<GameObject> chosenTypes = availableTypes.GetRange(0, typesToChoose);
+        currentEnemyCount = chosenTypes.Count * waveNumber * enemyCountMultiplier;
         foreach (EnemySpawner spawner in enemySpawners) {
             spawner.Spawn(chosenTypes, waveNumber * enemyCountMultiplier);
         }
@@ -84,6 +86,7 @@ public class GameManager : Singleton<GameManager>
 
     void ScheduleWaveStart()
     {
+        print("Scheduling wave start");
         Invoke("WaveStart", waveInterval);
     }
 

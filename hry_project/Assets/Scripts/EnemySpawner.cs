@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject goblin;
     public void Spawn(List<GameObject> types, int count)
     {
-        print("Spawning");
-        GameObject new_goblin = Instantiate(goblin, transform.position, Quaternion.identity);
+        for (int i = 0; i < types.Count; i++) {
+            for (int j = 0; j < count; j++) {
+                Instantiate(types[i], transform.position, Quaternion.identity);
+            }
+        }
     }    
 }

@@ -146,8 +146,8 @@ public class Player : MonoBehaviour
         if (!isShooting)
         {
             isShooting = true;
-            Debug.Log("Spawning projectile");
-            Debug.Log("Aim direction : " + aimDirection);
+            // Debug.Log("Spawning projectile");
+            // Debug.Log("Aim direction : " + aimDirection);
             GameObject shot = Instantiate(projectile, transform.position, Quaternion.identity);
             shot.GetComponent<Rigidbody2D>().velocity = aimDirection * shot.GetComponent<Projectile>().GetProjectileSPeed();
             shot.GetComponent<Projectile>().SetDamage(playerStats.damage.value);
