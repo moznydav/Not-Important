@@ -24,6 +24,7 @@ public class WaveManager : MonoBehaviour {
         enemiesCount--;
         if (enemiesCount <= 0) {
             Debug.Log("Wave should end.");
+            FindObjectOfType<GameManager>().WaveEnded();
         }
     }
 

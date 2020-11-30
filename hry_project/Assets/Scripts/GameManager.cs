@@ -61,7 +61,7 @@ public class GameManager : Singleton<GameManager>
         Application.Quit();
     }
 
-    void WaveEnded()
+    public void WaveEnded()
     {
         // TODO: Show upgrade menu
         print("Wave " + waveNumber + " ended");
