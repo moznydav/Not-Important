@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UpgradeButton : MonoBehaviour
-{
+public class UpgradeButton : MonoBehaviour {
     [SerializeField] Button button;
 
     GameManager gameManager;
-    private void Awake()
-    {
-        gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();      
+    private void Awake() {
+        gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
     }
 
-    public void Close()
-    {
+    public void Close() {
         gameManager.Resume();
+        Debug.Log("Now start the level.");
+        gameManager.ScheduleWaveStart();
     }
 }

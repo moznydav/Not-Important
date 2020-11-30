@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     public Stats stats;
 
     SpriteRenderer spriteRenderer;
+    WaveManager waveManager;
 
     List<Vector3> path;
     int lastPathIndex;
@@ -37,6 +38,9 @@ public class Enemy : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         pathfinding = (AStar) GameObject.FindWithTag(Constants.ASTAR_TAG).GetComponent(typeof(AStar));
         player = GameObject.FindWithTag(Constants.PLAYER_TAG);
+
+        waveManager = FindObjectOfType<WaveManager>();
+        waveManager.CountEnemies(); 
     }
 
     public void HandleMovement()
@@ -139,7 +143,7 @@ public class Enemy : MonoBehaviour
     private void Move()
     {
         if (canRun)
-        {
+        {  
             rigidBody.velocity = (moveDirection * stats.moveSpeed.value * Time.deltaTime);
         }
     }
@@ -158,6 +162,10 @@ public class Enemy : MonoBehaviour
     public void SetCanRun(bool canRun)
     {
         this.canRun = canRun;
+    }
+
+    public void OnDestroy() {
+        waveManager.EnemyDestroyed();
     }
 
 }

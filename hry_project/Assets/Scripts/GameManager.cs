@@ -20,10 +20,12 @@ public class GameManager : Singleton<GameManager>
     public bool canUpgrade;
     GameObject spawnedChest;
 
-    private int activeEnemyTypes = 1;
+    //private int activeEnemyTypes = 1;
     private int currentWaveNumber;
     private int currentEnemyCount = 0;
     private int waveNumber = 0;
+
+    WaveManager waveManager;
 
     public void Pause()
     {
@@ -64,21 +66,22 @@ public class GameManager : Singleton<GameManager>
         // TODO: Show upgrade menu
         print("Wave " + waveNumber + " ended");
         SpawnChest();
-        ScheduleWaveStart();
+        //ScheduleWaveStart();
     }
 
     public void EnemyKilled()
     {
         currentEnemyCount -= 1;
         print("Current enemy count: " + currentEnemyCount);
+        print("Current enemy count: " + currentEnemyCount);
         if (currentEnemyCount == 0) {
             WaveEnded();
         }
     }
-
-    void WaveStart()
+    /*
+    void WaveStart() //TODO waveManager.WaveStart();
     {
-        waveNumber += 1;
+        
         print("Wave " + waveNumber + " started");
         if (waveNumber % enemyTypeInterval == 0)
             //if(activeEnemyTypes + 1 < enemyTypes.Capacity)
@@ -96,15 +99,18 @@ public class GameManager : Singleton<GameManager>
             spawner.Spawn(chosenTypes, waveNumber * enemyCountMultiplier);
         }
     }
+    */
 
-    void ScheduleWaveStart()
+    public void ScheduleWaveStart()
     {
+        waveNumber += 1;
         print("Scheduling wave start");
-        Invoke("WaveStart", waveInterval);
+        waveManager.WaveStart();
     }
 
     void Start()
     {
+        waveManager = FindObjectOfType<WaveManager>();
         Resume();
         ScheduleWaveStart();
     }
@@ -151,7 +157,7 @@ public class GameManager : Singleton<GameManager>
                 if (!isGamePaused)
                 {
                     ActivateUpgradeMenu();
-                    Destroy(spawnedChest); // start destroy animation
+                    Destroy(spawnedChest);// start destroy animation
                 }
                 
             }
