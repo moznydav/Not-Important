@@ -159,5 +159,4 @@ public class Enemy : MonoBehaviour
     {
         this.canRun = canRun;
     }
-
 }

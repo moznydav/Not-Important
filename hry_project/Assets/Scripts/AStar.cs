@@ -7,7 +7,7 @@ using UnityEngine.Tilemaps;
 public class AStar : MonoBehaviour
 {
     [SerializeField] Tilemap tilemap;
-
+   
     private bool[,] map;
 
     private int width;
@@ -73,6 +73,10 @@ public class AStar : MonoBehaviour
         }
 
         return true;
+    }
+
+    public void SetTileMap(Tilemap newTilemap) {
+        tilemap = newTilemap;
     }
 
     public Tuple<int, int> WorldToCell(Vector3 vec)

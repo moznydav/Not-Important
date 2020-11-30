@@ -18,12 +18,20 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] List<GameObject> listOfUpgrades;
     [SerializeField] GameObject upgradeChest;
     public bool canUpgrade;
+
     GameObject spawnedChest;
+    LevelManager levelManager;
 
     private int activeEnemyTypes = 1;
     private int currentWaveNumber;
     private int currentEnemyCount = 0;
     private int waveNumber = 0;
+
+    void Start() {
+        levelManager = FindObjectOfType<LevelManager>();
+        Resume();
+        ScheduleWaveStart();
+    }
 
     public void Pause()
     {
@@ -59,12 +67,11 @@ public class GameManager : Singleton<GameManager>
         Application.Quit();
     }
 
-    void WaveEnded()
+    public void WaveEnded()
     {
         // TODO: Show upgrade menu
         print("Wave " + waveNumber + " ended");
         SpawnChest();
-        ScheduleWaveStart();
     }
 
     public void EnemyKilled()
@@ -78,6 +85,9 @@ public class GameManager : Singleton<GameManager>
 
     void WaveStart()
     {
+        if(waveNumber % 2 == 0) {
+            levelManager.SetupNextLevel();
+        }
         waveNumber += 1;
         print("Wave " + waveNumber + " started");
         if (waveNumber % enemyTypeInterval == 0)
@@ -97,16 +107,12 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    void ScheduleWaveStart()
+    public void ScheduleWaveStart()
     {
         print("Scheduling wave start");
         Invoke("WaveStart", waveInterval);
-    }
 
-    void Start()
-    {
-        Resume();
-        ScheduleWaveStart();
+        //waveManager.WaveStart();
     }
 
     public void ActivateUpgradeMenu()
@@ -161,6 +167,12 @@ public class GameManager : Singleton<GameManager>
         {
             SpawnChest();
         }
+        //testing
+        
+        if (Input.GetButtonDown("LevelSwitch")) {
+            levelManager.SetupNextLevel();
+        }
+        
     }
 
     public void SetCanUpgrade( bool canUpgrade)
