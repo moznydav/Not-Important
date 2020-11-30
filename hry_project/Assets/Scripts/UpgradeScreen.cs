@@ -17,6 +17,8 @@ public class UpgradeScreen : MonoBehaviour
     private GameObject currentHealth;
     private GameObject currentMovement;
 
+    //GameManager gameManager;
+
     public void Init()
     {
         int randomIndex = Mathf.RoundToInt(Random.Range(0, offensiveUpgrades.Length));
@@ -35,5 +37,7 @@ public class UpgradeScreen : MonoBehaviour
         Destroy(currentMovement);
         Destroy(currentOffensive);
         Destroy(currentHealth);
+
+        //gameManager.ScheduleWaveStart();
     }
 }
