@@ -20,8 +20,14 @@ public class LevelManager : MonoBehaviour
 
         //TODO spawners update
         //TODO pathfinding update
-        astar.SetTilemap(levels[levelNumber]);
+        astar.SetNewTileMap(levels[levelNumber].GetComponent<Level>().tilemap);
 
-        levelNumber++;
+
+        if(levelNumber <= 7) {
+            levelNumber++;
+        } else {
+            Debug.Log("Final level");
+            //TODO level reset
+        }
     }
 }

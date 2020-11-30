@@ -183,9 +183,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 113470576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f3611e2acc237c47b7f0ce8354ddb5a, type: 3}
+  m_Script: {fileID: 11500000, guid: afb2be6c35c61b641888b0a645f5ab6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tilemap: {fileID: 1448053036}
 --- !u!1001 &118539032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7500,6 +7501,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 249946100}
+  - component: {fileID: 249946101}
   m_Layer: 0
   m_Name: Level 3
   m_TagString: Untagged
@@ -7523,6 +7525,19 @@ Transform:
   m_Father: {fileID: 1719059069}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &249946101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249946099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb2be6c35c61b641888b0a645f5ab6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 844770697}
 --- !u!1 &308387233 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 308387233, guid: 654892e9a8021654d84f67fa03f988a4,
@@ -7758,6 +7773,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 397686207}
+  - component: {fileID: 397686208}
   m_Layer: 0
   m_Name: Level 5
   m_TagString: Untagged
@@ -7781,6 +7797,19 @@ Transform:
   m_Father: {fileID: 1719059069}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &397686208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397686206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb2be6c35c61b641888b0a645f5ab6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 201446676}
 --- !u!1001 &399173413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33005,6 +33034,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1251462250}
+  - component: {fileID: 1251462251}
   m_Layer: 0
   m_Name: Level 6
   m_TagString: Untagged
@@ -33028,6 +33058,19 @@ Transform:
   m_Father: {fileID: 1719059069}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1251462251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251462249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb2be6c35c61b641888b0a645f5ab6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 403889623}
 --- !u!1 &1321109449 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7149249461951340495, guid: 654892e9a8021654d84f67fa03f988a4,
@@ -33061,6 +33104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1396287262}
+  - component: {fileID: 1396287263}
   m_Layer: 0
   m_Name: Level 4
   m_TagString: Untagged
@@ -33084,6 +33128,19 @@ Transform:
   m_Father: {fileID: 1719059069}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1396287263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396287261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb2be6c35c61b641888b0a645f5ab6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 164583612}
 --- !u!1001 &1427258395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34547,6 +34604,7 @@ MonoBehaviour:
   - {fileID: 1251462249}
   - {fileID: 2136197262}
   - {fileID: 1606503633}
+  astar: {fileID: 0}
 --- !u!4 &1503453009 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 196022626036479522, guid: 31488a0371cabb44dbaeae6068867ae3,
@@ -34870,6 +34928,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1606503634}
+  - component: {fileID: 1606503635}
   m_Layer: 0
   m_Name: Level 8
   m_TagString: Untagged
@@ -34893,6 +34952,19 @@ Transform:
   m_Father: {fileID: 1719059069}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1606503635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606503633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb2be6c35c61b641888b0a645f5ab6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 576332789}
 --- !u!4 &1615380621 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 196022626036479522, guid: 31488a0371cabb44dbaeae6068867ae3,
@@ -35550,6 +35622,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1794644097}
+  - component: {fileID: 1794644098}
   m_Layer: 0
   m_Name: Level 2
   m_TagString: Untagged
@@ -35573,6 +35646,19 @@ Transform:
   m_Father: {fileID: 1719059069}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1794644098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794644096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb2be6c35c61b641888b0a645f5ab6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 569536413}
 --- !u!1001 &1799270758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98943,6 +99029,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2136197263}
+  - component: {fileID: 2136197264}
   m_Layer: 0
   m_Name: Level 7
   m_TagString: Untagged
@@ -98966,6 +99053,19 @@ Transform:
   m_Father: {fileID: 1719059069}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2136197264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136197262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb2be6c35c61b641888b0a645f5ab6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1012117897}
 --- !u!1001 &196022625972265609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -99224,7 +99324,7 @@ PrefabInstance:
     - target: {fileID: 4719806750646184786, guid: 3e2c3cad60483d341a516de669eaa9e1,
         type: 3}
       propertyPath: enemyCountMultiplier
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4719806750646184787, guid: 3e2c3cad60483d341a516de669eaa9e1,
         type: 3}
@@ -99348,6 +99448,11 @@ PrefabInstance:
     - target: {fileID: 2716789046835122914, guid: aae3c97dee8d4294f85d3f9e861ce6f7,
         type: 3}
       propertyPath: baseMaxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716789046835122914, guid: aae3c97dee8d4294f85d3f9e861ce6f7,
+        type: 3}
+      propertyPath: baseDamage
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6000552227410383350, guid: aae3c97dee8d4294f85d3f9e861ce6f7,

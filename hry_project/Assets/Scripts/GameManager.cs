@@ -85,9 +85,6 @@ public class GameManager : Singleton<GameManager>
 
     void WaveStart()
     {
-        if(waveNumber % 2 == 0) {
-            levelManager.SetupNextLevel();
-        }
         waveNumber += 1;
         print("Wave " + waveNumber + " started");
         if (waveNumber % enemyTypeInterval == 0)

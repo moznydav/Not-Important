@@ -28,6 +28,17 @@ public class AStar : MonoBehaviour
 
     void Awake()
     {
+        SetupTileMap();
+    }
+
+    public void SetWall(int cellX, int cellY, bool isWall)
+    {
+        // Debug.Log(cellY + " : " + cellX);
+        map[cellX, cellY] = isWall;
+        updated = true;
+    }
+
+    void SetupTileMap() {
         BoundsInt bounds = tilemap.cellBounds;
         TileBase[] allTiles = tilemap.GetTilesBlock(bounds);
 
@@ -36,23 +47,13 @@ public class AStar : MonoBehaviour
 
         map = new bool[width, height];
 
-        for (int x = 0; x < width; x++)
-        {
-            for (int y = 0; y < height; y++)
-            {
-                if (allTiles[x + y * width] != null)
-                {
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                if (allTiles[x + y * width] != null) {
                     map[x, y] = true;
                 }
             }
         }
-    }
-
-    public void SetWall(int cellX, int cellY, bool isWall)
-    {
-        // Debug.Log(cellY + " : " + cellX);
-        map[cellX, cellY] = isWall;
-        updated = true;
     }
 
     public bool IsPathClear(Vector3 from, Vector3 to, bool clearMap = false)
@@ -75,10 +76,12 @@ public class AStar : MonoBehaviour
         return true;
     }
 
-    public void SetTileMap(Tilemap newTilemap) {
+    
+    public void SetNewTileMap(Tilemap newTilemap) {
         tilemap = newTilemap;
+        SetupTileMap();
     }
-
+    
     public Tuple<int, int> WorldToCell(Vector3 vec)
     {
         var cell = tilemap.WorldToCell(vec) - tilemap.origin;
