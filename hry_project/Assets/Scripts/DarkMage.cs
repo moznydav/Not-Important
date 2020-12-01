@@ -10,8 +10,8 @@ public class DarkMage : EnemyShooter
     [SerializeField] GameObject gunPrefab;
     [SerializeField] float timeBetweenShots = 0.6f;
 
-    //[SerializeField] bool attackOnCooldown = false;
-    bool attacking;
+    [SerializeField] bool attackOnCooldown = false;
+    [SerializeField] bool attacking;
 
     private void Awake()
     {
@@ -64,7 +64,7 @@ public class DarkMage : EnemyShooter
             shot.GetComponent<Projectile>().SetDamage(stats.damage.value);
             shot.GetComponent<Projectile>().SetDirection(aimDirection);
             shot.transform.eulerAngles = new Vector3(0, 0, angle);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(timeBetweenShots);
             Destroy(gun);
         }
 
