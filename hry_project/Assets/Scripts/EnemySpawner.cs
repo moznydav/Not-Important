@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public void Spawn(List<GameObject> types, int count)
+    GameManager gameManager;
+
+    private void Awake() {
+        gameManager = FindObjectOfType<GameManager>();
+    }
+
+    public void Spawn(GameObject[] types, int count)
     {
-        for (int i = 0; i < types.Count; i++) {
+        for (int i = 0; i < types.Length; i++) {
             for (int j = 0; j < count; j++) {
+                gameManager.currentEnemyCount++;
                 Instantiate(types[i], transform.position, Quaternion.identity);
             }
         }

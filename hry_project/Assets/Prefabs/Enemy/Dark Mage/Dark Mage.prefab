@@ -183,7 +183,7 @@ MonoBehaviour:
   distancing: 0
   projectile: {fileID: 4238911258481400033, guid: 123f45869dc24eb4aa7a268461aff92c,
     type: 3}
-  attackCooldown: 2
+  attackCooldown: 3
   meleeDamageCooldown: 1
   anim: {fileID: 0}
   attackOnCooldown: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   - {fileID: 4190515479216283359}
   gunPrefab: {fileID: 7029322731654212296, guid: 20f21937a21a5984ea119ce7efca40b4,
     type: 3}
-  timeBetweenShots: 0
+  timeBetweenShots: 1.5
 --- !u!95 &3920694711985021386
 Animator:
   serializedVersion: 3
