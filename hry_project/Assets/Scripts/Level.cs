@@ -6,4 +6,5 @@ using UnityEngine.Tilemaps;
 public class Level : MonoBehaviour
 {
     [SerializeField] public Tilemap tilemap;
+    [SerializeField] public EnemySpawner[] enemySpawners;
 }

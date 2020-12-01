@@ -27,7 +27,7 @@ public class MenuManager : Singleton<MenuManager>
 
     public void Play()
     {
-        SceneManager.LoadScene("Sandbox", LoadSceneMode.Single);
+        SceneManager.LoadScene("Level", LoadSceneMode.Single);
     }
     public void Quit()
     {

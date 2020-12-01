@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,13 +11,14 @@ public class GameManager : Singleton<GameManager>
     public bool isGamePaused = false;
     [SerializeField] float waveInterval;
     [SerializeField] int enemyCountMultiplier = 3;
-    [SerializeField] List<EnemySpawner> enemySpawners;
+    [SerializeField] EnemySpawner[] enemySpawners;
     [SerializeField] List<GameObject> enemyTypes;
     [SerializeField] int enemyTypeInterval = 3;
     [SerializeField] public GameObject pauseMenu;
     [SerializeField] public GameObject upgradeMenu;
     [SerializeField] List<GameObject> listOfUpgrades;
     [SerializeField] GameObject upgradeChest;
+    [SerializeField] int waveToLevelRatio;
     public bool canUpgrade;
 
     GameObject spawnedChest;
@@ -77,7 +79,6 @@ public class GameManager : Singleton<GameManager>
     public void EnemyKilled()
     {
         currentEnemyCount -= 1;
-        print("Current enemy count: " + currentEnemyCount);
         if (currentEnemyCount == 0) {
             WaveEnded();
         }
@@ -86,27 +87,40 @@ public class GameManager : Singleton<GameManager>
     void WaveStart()
     {
         waveNumber += 1;
+        if (waveNumber % waveToLevelRatio == 0) {
+            levelManager.SetupNextLevel();
+        }
         print("Wave " + waveNumber + " started");
+        Debug.Log("Enemy active types: " + activeEnemyTypes);
+        Debug.Log("Enemy active types capacity: " + enemyTypes.Capacity);
+
         if (waveNumber % enemyTypeInterval == 0)
-            //if(activeEnemyTypes + 1 < enemyTypes.Capacity)
-            //{
+            if(activeEnemyTypes + 1 < enemyTypes.Capacity)
+            {
                 activeEnemyTypes += 1;
-           // }
+            }
+
+        
         List<GameObject> availableTypes = enemyTypes.GetRange(0, activeEnemyTypes);
         int typesToChoose = (int)Math.Ceiling((double)availableTypes.Count / 2);
         // TODO: randomly choose enemy types
         // and distribute them evenly across all spawners
         List<GameObject> chosenTypes = availableTypes.GetRange(0, typesToChoose);
-        currentEnemyCount = chosenTypes.Count * waveNumber * enemyCountMultiplier * enemySpawners.Count;
-        print("spawning... current enemy count: " + currentEnemyCount);
+        
+        currentEnemyCount = chosenTypes.Count * waveNumber * enemyCountMultiplier * enemySpawners.Length;
         foreach (EnemySpawner spawner in enemySpawners) {
             spawner.Spawn(chosenTypes, waveNumber * enemyCountMultiplier);
         }
     }
 
+    public void SetupNextSpawners(EnemySpawner[] newEnemySpawners) {
+
+        enemySpawners = newEnemySpawners;
+    }
+
     public void ScheduleWaveStart()
     {
-        print("Scheduling wave start");
+        print("Scheduling wave start"); 
         Invoke("WaveStart", waveInterval);
 
         //waveManager.WaveStart();

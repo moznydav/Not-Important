@@ -13,21 +13,23 @@ public class LevelManager : MonoBehaviour
     } 
 
     public void SetupNextLevel() {
+
         levels[levelNumber - 1].SetActive(false);
         levels[levelNumber].SetActive(true);
 
-        Debug.Log("Set up level " + levelNumber);
-
-        //TODO spawners update
-        //TODO pathfinding update
-        astar.SetNewTileMap(levels[levelNumber].GetComponent<Level>().tilemap);
-
-
-        if(levelNumber <= 7) {
+        if (levelNumber <= 7) {
             levelNumber++;
         } else {
             Debug.Log("Final level");
             //TODO level reset
         }
+
+        Debug.Log("Set up level " + levelNumber);
+
+        //TODO spawners update
+        GameManager.Instance.SetupNextSpawners(levels[levelNumber-1].GetComponent<Level>().enemySpawners);
+        //TODO pathfinding update
+        astar.SetNewTileMap(levels[levelNumber].GetComponent<Level>().tilemap);
+
     }
 }
