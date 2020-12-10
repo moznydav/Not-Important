@@ -14,7 +14,7 @@ public class Stats : MonoBehaviour
     [SerializeField] float baseDamage;
 
     [Header("Config")]
-    [SerializeField] GameObject VFX;
+    [SerializeField] GameObject[] VFX;
     [SerializeField] float immuneDuration = 0.2f;
     [SerializeField] GameObject[] blinkBody;
     [SerializeField] float blinkDuration = 0.1f;
@@ -111,9 +111,11 @@ public class Stats : MonoBehaviour
 
     private IEnumerator HandleHit()
     {
-        GameObject hitVFX = Instantiate(VFX, transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(0.2f);
-        Destroy(hitVFX);
+        GameObject selectedVFX = VFX[Random.Range(0,VFX.Length - 1)];
+        GameObject hitVFX = Instantiate(selectedVFX, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.5f);
+        Animator soonToBeDestroyed = hitVFX.GetComponent<Animator>();
+        Destroy(soonToBeDestroyed);
     }
 
     public IEnumerator StartImmuneFrames()

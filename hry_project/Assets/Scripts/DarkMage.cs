@@ -9,8 +9,6 @@ public class DarkMage : EnemyShooter
     [SerializeField] GameObject[] guns;
     [SerializeField] GameObject gunPrefab;
     [SerializeField] float timeBetweenShots = 0.6f;
-
-    [SerializeField] bool attackOnCooldown = false;
     [SerializeField] bool attacking;
 
     private void Awake()
@@ -30,7 +28,7 @@ public class DarkMage : EnemyShooter
         
         if (base.CanAttack())
         {
-            if (!attackOnCooldown)
+            if (!base.attackOnCooldown)
             {
                 attacking = true;
                 attackOnCooldown = true;
