@@ -58,7 +58,12 @@ public class AStar : MonoBehaviour
 
     public bool IsPathClear(Vector3 from, Vector3 to, bool clearMap = false)
     {
-        var line = GetBresenhamLine(WorldToCell(from), WorldToCell(to));
+        return IsPathClear(WorldToCell(from), WorldToCell(to), clearMap);
+    }
+
+    public bool IsPathClear(Tuple<int, int> from, Tuple<int, int> to, bool clearMap = false)
+    {
+        var line = GetBresenhamLine(from, to);
 
         int size = line.Count;
         int start = clearMap && size > 0 ? 1 : 0;
@@ -95,12 +100,17 @@ public class AStar : MonoBehaviour
 
     public List<Vector3> GetPath(Vector3 from, Vector3 to)
     {
-        var start = WorldToCell(from); // TODO: use struct?
+        var start = WorldToCell(from);
         var end = WorldToCell(to);
+
+        if (IsPathClear(start, end))
+        {
+            return new List<Vector3>() { from, to };
+        }
 
         int processedNodes = 0;
 
-        var open = new List<Tuple<int, int>>() { start }; // TODO: Cache `open`, `inOpen`, `score` and `parents` until `from` change
+        var open = new List<Tuple<int, int>>() { start };
         var inOpen = new HashSet<Tuple<int, int>>() { start };
         var score = CreateScoreArray();
         var gscore = CreateScoreArray();
