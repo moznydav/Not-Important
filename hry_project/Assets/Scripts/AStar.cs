@@ -7,7 +7,7 @@ using UnityEngine.Tilemaps;
 public class AStar : MonoBehaviour
 {
     [SerializeField] Tilemap tilemap;
-   
+
     private bool[,] map;
 
     private int width;
@@ -76,12 +76,12 @@ public class AStar : MonoBehaviour
         return true;
     }
 
-    
+
     public void SetNewTileMap(Tilemap newTilemap) {
         tilemap = newTilemap;
         SetupTileMap();
     }
-    
+
     public Tuple<int, int> WorldToCell(Vector3 vec)
     {
         var cell = tilemap.WorldToCell(vec) - tilemap.origin;
@@ -98,12 +98,17 @@ public class AStar : MonoBehaviour
         var start = WorldToCell(from); // TODO: use struct?
         var end = WorldToCell(to);
 
+        int processedNodes = 0;
+
         var open = new List<Tuple<int, int>>() { start }; // TODO: Cache `open`, `inOpen`, `score` and `parents` until `from` change
         var inOpen = new HashSet<Tuple<int, int>>() { start };
         var score = CreateScoreArray();
+        var gscore = CreateScoreArray();
+
         var parents = new Tuple<int, int>[width * height];
 
-        score[start.Item1 + start.Item2 * width] = 0;
+        score[start.Item1 + start.Item2 * width] = Heuristic(start, end);
+        gscore[start.Item1 + start.Item2 * width] = 0;
 
         while (open.Count != 0)
         {
@@ -111,11 +116,14 @@ public class AStar : MonoBehaviour
             open.RemoveAt(open.Count - 1); // TODO: Use priority queue
             inOpen.Remove(current);
 
+            processedNodes++;
+
             int x = current.Item1;
             int y = current.Item2;
 
             if (x == end.Item1 && y == end.Item2)
             {
+                Debug.Log("Processed nodes" + processedNodes);
                 return BuildPath(parents, end);
             }
 
@@ -123,16 +131,17 @@ public class AStar : MonoBehaviour
 
             foreach (var neighbor in GetNeighbors(current))
             {
-                double gscore = score[x + y * width] + GetWeight(current, neighbor);
+                double cgscore = gscore[x + y * width] + GetWeight(current, neighbor);
                 int index = neighbor.Item1 + neighbor.Item2 * width;
 
-                if (gscore >= score[index])
+                if (cgscore >= gscore[index])
                 {
                     continue;
                 }
 
                 parents[index] = current;
-                score[index] = gscore;
+                gscore[index] = cgscore;
+                score[index] = gscore[index] + Heuristic(neighbor, end);
 
                 if (inOpen.Contains(neighbor))
                 {
@@ -235,6 +244,14 @@ public class AStar : MonoBehaviour
         }
 
         return score;
+    }
+
+    private double Heuristic(Tuple<int, int> node, Tuple<int, int> goal)
+    {
+        var dx = Math.Abs(node.Item1 - goal.Item1);
+        var dy = Math.Abs(node.Item2 - goal.Item2);
+
+        return 1.0 * (dx + dy) + (sqrt2 - 2) * Math.Min(dx, dy);
     }
 
     /* Method taken from UIR course (https://cw.fel.cvut.cz/wiki/courses/b4m36uir/hw/t1c-map) */
