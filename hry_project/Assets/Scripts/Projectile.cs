@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] float lifespan = 1f;
     [SerializeField] int ricochet = 1;
     [SerializeField] int pierce = 0;
+    [SerializeField] int pierceDamageModifier = 3;
 
 
     float damage;
@@ -62,6 +63,10 @@ public class Projectile : MonoBehaviour
             if(pierce-- == 0)
             {
                 Destroy(gameObject);
+            }
+            else
+            {
+                damage = damage / pierceDamageModifier;
             }
             
         }

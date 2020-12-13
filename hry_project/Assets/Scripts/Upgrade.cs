@@ -16,6 +16,7 @@ public class Upgrade : ScriptableObject
         PROJECTILESPEED_DMG, //TODO
         ADD_PROJECTILE, //TODO
         ADD_PIERCE //TODO
+            //TODO: Drawback upgrades
     }
 
     [SerializeField] float value = 0f;
@@ -54,15 +55,18 @@ public class Upgrade : ScriptableObject
                 break;
 
             case UpgradeType.PROJECTILESPEED_DMG: // Add projectile speed and minor DMG
-
+                playerStats.UpdateProjectileSpeed(value);
+                playerStats.GetDamageStat().AddModifier(new StatModifier(value));
                 break;
 
             case UpgradeType.ADD_PROJECTILE: // Add projectile and decreases attackspeed
-
+                playerStats.UpdateNumOfProjectilesStat(value);
+                playerStats.GetAttackSpeedStat().AddModifier(new StatModifier(value));
                 break;
 
             case UpgradeType.ADD_PIERCE: // Add pierce and decreases DMG
-
+                playerStats.UpdatePierceValueStat(value);
+                playerStats.GetDamageStat().AddModifier(new StatModifier(value));
                 break;
         }
     }

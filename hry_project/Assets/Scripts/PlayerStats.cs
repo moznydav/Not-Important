@@ -79,4 +79,33 @@ public class PlayerStats : Stats
     {
         return moveSpeed;
     }
+
+    public CharacterStat GetPierceStat()
+    {
+        return pierceValue;
+    }
+    public CharacterStat GetProjectileStat()
+    {
+        return numOfProjectiles;
+    }
+    public CharacterStat GetProjectileSpeedStat()
+    {
+        return projectileSpeed;
+    }
+
+    public void UpdateProjectileSpeed(float value)
+    {
+        projectileSpeed.AddModifier(new StatModifier(value));
+    }
+
+    public void UpdateNumOfProjectilesStat(float value)
+    {
+        numOfProjectiles.AddModifier(new StatModifier(value));
+    }
+
+    public void UpdatePierceValueStat(float value)
+    {
+        pierceValue.AddModifier(new StatModifier(value));
+    }
+
 }

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c17a48f51b108046ad55d19e80b9ae0, type: 3}
   m_Name: BasicAttackSpeed
   m_EditorClassIdentifier: 
-  value: -0.1
+  value: -0.15
+  secondaryValue: 0
   upgradeType: 2
