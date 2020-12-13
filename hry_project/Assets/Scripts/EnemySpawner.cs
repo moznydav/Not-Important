@@ -10,11 +10,14 @@ public class EnemySpawner : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
     }
 
-    public void Spawn(GameObject[] types)
+    public IEnumerator Spawn(GameObject[] types)
     {
+        Vector2 spawnPosition;
         for (int i = 0; i < types.Length; i++) {
+            spawnPosition = transform.position + new Vector3(Random.Range(-0.8f, 0.8f), Random.Range(-0.8f, 0.8f), 0);
             gameManager.currentEnemyCount++;
-            Instantiate(types[i], transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(Random.Range(0.5f, 1.2f));
+            Instantiate(types[i], spawnPosition, Quaternion.identity);
         }
-    }    
+    }
 }
