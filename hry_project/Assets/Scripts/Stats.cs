@@ -12,6 +12,10 @@ public class Stats : MonoBehaviour
     [SerializeField] float baseAttackSpeed;
     [SerializeField] float baseMoveSpeed;
     [SerializeField] float baseDamage;
+    [SerializeField] float baseNumOfProjectiles;
+    [SerializeField] float baseProjectileSpeed;
+    [SerializeField] float basePierce;
+
 
     [Header("Config")]
     [SerializeField] GameObject[] VFX;
@@ -24,6 +28,9 @@ public class Stats : MonoBehaviour
     public CharacterStat attackSpeed;
     public CharacterStat moveSpeed;
     public CharacterStat damage;
+    public CharacterStat numOfProjectiles;
+    public CharacterStat pierceValue;
+    public CharacterStat projectileSpeed;
 
     [Header("For Debug")]
     [SerializeField] public float currentHealth;
@@ -54,7 +61,10 @@ public class Stats : MonoBehaviour
         attackSpeed = new CharacterStat(baseAttackSpeed);
         moveSpeed = new CharacterStat(baseMoveSpeed);
         damage = new CharacterStat(baseDamage);
-    }
+        numOfProjectiles = new CharacterStat(baseNumOfProjectiles);
+        pierceValue = new CharacterStat(basePierce);
+        projectileSpeed = new CharacterStat(baseProjectileSpeed);
+}
 
     public void UpdateHealthbar()
     {

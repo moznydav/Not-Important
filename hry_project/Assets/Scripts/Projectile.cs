@@ -7,6 +7,8 @@ public class Projectile : MonoBehaviour
     [SerializeField] float projectileSpeed = 20f;
     [SerializeField] float lifespan = 1f;
     [SerializeField] int ricochet = 1;
+    [SerializeField] int pierce = 0;
+
 
     float damage;
 
@@ -43,6 +45,10 @@ public class Projectile : MonoBehaviour
 
                 return;
             }
+            else
+            {
+                Destroy(gameObject);
+            }
 
             if (other.tag == Constants.DESTROYABLE_TAG)
             {
@@ -53,7 +59,11 @@ public class Projectile : MonoBehaviour
             attackDone = true;
             // Debug.Log("HIT " + other.name);
 
-            Destroy(gameObject);
+            if(pierce-- == 0)
+            {
+                Destroy(gameObject);
+            }
+            
         }
     }
 
@@ -90,6 +100,15 @@ public class Projectile : MonoBehaviour
         return projectileSpeed;
     }
 
+    public void SetProjectileSpeed(float projectileSpeed)
+    {
+        this.projectileSpeed = projectileSpeed;
+    }
+
+    public void SetPierce(int pierceValue)
+    {
+        pierce = pierceValue;
+    }
 
     private IEnumerator HandleLifeTime()
     {

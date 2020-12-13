@@ -10,10 +10,16 @@ public class Upgrade : ScriptableObject
         HEALTH,
         DAMAGE,
         ATTACK_SPEED,
-        MOVE_SPEED
+        MOVE_SPEED,
+        DUAL_DMG_HP, //TODO
+        DUAL_AS_MS, //TODO
+        PROJECTILESPEED_DMG, //TODO
+        ADD_PROJECTILE, //TODO
+        ADD_PIERCE //TODO
     }
 
     [SerializeField] float value = 0f;
+    [SerializeField] float secondaryValue = 0f;
     [SerializeField] UpgradeType upgradeType;
 
     public void ApplyUpgrade()
@@ -35,6 +41,28 @@ public class Upgrade : ScriptableObject
 
             case UpgradeType.MOVE_SPEED:
                 playerStats.GetMoveSpeedStat().AddModifier(new StatModifier(value));
+                break;
+
+            case UpgradeType.DUAL_DMG_HP: // minor DMG and HP
+                playerStats.GetDamageStat().AddModifier(new StatModifier(value));
+                playerStats.UpdateHealthStat(secondaryValue);
+                break;
+
+            case UpgradeType.DUAL_AS_MS: // minor AttackSpeed and Movespeed
+                playerStats.GetAttackSpeedStat().AddModifier(new StatModifier(value));
+                playerStats.GetMoveSpeedStat().AddModifier(new StatModifier(secondaryValue));
+                break;
+
+            case UpgradeType.PROJECTILESPEED_DMG: // Add projectile speed and minor DMG
+
+                break;
+
+            case UpgradeType.ADD_PROJECTILE: // Add projectile and decreases attackspeed
+
+                break;
+
+            case UpgradeType.ADD_PIERCE: // Add pierce and decreases DMG
+
                 break;
         }
     }
