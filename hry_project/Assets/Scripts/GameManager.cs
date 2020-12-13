@@ -15,10 +15,12 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] GameObject[] enemyTypes;
     [SerializeField] public GameObject pauseMenu;
     [SerializeField] public GameObject upgradeMenu;
+    [SerializeField] public GameObject DeathScreen;
     [SerializeField] List<GameObject> listOfUpgrades;
     [SerializeField] GameObject upgradeChest;
     [SerializeField] int waveToLevelRatio = 2;
     public bool canUpgrade;
+    public bool debugMode = false;
 
     GameObject spawnedChest;
     LevelManager levelManager;
@@ -28,10 +30,12 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] public int currentEnemyCount = 0;
     private int waveNumber = 0;
     GameObject[] chosenTypes;
+    private GameObject player;
 
 
     void Start() {
         levelManager = FindObjectOfType<LevelManager>();
+        player = GameObject.FindWithTag(Constants.PLAYER_TAG);
         Resume();
         ScheduleWaveStart();
     }
@@ -102,7 +106,7 @@ public class GameManager : Singleton<GameManager>
         //waveNumber * enemyCountMultiplier
 
         foreach (EnemySpawner spawner in enemySpawners) {
-            spawner.Spawn(chosenTypes, activeEnemyTypes);
+            spawner.Spawn(chosenTypes, 1);
         }
     }
 
@@ -148,6 +152,13 @@ public class GameManager : Singleton<GameManager>
         spawnedChest = Instantiate(upgradeChest, chestPosition, Quaternion.identity);
     }
 
+    public void InitDeathScreen()
+    {
+        DeathScreen.SetActive(true);
+        Cursor.visible = true;
+        //Time.timeScale = 0f;
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -184,7 +195,11 @@ public class GameManager : Singleton<GameManager>
         if (Input.GetButtonDown("LevelSwitch")) {
             levelManager.SetupNextLevel();
         }
-        
+
+        if (!player)
+        {
+            InitDeathScreen();
+        }
     }
 
     public void SetCanUpgrade( bool canUpgrade)
