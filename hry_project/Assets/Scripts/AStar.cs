@@ -81,6 +81,58 @@ public class AStar : MonoBehaviour
         return true;
     }
 
+    public Vector3 FindFreeTileInRange(Vector3 origin, int range, int maxRange)
+    {
+        var originTile = WorldToCell(origin);
+
+        for (int i = 0; i <= maxRange - range; i++)
+        {
+            var tile = FindFreeTileInRange(originTile, range + i);
+            if (tile != null)
+            {
+                return CellToWorld(tile);
+            }
+        }
+
+        return new Vector3();
+    }
+
+    private bool IsInMap(int x, int y)
+    {
+        return x < width && y >= 0 && y < height && x >= 0;
+    }
+
+    private Tuple<int, int> FindFreeTileInRange(Tuple<int, int> origin, int range)
+    {
+        int x = origin.Item1;
+        int y = origin.Item2;
+
+        for (int i = -range; i <= range; i++)
+        {
+            if (IsInMap(x + range, y + i) && IsPathClear(origin, Tuple.Create(x + range, y + i)))
+            {
+                return Tuple.Create(x + range, y + i);
+            }
+
+            if (IsInMap(x - range, y + i) && IsPathClear(origin, Tuple.Create(x - range, y + i)))
+            {
+                return Tuple.Create(x - range, y + i);
+            }
+
+            if (IsInMap(x + i, y + range) && IsPathClear(origin, Tuple.Create(x + i, y + range)))
+            {
+                return Tuple.Create(x + i, y + range);
+            }
+
+            if (IsInMap(x + i, y - range) && IsPathClear(origin, Tuple.Create(x + i, y - range)))
+            {
+                return Tuple.Create(x + i, y - range);
+            }
+        }
+
+        return null;
+    }
+
 
     public void SetNewTileMap(Tilemap newTilemap) {
         tilemap = newTilemap;
@@ -234,11 +286,6 @@ public class AStar : MonoBehaviour
                 yield return Tuple.Create(tmpX, tmpY);
             }
         }
-    }
-
-    private List<Vector3> SimplifyPath(List<Vector3> path)
-    {
-        return path; //TODO: Try to simplify path using Bresenham line or whatever
     }
 
     private double[] CreateScoreArray()
