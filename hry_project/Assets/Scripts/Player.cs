@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     // Config
     [Header("Config")]
     [SerializeField] float rollSpeed = 2000f;
+    [SerializeField] float projectileSpreadModifier = 5f;
 
     [Header("Parts")]
     [SerializeField] GameObject projectile;
@@ -146,12 +147,42 @@ public class Player : MonoBehaviour
         if (!isShooting)
         {
             isShooting = true;
-            // Debug.Log("Spawning projectile");
-            // Debug.Log("Aim direction : " + aimDirection);
-            GameObject shot = Instantiate(projectile, transform.position, Quaternion.identity);
-            shot.GetComponent<Rigidbody2D>().velocity = aimDirection * shot.GetComponent<Projectile>().GetProjectileSPeed();
-            shot.GetComponent<Projectile>().SetDamage(playerStats.damage.value);
-            shot.GetComponent<Projectile>().SetDirection(aimDirection);
+            int numOfProjectiles = (int)playerStats.numOfProjectiles.value;
+
+            Vector2 Offset = new Vector3(aimDirection.y, -aimDirection.x);
+            Offset = Offset / projectileSpreadModifier;
+            Vector2 shootDirection = aimDirection;
+
+            int switchIndex = 1;
+            int projectileState = 1;
+            //Debug.Log("numOfProjectiles: " + numOfProjectiles);
+            //Debug.Log("Offset: " + Offset);
+            for (int i = 0; i < numOfProjectiles; i++)
+            {
+                // Debug.Log("Spawning projectile");
+                // Debug.Log("Aim direction : " + aimDirection);
+                if ((i - 1) % 2 == 0 && i > 1)
+                {
+                    projectileState++;
+                }
+                if(i > 0)
+                {
+                    //Debug.Log("state: " + projectileState + " switchIndex: " + switchIndex);
+                    shootDirection = aimDirection + (Offset * projectileState * switchIndex);
+                    switchIndex *= -1;
+                    shootDirection.Normalize();
+                }
+                //Debug.Log("Shoot direction: " + shootDirection);
+                GameObject shot = Instantiate(projectile, transform.position, Quaternion.identity);
+                shot.GetComponent<Rigidbody2D>().velocity = shootDirection * shot.GetComponent<Projectile>().GetProjectileSPeed();
+                shot.GetComponent<Projectile>().SetDamage(playerStats.damage.value);
+                shot.GetComponent<Projectile>().SetDirection(shootDirection);
+                shot.GetComponent<Projectile>().SetProjectileSpeed(playerStats.projectileSpeed.value);
+                shot.GetComponent<Projectile>().SetPierce((int)playerStats.pierceValue.value);
+            }
+
+
+            
             StartCoroutine(AttackCooldown());
         }
 
@@ -161,7 +192,8 @@ public class Player : MonoBehaviour
 
     private IEnumerator AttackCooldown()
     {
-
+        Debug.Log("COOLDOWN START!");
+        Debug.Log("AttackSpeed: " + playerStats.attackSpeed.value);
         anim.SetBool("Attack Cooldown", true);
         yield return new WaitForSeconds(playerStats.attackSpeed.value);
         anim.SetBool("Attack Cooldown", false);

@@ -598,6 +598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rollSpeed: 800
+  projectileSpreadModifier: 7
   projectile: {fileID: 5102771910098208509, guid: 5272e22764d227c4a88eec247a4b7bb1,
     type: 3}
   crossHair: {fileID: 4992653142888655057}
@@ -620,8 +621,18 @@ MonoBehaviour:
   baseAttackSpeed: 0.75
   baseMoveSpeed: 350
   baseDamage: 25
-  VFX: {fileID: 3165420064654571523, guid: 993068677e258bc4daab65b24f33976a, type: 3}
+  baseNumOfProjectiles: 1
+  baseProjectileSpeed: 20
+  basePierce: 0
+  VFX:
+  - {fileID: 5790442172002470382, guid: ce3976915f689704ca8159b554c6d22e, type: 3}
+  - {fileID: 2350176681932452561, guid: 2813a414d9d74a84dbca917279e33595, type: 3}
+  - {fileID: 6554013440726716592, guid: 8a32371938db1b947b62799ae1d84ab5, type: 3}
   immuneDuration: 0.2
+  blinkBody:
+  - {fileID: 362514959755084783}
+  - {fileID: 8000891693078247934}
+  blinkDuration: 0.1
   currentHealth: 0
   isAlive: 1
   rollRegenTime: 2

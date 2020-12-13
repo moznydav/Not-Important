@@ -100,8 +100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 20
   lifespan: 1
-  ricochet: 1
-  VFX: {fileID: 2628853007543437094, guid: 993068677e258bc4daab65b24f33976a, type: 3}
+  ricochet: 2
+  pierce: 0
+  pierceDamageModifier: 3
 --- !u!50 &254868739
 Rigidbody2D:
   serializedVersion: 4
