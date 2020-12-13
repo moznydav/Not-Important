@@ -30,26 +30,26 @@ public class WaveManager : MonoBehaviour {
 
     public void WaveStart() {
         waveNumber++;
-        SpawnerHandler();
+   //     SpawnerHandler();
 
     }
 
-    private void SpawnerHandler() {
-        print("Wave " + waveNumber + " started");
-        if (waveNumber % enemyTypeInterval == 0) {
-            if (activeEnemyTypes + 1 < enemyTypes.Capacity) {
-                activeEnemyTypes++;
-            }
-        }
-        List<GameObject> availableTypes = enemyTypes.GetRange(0, activeEnemyTypes);
-        int typesToChoose = (int)Math.Ceiling((double)availableTypes.Count / 2);
-        // TODO: randomly choose enemy types
-        // and distribute them evenly across all spawners
-        List<GameObject> chosenTypes = availableTypes.GetRange(0, typesToChoose);
-        foreach (EnemySpawner spawner in enemySpawners) {
-            spawner.Spawn(chosenTypes, waveNumber * enemyCountMultiplier);
-        }
-    }
+  //  private void SpawnerHandler() {
+  //      print("Wave " + waveNumber + " started");
+  //      if (waveNumber % enemyTypeInterval == 0) {
+  //          if (activeEnemyTypes + 1 < enemyTypes.Capacity) {
+  //              activeEnemyTypes++;
+  //          }
+  //      }
+  //      List<GameObject> availableTypes = enemyTypes.GetRange(0, activeEnemyTypes);
+  //      int typesToChoose = (int)Math.Ceiling((double)availableTypes.Count / 2);
+  //      // TODO: randomly choose enemy types
+  //      // and distribute them evenly across all spawners
+  //      List<GameObject> chosenTypes = availableTypes.GetRange(0, typesToChoose);
+  //      foreach (EnemySpawner spawner in enemySpawners) {
+  //          spawner.Spawn(chosenTypes, waveNumber * enemyCountMultiplier);
+  //      }
+  //  }
 
 
 }
