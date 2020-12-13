@@ -358,7 +358,10 @@ MonoBehaviour:
   baseAttackSpeed: 2
   baseMoveSpeed: 225
   baseDamage: 20
-  VFX: {fileID: 3165420064654571523, guid: 993068677e258bc4daab65b24f33976a, type: 3}
+  VFX:
+  - {fileID: 5790442172002470382, guid: ce3976915f689704ca8159b554c6d22e, type: 3}
+  - {fileID: 2350176681932452561, guid: 2813a414d9d74a84dbca917279e33595, type: 3}
+  - {fileID: 6554013440726716592, guid: 8a32371938db1b947b62799ae1d84ab5, type: 3}
   immuneDuration: 0.2
   blinkBody: []
   blinkDuration: 0.1
@@ -376,8 +379,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7a121c4e3b061f4496fca4a66c4a6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keepDistance: 5
-  keepDistanceError: 5
+  keepDistance: 10
+  keepDistanceError: 10
   player: {fileID: 0}
   rigidBody: {fileID: 0}
   stats: {fileID: 0}

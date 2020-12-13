@@ -53,7 +53,10 @@ MonoBehaviour:
   baseAttackSpeed: 1
   baseMoveSpeed: 350
   baseDamage: 20
-  VFX: {fileID: 3165420064654571523, guid: 993068677e258bc4daab65b24f33976a, type: 3}
+  VFX:
+  - {fileID: 5790442172002470382, guid: ce3976915f689704ca8159b554c6d22e, type: 3}
+  - {fileID: 2350176681932452561, guid: 2813a414d9d74a84dbca917279e33595, type: 3}
+  - {fileID: 6554013440726716592, guid: 8a32371938db1b947b62799ae1d84ab5, type: 3}
   immuneDuration: 0.2
   blinkBody: []
   blinkDuration: 0.1
