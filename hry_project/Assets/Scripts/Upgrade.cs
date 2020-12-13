@@ -56,17 +56,17 @@ public class Upgrade : ScriptableObject
 
             case UpgradeType.PROJECTILESPEED_DMG: // Add projectile speed and minor DMG
                 playerStats.UpdateProjectileSpeed(value);
-                playerStats.GetDamageStat().AddModifier(new StatModifier(value));
+                playerStats.GetDamageStat().AddModifier(new StatModifier(secondaryValue));
                 break;
 
             case UpgradeType.ADD_PROJECTILE: // Add projectile and decreases attackspeed
                 playerStats.UpdateNumOfProjectilesStat(value);
-                playerStats.GetAttackSpeedStat().AddModifier(new StatModifier(value));
+                playerStats.GetAttackSpeedStat().AddModifier(new StatModifier(secondaryValue));
                 break;
 
             case UpgradeType.ADD_PIERCE: // Add pierce and decreases DMG
                 playerStats.UpdatePierceValueStat(value);
-                playerStats.GetDamageStat().AddModifier(new StatModifier(value));
+                playerStats.GetDamageStat().AddModifier(new StatModifier(secondaryValue));
                 break;
         }
     }

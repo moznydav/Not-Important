@@ -185,7 +185,7 @@ public class AStar : MonoBehaviour
 
             if (x == end.Item1 && y == end.Item2)
             {
-                Debug.Log("Processed nodes" + processedNodes);
+                //Debug.Log("Processed nodes" + processedNodes);
                 return BuildPath(parents, end);
             }
 

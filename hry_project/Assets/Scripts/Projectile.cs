@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] float projectileSpeed = 20f;
     [SerializeField] float lifespan = 1f;
-    [SerializeField] int ricochet = 1;
+    [SerializeField] int ricochet = 2;
     [SerializeField] int pierce = 0;
     [SerializeField] int pierceDamageModifier = 3;
 
@@ -16,6 +16,7 @@ public class Projectile : MonoBehaviour
     bool attackDone = false;
     Rigidbody2D rigidBody;
     Vector2 direction;
+    string lastHit = "Karel";
 
     private void Awake()
     {
@@ -26,17 +27,23 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //Debug.Log("Pierce value: " + pierce);
         if (!attackDone)
         {
             var other = collision.collider;
             Stats stats = other.GetComponent<Stats>();
 
-            if (stats)
+            if (other.tag == Constants.DESTROYABLE_TAG)
+            {
+                var destroyable = other.GetComponent<Destroyable>();
+                destroyable.Destroy();
+            }
+            else if (stats && lastHit != other.name)
             {
                 stats.DealDamage(damage);
+                lastHit = other.name;
             }
-
-            if (other.name == "Walls" && ricochet-- > 0)
+            else if ( ricochet-- > 0)
             {
                 var contact = collision.GetContact(0);
 
@@ -46,30 +53,19 @@ public class Projectile : MonoBehaviour
 
                 return;
             }
-            else
-            {
-                Destroy(gameObject);
-            }
 
-            if (other.tag == Constants.DESTROYABLE_TAG)
-            {
-                var destroyable = other.GetComponent<Destroyable>();
-                destroyable.Destroy();
-            }
+            
 
             attackDone = true;
-            // Debug.Log("HIT " + other.name);
-
-            if(pierce-- == 0)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                damage = damage / pierceDamageModifier;
-            }
-            
+            //Debug.Log("HIT " + other.name);
+            Destroy(gameObject);
         }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        Debug.Log("TRIGGER OFF");
+        GetComponent<Collider2D>().isTrigger = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

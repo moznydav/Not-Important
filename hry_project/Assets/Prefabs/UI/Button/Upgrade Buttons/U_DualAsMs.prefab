@@ -23,7 +23,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6838375470009203175}
   m_Layer: 5
-  m_Name: U_attack_speed
+  m_Name: U_DualAsMs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,9 @@ PrefabInstance:
     - target: {fileID: 6294191559353108692, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
       propertyPath: m_Text
-      value: ATTACK SPEED +
+      value: 'A. SPEED +
+
+        M. SPEED +'
       objectReference: {fileID: 0}
     - target: {fileID: 6294191559353108692, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
@@ -90,7 +92,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11400000, guid: 16b43bc2fd12fe04d9451e261a22493b,
+      objectReference: {fileID: 11400000, guid: 4269ffa30286d3344aeefb671acafea3,
         type: 2}
     - target: {fileID: 6294191560235021665, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
