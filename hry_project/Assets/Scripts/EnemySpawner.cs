@@ -10,13 +10,11 @@ public class EnemySpawner : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
     }
 
-    public void Spawn(GameObject[] types, int count)
+    public void Spawn(GameObject[] types)
     {
         for (int i = 0; i < types.Length; i++) {
-            for (int j = 0; j < count; j++) {
-                gameManager.currentEnemyCount++;
-                Instantiate(types[i], transform.position, Quaternion.identity);
-            }
+            gameManager.currentEnemyCount++;
+            Instantiate(types[i], transform.position, Quaternion.identity);
         }
     }    
 }

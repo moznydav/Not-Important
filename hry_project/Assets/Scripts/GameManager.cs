@@ -10,9 +10,10 @@ public class GameManager : Singleton<GameManager>
 {
     public bool isGamePaused = false;
     [SerializeField] float waveInterval;
-    [SerializeField] int enemyCountMultiplier = 3;
+    [SerializeField] int enemyPowerMultiplier;
     [SerializeField] EnemySpawner[] enemySpawners;
     [SerializeField] GameObject[] enemyTypes;
+    [SerializeField] int[] enemyPowers;
     [SerializeField] public GameObject pauseMenu;
     [SerializeField] public GameObject upgradeMenu;
     [SerializeField] public GameObject DeathScreen;
@@ -101,12 +102,18 @@ public class GameManager : Singleton<GameManager>
         }
         print("Wave " + waveNumber + " started");
 
-        MakeNewChosenTypes(activeEnemyTypes);
+        int[] chosenPowers = MakeNewChosenTypes(activeEnemyTypes);
+        float desiredTotalPower = waveNumber * enemyPowerMultiplier;
+        int totalBatches = (int)Math.Round(desiredTotalPower / chosenPowers.Sum());
+        print("total batches: " + totalBatches);
 
-        //waveNumber * enemyCountMultiplier
-
-        foreach (EnemySpawner spawner in enemySpawners) {
-            spawner.Spawn(chosenTypes, 1);
+        int index = 0;
+        int counter = 0;
+        while (counter < totalBatches) {
+            print("spawning...");
+            enemySpawners[index].Spawn(chosenTypes);
+            index += 1;
+            counter += 1;
         }
     }
 
@@ -115,20 +122,21 @@ public class GameManager : Singleton<GameManager>
         enemySpawners = newEnemySpawners;
     }
 
-    void MakeNewChosenTypes(int length) {
+    int[] MakeNewChosenTypes(int length) {
         Debug.Log("Active enemy types" + length);
         chosenTypes = new GameObject[length];
+        int[] chosenPowers = new int[length];
         for(int i = 0; i < length; i++) {
-            chosenTypes[i] = enemyTypes[UnityEngine.Random.Range(0, length)];
+            int index = UnityEngine.Random.Range(0, length);
+            chosenTypes[i] = enemyTypes[index];
+            chosenPowers[i] = enemyPowers[index];
         }
+        return chosenPowers;
     }
 
     public void ScheduleWaveStart()
     {
-        //print("Scheduling wave start"); 
         Invoke("WaveStart", waveInterval);
-
-        //waveManager.WaveStart();
     }
 
     public void ActivateUpgradeMenu()
