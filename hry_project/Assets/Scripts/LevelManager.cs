@@ -17,7 +17,7 @@ public class LevelManager : MonoBehaviour
         levels[levelNumber - 1].SetActive(false);
         levels[levelNumber].SetActive(true);
 
-        if (levelNumber <= 7) {
+        if (levelNumber < 7) {
             levelNumber++;
         } else {
             Debug.Log("Final level");

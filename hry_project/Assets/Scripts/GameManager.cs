@@ -94,6 +94,7 @@ public class GameManager : Singleton<GameManager>
     {
         waveNumber++;
         if (waveNumber % waveToLevelRatio == 0) {
+            Debug.Log("NextLevel");
             levelManager.SetupNextLevel();
             if (activeEnemyTypes < enemyTypes.Length) {
                 activeEnemyTypes++;

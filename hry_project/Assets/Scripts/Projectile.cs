@@ -62,12 +62,6 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        Debug.Log("TRIGGER OFF");
-        GetComponent<Collider2D>().isTrigger = false;
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!attackDone)
