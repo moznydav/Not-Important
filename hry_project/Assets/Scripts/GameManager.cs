@@ -10,7 +10,7 @@ public class GameManager : Singleton<GameManager>
 {
     public bool isGamePaused = false;
     [SerializeField] float waveInterval;
-    [SerializeField] int enemyPowerMultiplier;
+    [SerializeField] float enemyPowerMultiplier;
     [SerializeField] EnemySpawner[] enemySpawners;
     [SerializeField] GameObject[] enemyTypes;
     [SerializeField] int[] enemyPowers;
