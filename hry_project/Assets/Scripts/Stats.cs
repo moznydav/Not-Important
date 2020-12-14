@@ -150,4 +150,8 @@ public class Stats : MonoBehaviour
 
         blink = false;
     }
+
+    public void UpdateSpeed(StatModifier modifier) {
+        moveSpeed.AddModifier(modifier);
+    }
 }

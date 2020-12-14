@@ -192,8 +192,8 @@ public class Player : MonoBehaviour
 
     private IEnumerator AttackCooldown()
     {
-        Debug.Log("COOLDOWN START!");
-        Debug.Log("AttackSpeed: " + playerStats.attackSpeed.value);
+        //Debug.Log("COOLDOWN START!");
+        //Debug.Log("AttackSpeed: " + playerStats.attackSpeed.value);
         anim.SetBool("Attack Cooldown", true);
         yield return new WaitForSeconds(playerStats.attackSpeed.value);
         anim.SetBool("Attack Cooldown", false);

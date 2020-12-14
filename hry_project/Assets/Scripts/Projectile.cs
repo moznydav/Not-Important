@@ -54,10 +54,9 @@ public class Projectile : MonoBehaviour
                 return;
             }
 
-            
-
             attackDone = true;
             //Debug.Log("HIT " + other.name);
+
             Destroy(gameObject);
         }
     }
@@ -71,12 +70,14 @@ public class Projectile : MonoBehaviour
             if (stats)
             {
                 stats.DealDamage(damage);
+                attackDone = true;
+                Destroy(gameObject);
             }
 
-            attackDone = true;
+            
             // Debug.Log("HIT " + other.name);
 
-            Destroy(gameObject);
+           
         }
     }
 

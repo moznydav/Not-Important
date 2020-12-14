@@ -15,7 +15,7 @@ public class UpgradeButton : MonoBehaviour
 
     public void Close()
     {
-        gameManager.Resume();
-        gameManager.ScheduleWaveStart();
+        gameManager.ActivateEnvironmentMenu();
+        //gameManager.ScheduleWaveStart();
     }
 }

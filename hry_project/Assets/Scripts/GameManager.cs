@@ -17,6 +17,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] public GameObject pauseMenu;
     [SerializeField] public GameObject upgradeMenu;
     [SerializeField] public GameObject DeathScreen;
+    [SerializeField] public GameObject environmentMenu;
     [SerializeField] List<GameObject> listOfUpgrades;
     [SerializeField] GameObject upgradeChest;
     [SerializeField] int waveToLevelRatio = 2;
@@ -55,10 +56,10 @@ public class GameManager : Singleton<GameManager>
         isGamePaused = false;
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
-        if (upgradeMenu.activeInHierarchy)
+        if (environmentMenu.activeInHierarchy)
         {
-            upgradeMenu.GetComponent<UpgradeScreen>().Close();
-            upgradeMenu.SetActive(false);
+            environmentMenu.GetComponent<EnvironmentScreen>().Close();
+            environmentMenu.SetActive(false);
         }
         Cursor.visible = false;
     }
@@ -152,6 +153,15 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = 0f;
         upgradeMenu.GetComponent<UpgradeScreen>().Init();
 
+    }
+
+    public void ActivateEnvironmentMenu() {
+        if (upgradeMenu.activeInHierarchy) {
+            upgradeMenu.GetComponent<UpgradeScreen>().Close();
+            upgradeMenu.SetActive(false);
+        }
+        environmentMenu.SetActive(true);
+        environmentMenu.GetComponent<EnvironmentScreen>().Init();
     }
 
     public void SpawnChest()
