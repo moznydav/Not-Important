@@ -59,7 +59,7 @@ PrefabInstance:
     - target: {fileID: 6294191559353108692, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
       propertyPath: m_Text
-      value: SLIME POOLS
+      value: TAR POOLS
       objectReference: {fileID: 0}
     - target: {fileID: 6294191559353108692, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
