@@ -110,6 +110,14 @@ public class GameManager : Singleton<GameManager>
 
         int index = 0;
         int counter = 0;
+
+        if (enemySpawners.Length == 0) {
+            return;
+        }
+
+        /*
+        Debug.Log("SPAWNERS " + enemySpawners.Length);
+
         while (counter < totalBatches) {
             print("spawning...");
             StartCoroutine(enemySpawners[index].Spawn(chosenTypes)) ;
@@ -120,6 +128,7 @@ public class GameManager : Singleton<GameManager>
                 index = 0;
             }
         }
+        */
     }
 
     public void SetupNextSpawners(EnemySpawner[] newEnemySpawners) {
@@ -198,16 +207,16 @@ public class GameManager : Singleton<GameManager>
                     ActivateUpgradeMenu();
                     Destroy(spawnedChest); // start destroy animation
                 }
-                
+
             }
         }
-        // rework 
+        // rework
         if (Input.GetButtonDown("Fire3"))
         {
             SpawnChest();
         }
         //testing
-        
+
         if (Input.GetButtonDown("LevelSwitch")) {
             levelManager.SetupNextLevel();
         }

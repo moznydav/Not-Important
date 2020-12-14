@@ -6,6 +6,7 @@ public class ExplosiveBarrel : Destroyable
 {
     [SerializeField] float damage = 50f;
     [SerializeField] GameObject explosionVFX;
+    [SerializeField] bool isTrigger = false;
 
     BoxCollider2D collider;
     SpriteRenderer spriteRenderer;
@@ -16,6 +17,11 @@ public class ExplosiveBarrel : Destroyable
 
     void Awake()
     {
+        if (isTrigger)
+        {
+            StartCoroutine(TriggerExplosion());
+        }
+
         collider = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         pathfinding = (AStar) GameObject.FindWithTag(Constants.ASTAR_TAG).GetComponent(typeof(AStar));
@@ -34,10 +40,18 @@ public class ExplosiveBarrel : Destroyable
         StartCoroutine(HandleExplosion());
     }
 
+
+
     private bool CanHit(Vector3 pos)
     {
         Vector3 position = transform.position;
         return Vector3.Distance(pos, position) <= radius && pathfinding.IsPathClear(pos, position, true);
+    }
+
+    private IEnumerator TriggerExplosion()
+    {
+        yield return new WaitForSeconds(15f);
+        OnDestroy();
     }
 
     private IEnumerator HandleDamage()
@@ -46,9 +60,6 @@ public class ExplosiveBarrel : Destroyable
         ClearMap();
 
         yield return new WaitForSeconds(.1f);
-        spriteRenderer.color = new Color(.0f, .0f, .0f, .0f);
-
-        yield return new WaitForSeconds(.2f);
         var entities = FindObjectsOfType(typeof(Stats)) as Stats[];
 
         foreach(Stats item in entities)
@@ -68,6 +79,9 @@ public class ExplosiveBarrel : Destroyable
                 item.Destroy();
             }
         }
+
+        yield return new WaitForSeconds(.05f);
+        spriteRenderer.color = new Color(.0f, .0f, .0f, .0f);
     }
 
     private IEnumerator HandleExplosion()
