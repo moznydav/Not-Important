@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class GolemProjectile : MonoBehaviour
 {
-    private float damage = 20f;
-    private bool followPlayer;
-    Collider2D dmgArea;
-    GameObject player;
+    [SerializeField] private float damage = 20f;
+    [SerializeField] private bool followPlayer;
+    [SerializeField] Collider2D dmgArea;
+    [SerializeField] GameObject player;
 
     private void Awake()
     {
         dmgArea = GetComponent<Collider2D>();
         dmgArea.enabled = false;
         followPlayer = true;
-        player = GameObject.FindWithTag(Constants.PLAYER_TAG);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -65,5 +64,9 @@ public class GolemProjectile : MonoBehaviour
         this.damage = damage;
     }
 
+    public void SetPlayer(GameObject player)
+    {
+        this.player = player;
+    }
    
 }
