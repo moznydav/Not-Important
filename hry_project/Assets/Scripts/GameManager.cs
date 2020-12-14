@@ -170,8 +170,11 @@ public class GameManager : Singleton<GameManager>
         {
             Destroy(spawnedChest);
         }
-        Vector3 chestPosition = GameObject.FindWithTag(Constants.PLAYER_TAG).transform.position;
-        chestPosition.x += 5;
+
+        AStar pathfinding = (AStar)GameObject.FindWithTag(Constants.ASTAR_TAG).GetComponent(typeof(AStar));
+        Vector3 playerPosition = GameObject.FindWithTag(Constants.PLAYER_TAG).transform.position;
+        Vector3 chestPosition = pathfinding.FindFreeTileInRange(playerPosition, 5, 7);
+
         spawnedChest = Instantiate(upgradeChest, chestPosition, Quaternion.identity);
     }
 
