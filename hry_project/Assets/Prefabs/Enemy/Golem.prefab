@@ -107,7 +107,8 @@ MonoBehaviour:
   baseNumOfProjectiles: 0
   baseProjectileSpeed: 0
   basePierce: 0
-  VFX: []
+  VFX:
+  - {fileID: 5790442172002470382, guid: ce3976915f689704ca8159b554c6d22e, type: 3}
   immuneDuration: 0.2
   blinkBody: []
   blinkDuration: 0.1
