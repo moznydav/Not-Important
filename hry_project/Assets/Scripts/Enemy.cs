@@ -170,4 +170,9 @@ public class Enemy : MonoBehaviour
     {
         spawning = false;
     }
+
+    private void OnDestroy()
+    {
+        FindObjectOfType<GameManager>().EnemyKilled();
+    }
 }
