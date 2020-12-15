@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 6534814302608795108}
   - component: {fileID: 6534814302608795110}
   - component: {fileID: 6534814302608795111}
+  - component: {fileID: 6534814301680111695}
+  - component: {fileID: 6534814301680111696}
+  - component: {fileID: 6534814301680111694}
   m_Layer: 11
   m_Name: Golem
   m_TagString: Untagged
@@ -26,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6534814302608795115}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -145.37155, y: 166.85095, z: 35.870613}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -70,12 +73,12 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -1758626483
+  m_SortingLayer: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: d04b0e312d7f6d545bd5dd5770638ede, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 3.75, y: 3.75}
@@ -96,12 +99,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10457ac6c3a1b0b45a817ab6c10ec4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthbar: {fileID: 0}
   baseMaxHealth: 150
   baseAttackSpeed: 3
   baseMoveSpeed: 150
   baseDamage: 75
-  isAlive: 1
+  baseNumOfProjectiles: 0
+  baseProjectileSpeed: 0
+  basePierce: 0
+  VFX:
+  - {fileID: 5790442172002470382, guid: ce3976915f689704ca8159b554c6d22e, type: 3}
+  immuneDuration: 0.2
+  blinkBody: []
+  blinkDuration: 0.1
   currentHealth: 0
+  isAlive: 1
 --- !u!70 &6534814302608795111
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -118,3 +130,70 @@ CapsuleCollider2D:
   m_Offset: {x: 0.02579546, y: -0.20625019}
   m_Size: {x: 2.253831, y: 3.1312466}
   m_Direction: 0
+--- !u!50 &6534814301680111695
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6534814302608795115}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 50
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!95 &6534814301680111696
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6534814302608795115}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0f4d70aa7d31d494fbe9302d213e9b87, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6534814301680111694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6534814302608795115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17eae570e873594c9232b5e73074532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keepDistance: 10
+  keepDistanceError: 10
+  player: {fileID: 0}
+  rigidBody: {fileID: 0}
+  stats: {fileID: 0}
+  distancing: 0
+  spawning: 0
+  projectile: {fileID: 7495863457921755905, guid: e7f57b68c0a297f46a00e4df6f074bc7,
+    type: 3}
+  attackCooldown: 5
+  meleeDamageCooldown: 1
+  anim: {fileID: 0}
+  attackOnCooldown: 0
+  attackDone: 0
+  aimDirection: {x: 0, y: 0, z: 0}

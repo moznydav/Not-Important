@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     int lastPathIndex;
     [SerializeField] bool distancing;
     bool canRun = true;
-
+    public bool spawning;
     Tuple<int, int> lastPlayerCell;
 
     void Awake()
@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         pathfinding = (AStar) GameObject.FindWithTag(Constants.ASTAR_TAG).GetComponent(typeof(AStar));
         player = GameObject.FindWithTag(Constants.PLAYER_TAG);
+        spawning = true;
     }
 
     public void HandleMovement()
@@ -62,7 +63,12 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
+        //TODO: fix all enemies for spawn variable!
+        if (!spawning)
+        {
+            Move();
+        }
+        
     }
 
     private bool KeepDistance()
@@ -158,5 +164,10 @@ public class Enemy : MonoBehaviour
     public void SetCanRun(bool canRun)
     {
         this.canRun = canRun;
+    }
+
+    public void SpawnDone()
+    {
+        spawning = false;
     }
 }

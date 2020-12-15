@@ -877,7 +877,7 @@ PrefabInstance:
     - target: {fileID: 8551619868542897456, guid: 1efc1a62e73f0294a861f55b13152c34,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1efc1a62e73f0294a861f55b13152c34, type: 3}
@@ -17158,6 +17158,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dark Mage (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1692508926896011952, guid: 878d79d8ceac77a46a54aabd52ee8566,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1692508926896011958, guid: 878d79d8ceac77a46a54aabd52ee8566,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17779,6 +17784,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4719806750646184786, guid: 3e2c3cad60483d341a516de669eaa9e1,
         type: 3}
+      propertyPath: enemySpawners.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719806750646184786, guid: 3e2c3cad60483d341a516de669eaa9e1,
+        type: 3}
       propertyPath: enemySpawners.Array.data[0]
       value: 
       objectReference: {fileID: 338759393}
@@ -18025,12 +18035,12 @@ PrefabInstance:
     - target: {fileID: 6534814302608795109, guid: 2199403c4cf355542a1d43c55d72a015,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -145.37155
+      value: -140.81
       objectReference: {fileID: 0}
     - target: {fileID: 6534814302608795109, guid: 2199403c4cf355542a1d43c55d72a015,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 166.85095
+      value: 163.14
       objectReference: {fileID: 0}
     - target: {fileID: 6534814302608795109, guid: 2199403c4cf355542a1d43c55d72a015,
         type: 3}
@@ -18077,20 +18087,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6534814302608795111, guid: 2199403c4cf355542a1d43c55d72a015,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6534814302608795115, guid: 2199403c4cf355542a1d43c55d72a015,
         type: 3}
       propertyPath: m_Name
       value: Golem
-      objectReference: {fileID: 0}
-    - target: {fileID: 6534814302608795115, guid: 2199403c4cf355542a1d43c55d72a015,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2199403c4cf355542a1d43c55d72a015, type: 3}

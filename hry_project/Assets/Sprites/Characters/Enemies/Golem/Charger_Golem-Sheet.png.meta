@@ -1,0 +1,1402 @@
+fileFormatVersion: 2
+guid: 6d344582cf3181643980b8945a27f79f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8548867361473033283
+    second: Charger_Golem-Sheet_0
+  - first:
+      213: -8195350546026441103
+    second: Charger_Golem-Sheet_1
+  - first:
+      213: 8477709194227831368
+    second: Charger_Golem-Sheet_2
+  - first:
+      213: -2692286649449075931
+    second: Charger_Golem-Sheet_3
+  - first:
+      213: 3464280733649765225
+    second: Charger_Golem-Sheet_4
+  - first:
+      213: 7214555685711306098
+    second: Charger_Golem-Sheet_5
+  - first:
+      213: 5851171927840499248
+    second: Charger_Golem-Sheet_6
+  - first:
+      213: 6264492987788910870
+    second: Charger_Golem-Sheet_7
+  - first:
+      213: 8506545431275296894
+    second: Charger_Golem-Sheet_8
+  - first:
+      213: 4102461475559774612
+    second: Charger_Golem-Sheet_9
+  - first:
+      213: -7386832559321177829
+    second: Charger_Golem-Sheet_10
+  - first:
+      213: 1492425065758136064
+    second: Charger_Golem-Sheet_11
+  - first:
+      213: -2421340316516906758
+    second: Charger_Golem-Sheet_12
+  - first:
+      213: 8574196653379390978
+    second: Charger_Golem-Sheet_13
+  - first:
+      213: -2318161977061845347
+    second: Charger_Golem-Sheet_14
+  - first:
+      213: -7151341299829886325
+    second: Charger_Golem-Sheet_15
+  - first:
+      213: 335943269251112589
+    second: Charger_Golem-Sheet_16
+  - first:
+      213: -1402163926409547884
+    second: Charger_Golem-Sheet_17
+  - first:
+      213: -1101287500559445768
+    second: Charger_Golem-Sheet_18
+  - first:
+      213: 5704694193161725615
+    second: Charger_Golem-Sheet_19
+  - first:
+      213: 1706163455370353386
+    second: Charger_Golem-Sheet_20
+  - first:
+      213: 6007118931040321395
+    second: Charger_Golem-Sheet_21
+  - first:
+      213: 4085954133085586060
+    second: Charger_Golem-Sheet_22
+  - first:
+      213: 6349638553604077390
+    second: Charger_Golem-Sheet_23
+  - first:
+      213: 3022343425342232596
+    second: Charger_Golem-Sheet_24
+  - first:
+      213: -1476444343206365055
+    second: Charger_Golem-Sheet_25
+  - first:
+      213: -7870371240039592375
+    second: Charger_Golem-Sheet_26
+  - first:
+      213: -2101260530292857998
+    second: Charger_Golem-Sheet_27
+  - first:
+      213: 1831400595566617864
+    second: Charger_Golem-Sheet_28
+  - first:
+      213: -1236562983691595315
+    second: Charger_Golem-Sheet_29
+  - first:
+      213: 5965600783733989387
+    second: Charger_Golem-Sheet_30
+  - first:
+      213: 7499093890194153318
+    second: Charger_Golem-Sheet_31
+  - first:
+      213: 1464383472301035500
+    second: Charger_Golem-Sheet_32
+  - first:
+      213: -3528108903717298155
+    second: Charger_Golem-Sheet_33
+  - first:
+      213: 762531039692694190
+    second: Charger_Golem-Sheet_34
+  - first:
+      213: 3936985228037221321
+    second: Charger_Golem-Sheet_35
+  - first:
+      213: 1616249413723486798
+    second: Charger_Golem-Sheet_36
+  - first:
+      213: -4431533566409157770
+    second: Charger_Golem-Sheet_37
+  - first:
+      213: 5036761436246664433
+    second: Charger_Golem-Sheet_38
+  - first:
+      213: 4110884859215614753
+    second: Charger_Golem-Sheet_39
+  - first:
+      213: 833767372414449820
+    second: Charger_Golem-Sheet_40
+  - first:
+      213: 5054427975372428481
+    second: Charger_Golem-Sheet_41
+  - first:
+      213: -8837866325933881670
+    second: Charger_Golem-Sheet_42
+  - first:
+      213: -3538852284790893411
+    second: Charger_Golem-Sheet_43
+  - first:
+      213: -4677991626578204810
+    second: Charger_Golem-Sheet_44
+  - first:
+      213: -4287490427520596459
+    second: Charger_Golem-Sheet_45
+  - first:
+      213: -4695411638094163224
+    second: Charger_Golem-Sheet_46
+  - first:
+      213: 1163775536702093435
+    second: Charger_Golem-Sheet_47
+  - first:
+      213: 3928781735441946045
+    second: Charger_Golem-Sheet_48
+  - first:
+      213: -6679855991871687738
+    second: Charger_Golem-Sheet_49
+  - first:
+      213: -780612359538953909
+    second: Charger_Golem-Sheet_50
+  - first:
+      213: -8549334009632970101
+    second: Charger_Golem-Sheet_51
+  - first:
+      213: 9190199769229744980
+    second: Charger_Golem-Sheet_52
+  - first:
+      213: 4129934090863014721
+    second: Charger_Golem-Sheet_53
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 450
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 344f788429da3a670800000000000000
+      internalID: 8548867361473033283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 450
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1765a466914444e80800000000000000
+      internalID: -8195350546026441103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 450
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8425307689fd6a570800000000000000
+      internalID: 8477709194227831368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 450
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52baf028e8313aad0800000000000000
+      internalID: -2692286649449075931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 450
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9638c6309f8931030800000000000000
+      internalID: 3464280733649765225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 450
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27dd81bfb204f1460800000000000000
+      internalID: 7214555685711306098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 036aba61ed9833150800000000000000
+      internalID: 5851171927840499248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 360
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61165138e23ffe650800000000000000
+      internalID: 6264492987788910870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 360
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e78d2e800025d0670800000000000000
+      internalID: 8506545431275296894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 360
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 499177be9fedee830800000000000000
+      internalID: 4102461475559774612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 360
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b112f56ace2bc7990800000000000000
+      internalID: -7386832559321177829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 360
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 007176aa0b826b410800000000000000
+      internalID: 1492425065758136064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 360
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af88da99fcba56ed0800000000000000
+      internalID: -2421340316516906758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 360
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e850f9d6aadf670800000000000000
+      internalID: 8574196653379390978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 360
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d965969c6fb34dfd0800000000000000
+      internalID: -2318161977061845347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 360
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b823f0c2af451cc90800000000000000
+      internalID: -7151341299829886325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 270
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8e556c9f9289a400800000000000000
+      internalID: 335943269251112589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 270
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49fed7186538a8ce0800000000000000
+      internalID: -1402163926409547884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 270
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f093956ad077b0f0800000000000000
+      internalID: -1101287500559445768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 270
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa663a7d4252b2f40800000000000000
+      internalID: 5704694193161725615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 270
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea5a1e7f928da710800000000000000
+      internalID: 1706163455370353386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 270
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37fbe2837d29d5350800000000000000
+      internalID: 6007118931040321395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 270
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c820b1fb2a934b830800000000000000
+      internalID: 4085954133085586060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 270
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4732b76f927e1850800000000000000
+      internalID: 6349638553604077390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 270
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 418d2c0155581f920800000000000000
+      internalID: 3022343425342232596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 270
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 188bc8041bd928be0800000000000000
+      internalID: -1476444343206365055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 180
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94e4df26e03d6c290800000000000000
+      internalID: -7870371240039592375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 180
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 273685f3ea2d6d2e0800000000000000
+      internalID: -2101260530292857998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 180
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 805ef2473217a6910800000000000000
+      internalID: 1831400595566617864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 180
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc15aa69488d6dee0800000000000000
+      internalID: -1236562983691595315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 180
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b00a1424e421ac250800000000000000
+      internalID: 5965600783733989387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 180
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66f13564922221860800000000000000
+      internalID: 7499093890194153318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 180
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cefc4796209825410800000000000000
+      internalID: 1464383472301035500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 180
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 510a90115a3a90fc0800000000000000
+      internalID: -3528108903717298155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 180
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea2a717c0fd059a00800000000000000
+      internalID: 762531039692694190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 180
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cb6e13b43bf2a630800000000000000
+      internalID: 3936985228037221321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 90
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4afb6d47421e6610800000000000000
+      internalID: 1616249413723486798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 90
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67356fb53b70082c0800000000000000
+      internalID: -4431533566409157770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 90
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f46ed127db26e540800000000000000
+      internalID: 5036761436246664433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 90
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1231412cffbcc0930800000000000000
+      internalID: 4110884859215614753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 90
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c98f21af103229b00800000000000000
+      internalID: 833767372414449820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 90
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c4dedec67fe42640800000000000000
+      internalID: 5054427975372428481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 90
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab6035ec667995580800000000000000
+      internalID: -8837866325933881670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 90
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d94957cb89873eec0800000000000000
+      internalID: -3538852284790893411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 90
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 677ed83966f641fb0800000000000000
+      internalID: -4677991626578204810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 90
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5164fb91c26cf74c0800000000000000
+      internalID: -4287490427520596459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e299251efb86deb0800000000000000
+      internalID: -4695411638094163224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b78fa674faf862010800000000000000
+      internalID: 1163775536702093435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db55f0d3c26d58630800000000000000
+      internalID: 3928781735441946045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c339b5ed526c43a0800000000000000
+      internalID: -6679855991871687738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 0
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b41b662e135ba25f0800000000000000
+      internalID: -780612359538953909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 0
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8a29a9b30aaa5980800000000000000
+      internalID: -8549334009632970101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45bd0d39ff52a8f70800000000000000
+      internalID: 9190199769229744980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_Golem-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 0
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1437aaf9c29705930800000000000000
+      internalID: 4129934090863014721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b3e5046f957c36e46ab281abac2c8e46
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
