@@ -118,6 +118,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 0}
+--- !u!114 &4119496371244305486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2987186240400589247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152963ab34dbff847a22a5021f4a7dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
 --- !u!1 &3266962952495913765
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5052024109994577320
 RectTransform:
   m_ObjectHideFlags: 0
@@ -347,10 +360,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offensiveUpgrades:
-  - {fileID: 6838375470009203174, guid: 22aa3610f24046a4baece4acb10e6ec7, type: 3}
-  - {fileID: 6838375470009203174, guid: 036aa2a230ef6c14c89e691697ee9c85, type: 3}
   - {fileID: 6838375470009203174, guid: a71a2e2f1d3e3c14684642820def23a4, type: 3}
+  - {fileID: 6838375470009203174, guid: 036aa2a230ef6c14c89e691697ee9c85, type: 3}
   - {fileID: 6838375470009203174, guid: d94aa8d09e3987147b406ee02cb5a0a4, type: 3}
+  - {fileID: 6838375470009203174, guid: 88c585d36a37c1846a88a72229ec5e0d, type: 3}
   healthUpgrades:
   - {fileID: 6838375470009203174, guid: c7ef8b7c63a120a44957ccb7811ad673, type: 3}
   - {fileID: 6838375470009203174, guid: a71a2e2f1d3e3c14684642820def23a4, type: 3}
@@ -572,7 +585,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2094601097}
+      objectReference: {fileID: 4119496371244305486}
     - target: {fileID: 6294191560235021665, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
