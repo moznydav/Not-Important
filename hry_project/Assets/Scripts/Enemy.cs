@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
 
     public void InitializeEnemy()
     {
+        GetComponent<Collider2D>().enabled = false;
         stats = GetComponent<Stats>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         // anim = GetComponent<Animator>();
@@ -168,6 +169,7 @@ public class Enemy : MonoBehaviour
 
     public void SpawnDone()
     {
+        GetComponent<Collider2D>().enabled = true;
         spawning = false;
     }
 
