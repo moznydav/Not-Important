@@ -6,8 +6,8 @@ using UnityEngine;
 public class UpgradeScreen : MonoBehaviour
 {
     [SerializeField] GameObject[] offensiveUpgrades;
-    [SerializeField] GameObject[] healthUpgrades;
-    [SerializeField] GameObject[] movementUpgrades;
+    [SerializeField] GameObject[] DefenceUpgrades;
+    [SerializeField] GameObject[] UtilityUpgrades;
     [Header("Places")]
     [SerializeField] GameObject offensivePlace;
     [SerializeField] GameObject healthPlace;
@@ -21,14 +21,14 @@ public class UpgradeScreen : MonoBehaviour
 
     public void Init()
     {
-        int randomIndex = Mathf.RoundToInt(Random.Range(0, offensiveUpgrades.Length));
+        int randomIndex = Mathf.RoundToInt(Random.Range(0, offensiveUpgrades.Length - 1));
         currentOffensive = Instantiate(offensiveUpgrades[randomIndex], offensivePlace.transform);
 
-        randomIndex = Mathf.RoundToInt(Random.Range(0, healthUpgrades.Length));
-        currentHealth = Instantiate(healthUpgrades[randomIndex], healthPlace.transform);
+        randomIndex = Mathf.RoundToInt(Random.Range(0, DefenceUpgrades.Length - 1));
+        currentHealth = Instantiate(DefenceUpgrades[randomIndex], healthPlace.transform);
 
-        randomIndex = Mathf.RoundToInt(Random.Range(0, movementUpgrades.Length));
-        currentMovement = Instantiate(movementUpgrades[randomIndex], movementPlace.transform);
+        randomIndex = Mathf.RoundToInt(Random.Range(0, UtilityUpgrades.Length - 1));
+        currentMovement = Instantiate(UtilityUpgrades[randomIndex], movementPlace.transform);
 
     }
 

@@ -364,13 +364,11 @@ MonoBehaviour:
   - {fileID: 6838375470009203174, guid: 036aa2a230ef6c14c89e691697ee9c85, type: 3}
   - {fileID: 6838375470009203174, guid: d94aa8d09e3987147b406ee02cb5a0a4, type: 3}
   - {fileID: 6838375470009203174, guid: 88c585d36a37c1846a88a72229ec5e0d, type: 3}
-  healthUpgrades:
-  - {fileID: 6838375470009203174, guid: c7ef8b7c63a120a44957ccb7811ad673, type: 3}
-  - {fileID: 6838375470009203174, guid: a71a2e2f1d3e3c14684642820def23a4, type: 3}
-  movementUpgrades:
-  - {fileID: 6838375470009203174, guid: 7cba1142780a2ac448f0c2ef251b4d60, type: 3}
-  - {fileID: 6838375470009203174, guid: 22aa3610f24046a4baece4acb10e6ec7, type: 3}
-  - {fileID: 6838375470009203174, guid: 002410b3a0a542a4b9692e7c67ab2103, type: 3}
+  DefenceUpgrades:
+  - {fileID: 6838375470009203174, guid: ae32c2529b7d44f41a056213acd94950, type: 3}
+  UtilityUpgrades:
+  - {fileID: 6838375470009203174, guid: ae32c2529b7d44f41a056213acd94950, type: 3}
+  - {fileID: 6838375470009203174, guid: ae32c2529b7d44f41a056213acd94950, type: 3}
   offensivePlace: {fileID: 308387233}
   healthPlace: {fileID: 1560823678}
   movementPlace: {fileID: 953676165}

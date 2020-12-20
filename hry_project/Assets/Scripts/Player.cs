@@ -147,7 +147,7 @@ public class Player : MonoBehaviour
         if (!isShooting)
         {
             isShooting = true;
-            int numOfProjectiles = (int)playerStats.numOfProjectiles.value;
+            int numOfProjectiles = playerStats.numOfProjectiles;
 
             Vector2 Offset = new Vector3(aimDirection.y, -aimDirection.x);
             Offset = Offset / projectileSpreadModifier;
@@ -178,7 +178,12 @@ public class Player : MonoBehaviour
                 shot.GetComponent<Projectile>().SetDamage(playerStats.damage.value);
                 shot.GetComponent<Projectile>().SetDirection(shootDirection);
                 shot.GetComponent<Projectile>().SetProjectileSpeed(playerStats.projectileSpeed.value);
-                shot.GetComponent<Projectile>().SetPierce((int)playerStats.pierceValue.value);
+                shot.GetComponent<Projectile>().SetPierce(playerStats.pierceValue);
+                if (playerStats.hasPoison)
+                {
+                    shot.GetComponent<Projectile>().SetPoison(3, (int)playerStats.poisonDamage.value);
+                    //playerStats.poisonTicks
+                }
             }
 
 

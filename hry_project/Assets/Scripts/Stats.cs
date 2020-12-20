@@ -12,9 +12,9 @@ public class Stats : MonoBehaviour
     [SerializeField] float baseAttackSpeed;
     [SerializeField] float baseMoveSpeed;
     [SerializeField] float baseDamage;
-    [SerializeField] float baseNumOfProjectiles;
+    [SerializeField] int baseNumOfProjectiles;
     [SerializeField] float baseProjectileSpeed;
-    [SerializeField] float basePierce;
+    [SerializeField] int basePierce;
 
 
     [Header("Config")]
@@ -28,21 +28,27 @@ public class Stats : MonoBehaviour
     public CharacterStat attackSpeed;
     public CharacterStat moveSpeed;
     public CharacterStat damage;
-    public CharacterStat numOfProjectiles;
-    public CharacterStat pierceValue;
+    public CharacterStat poisonDamage;
+    public int numOfProjectiles;
+    public int pierceValue;
+    public int poisonTicks;
     public CharacterStat projectileSpeed;
+    private float poisonIntervals = 1.4f;
 
     [Header("For Debug")]
     [SerializeField] public float currentHealth;
     public bool isAlive = true;
     private bool immune = false;
     private bool blink = false;
+    public bool hasPoison = false;
+    private bool poisoned;
+    private Color baseColor = Color.white;
 
     private SpriteRenderer[] spriteRenderer;
 
     public void SetImmune(bool isImmune) { immune = isImmune; }
 
-    private void Start()
+    private void Awake()
     {
         spriteRenderer = new SpriteRenderer[blinkBody.Length];
 
@@ -61,9 +67,11 @@ public class Stats : MonoBehaviour
         attackSpeed = new CharacterStat(baseAttackSpeed);
         moveSpeed = new CharacterStat(baseMoveSpeed);
         damage = new CharacterStat(baseDamage);
-        numOfProjectiles = new CharacterStat(baseNumOfProjectiles);
-        pierceValue = new CharacterStat(basePierce);
+        numOfProjectiles = baseNumOfProjectiles;
+        pierceValue = basePierce;
         projectileSpeed = new CharacterStat(baseProjectileSpeed);
+        poisonDamage = new CharacterStat(0);
+        poisonTicks = 0;
 }
 
     public void UpdateHealthbar()
@@ -113,6 +121,28 @@ public class Stats : MonoBehaviour
         UpdateHealthbar();
     }
 
+    public void ApplyPoison(int numOfTicks, float damage)
+    {
+        if (!poisoned)
+        {
+            poisoned = true;
+            StartCoroutine(HandlePoison(numOfTicks, damage));
+        }
+    }
+
+    private IEnumerator HandlePoison(int ticks, float damage)
+    {
+        //Debug.Log("INIT POISON");
+        updateSpriteColor(Color.green);
+        for(int  i = 0; i < ticks;  i++)
+        {
+            yield return new WaitForSeconds(poisonIntervals);
+           // Debug.Log("POISON TICK");
+            DealDamage(damage);
+        }
+        updateSpriteColor(Color.white);
+        poisoned = false;
+    }
     public void HealToMax()
     {
         currentHealth = maxHealth.value;
@@ -145,13 +175,29 @@ public class Stats : MonoBehaviour
 
         for (int i = 0; i < spriteRenderer.Length; i++)
         {
-            spriteRenderer[i].color = Color.white;
+            spriteRenderer[i].color = baseColor;
         }
 
         blink = false;
     }
 
+    private void updateSpriteColor(Color color)
+    {
+        baseColor = color;
+
+        for (int i = 0; i < spriteRenderer.Length; i++)
+        {
+            spriteRenderer[i].color = Color.white;
+        }
+
+    }
+
     public void UpdateSpeed(StatModifier modifier) {
         moveSpeed.AddModifier(modifier);
+    }
+
+    public void TurnOnPoison(bool hasPoison)
+    {
+        this.hasPoison = hasPoison;
     }
 }

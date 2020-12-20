@@ -11,12 +11,32 @@ public class Upgrade : ScriptableObject
         DAMAGE,
         ATTACK_SPEED,
         MOVE_SPEED,
-        DUAL_DMG_HP, //TODO
-        DUAL_AS_MS, //TODO
-        PROJECTILESPEED_DMG, //TODO
-        ADD_PROJECTILE, //TODO
-        ADD_PIERCE //TODO
-            //TODO: Drawback upgrades
+        DUAL_DMG_HP, 
+        DUAL_AS_MS, 
+        PROJECTILESPEED_DMG,
+        ADD_PROJECTILE, 
+        ADD_PIERCE, 
+        BASE_POISON,
+        POISON_EXPLOSION, // TODO
+        PROJ_EXPLOSION, // TODO
+        RANGE_DAMAGE, // TODO
+        CLOSE_DAMAGE, // TODO
+        SPRAY_AND_PRAY, // TODO
+        THORNS, // TODO
+        BERSERK, // TODO
+        CHAINS, //TODO - 50%dmg off but no rolls
+        LUCKY_CHARM, // TODO - chance to heal to max
+        DAMAGE_AURA, // TODO
+        FIREWALL, // TODO - every 3s imunity for 1s
+        HP_TO_DMG, // TODO - % of HP to dmg
+        POISON_TRAPS, // TODO
+        PARKOUR_BOOTS, // TODO
+        GUPPY_TALISMAN, // TODO
+        UNLIMITED_ROLLS, // TODO
+        POISON_TRAIL // TODO
+
+
+            
     }
 
     [SerializeField] float value = 0f;
@@ -60,13 +80,16 @@ public class Upgrade : ScriptableObject
                 break;
 
             case UpgradeType.ADD_PROJECTILE: // Add projectile and decreases attackspeed
-                playerStats.UpdateNumOfProjectilesStat(value);
+                playerStats.AddProjectileStat((int)value);
                 playerStats.GetAttackSpeedStat().AddModifier(new StatModifier(secondaryValue));
                 break;
 
             case UpgradeType.ADD_PIERCE: // Add pierce and decreases DMG
-                playerStats.UpdatePierceValueStat(value);
+                playerStats.AddPierceStat((int)value);
                 playerStats.GetDamageStat().AddModifier(new StatModifier(secondaryValue));
+                break;
+            case UpgradeType.BASE_POISON:
+                playerStats.UpdatePoisonStat(value);
                 break;
         }
     }

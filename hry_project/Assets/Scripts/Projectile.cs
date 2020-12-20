@@ -10,15 +10,16 @@ public class Projectile : MonoBehaviour
     [SerializeField] int pierce = 0;
     [SerializeField] float pierceDamageModifier = 0.4f;
     [SerializeField] float knockBackValue = 0.6f;
+    [SerializeField] float poisonDamage;
+    [SerializeField] int poisonTicks;
 
-
+    public bool poisoned;
     float damage;
 
     bool attackDone = false;
     Rigidbody2D rigidBody;
     Vector2 direction;
-    string lastHit = "Karel";
-
+    
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -70,8 +71,11 @@ public class Projectile : MonoBehaviour
 
             if (stats)
             {
+                if (poisoned)
+                {
+                stats.ApplyPoison(poisonTicks, poisonDamage);
+                }
                 stats.DealDamage(damage);
-                lastHit = other.name;
                 attackDone = true;
                 other.transform.Translate(direction * knockBackValue);
                 if(pierce > 0)
@@ -122,5 +126,12 @@ public class Projectile : MonoBehaviour
     {
         yield return new WaitForSeconds(lifespan);
         Destroy(gameObject);
+    }
+
+    public void SetPoison(int ticks, int damage)
+    {
+        poisoned = true;
+        poisonTicks = ticks;
+        poisonDamage = damage;
     }
 }

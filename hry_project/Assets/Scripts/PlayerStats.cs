@@ -6,6 +6,7 @@ public class PlayerStats : Stats
 {
     [SerializeField] float rollRegenTime;
     [SerializeField] int maxRolls;
+    [SerializeField] int poisonTicks;
     public RollSupply rollSupply;
     private int rollsRemaining;
     private float lastRegenTime;
@@ -80,13 +81,13 @@ public class PlayerStats : Stats
         return moveSpeed;
     }
 
-    public CharacterStat GetPierceStat()
+    public void AddPierceStat(int value)
     {
-        return pierceValue;
+        pierceValue += value;
     }
-    public CharacterStat GetProjectileStat()
+    public void AddProjectileStat(int value)
     {
-        return numOfProjectiles;
+        numOfProjectiles += value;
     }
     public CharacterStat GetProjectileSpeedStat()
     {
@@ -98,14 +99,14 @@ public class PlayerStats : Stats
         projectileSpeed.AddModifier(new StatModifier(value));
     }
 
-    public void UpdateNumOfProjectilesStat(float value)
+    public void UpdatePoisonStat(float value)
     {
-        numOfProjectiles.AddModifier(new StatModifier(value));
-    }
-
-    public void UpdatePierceValueStat(float value)
-    {
-        pierceValue.AddModifier(new StatModifier(value));
+        if (!base.hasPoison)
+        {
+            base.hasPoison = true;
+            base.poisonTicks = poisonTicks;
+        }
+        base.poisonDamage.AddModifier(new StatModifier(value));
     }
 
 }
