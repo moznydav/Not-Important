@@ -103,6 +103,7 @@ MonoBehaviour:
   ricochet: 2
   pierce: 0
   pierceDamageModifier: 3
+  knockBackValue: 0.3
 --- !u!50 &254868739
 Rigidbody2D:
   serializedVersion: 4

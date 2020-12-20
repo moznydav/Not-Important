@@ -355,8 +355,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1758626483
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &8340497791050187426
 MonoBehaviour:
@@ -663,7 +663,7 @@ GameObject:
   - component: {fileID: 3584843980734656987}
   - component: {fileID: 3893464623970290658}
   - component: {fileID: 2046334532}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}

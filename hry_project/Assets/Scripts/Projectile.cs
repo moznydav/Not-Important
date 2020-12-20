@@ -8,7 +8,8 @@ public class Projectile : MonoBehaviour
     [SerializeField] float lifespan = 1f;
     [SerializeField] int ricochet = 2;
     [SerializeField] int pierce = 0;
-    [SerializeField] int pierceDamageModifier = 3;
+    [SerializeField] float pierceDamageModifier = 0.4f;
+    [SerializeField] float knockBackValue = 0.6f;
 
 
     float damage;
@@ -38,11 +39,11 @@ public class Projectile : MonoBehaviour
                 var destroyable = other.GetComponent<Destroyable>();
                 destroyable.Destroy();
             }
-            else if (stats && lastHit != other.name)
-            {
-                stats.DealDamage(damage);
-                lastHit = other.name;
-            }
+            //else if (stats && lastHit != other.name)
+            //{
+            //    stats.DealDamage(damage);
+            //    lastHit = other.name;
+            //}
             else if ( ricochet-- > 0)
             {
                 var contact = collision.GetContact(0);
@@ -50,7 +51,7 @@ public class Projectile : MonoBehaviour
                 direction = Vector2.Reflect(direction, contact.normal);
                 direction.Normalize();
                 rigidBody.velocity = direction * projectileSpeed;
-
+                attackDone = true;
                 return;
             }
 
@@ -63,21 +64,32 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!attackDone)
-        {
+       // if (!attackDone)
+       // {
             Stats stats = other.GetComponent<Stats>();
 
             if (stats)
             {
                 stats.DealDamage(damage);
+                lastHit = other.name;
                 attackDone = true;
-                Destroy(gameObject);
-            }
+                other.transform.Translate(direction * knockBackValue);
+                if(pierce > 0)
+                {
+                    damage *= pierceDamageModifier;
+                    pierce--;
+                }
+                else
+                {
+                    Destroy(gameObject);
+                }
+                
+         //   }
 
-            
+
             // Debug.Log("HIT " + other.name);
 
-           
+
         }
     }
 

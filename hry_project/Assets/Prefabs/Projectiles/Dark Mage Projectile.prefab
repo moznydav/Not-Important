@@ -139,3 +139,4 @@ MonoBehaviour:
   ricochet: 1
   pierce: 0
   pierceDamageModifier: 3
+  knockBack: 0
