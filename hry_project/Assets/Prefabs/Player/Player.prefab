@@ -233,9 +233,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingLayerID: -1758626483
+  m_SortingLayer: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: -6874504565857425583, guid: 9c4c888384532ca4c95f40d114dcb3df,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -571,9 +571,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1758626483
+  m_SortingLayer: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -628,15 +628,27 @@ MonoBehaviour:
   - {fileID: 5790442172002470382, guid: ce3976915f689704ca8159b554c6d22e, type: 3}
   - {fileID: 2350176681932452561, guid: 2813a414d9d74a84dbca917279e33595, type: 3}
   - {fileID: 6554013440726716592, guid: 8a32371938db1b947b62799ae1d84ab5, type: 3}
+  projectileExplosion: {fileID: 2775445341446495185, guid: 00fadde928adb52429149d26906b75a4,
+    type: 3}
+  poisonTrail: {fileID: 3238926035080142752, guid: e8b3777eb2cea1b48b8a5af7a16fe938,
+    type: 3}
   immuneDuration: 0.2
   blinkBody:
   - {fileID: 362514959755084783}
   - {fileID: 8000891693078247934}
   blinkDuration: 0.1
+  explosionDamage: 0
+  numOfProjectiles: 0
+  pierceValue: 0
+  poisonTicks: 0
   currentHealth: 0
   isAlive: 1
+  hasPoison: 0
+  explodingProjectiles: 0
+  hasPoisonTrail: 0
   rollRegenTime: 2
   maxRolls: 3
+  poisonTicks: 0
   rollSupply: {fileID: 6000552226187604467}
 --- !u!114 &5617675635311616193
 MonoBehaviour:
@@ -721,9 +733,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingLayerID: -1758626483
+  m_SortingLayer: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: -8187283231347527578, guid: 2245d89c99eb6a048913ed02f6f4640f,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -94,6 +94,10 @@ public class Upgrade : ScriptableObject
             case UpgradeType.PROJ_EXPLOSION:
                 playerStats.UpdateExplodingProjectile(value);
                 break;
+            case UpgradeType.POISON_TRAIL:
+                playerStats.hasPoisonTrail = true;
+                playerStats.UpdatePoisonStat(value);
+                break;
         }
     }
 }

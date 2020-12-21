@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [Header("Config")]
     [SerializeField] float rollSpeed = 2000f;
     [SerializeField] float projectileSpreadModifier = 5f;
+    [SerializeField] float trailInterval = 1f;
 
     [Header("Parts")]
     [SerializeField] GameObject projectile;
@@ -18,9 +19,10 @@ public class Player : MonoBehaviour
     // State
     bool isRolling = false;
     bool isShooting = false;
+    bool trailCooldown = false;
     // Cached variables
 
-    Vector2 moveDirection;
+    public Vector2 moveDirection;
     Vector2 aimDirection;
 
     // Cached components
@@ -57,6 +59,15 @@ public class Player : MonoBehaviour
             Move();
             HandleShoot();
         }
+        if (playerStats.hasPoisonTrail)
+        {
+            if (moveDirection.magnitude > 0 && !trailCooldown)
+            {
+                trailCooldown = true;
+                StartCoroutine(SpawnPoisonTrail());
+            }
+        }
+        
 
     }
 
@@ -220,4 +231,15 @@ public class Player : MonoBehaviour
     {
         isRolling = false;
     }
+
+    private IEnumerator SpawnPoisonTrail()
+    {
+        Debug.Log("SPAWNING TRAIL");
+        Vector3 V3moveDirection = moveDirection;
+        GameObject Trail = Instantiate(playerStats.poisonTrail, transform.position - V3moveDirection, Quaternion.identity);
+        Trail.GetComponent<PoisonTrail>().SetUpTrail(playerStats.poisonDamage.value, playerStats.poisonTicks);
+        yield return new WaitForSeconds(trailInterval);
+        trailCooldown = false;
+    }
+
 }

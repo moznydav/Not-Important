@@ -20,6 +20,7 @@ public class Stats : MonoBehaviour
     [Header("Config")]
     [SerializeField] GameObject[] VFX;
     [SerializeField] public GameObject projectileExplosion;
+    [SerializeField] public GameObject poisonTrail;
     [SerializeField] float immuneDuration = 0.2f;
     [SerializeField] GameObject[] blinkBody;
     [SerializeField] float blinkDuration = 0.1f;
@@ -48,6 +49,7 @@ public class Stats : MonoBehaviour
     [Header("Upgrades")]
     public bool hasPoison = false;
     public bool explodingProjectiles = false;
+    public bool hasPoisonTrail = false;
 
     private SpriteRenderer[] spriteRenderer;
 

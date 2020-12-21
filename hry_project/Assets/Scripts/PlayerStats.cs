@@ -6,7 +6,6 @@ public class PlayerStats : Stats
 {
     [SerializeField] float rollRegenTime;
     [SerializeField] int maxRolls;
-    [SerializeField] int poisonTicks;
     public RollSupply rollSupply;
     private int rollsRemaining;
     private float lastRegenTime;
@@ -115,4 +114,6 @@ public class PlayerStats : Stats
         base.explosionDamage += damage;
 
     }
+
+    
 }
