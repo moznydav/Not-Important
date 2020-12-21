@@ -16,6 +16,10 @@ public class Projectile : MonoBehaviour
     public bool poisoned;
     float damage;
 
+    public bool exploding;
+    GameObject explosion;
+    float explosionDamage;
+
     bool attackDone = false;
     Rigidbody2D rigidBody;
     Vector2 direction;
@@ -76,6 +80,12 @@ public class Projectile : MonoBehaviour
                 stats.ApplyPoison(poisonTicks, poisonDamage);
                 }
                 stats.DealDamage(damage);
+
+                if (exploding)
+                {
+                    GameObject BoomBoom = Instantiate(explosion, transform.position, Quaternion.identity);
+                    BoomBoom.GetComponent<Explosion>().SetUpExplosion(explosionDamage, poisoned, poisonDamage, poisonTicks);
+                }
                 attackDone = true;
                 other.transform.Translate(direction * knockBackValue);
                 if(pierce > 0)
@@ -133,5 +143,12 @@ public class Projectile : MonoBehaviour
         poisoned = true;
         poisonTicks = ticks;
         poisonDamage = damage;
+    }
+
+    public void SetExplosion(GameObject exlosionPrefab,float damage)
+    {
+        exploding = true;
+        explosion = exlosionPrefab;
+        explosionDamage = damage;
     }
 }

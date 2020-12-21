@@ -19,6 +19,7 @@ public class Stats : MonoBehaviour
 
     [Header("Config")]
     [SerializeField] GameObject[] VFX;
+    [SerializeField] public GameObject projectileExplosion;
     [SerializeField] float immuneDuration = 0.2f;
     [SerializeField] GameObject[] blinkBody;
     [SerializeField] float blinkDuration = 0.1f;
@@ -29,6 +30,7 @@ public class Stats : MonoBehaviour
     public CharacterStat moveSpeed;
     public CharacterStat damage;
     public CharacterStat poisonDamage;
+    public float explosionDamage;
     public int numOfProjectiles;
     public int pierceValue;
     public int poisonTicks;
@@ -40,9 +42,12 @@ public class Stats : MonoBehaviour
     public bool isAlive = true;
     private bool immune = false;
     private bool blink = false;
-    public bool hasPoison = false;
     private bool poisoned;
     private Color baseColor = Color.white;
+
+    [Header("Upgrades")]
+    public bool hasPoison = false;
+    public bool explodingProjectiles = false;
 
     private SpriteRenderer[] spriteRenderer;
 
@@ -72,6 +77,7 @@ public class Stats : MonoBehaviour
         projectileSpeed = new CharacterStat(baseProjectileSpeed);
         poisonDamage = new CharacterStat(0);
         poisonTicks = 0;
+        explosionDamage = 0.15f;
 }
 
     public void UpdateHealthbar()

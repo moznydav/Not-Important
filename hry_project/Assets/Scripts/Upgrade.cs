@@ -91,6 +91,9 @@ public class Upgrade : ScriptableObject
             case UpgradeType.BASE_POISON:
                 playerStats.UpdatePoisonStat(value);
                 break;
+            case UpgradeType.PROJ_EXPLOSION:
+                playerStats.UpdateExplodingProjectile(value);
+                break;
         }
     }
 }

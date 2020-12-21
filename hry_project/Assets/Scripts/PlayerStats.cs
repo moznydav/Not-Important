@@ -109,4 +109,10 @@ public class PlayerStats : Stats
         base.poisonDamage.AddModifier(new StatModifier(value));
     }
 
+    public void UpdateExplodingProjectile(float damage)
+    {
+        base.explodingProjectiles = true;
+        base.explosionDamage += damage;
+
+    }
 }

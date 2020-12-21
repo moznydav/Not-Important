@@ -184,6 +184,10 @@ public class Player : MonoBehaviour
                     shot.GetComponent<Projectile>().SetPoison(3, (int)playerStats.poisonDamage.value);
                     //playerStats.poisonTicks
                 }
+                if (playerStats.explodingProjectiles)
+                {
+                    shot.GetComponent<Projectile>().SetExplosion(playerStats.projectileExplosion, playerStats.damage.value*playerStats.explosionDamage);
+                }
             }
 
 
