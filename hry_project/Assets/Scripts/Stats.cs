@@ -50,6 +50,9 @@ public class Stats : MonoBehaviour
     public bool hasPoison = false;
     public bool explodingProjectiles = false;
     public bool hasPoisonTrail = false;
+    public bool hasBrokenScope = false;
+    public bool hasSniperScope = false;
+    public bool hasSprayAndPray = false;
 
     private SpriteRenderer[] spriteRenderer;
 

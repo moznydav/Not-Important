@@ -18,9 +18,9 @@ public class Upgrade : ScriptableObject
         ADD_PIERCE, 
         BASE_POISON,
         POISON_EXPLOSION, // TODO
-        PROJ_EXPLOSION, // TODO
-        RANGE_DAMAGE, // TODO
-        CLOSE_DAMAGE, // TODO
+        PROJ_EXPLOSION, // add class bonus
+        SNIPER_SCOPE, 
+        BROKEN_SCOPE, 
         SPRAY_AND_PRAY, // TODO
         THORNS, // TODO
         BERSERK, // TODO
@@ -33,7 +33,7 @@ public class Upgrade : ScriptableObject
         PARKOUR_BOOTS, // TODO
         GUPPY_TALISMAN, // TODO
         UNLIMITED_ROLLS, // TODO
-        POISON_TRAIL // TODO
+        POISON_TRAIL 
 
 
             
@@ -98,6 +98,19 @@ public class Upgrade : ScriptableObject
                 playerStats.hasPoisonTrail = true;
                 playerStats.UpdatePoisonStat(value);
                 break;
+            case UpgradeType.BROKEN_SCOPE:
+                playerStats.GetDamageStat().AddModifier(new StatModifier(value));
+                playerStats.hasBrokenScope = true;
+                break;
+            case UpgradeType.SNIPER_SCOPE:
+                playerStats.GetDamageStat().AddModifier(new StatModifier(value));
+                playerStats.hasSniperScope = true;
+                break;
+            case UpgradeType.SPRAY_AND_PRAY:
+                playerStats.GetAttackSpeedStat().AddModifier(new StatModifier(value));
+                playerStats.hasSprayAndPray = true;
+                break;
+
         }
     }
 }

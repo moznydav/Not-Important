@@ -104,6 +104,13 @@ MonoBehaviour:
   pierce: 0
   pierceDamageModifier: 3
   knockBackValue: 0.3
+  poisonDamage: 0
+  poisonTicks: 0
+  scopeIntervals: 0.3
+  brokenScopeModifier: 0.8
+  SniperScopeModifier: 1.7
+  poisoned: 0
+  exploding: 0
 --- !u!50 &254868739
 Rigidbody2D:
   serializedVersion: 4

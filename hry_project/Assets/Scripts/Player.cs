@@ -67,6 +67,10 @@ public class Player : MonoBehaviour
                 StartCoroutine(SpawnPoisonTrail());
             }
         }
+        if (playerStats.hasSprayAndPray)
+        {
+            crossHair.SetActive(false);
+        }
         
 
     }
@@ -163,6 +167,8 @@ public class Player : MonoBehaviour
             Vector2 Offset = new Vector3(aimDirection.y, -aimDirection.x);
             Offset = Offset / projectileSpreadModifier;
             Vector2 shootDirection = aimDirection;
+            Vector2 randomOffset = new Vector2(Random.Range(-1f,1f),Random.Range(-1f,1f));
+            
 
             int switchIndex = 1;
             int projectileState = 1;
@@ -183,6 +189,11 @@ public class Player : MonoBehaviour
                     switchIndex *= -1;
                     shootDirection.Normalize();
                 }
+                if (playerStats.hasSprayAndPray)
+                {
+                    shootDirection += randomOffset;
+                    shootDirection.Normalize();
+                }
                 //Debug.Log("Shoot direction: " + shootDirection);
                 GameObject shot = Instantiate(projectile, transform.position, Quaternion.identity);
                 shot.GetComponent<Rigidbody2D>().velocity = shootDirection * shot.GetComponent<Projectile>().GetProjectileSPeed();
@@ -198,6 +209,10 @@ public class Player : MonoBehaviour
                 if (playerStats.explodingProjectiles)
                 {
                     shot.GetComponent<Projectile>().SetExplosion(playerStats.projectileExplosion, playerStats.damage.value*playerStats.explosionDamage);
+                }
+                if (playerStats.hasBrokenScope || playerStats.hasSniperScope)
+                {
+                    shot.GetComponent<Projectile>().SetScopes(playerStats.hasBrokenScope, playerStats.hasSniperScope);
                 }
             }
 
