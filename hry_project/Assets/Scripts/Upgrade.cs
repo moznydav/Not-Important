@@ -109,7 +109,21 @@ public class Upgrade : ScriptableObject
                 playerStats.attackSpeed += value;
                 playerStats.hasSprayAndPray = true;
                 break;
-
+            case UpgradeType.THORNS:
+                playerStats.UpdateThorns(value);
+                break;
+            case UpgradeType.BERSERK:
+                playerStats.UpdateBerserk(value);
+                break;
+            case UpgradeType.CHAINS:
+                playerStats.UpdateChains();
+                break;
+            case UpgradeType.FIREWALL:
+                playerStats.UpdateFireWall(value);
+                break;
+            case UpgradeType.HP_TO_DMG:
+                playerStats.UpdateHpToDmg(value);
+                break;
         }
     }
 }

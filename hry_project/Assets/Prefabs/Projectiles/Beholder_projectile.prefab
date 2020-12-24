@@ -139,4 +139,12 @@ MonoBehaviour:
   ricochet: 0
   pierce: 0
   pierceDamageModifier: 3
-  knockBack: 0
+  knockBackValue: 0
+  poisonDamage: 0
+  poisonTicks: 0
+  scopeIntervals: 0.3
+  brokenScopeModifier: 0.8
+  SniperScopeModifier: 1.7
+  poisoned: 0
+  damage: 0
+  exploding: 0

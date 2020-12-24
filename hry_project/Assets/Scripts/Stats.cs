@@ -37,11 +37,17 @@ public class Stats : MonoBehaviour
     public int poisonTicks;
     public float projectileSpeed;
     private float poisonIntervals = 1.4f;
+    public float thornsDamage;
+    public float berserkMultiplier = 1f;
+    private float chainsMultiplier = 1f;
+    private float fireWallInterval;
+    private float HpToDmgMultiplier;
 
     [Header("For Debug")]
     [SerializeField] public float currentHealth;
     public bool isAlive = true;
     private bool immune = false;
+    private bool fireWallImmune = false;
     private bool blink = false;
     private bool poisoned;
     private Color baseColor = Color.white;
@@ -50,9 +56,14 @@ public class Stats : MonoBehaviour
     public bool hasPoison = false;
     public bool explodingProjectiles = false;
     public bool hasPoisonTrail = false;
-    public bool hasBrokenScope = false;
-    public bool hasSniperScope = false;
+    public bool hasBrokenScope = false; // maybe switch to % of dmg
+    public bool hasSniperScope = false; // maybe switch to % of dmg
     public bool hasSprayAndPray = false;
+    public bool hasThorns = false;
+    public bool hasBerserk = false;
+    public bool hasChains = false; // 50% of dmg off, no rolls
+    public bool hasFireWall = false; // immunity every 3s
+    public bool hasHpToDmg = false;
 
     private SpriteRenderer[] spriteRenderer;
 
@@ -95,9 +106,17 @@ public class Stats : MonoBehaviour
 
     public void DealDamage(float damage)
     {
-        if (!immune)
+        if (!immune && !fireWallImmune)
         {
-            currentHealth -= damage;
+            if (hasChains)
+            {
+                currentHealth -= damage * chainsMultiplier ;
+            }
+            else
+            {
+                currentHealth -= damage;
+            }
+            
             StartCoroutine(HandleHit());
 
             if (!blink)
@@ -203,12 +222,80 @@ public class Stats : MonoBehaviour
 
     }
 
-    //public void UpdateSpeed(StatModifier modifier) {
-    //    moveSpeed.AddModifier(modifier);
-    //}
-
     public void TurnOnPoison(bool hasPoison)
     {
         this.hasPoison = hasPoison;
+    }
+
+    public void UpdateThorns(float value)
+    {
+        thornsDamage += value;
+        hasThorns = true;               
+    }
+
+    public void UpdateBerserk(float value)
+    {
+        berserkMultiplier += value;
+        hasBerserk = true;
+    }
+
+    public void UpdateChains()
+    {
+        chainsMultiplier /= 2;
+        hasChains = true;
+    }
+
+    public void UpdateFireWall(float value)
+    {
+        if (hasFireWall)
+        {
+            fireWallInterval += value;
+        }
+        else
+        {
+            hasFireWall = true;
+            fireWallInterval = 1f;
+            StartCoroutine(HandleFireWall());
+        }
+    } 
+
+    private IEnumerator HandleFireWall()
+    {
+        while (hasFireWall)
+        {
+            yield return new WaitForSeconds(3f);
+            fireWallImmune = true;
+            yield return new WaitForSeconds(fireWallInterval);
+        }
+        
+
+    }
+
+    public void UpdateHpToDmg(float value)
+    {
+        if (hasHpToDmg)
+        {
+            HpToDmgMultiplier += value;
+        }
+        else
+        {
+            hasHpToDmg = true;
+            HpToDmgMultiplier = 0.2f;
+        }
+    }
+
+    //TODO use this function everytime someone attacks
+    public float GetDamage()
+    {
+        float retDamage = damage;
+        if (hasHpToDmg)
+        {
+            retDamage += maxHealth * HpToDmgMultiplier;
+        }
+        if (hasBerserk)
+        {
+            retDamage *= berserkMultiplier;
+        }
+        return retDamage;
     }
 }

@@ -21,6 +21,7 @@ public class Projectile : MonoBehaviour
 
     public bool exploding;
     GameObject explosion;
+    GameObject origin;
     float explosionDamage;
     bool brokenScope = false;
     bool sniperScope = false;
@@ -85,9 +86,13 @@ public class Projectile : MonoBehaviour
             {
                 if (poisoned)
                 {
-                stats.ApplyPoison(poisonTicks, poisonDamage);
+                    stats.ApplyPoison(poisonTicks, poisonDamage);
                 }
                 stats.DealDamage(damage);
+                if (stats.hasThorns)
+                {
+                    origin.GetComponent<Stats>().DealDamage(stats.thornsDamage);
+                }    
 
                 if (exploding)
                 {
@@ -112,7 +117,7 @@ public class Projectile : MonoBehaviour
             // Debug.Log("HIT " + other.name);
 
 
-        }
+            }
     }
 
     public void SetDamage(float damage)
@@ -182,6 +187,10 @@ public class Projectile : MonoBehaviour
             }
         }
         
+    }
+    public void SetOrigin(GameObject creator)
+    {
+        origin = creator;
     }
 
 }
