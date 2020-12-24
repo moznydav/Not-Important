@@ -26,16 +26,16 @@ public class Stats : MonoBehaviour
     [SerializeField] float blinkDuration = 0.1f;
 
     // Stats
-    public CharacterStat maxHealth;
-    public CharacterStat attackSpeed;
-    public CharacterStat moveSpeed;
-    public CharacterStat damage;
-    public CharacterStat poisonDamage;
+    public float maxHealth;
+    public float attackSpeed;
+    public float moveSpeed;
+    public float damage;
+    public float poisonDamage;
     public float explosionDamage;
     public int numOfProjectiles;
     public int pierceValue;
     public int poisonTicks;
-    public CharacterStat projectileSpeed;
+    public float projectileSpeed;
     private float poisonIntervals = 1.4f;
 
     [Header("For Debug")]
@@ -73,14 +73,14 @@ public class Stats : MonoBehaviour
     public void InitializeStats()
     {
         currentHealth = baseMaxHealth;
-        maxHealth = new CharacterStat(baseMaxHealth);
-        attackSpeed = new CharacterStat(baseAttackSpeed);
-        moveSpeed = new CharacterStat(baseMoveSpeed);
-        damage = new CharacterStat(baseDamage);
+        maxHealth = baseMaxHealth;
+        attackSpeed = baseAttackSpeed;
+        moveSpeed = baseMoveSpeed;
+        damage = baseDamage;
         numOfProjectiles = baseNumOfProjectiles;
         pierceValue = basePierce;
-        projectileSpeed = new CharacterStat(baseProjectileSpeed);
-        poisonDamage = new CharacterStat(0);
+        projectileSpeed = baseProjectileSpeed;
+        poisonDamage = 0;
         poisonTicks = 0;
         explosionDamage = 0.15f;
 }
@@ -89,7 +89,7 @@ public class Stats : MonoBehaviour
     {
         if (healthbar)
         {
-            healthbar.SetHealthPercentage(currentHealth, maxHealth.value);
+            healthbar.SetHealthPercentage(currentHealth, maxHealth);
         }
     }
 
@@ -121,9 +121,9 @@ public class Stats : MonoBehaviour
 
     public void Heal(float heal)
     {
-        if((currentHealth + heal) > maxHealth.value)
+        if((currentHealth + heal) > maxHealth)
         {
-            currentHealth = maxHealth.value;
+            currentHealth = maxHealth;
         }
         else
         {
@@ -156,7 +156,7 @@ public class Stats : MonoBehaviour
     }
     public void HealToMax()
     {
-        currentHealth = maxHealth.value;
+        currentHealth = maxHealth;
         UpdateHealthbar();
     }
 
@@ -203,9 +203,9 @@ public class Stats : MonoBehaviour
 
     }
 
-    public void UpdateSpeed(StatModifier modifier) {
-        moveSpeed.AddModifier(modifier);
-    }
+    //public void UpdateSpeed(StatModifier modifier) {
+    //    moveSpeed.AddModifier(modifier);
+    //}
 
     public void TurnOnPoison(bool hasPoison)
     {

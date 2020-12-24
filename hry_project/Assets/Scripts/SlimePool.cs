@@ -12,7 +12,7 @@ public class SlimePool : MonoBehaviour
         Stats stats = other.GetComponent<Stats>();
 
         if (stats) {
-            stats.UpdateSpeed(new StatModifier(-slowValue));
+            stats.moveSpeed -= slowValue;
         }
 
     }
@@ -21,7 +21,7 @@ public class SlimePool : MonoBehaviour
         Stats stats = other.GetComponent<Stats>();
 
         if (stats) {
-            stats.UpdateSpeed(new StatModifier(slowValue));
+            stats.moveSpeed += slowValue;
         }
     }
 }

@@ -147,7 +147,7 @@ public class Enemy : MonoBehaviour
     {
         if (canRun)
         {
-            rigidBody.velocity = (moveDirection * stats.moveSpeed.value * Time.deltaTime);
+            rigidBody.velocity = (moveDirection * stats.moveSpeed * Time.deltaTime);
         }
     }
 

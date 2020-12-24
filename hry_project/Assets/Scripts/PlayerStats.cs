@@ -63,21 +63,9 @@ public class PlayerStats : Stats
 
     public void UpdateHealthStat(float value)
     {
-        maxHealth.AddModifier(new StatModifier(value));
+        maxHealth += value;
         base.currentHealth += value;
         base.UpdateHealthbar();
-    }
-    public CharacterStat GetDamageStat()
-    {
-        return damage;
-    }
-    public CharacterStat GetAttackSpeedStat()
-    {
-        return attackSpeed;
-    }
-    public CharacterStat GetMoveSpeedStat()
-    {
-        return moveSpeed;
     }
 
     public void AddPierceStat(int value)
@@ -88,15 +76,6 @@ public class PlayerStats : Stats
     {
         numOfProjectiles += value;
     }
-    public CharacterStat GetProjectileSpeedStat()
-    {
-        return projectileSpeed;
-    }
-
-    public void UpdateProjectileSpeed(float value)
-    {
-        projectileSpeed.AddModifier(new StatModifier(value));
-    }
 
     public void UpdatePoisonStat(float value)
     {
@@ -105,7 +84,8 @@ public class PlayerStats : Stats
             base.hasPoison = true;
             base.poisonTicks = poisonTicks;
         }
-        base.poisonDamage.AddModifier(new StatModifier(value));
+        base.poisonDamage += value;
+            //AddModifier(new StatModifier(value));
     }
 
     public void UpdateExplodingProjectile(float damage)

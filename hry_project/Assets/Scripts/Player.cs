@@ -103,8 +103,8 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-        rigidBody.velocity = new Vector2(moveDirection.x * playerStats.moveSpeed.value * Time.fixedDeltaTime,
-                                         moveDirection.y * playerStats.moveSpeed.value * Time.fixedDeltaTime );
+        rigidBody.velocity = new Vector2(moveDirection.x * playerStats.moveSpeed * Time.fixedDeltaTime,
+                                         moveDirection.y * playerStats.moveSpeed * Time.fixedDeltaTime );
     }
 
     void HandleMovement()
@@ -197,18 +197,18 @@ public class Player : MonoBehaviour
                 //Debug.Log("Shoot direction: " + shootDirection);
                 GameObject shot = Instantiate(projectile, transform.position, Quaternion.identity);
                 shot.GetComponent<Rigidbody2D>().velocity = shootDirection * shot.GetComponent<Projectile>().GetProjectileSPeed();
-                shot.GetComponent<Projectile>().SetDamage(playerStats.damage.value);
+                shot.GetComponent<Projectile>().SetDamage(playerStats.damage);
                 shot.GetComponent<Projectile>().SetDirection(shootDirection);
-                shot.GetComponent<Projectile>().SetProjectileSpeed(playerStats.projectileSpeed.value);
+                shot.GetComponent<Projectile>().SetProjectileSpeed(playerStats.projectileSpeed);
                 shot.GetComponent<Projectile>().SetPierce(playerStats.pierceValue);
                 if (playerStats.hasPoison)
                 {
-                    shot.GetComponent<Projectile>().SetPoison(3, (int)playerStats.poisonDamage.value);
+                    shot.GetComponent<Projectile>().SetPoison(3, (int)playerStats.poisonDamage);
                     //playerStats.poisonTicks
                 }
                 if (playerStats.explodingProjectiles)
                 {
-                    shot.GetComponent<Projectile>().SetExplosion(playerStats.projectileExplosion, playerStats.damage.value*playerStats.explosionDamage);
+                    shot.GetComponent<Projectile>().SetExplosion(playerStats.projectileExplosion, playerStats.damage*playerStats.explosionDamage);
                 }
                 if (playerStats.hasBrokenScope || playerStats.hasSniperScope)
                 {
@@ -230,7 +230,7 @@ public class Player : MonoBehaviour
         //Debug.Log("COOLDOWN START!");
         //Debug.Log("AttackSpeed: " + playerStats.attackSpeed.value);
         anim.SetBool("Attack Cooldown", true);
-        yield return new WaitForSeconds(playerStats.attackSpeed.value);
+        yield return new WaitForSeconds(playerStats.attackSpeed);
         anim.SetBool("Attack Cooldown", false);
         isShooting = false;
     }
@@ -252,7 +252,7 @@ public class Player : MonoBehaviour
         Debug.Log("SPAWNING TRAIL");
         Vector3 V3moveDirection = moveDirection;
         GameObject Trail = Instantiate(playerStats.poisonTrail, transform.position - V3moveDirection, Quaternion.identity);
-        Trail.GetComponent<PoisonTrail>().SetUpTrail(playerStats.poisonDamage.value, playerStats.poisonTicks);
+        Trail.GetComponent<PoisonTrail>().SetUpTrail(playerStats.poisonDamage, playerStats.poisonTicks);
         yield return new WaitForSeconds(trailInterval);
         trailCooldown = false;
     }
