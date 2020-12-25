@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] float projectileSpeed = 20f;
     [SerializeField] float lifespan = 1f;
-    [SerializeField] int ricochet = 2;
+    [SerializeField] int ricochet = 0;
     [SerializeField] int pierce = 0;
     [SerializeField] float pierceDamageModifier = 0.4f;
     [SerializeField] float knockBackValue = 0.6f;
@@ -187,6 +187,10 @@ public class Projectile : MonoBehaviour
             }
         }
         
+    }
+    public void SetRicochet(int value)
+    {
+        ricochet = value;
     }
     public void SetOrigin(GameObject creator)
     {

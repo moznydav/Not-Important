@@ -214,6 +214,10 @@ public class Player : MonoBehaviour
                 {
                     shot.GetComponent<Projectile>().SetScopes(playerStats.hasBrokenScope, playerStats.hasSniperScope);
                 }
+                if (playerStats.hasRicochet)
+                {
+                    shot.GetComponent<Projectile>().SetRicochet(playerStats.ricochetValue);
+                }
             }
 
 

@@ -11,12 +11,16 @@ public class Upgrade : ScriptableObject
         DAMAGE,
         ATTACK_SPEED,
         MOVE_SPEED,
+        DUAL_DMG_ATKSPEED,
+        DUAL_MS_PROJETILESPEED,
+        DUAL_PROJECTILESPEED_ATTACKSPEED,
         DUAL_DMG_HP, 
         DUAL_AS_MS, 
         PROJECTILESPEED_DMG,
         ADD_PROJECTILE, 
         ADD_PIERCE, 
         BASE_POISON,
+        RICOCHET,
         POISON_EXPLOSION, // TODO
         PROJ_EXPLOSION, // add class bonus
         SNIPER_SCOPE, 
@@ -62,6 +66,21 @@ public class Upgrade : ScriptableObject
 
             case UpgradeType.MOVE_SPEED:
                 playerStats.moveSpeed += value;
+                break;
+
+            case UpgradeType.DUAL_DMG_ATKSPEED:
+                playerStats.damage += value;
+                playerStats.attackSpeed += secondaryValue;
+                break;
+
+            case UpgradeType.DUAL_MS_PROJETILESPEED:
+                playerStats.moveSpeed += value;
+                playerStats.projectileSpeed += secondaryValue;
+                break;
+
+            case UpgradeType.DUAL_PROJECTILESPEED_ATTACKSPEED:
+                playerStats.projectileSpeed += value;
+                playerStats.attackSpeed += secondaryValue;
                 break;
 
             case UpgradeType.DUAL_DMG_HP: // minor DMG and HP
@@ -123,6 +142,9 @@ public class Upgrade : ScriptableObject
                 break;
             case UpgradeType.HP_TO_DMG:
                 playerStats.UpdateHpToDmg(value);
+                break;
+            case UpgradeType.RICOCHET:
+                playerStats.UpdateRicochet();
                 break;
         }
     }

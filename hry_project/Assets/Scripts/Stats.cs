@@ -34,6 +34,7 @@ public class Stats : MonoBehaviour
     public float explosionDamage;
     public int numOfProjectiles;
     public int pierceValue;
+    public int ricochetValue;
     public int poisonTicks;
     public float projectileSpeed;
     private float poisonIntervals = 1.4f;
@@ -64,6 +65,7 @@ public class Stats : MonoBehaviour
     public bool hasChains = false; // 50% of dmg off, no rolls
     public bool hasFireWall = false; // immunity every 3s
     public bool hasHpToDmg = false;
+    public bool hasRicochet = false;
 
     private SpriteRenderer[] spriteRenderer;
 
@@ -93,6 +95,7 @@ public class Stats : MonoBehaviour
         projectileSpeed = baseProjectileSpeed;
         poisonDamage = 0;
         poisonTicks = 0;
+        ricochetValue = 0;
         explosionDamage = 0.15f;
 }
 
@@ -271,6 +274,12 @@ public class Stats : MonoBehaviour
 
     }
 
+    public void UpdateRicochet()
+    {
+        ricochetValue++;
+        hasRicochet = true;
+    }
+
     public void UpdateHpToDmg(float value)
     {
         if (hasHpToDmg)
@@ -292,7 +301,7 @@ public class Stats : MonoBehaviour
         {
             retDamage += maxHealth * HpToDmgMultiplier;
         }
-        if (hasBerserk)
+        if (hasBerserk && currentHealth <= (0.3 * maxHealth))
         {
             retDamage *= berserkMultiplier;
         }
