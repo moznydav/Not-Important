@@ -73,18 +73,19 @@ public class Stats : MonoBehaviour
 
     private void Awake()
     {
-        spriteRenderer = new SpriteRenderer[blinkBody.Length];
-
-        for (int i = 0; i < blinkBody.Length; i++)
-        {
-            spriteRenderer[i] = blinkBody[i].GetComponent<SpriteRenderer>();
-        }
-
         InitializeStats();
     }
 
     public void InitializeStats()
     {
+        spriteRenderer = new SpriteRenderer[blinkBody.Length];
+
+        for (int i = 0; i < blinkBody.Length; i++)
+        {
+            spriteRenderer[i] = blinkBody[i].GetComponent<SpriteRenderer>();
+            Debug.Log(i + " num of sprite renderers");
+        }
+
         currentHealth = baseMaxHealth;
         maxHealth = baseMaxHealth;
         attackSpeed = baseAttackSpeed;
@@ -199,8 +200,10 @@ public class Stats : MonoBehaviour
 
     private IEnumerator Flash()
     {
+        Debug.Log(spriteRenderer.Length);
         for (int i = 0; i < spriteRenderer.Length; i++)
         {
+            Debug.Log("BAM!");
             spriteRenderer[i].color = Color.red;
         }
 
