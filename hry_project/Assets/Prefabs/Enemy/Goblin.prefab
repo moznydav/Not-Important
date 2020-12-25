@@ -170,11 +170,39 @@ MonoBehaviour:
   - {fileID: 5790442172002470382, guid: ce3976915f689704ca8159b554c6d22e, type: 3}
   - {fileID: 2350176681932452561, guid: 2813a414d9d74a84dbca917279e33595, type: 3}
   - {fileID: 6554013440726716592, guid: 8a32371938db1b947b62799ae1d84ab5, type: 3}
+  projectileExplosion: {fileID: 0}
+  poisonTrail: {fileID: 0}
   immuneDuration: 0.2
-  blinkBody: []
+  blinkBody:
+  - {fileID: 6549014350279722773}
   blinkDuration: 0.1
+  maxHealth: 0
+  attackSpeed: 0
+  moveSpeed: 0
+  damage: 0
+  poisonDamage: 0
+  explosionDamage: 0
+  numOfProjectiles: 0
+  pierceValue: 0
+  ricochetValue: 0
+  poisonTicks: 0
+  projectileSpeed: 0
+  thornsDamage: 0
+  berserkMultiplier: 1
   currentHealth: 0
   isAlive: 1
+  hasPoison: 0
+  explodingProjectiles: 0
+  hasPoisonTrail: 0
+  hasBrokenScope: 0
+  hasSniperScope: 0
+  hasSprayAndPray: 0
+  hasThorns: 0
+  hasBerserk: 0
+  hasChains: 0
+  hasFireWall: 0
+  hasHpToDmg: 0
+  hasRicochet: 0
 --- !u!70 &196022626036479524
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -323,7 +351,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1758626483
   m_SortingLayer: 1
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 4f1fc34d30587f64a8a0d7245fa41e08, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
