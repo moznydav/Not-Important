@@ -41,7 +41,6 @@ public class EnvironmentButton: MonoBehaviour
 
     public void Close() {
         gameManager.Resume();
-        levelManager.BarrelsReset();
         gameManager.ScheduleWaveStart();
     }
 }
