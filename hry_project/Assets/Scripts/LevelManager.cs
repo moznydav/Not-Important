@@ -14,8 +14,11 @@ public class LevelManager : MonoBehaviour
     [SerializeField] public int explosivesLevel;
     [SerializeField] public int barricadesLevel;
 
+    [SerializeField] Player player;
+
     void Awake() {
         astar = FindObjectOfType<AStar>();
+        player = FindObjectOfType<Player>();
     }
 
     public void SetupNextLevel() {
@@ -29,13 +32,15 @@ public class LevelManager : MonoBehaviour
             //TODO spawners update
             GameManager.Instance.SetupNextSpawners(levels[levelNumber - 1].GetComponent<Level>().enemySpawners);
             //TODO pathfinding update
-            astar.SetNewTileMap(levels[levelNumber].GetComponent<Level>().walls);
+            astar.SetNewTileMap(levels[levelNumber-1].GetComponent<Level>().walls);
             //environment update
             SetUpEnvironment();
 
         } else {
             Debug.Log("Final level");
             //TODO level reset
+            player.TeleportToMiddle();
+            
         }
     }
 

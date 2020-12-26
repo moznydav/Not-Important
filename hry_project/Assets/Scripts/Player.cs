@@ -261,4 +261,8 @@ public class Player : MonoBehaviour
         trailCooldown = false;
     }
 
+    public void TeleportToMiddle() {
+        //TODO
+    }
+
 }
