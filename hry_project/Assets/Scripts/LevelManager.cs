@@ -23,25 +23,30 @@ public class LevelManager : MonoBehaviour
 
     public void SetupNextLevel() {
 
-        if (levelNumber < 7) {
+        if (levelNumber < 8) {
             levels[levelNumber - 1].SetActive(false);
             levels[levelNumber].SetActive(true);
             levelNumber++;
             Debug.Log("Set up level " + levelNumber);
-
-            //TODO spawners update
-            GameManager.Instance.SetupNextSpawners(levels[levelNumber - 1].GetComponent<Level>().enemySpawners);
-            //TODO pathfinding update
-            astar.SetNewTileMap(levels[levelNumber-1].GetComponent<Level>().walls);
-            //environment update
-            SetUpEnvironment();
+            LevelUpdate(levelNumber);
 
         } else {
-            Debug.Log("Final level");
+            Debug.Log("Reseting level");
             //TODO level reset
             player.TeleportToMiddle();
+            levelNumber = 0;
+            LevelUpdate(levelNumber);
             
         }
+    }
+
+    void LevelUpdate(int levelNumber) {
+        //TODO spawners update
+        GameManager.Instance.SetupNextSpawners(levels[levelNumber - 1].GetComponent<Level>().enemySpawners);
+        //TODO pathfinding update
+        astar.SetNewTileMap(levels[levelNumber - 1].GetComponent<Level>().walls);
+        //environment update
+        SetUpEnvironment(levelNumber);
     }
 
     public void ActivateSpikes() {
@@ -108,7 +113,7 @@ public class LevelManager : MonoBehaviour
                 break;
         }
     }
-    void SetUpEnvironment() {
+    void SetUpEnvironment(int levelNumber) {
         if (spikesLevel > 0) {
             levels[levelNumber - 1].GetComponent<Level>().spikes[spikesLevel].SetActive(true);
         }
