@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
 
     public void InitializeEnemy()
     {
+        GetComponent<Collider2D>().enabled = false;
         stats = GetComponent<Stats>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         // anim = GetComponent<Animator>();
@@ -146,7 +147,7 @@ public class Enemy : MonoBehaviour
     {
         if (canRun)
         {
-            rigidBody.velocity = (moveDirection * stats.moveSpeed.value * Time.deltaTime);
+            rigidBody.velocity = (moveDirection * stats.moveSpeed * Time.deltaTime);
         }
     }
 
@@ -168,6 +169,7 @@ public class Enemy : MonoBehaviour
 
     public void SpawnDone()
     {
+        GetComponent<Collider2D>().enabled = true;
         spawning = false;
     }
 

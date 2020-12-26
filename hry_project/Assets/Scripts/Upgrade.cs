@@ -11,12 +11,36 @@ public class Upgrade : ScriptableObject
         DAMAGE,
         ATTACK_SPEED,
         MOVE_SPEED,
-        DUAL_DMG_HP, //TODO
-        DUAL_AS_MS, //TODO
-        PROJECTILESPEED_DMG, //TODO
-        ADD_PROJECTILE, //TODO
-        ADD_PIERCE //TODO
-            //TODO: Drawback upgrades
+        DUAL_DMG_ATKSPEED,
+        DUAL_MS_PROJETILESPEED,
+        DUAL_PROJECTILESPEED_ATTACKSPEED,
+        DUAL_DMG_HP, 
+        DUAL_AS_MS, 
+        PROJECTILESPEED_DMG,
+        ADD_PROJECTILE, 
+        ADD_PIERCE, 
+        BASE_POISON,
+        RICOCHET,
+        POISON_EXPLOSION, // TODO
+        PROJ_EXPLOSION, // add class bonus
+        SNIPER_SCOPE, 
+        BROKEN_SCOPE, 
+        SPRAY_AND_PRAY, // TODO
+        THORNS, // TODO
+        BERSERK, // TODO
+        CHAINS, //TODO - 50%dmg off but no rolls
+        LUCKY_CHARM, // TODO - chance to heal to max
+        DAMAGE_AURA, // TODO
+        FIREWALL, // TODO - every 3s imunity for 1s
+        HP_TO_DMG, // TODO - % of HP to dmg
+        POISON_TRAPS, // TODO
+        PARKOUR_BOOTS, // TODO
+        GUPPY_TALISMAN, // TODO
+        UNLIMITED_ROLLS, // TODO
+        POISON_TRAIL 
+
+
+            
     }
 
     [SerializeField] float value = 0f;
@@ -33,40 +57,94 @@ public class Upgrade : ScriptableObject
                 break;
 
             case UpgradeType.DAMAGE:
-                playerStats.GetDamageStat().AddModifier(new StatModifier(value));
+                playerStats.damage += value;
                 break;
 
             case UpgradeType.ATTACK_SPEED:
-                playerStats.GetAttackSpeedStat().AddModifier(new StatModifier(value));
+                playerStats.attackSpeed += value;
                 break;
 
             case UpgradeType.MOVE_SPEED:
-                playerStats.GetMoveSpeedStat().AddModifier(new StatModifier(value));
+                playerStats.moveSpeed += value;
+                break;
+
+            case UpgradeType.DUAL_DMG_ATKSPEED:
+                playerStats.damage += value;
+                playerStats.attackSpeed += secondaryValue;
+                break;
+
+            case UpgradeType.DUAL_MS_PROJETILESPEED:
+                playerStats.moveSpeed += value;
+                playerStats.projectileSpeed += secondaryValue;
+                break;
+
+            case UpgradeType.DUAL_PROJECTILESPEED_ATTACKSPEED:
+                playerStats.projectileSpeed += value;
+                playerStats.attackSpeed += secondaryValue;
                 break;
 
             case UpgradeType.DUAL_DMG_HP: // minor DMG and HP
-                playerStats.GetDamageStat().AddModifier(new StatModifier(value));
+                playerStats.damage += value;
                 playerStats.UpdateHealthStat(secondaryValue);
                 break;
 
             case UpgradeType.DUAL_AS_MS: // minor AttackSpeed and Movespeed
-                playerStats.GetAttackSpeedStat().AddModifier(new StatModifier(value));
-                playerStats.GetMoveSpeedStat().AddModifier(new StatModifier(secondaryValue));
+                playerStats.attackSpeed += value;
+                playerStats.moveSpeed += secondaryValue;
                 break;
 
-            case UpgradeType.PROJECTILESPEED_DMG: // Add projectile speed and minor DMG
-                playerStats.UpdateProjectileSpeed(value);
-                playerStats.GetDamageStat().AddModifier(new StatModifier(secondaryValue));
+            case UpgradeType.PROJECTILESPEED_DMG: // Add projectile speed
+                playerStats.projectileSpeed += value;
                 break;
 
             case UpgradeType.ADD_PROJECTILE: // Add projectile and decreases attackspeed
-                playerStats.UpdateNumOfProjectilesStat(value);
-                playerStats.GetAttackSpeedStat().AddModifier(new StatModifier(secondaryValue));
+                playerStats.AddProjectileStat((int)value);
+                playerStats.attackSpeed += secondaryValue;
                 break;
 
             case UpgradeType.ADD_PIERCE: // Add pierce and decreases DMG
-                playerStats.UpdatePierceValueStat(value);
-                playerStats.GetDamageStat().AddModifier(new StatModifier(secondaryValue));
+                playerStats.AddPierceStat((int)value);
+                playerStats.damage += secondaryValue;
+                break;
+            case UpgradeType.BASE_POISON:
+                playerStats.UpdatePoisonStat(value);
+                break;
+            case UpgradeType.PROJ_EXPLOSION:
+                playerStats.UpdateExplodingProjectile(value);
+                break;
+            case UpgradeType.POISON_TRAIL:
+                playerStats.hasPoisonTrail = true;
+                playerStats.UpdatePoisonStat(value);
+                break;
+            case UpgradeType.BROKEN_SCOPE:
+                playerStats.damage += value;
+                playerStats.hasBrokenScope = true;
+                break;
+            case UpgradeType.SNIPER_SCOPE:
+                playerStats.damage += value;
+                playerStats.hasSniperScope = true;
+                break;
+            case UpgradeType.SPRAY_AND_PRAY:
+                playerStats.attackSpeed += value;
+                playerStats.hasSprayAndPray = true;
+                break;
+            case UpgradeType.THORNS:
+                playerStats.UpdateThorns(value);
+                break;
+            case UpgradeType.BERSERK:
+                playerStats.UpdateBerserk(value);
+                break;
+            case UpgradeType.CHAINS:
+                playerStats.UpdateChains();
+                break;
+            case UpgradeType.FIREWALL:
+                playerStats.UpdateFireWall(value);
+                break;
+            case UpgradeType.HP_TO_DMG:
+                playerStats.UpdateHpToDmg(value);
+                break;
+            case UpgradeType.RICOCHET:
+                playerStats.UpdateRicochet();
                 break;
         }
     }

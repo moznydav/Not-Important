@@ -47,7 +47,7 @@ public class Beholder : EnemyShooter
         float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
         GameObject shot = Instantiate(projectile, transform.position, Quaternion.identity);
         shot.GetComponent<Rigidbody2D>().velocity = aimDirection * shot.GetComponent<Projectile>().GetProjectileSPeed();
-        shot.GetComponent<Projectile>().SetDamage(stats.damage.value);
+        shot.GetComponent<Projectile>().SetDamage(stats.damage);
         shot.GetComponent<Projectile>().SetDirection(aimDirection);
         shot.transform.eulerAngles = new Vector3(0, 0, angle);
         legs.GetComponent<Animator>().SetBool("Attacking", false);

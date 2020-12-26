@@ -9,6 +9,8 @@ public class PlayerStats : Stats
     public RollSupply rollSupply;
     private int rollsRemaining;
     private float lastRegenTime;
+    
+
 
     private void Awake() {
         lastRegenTime = Time.time;
@@ -63,49 +65,37 @@ public class PlayerStats : Stats
 
     public void UpdateHealthStat(float value)
     {
-        maxHealth.AddModifier(new StatModifier(value));
+        maxHealth += value;
         base.currentHealth += value;
         base.UpdateHealthbar();
     }
-    public CharacterStat GetDamageStat()
+
+    public void AddPierceStat(int value)
     {
-        return damage;
+        pierceValue += value;
     }
-    public CharacterStat GetAttackSpeedStat()
+    public void AddProjectileStat(int value)
     {
-        return attackSpeed;
-    }
-    public CharacterStat GetMoveSpeedStat()
-    {
-        return moveSpeed;
+        numOfProjectiles += value;
     }
 
-    public CharacterStat GetPierceStat()
+    public void UpdatePoisonStat(float value)
     {
-        return pierceValue;
-    }
-    public CharacterStat GetProjectileStat()
-    {
-        return numOfProjectiles;
-    }
-    public CharacterStat GetProjectileSpeedStat()
-    {
-        return projectileSpeed;
+        if (!base.hasPoison)
+        {
+            base.hasPoison = true;
+            base.poisonTicks = poisonTicks;
+        }
+        base.poisonDamage += value;
+            //AddModifier(new StatModifier(value));
     }
 
-    public void UpdateProjectileSpeed(float value)
+    public void UpdateExplodingProjectile(float damage)
     {
-        projectileSpeed.AddModifier(new StatModifier(value));
+        base.explodingProjectiles = true;
+        base.explosionDamage += damage;
+
     }
 
-    public void UpdateNumOfProjectilesStat(float value)
-    {
-        numOfProjectiles.AddModifier(new StatModifier(value));
-    }
-
-    public void UpdatePierceValueStat(float value)
-    {
-        pierceValue.AddModifier(new StatModifier(value));
-    }
-
+    
 }
