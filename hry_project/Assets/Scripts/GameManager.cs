@@ -49,6 +49,7 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = 0f;
         pauseMenu.SetActive(true);
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void Resume()
@@ -62,6 +63,7 @@ public class GameManager : Singleton<GameManager>
             environmentMenu.SetActive(false);
         }
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void ToMainMenu()
@@ -182,6 +184,7 @@ public class GameManager : Singleton<GameManager>
     {
         DeathScreen.SetActive(true);
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         //Time.timeScale = 0f;
     }
 

@@ -15,7 +15,6 @@ public class Goblin : Enemy
     
     bool attacking = false;
     bool attackDone = false;
-    bool spawning = true;
     Vector3 attackDirection = new Vector3(0f, 0f, 0f);
 
 
@@ -76,15 +75,9 @@ public class Goblin : Enemy
         Stats otherStats = other.GetComponent<Stats>();
         if (otherStats is PlayerStats && !attackDone)
         {
-            otherStats.DealDamage(stats.damage.value);
+            otherStats.DealDamage(stats.damage);
             StartCoroutine(DamageCooldown());
         }
     }
-
-    private void DoneSpawning()
-    {
-        spawning = false;
-    }
-
 }
 ;

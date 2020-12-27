@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGamePaused: 0
   waveInterval: 1
-  enemyPowerMultiplier: 5
+  enemyPowerMultiplier: 3
   enemySpawners:
   - {fileID: 0}
   - {fileID: 0}
