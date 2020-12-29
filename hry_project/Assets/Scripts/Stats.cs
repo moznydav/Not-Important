@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
+    //AB5858
     public Healthbar healthbar;
 
     //Config base stats
@@ -24,6 +25,7 @@ public class Stats : MonoBehaviour
     [SerializeField] float immuneDuration = 0.2f;
     [SerializeField] GameObject[] blinkBody;
     [SerializeField] float blinkDuration = 0.1f;
+    [SerializeField] Color berserkColor;
 
     // Stats
     public float maxHealth;
@@ -44,7 +46,11 @@ public class Stats : MonoBehaviour
     private float fireWallInterval;
     private float HpToDmgMultiplier;
     public float damageAuraMultiplier;
+    public float parkourMultiplier = 1f;
+    public int guppyLives = 0;
+    public float unlimitedRollsMultiplier = 1f;
     public bool isBuffed = false;
+    
 
 
     [Header("For Debug")]
@@ -72,7 +78,9 @@ public class Stats : MonoBehaviour
     public bool hasDumbLuck = false;
     public bool hasDamageAura = false;
     public bool hasParkourBoots = false;
+    public bool hasCorpseExplosion = false;
     public bool hasGuppy = false;
+    public bool hasUnlimitedRolls = false;
 
     private SpriteRenderer[] spriteRenderer;
 
@@ -108,6 +116,8 @@ public class Stats : MonoBehaviour
         damageAuraMultiplier = 0;
 }
 
+   
+
     public void UpdateHealthbar()
     {
         if (healthbar)
@@ -130,6 +140,11 @@ public class Stats : MonoBehaviour
                 
             }
 
+            if (hasUnlimitedRolls)
+            {
+                damage *= unlimitedRollsMultiplier;
+            }
+
             if (hasChains)
             {
                 currentHealth -= damage * chainsMultiplier ;
@@ -139,6 +154,7 @@ public class Stats : MonoBehaviour
                 currentHealth -= damage;
             }
             
+
             StartCoroutine(HandleHit());
 
             if (!blink)
@@ -149,11 +165,29 @@ public class Stats : MonoBehaviour
 
             if (currentHealth <= 0)
             {
-                isAlive = false;
-                Destroy(gameObject);
+                if(hasGuppy && guppyLives > 0)
+                {
+                    guppyLives--;
+                    currentHealth = 1;
+
+                    Player player = GetComponent<Player>();
+                    if (player)
+                    {
+                        player.UpdateCouter(guppyLives.ToString());
+                    }
+                }
+                else
+                {
+                    isAlive = false;
+                    Destroy(gameObject);
+                }
                 //GameManager.Instance.EnemyKilled();
                 //Change this
                 //Add animations
+            }
+            if (hasBerserk && currentHealth < maxHealth * 0.3f)
+            {
+                updateSpriteColor(berserkColor);
             }
             // Debug.Log(gameObject.name + " health reduced to " + currentHealth);
         }
@@ -192,12 +226,17 @@ public class Stats : MonoBehaviour
            // Debug.Log("POISON TICK");
             DealDamage(damage,null);
         }
-        updateSpriteColor(Color.white);
+        if(hasBerserk && currentHealth < maxHealth * 0.3f)
+        {
+            updateSpriteColor(Color.white);
+        }
+        
         poisoned = false;
     }
     public void HealToMax()
     {
         currentHealth = maxHealth;
+        updateSpriteColor(Color.white);
         UpdateHealthbar();
     }
 
@@ -218,10 +257,8 @@ public class Stats : MonoBehaviour
 
     private IEnumerator Flash()
     {
-        Debug.Log(spriteRenderer.Length);
         for (int i = 0; i < spriteRenderer.Length; i++)
-        {
-            Debug.Log("BAM!");
+        { 
             spriteRenderer[i].color = Color.red;
         }
 
@@ -235,13 +272,13 @@ public class Stats : MonoBehaviour
         blink = false;
     }
 
-    private void updateSpriteColor(Color color)
+    public void updateSpriteColor(Color color)
     {
         baseColor = color;
 
         for (int i = 0; i < spriteRenderer.Length; i++)
         {
-            spriteRenderer[i].color = Color.white;
+            spriteRenderer[i].color = baseColor;
         }
 
     }
@@ -341,5 +378,42 @@ public class Stats : MonoBehaviour
     {
         damageAuraMultiplier += value;
         hasDamageAura = true;
+    }
+
+    public void UpdateParkourBoots(float value)
+    {
+        parkourMultiplier += value;
+        hasParkourBoots = true;
+    }
+
+    private IEnumerator HandleMovementBoost()
+    {
+        if (hasParkourBoots)
+        {
+            float buff = moveSpeed * (parkourMultiplier - 1);
+            moveSpeed += buff;
+            yield return new WaitForSeconds(1.5f);
+            moveSpeed -= buff;
+    
+        }
+    }
+
+    private void StartMovementBoost()
+    {
+        StartCoroutine(HandleMovementBoost());
+    }
+
+    public void UpdateGuppy(int value)
+    {
+        hasGuppy = true;
+        guppyLives += value;
+        maxHealth = 1f;
+        currentHealth = 1f;
+
+        Player player = GetComponent<Player>();
+        if (player)
+        {
+            player.UpdateCouter(guppyLives.ToString());
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] float rollSpeed = 2000f;
     [SerializeField] float projectileSpreadModifier = 5f;
     [SerializeField] float trailInterval = 1f;
+    [SerializeField] GameObject CorpseExplosion;
 
     [Header("Parts")]
     [SerializeField] GameObject projectile;
@@ -16,6 +18,8 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject body;
     [SerializeField] GameObject legs;
     [SerializeField] GameObject aura;
+    [SerializeField] Text guppyCounter;
+    [SerializeField] GameObject guppy;
 
     // State
     bool isRolling = false;
@@ -207,7 +211,7 @@ public class Player : MonoBehaviour
                 //Debug.Log("Shoot direction: " + shootDirection);
                 GameObject shot = Instantiate(projectile, transform.position, Quaternion.identity);
                 shot.GetComponent<Rigidbody2D>().velocity = shootDirection * shot.GetComponent<Projectile>().GetProjectileSPeed();
-                shot.GetComponent<Projectile>().SetDamage(playerStats.damage);
+                shot.GetComponent<Projectile>().SetDamage(playerStats.GetDamage());
                 shot.GetComponent<Projectile>().SetDirection(shootDirection);
                 shot.GetComponent<Projectile>().SetProjectileSpeed(playerStats.projectileSpeed);
                 shot.GetComponent<Projectile>().SetPierce(playerStats.pierceValue);
@@ -272,4 +276,16 @@ public class Player : MonoBehaviour
         trailCooldown = false;
     }
 
+    public void SpawnCorpseExplosion(Vector3 position)
+    {
+        GameObject BoomBoom = Instantiate(CorpseExplosion, position, Quaternion.identity);
+        BoomBoom.GetComponent<Explosion>().SetUpExplosion(0, true, playerStats.poisonDamage, playerStats.poisonTicks);
+    }
+
+    public void UpdateCouter(string newVal)
+    {
+        guppy.SetActive(true);
+        guppyCounter.text = newVal;
+
+    }
 }

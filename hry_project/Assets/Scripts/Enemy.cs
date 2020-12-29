@@ -180,11 +180,15 @@ public class Enemy : MonoBehaviour
             if (player.GetComponent<PlayerStats>().hasDumbLuck)
             {
                 int luckyNumber = 42;
-                int roll = UnityEngine.Random.Range(0, 150);
+                int roll = UnityEngine.Random.Range(0, 100);
                 if (roll == luckyNumber)
                 {
                     player.GetComponent<PlayerStats>().HealToMax();
                 }
+            }
+            if (player.GetComponent<PlayerStats>().hasCorpseExplosion)
+            {
+                player.GetComponent<Player>().SpawnCorpseExplosion(transform.position);
             }
         }
         

@@ -152,6 +152,18 @@ public class Upgrade : ScriptableObject
             case UpgradeType.DAMAGE_AURA:
                 playerStats.UpdateDamageAura(value);
                 break;
+            case UpgradeType.PARKOUR_BOOTS:
+                playerStats.UpdateParkourBoots(value);
+                break;
+            case UpgradeType.POISON_EXPLOSION:
+                playerStats.updateCorpseExplosion(value);
+                break;
+            case UpgradeType.GUPPY_TALISMAN:
+                playerStats.UpdateGuppy((int)value);
+                break;
+            case UpgradeType.UNLIMITED_ROLLS:
+                playerStats.UpdateUnlimitedRolls();
+                break;
         }
     }
 }

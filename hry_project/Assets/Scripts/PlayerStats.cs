@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class PlayerStats : Stats
 {
-    [SerializeField] float rollRegenTime;
+    [Header("PlayerStats part")]
+    [SerializeField]public float rollRegenTime;
     [SerializeField] int maxRolls;
+    
     public RollSupply rollSupply;
     private int rollsRemaining;
     private float lastRegenTime;
-    
-
-
     private void Awake() {
         lastRegenTime = Time.time;
         base.InitializeStats();
@@ -40,6 +39,7 @@ public class PlayerStats : Stats
     private void Update()
     {
         HandleRollRegen();
+        
     }
 
     public int GetRollsRemaining() { return rollsRemaining; }
@@ -61,6 +61,7 @@ public class PlayerStats : Stats
         base.DealDamage(damage, origin);
         SetImmune(true);
         StartCoroutine(StartImmuneFrames());
+        
     }
 
     public void UpdateHealthStat(float value)
@@ -90,6 +91,13 @@ public class PlayerStats : Stats
             //AddModifier(new StatModifier(value));
     }
 
+    public void updateCorpseExplosion(float value)
+    {
+        hasCorpseExplosion = true;
+        poisonDamage += value;
+        poisonTicks = 3;
+    }
+
     public void UpdateExplodingProjectile(float damage)
     {
         base.explodingProjectiles = true;
@@ -102,6 +110,20 @@ public class PlayerStats : Stats
         chainsMultiplier /= 2;
         hasChains = true;
         rollSupply.gameObject.SetActive(false);      
+    }
+
+    public void UpdateUnlimitedRolls()
+    {
+        if (!hasUnlimitedRolls)
+        {
+            hasUnlimitedRolls = true;
+            rollRegenTime = 0.1f;
+            unlimitedRollsMultiplier = 2f;
+        }
+        else
+        {
+            unlimitedRollsMultiplier *= 0.7f;
+        }
     }
 
 }
