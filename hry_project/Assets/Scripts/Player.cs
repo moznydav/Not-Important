@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject aura;
     [SerializeField] Text guppyCounter;
     [SerializeField] GameObject guppy;
+    [SerializeField] public GameObject fireWall;
 
     // State
     bool isRolling = false;

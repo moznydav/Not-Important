@@ -321,8 +321,12 @@ public class Stats : MonoBehaviour
         while (hasFireWall)
         {
             yield return new WaitForSeconds(3f);
+            GetComponent<Player>().fireWall.SetActive(true);
             fireWallImmune = true;
             yield return new WaitForSeconds(fireWallInterval);
+            GetComponent<Player>().fireWall.SetActive(false);
+            fireWallImmune = false;
+
         }
         
 

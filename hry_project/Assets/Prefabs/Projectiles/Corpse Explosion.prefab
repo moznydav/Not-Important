@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2775445341446495184}
   - component: {fileID: 2775445341446495189}
   - component: {fileID: 1669997456}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Corpse Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
