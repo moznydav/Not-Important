@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 20
   lifespan: 1
-  ricochet: 2
+  ricochet: 0
   pierce: 0
   pierceDamageModifier: 3
   knockBackValue: 0.3
@@ -110,6 +110,7 @@ MonoBehaviour:
   brokenScopeModifier: 0.8
   SniperScopeModifier: 1.7
   poisoned: 0
+  damage: 0
   exploding: 0
 --- !u!50 &254868739
 Rigidbody2D:
