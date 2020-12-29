@@ -146,6 +146,12 @@ public class Upgrade : ScriptableObject
             case UpgradeType.RICOCHET:
                 playerStats.UpdateRicochet();
                 break;
+            case UpgradeType.LUCKY_CHARM:
+                playerStats.UpdateDumbLuck();
+                break;
+            case UpgradeType.DAMAGE_AURA:
+                playerStats.UpdateDamageAura(value);
+                break;
         }
     }
 }

@@ -40,10 +40,12 @@ public class Stats : MonoBehaviour
     private float poisonIntervals = 1.4f;
     public float thornsDamage;
     public float berserkMultiplier = 1f;
-    private float chainsMultiplier = 1f;
+    public float chainsMultiplier = 1f;
     private float fireWallInterval;
     private float HpToDmgMultiplier;
+    public float damageAuraMultiplier;
     public bool isBuffed = false;
+
 
     [Header("For Debug")]
     [SerializeField] public float currentHealth;
@@ -67,6 +69,10 @@ public class Stats : MonoBehaviour
     public bool hasFireWall = false; // immunity every 3s
     public bool hasHpToDmg = false;
     public bool hasRicochet = false;
+    public bool hasDumbLuck = false;
+    public bool hasDamageAura = false;
+    public bool hasParkourBoots = false;
+    public bool hasGuppy = false;
 
     private SpriteRenderer[] spriteRenderer;
 
@@ -99,6 +105,7 @@ public class Stats : MonoBehaviour
         poisonTicks = 0;
         ricochetValue = 0;
         explosionDamage = 0.15f;
+        damageAuraMultiplier = 0;
 }
 
     public void UpdateHealthbar()
@@ -109,11 +116,20 @@ public class Stats : MonoBehaviour
         }
     }
 
-    public void DealDamage(float damage)
+    public void DealDamage(float damage, Stats origin)
     {
         //TOOD: add GameObject origin parameter
         if (!immune && !fireWallImmune)
         {
+            if (hasThorns)
+            {
+                if (origin)
+                {
+                    origin.DealDamage(thornsDamage, null);
+                }
+                
+            }
+
             if (hasChains)
             {
                 currentHealth -= damage * chainsMultiplier ;
@@ -174,7 +190,7 @@ public class Stats : MonoBehaviour
         {
             yield return new WaitForSeconds(poisonIntervals);
            // Debug.Log("POISON TICK");
-            DealDamage(damage);
+            DealDamage(damage,null);
         }
         updateSpriteColor(Color.white);
         poisoned = false;
@@ -247,11 +263,7 @@ public class Stats : MonoBehaviour
         hasBerserk = true;
     }
 
-    public void UpdateChains()
-    {
-        chainsMultiplier /= 2;
-        hasChains = true;
-    }
+    
 
     public void UpdateFireWall(float value)
     {
@@ -319,5 +331,15 @@ public class Stats : MonoBehaviour
             retDamage *= berserkMultiplier;
         }
         return retDamage;
+    }
+    public void UpdateDumbLuck()
+    {
+        hasDumbLuck = true;
+    }
+
+    public void UpdateDamageAura(float value)
+    {
+        damageAuraMultiplier += value;
+        hasDamageAura = true;
     }
 }

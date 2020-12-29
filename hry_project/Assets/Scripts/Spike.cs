@@ -10,7 +10,7 @@ public class Spike : MonoBehaviour
         Stats stats = other.GetComponent<Stats>();
 
         if (stats) {
-            stats.DealDamage(damageValue);
+            stats.DealDamage(damageValue,null);
         }
 
     }
@@ -19,7 +19,7 @@ public class Spike : MonoBehaviour
         Stats stats = other.GetComponent<Stats>();
 
         if (stats) {
-            stats.DealDamage(damageValue);
+            stats.DealDamage(damageValue,null);
         }
     }
 }

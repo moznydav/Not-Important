@@ -48,7 +48,7 @@ public class EnemyShooter : Enemy
         Stats otherStats = other.GetComponent<Stats>();
         if (otherStats is PlayerStats && !attackDone)
         {
-            otherStats.DealDamage(stats.damage);
+            otherStats.DealDamage(stats.damage,stats);
             StartCoroutine(MeleeDamageCooldown());
         }
     }

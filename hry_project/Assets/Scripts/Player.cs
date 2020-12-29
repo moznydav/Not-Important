@@ -15,11 +15,13 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject crossHair;
     [SerializeField] GameObject body;
     [SerializeField] GameObject legs;
+    [SerializeField] GameObject aura;
 
     // State
     bool isRolling = false;
     bool isShooting = false;
     bool trailCooldown = false;
+    bool auraEnabled = false;
     // Cached variables
 
     public Vector2 moveDirection;
@@ -38,6 +40,7 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         playerStats = GetComponent<PlayerStats>();
         Cursor.visible = false;
+        aura.SetActive(false);
     }
 
     // Update is called once per frame
@@ -52,6 +55,7 @@ public class Player : MonoBehaviour
         Aim();
         if (isRolling)
         {
+
             Roll();
         }
         else
@@ -59,6 +63,12 @@ public class Player : MonoBehaviour
             Move();
             HandleShoot();
         }
+        if (playerStats.hasDamageAura && !auraEnabled)
+        {
+            auraEnabled = true;
+            aura.SetActive(true);
+        }
+
         if (playerStats.hasPoisonTrail)
         {
             if (moveDirection.magnitude > 0 && !trailCooldown)
@@ -86,7 +96,7 @@ public class Player : MonoBehaviour
 
             if (Input.GetButtonDown("Jump") &&
                 moveDirection.magnitude > 0 &&
-                playerStats.GetRollsRemaining() > 0) {
+                playerStats.GetRollsRemaining() > 0 && !playerStats.hasChains) {
                 StartRoll();
             }
         }
@@ -201,6 +211,7 @@ public class Player : MonoBehaviour
                 shot.GetComponent<Projectile>().SetDirection(shootDirection);
                 shot.GetComponent<Projectile>().SetProjectileSpeed(playerStats.projectileSpeed);
                 shot.GetComponent<Projectile>().SetPierce(playerStats.pierceValue);
+                shot.GetComponent<Projectile>().SetOrigin(gameObject);
                 if (playerStats.hasPoison)
                 {
                     shot.GetComponent<Projectile>().SetPoison(3, (int)playerStats.poisonDamage);

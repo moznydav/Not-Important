@@ -56,9 +56,9 @@ public class PlayerStats : Stats
         }
     }
 
-    public void DealDamage(float damage)
+    public void DealDamage(float damage, Stats origin)
     {
-        base.DealDamage(damage);
+        base.DealDamage(damage, origin);
         SetImmune(true);
         StartCoroutine(StartImmuneFrames());
     }
@@ -97,5 +97,11 @@ public class PlayerStats : Stats
 
     }
 
-    
+    public void UpdateChains()
+    {
+        chainsMultiplier /= 2;
+        hasChains = true;
+        rollSupply.gameObject.SetActive(false);      
+    }
+
 }

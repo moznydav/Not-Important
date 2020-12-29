@@ -89,11 +89,7 @@ public class Projectile : MonoBehaviour
                 {
                     stats.ApplyPoison(poisonTicks, poisonDamage);
                 }
-                stats.DealDamage(damage);
-                if (stats.hasThorns)
-                {
-                    origin.GetComponent<Stats>().DealDamage(stats.thornsDamage);
-                }    
+                stats.DealDamage(damage,origin.GetComponent<Stats>());   
 
                 if (exploding)
                 {

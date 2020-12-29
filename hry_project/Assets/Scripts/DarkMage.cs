@@ -61,6 +61,7 @@ public class DarkMage : EnemyShooter
             shot.GetComponent<Rigidbody2D>().velocity = aimDirection * shot.GetComponent<Projectile>().GetProjectileSPeed();
             shot.GetComponent<Projectile>().SetDamage(stats.damage);
             shot.GetComponent<Projectile>().SetDirection(aimDirection);
+            shot.GetComponent<Projectile>().SetOrigin(gameObject);
             shot.transform.eulerAngles = new Vector3(0, 0, angle);
             yield return new WaitForSeconds(timeBetweenShots);
             Destroy(gun);

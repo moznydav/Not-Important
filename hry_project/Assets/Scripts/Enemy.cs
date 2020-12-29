@@ -175,6 +175,21 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (player)
+        {
+            if (player.GetComponent<PlayerStats>().hasDumbLuck)
+            {
+                int luckyNumber = 42;
+                int roll = UnityEngine.Random.Range(0, 150);
+                if (roll == luckyNumber)
+                {
+                    player.GetComponent<PlayerStats>().HealToMax();
+                }
+            }
+        }
+        
+        
+
         FindObjectOfType<GameManager>().EnemyKilled();
     }
 }

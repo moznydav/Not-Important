@@ -19,7 +19,7 @@ public class Explosion : MonoBehaviour
             {
                 stats.ApplyPoison(poisonTicks, poisonDamage);
             }
-            stats.DealDamage(damage);
+            stats.DealDamage(damage,null);
         }
 
     }

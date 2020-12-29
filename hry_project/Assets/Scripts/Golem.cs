@@ -52,7 +52,8 @@ public class Golem : EnemyShooter
         anim.SetBool("Attacking", false);
         GameObject shot = Instantiate(projectile, player.transform.position, Quaternion.identity);
         shot.GetComponent<GolemProjectile>().SetDamage(stats.damage);
-        shot.GetComponent<GolemProjectile>().SetPlayer(player);
+        shot.GetComponent<GolemProjectile>().SetPlayerAndOrigin(player,stats);
+
     }
 
 }

@@ -55,7 +55,7 @@ public class ExplosiveBarrel : Destroyable
         {
             if (CanHit(item.transform.position))
             {
-                item.DealDamage(damage);
+                item.DealDamage(damage,null);
             }
         }
 

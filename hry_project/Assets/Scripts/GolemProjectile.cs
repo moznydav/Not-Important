@@ -8,6 +8,7 @@ public class GolemProjectile : MonoBehaviour
     [SerializeField] private bool followPlayer;
     [SerializeField] Collider2D dmgArea;
     [SerializeField] GameObject player;
+    [SerializeField] Stats origin;
 
     private void Awake()
     {
@@ -22,7 +23,7 @@ public class GolemProjectile : MonoBehaviour
 
             if (stats)
             {
-                stats.DealDamage(damage);
+                stats.DealDamage(damage,origin);
             }
             // Debug.Log("HIT " + other.name);
     }
@@ -64,9 +65,11 @@ public class GolemProjectile : MonoBehaviour
         this.damage = damage;
     }
 
-    public void SetPlayer(GameObject player)
+    public void SetPlayerAndOrigin(GameObject player, Stats origin)
     {
         this.player = player;
+        this.origin = origin;
+
     }
    
 }
