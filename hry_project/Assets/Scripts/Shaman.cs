@@ -18,6 +18,7 @@ public class Shaman : Enemy
     bool attacking = false;
     bool attackDone = false;
     bool buffEnabled;
+    bool buffing;
     Vector3 attackDirection = new Vector3(0f, 0f, 0f);
 
 
@@ -25,6 +26,7 @@ public class Shaman : Enemy
     {
         InitializeEnemy();
         buffEnabled = false;
+        buffing = false;
         anim = GetComponent<Animator>();
     }
 
@@ -44,6 +46,10 @@ public class Shaman : Enemy
                 anim.SetFloat("Magnitude", GetMoveDirection().magnitude);
                 
             }
+            if (buffing)
+            {
+                GetComponent<Rigidbody2D>().velocity = new Vector3(0f, 0f, 0f);
+            }
         }
 
     }
@@ -56,7 +62,7 @@ public class Shaman : Enemy
         {
             SetCanRun(false);
             anim.SetBool("Buffing", true);
-            GetComponent<Rigidbody2D>().velocity = new Vector3(0f, 0f, 0f);
+            buffing = true;
             GameObject currentBuff = Instantiate(buff, transform.position, Quaternion.identity);
             yield return new WaitForSeconds(buffCooldown);
             //Handle animator
@@ -70,6 +76,7 @@ public class Shaman : Enemy
     {
         anim.SetBool("Buffing", false);
         SetCanRun(true);
+        buffing = false;
     }
 
     private IEnumerator DamageCooldown()

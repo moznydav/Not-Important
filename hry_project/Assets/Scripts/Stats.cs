@@ -228,6 +228,10 @@ public class Stats : MonoBehaviour
         }
         if(hasBerserk && currentHealth < maxHealth * 0.3f)
         {
+            updateSpriteColor(berserkColor);
+        }
+        else
+        {
             updateSpriteColor(Color.white);
         }
         
