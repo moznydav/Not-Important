@@ -78,8 +78,9 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-       // if (!attackDone)
-       // {
+        if (!attackDone)
+        {
+            attackDone = true;
             Stats stats = other.GetComponent<Stats>();
 
             if (stats)
@@ -111,7 +112,7 @@ public class Projectile : MonoBehaviour
                     Destroy(gameObject);
                 }
                 
-         //   }
+            }
 
 
             // Debug.Log("HIT " + other.name);
@@ -120,6 +121,10 @@ public class Projectile : MonoBehaviour
             }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        attackDone = false;
+    }
     public void SetDamage(float damage)
     {
         this.damage = damage;

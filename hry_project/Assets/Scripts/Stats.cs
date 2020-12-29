@@ -43,6 +43,7 @@ public class Stats : MonoBehaviour
     private float chainsMultiplier = 1f;
     private float fireWallInterval;
     private float HpToDmgMultiplier;
+    public bool isBuffed = false;
 
     [Header("For Debug")]
     [SerializeField] public float currentHealth;
@@ -110,6 +111,7 @@ public class Stats : MonoBehaviour
 
     public void DealDamage(float damage)
     {
+        //TOOD: add GameObject origin parameter
         if (!immune && !fireWallImmune)
         {
             if (hasChains)
@@ -294,6 +296,14 @@ public class Stats : MonoBehaviour
             hasHpToDmg = true;
             HpToDmgMultiplier = 0.2f;
         }
+    }
+
+    public IEnumerator HandleBuff(float movementBuff, float buffDuration)
+    {
+        moveSpeed += movementBuff;
+        yield return new WaitForSeconds(buffDuration);
+        moveSpeed -= movementBuff;
+        isBuffed = false;
     }
 
     //TODO use this function everytime someone attacks
