@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
     public bool isGamePaused = false;
-    [SerializeField] float waveInterval;
+    [SerializeField] float wavePauseTime;
     [SerializeField] float enemyPowerMultiplier;
     [SerializeField] EnemySpawner[] enemySpawners;
     [SerializeField] GameObject[] enemyTypes;
@@ -21,6 +21,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] List<GameObject> listOfUpgrades;
     [SerializeField] GameObject upgradeChest;
     [SerializeField] int waveToLevelRatio = 2;
+    [SerializeField] float timeBetweenWaves = 15;
     public bool canUpgrade;
     public bool debugMode = false;
 
@@ -28,6 +29,7 @@ public class GameManager : Singleton<GameManager>
     LevelManager levelManager;
 
     private int activeEnemyTypes = 1;
+    private float NextWaveIn;
     private int currentWaveNumber;
     [SerializeField] public int currentEnemyCount = 0;
     private int waveNumber = 0;
@@ -80,9 +82,9 @@ public class GameManager : Singleton<GameManager>
 
     public void WaveEnded()
     {
-        // TODO: Show upgrade menu
         print("Wave " + waveNumber + " ended");
         SpawnChest();
+        ScheduleWaveStart();
     }
 
     public void EnemyKilled()
@@ -95,6 +97,7 @@ public class GameManager : Singleton<GameManager>
 
     void WaveStart()
     {
+        NextWaveIn = timeBetweenWaves;
         waveNumber++;
         if (waveNumber % waveToLevelRatio == 0) {
             Debug.Log("NextLevel");
@@ -144,7 +147,7 @@ public class GameManager : Singleton<GameManager>
 
     public void ScheduleWaveStart()
     {
-        Invoke("WaveStart", waveInterval);
+        Invoke("WaveStart", wavePauseTime);
     }
 
     public void ActivateUpgradeMenu()
@@ -188,10 +191,13 @@ public class GameManager : Singleton<GameManager>
         //Time.timeScale = 0f;
     }
 
-
-    // Update is called once per frame
     void Update()
     {
+        NextWaveIn -= Time.deltaTime;
+        if (NextWaveIn < 0)
+        {
+            WaveEnded();
+        } 
         if (Input.GetButtonDown("Cancel"))
         {
             if (isGamePaused)
