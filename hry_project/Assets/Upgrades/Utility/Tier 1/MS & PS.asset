@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MS & PS
   m_EditorClassIdentifier: 
   value: 40
-  secondaryValue: 10
+  secondaryValue: 5
   upgradeType: 5

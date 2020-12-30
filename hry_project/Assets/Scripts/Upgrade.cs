@@ -47,6 +47,16 @@ public class Upgrade : ScriptableObject
     [SerializeField] float secondaryValue = 0f;
     [SerializeField] UpgradeType upgradeType;
 
+    //Offense
+    private float classDamage = 10f;
+    private float classAttackSpeed = -0.05f;
+    //Defence
+    private float classHp = 20f;
+    //Utility
+    private float classMoveSpeed = 30f;
+    private float classProjectileSpeed = 4f;
+
+
     public void ApplyUpgrade()
     {
         PlayerStats playerStats = GameObject.FindWithTag(Constants.PLAYER_TAG).GetComponent<PlayerStats>();
@@ -110,6 +120,8 @@ public class Upgrade : ScriptableObject
                 playerStats.UpdatePoisonStat(value);
                 break;
             case UpgradeType.PROJ_EXPLOSION:
+                playerStats.damage += classDamage;
+                playerStats.attackSpeed -= classAttackSpeed;
                 playerStats.UpdateExplodingProjectile(value);
                 break;
             case UpgradeType.POISON_TRAIL:
@@ -129,39 +141,52 @@ public class Upgrade : ScriptableObject
                 playerStats.hasSprayAndPray = true;
                 break;
             case UpgradeType.THORNS:
+                playerStats.UpdateHealthStat(classHp);
                 playerStats.UpdateThorns(value);
                 break;
             case UpgradeType.BERSERK:
+                playerStats.UpdateHealthStat(classHp);
                 playerStats.UpdateBerserk(value);
                 break;
             case UpgradeType.CHAINS:
+                playerStats.UpdateHealthStat(classHp * 2);
                 playerStats.UpdateChains();
                 break;
             case UpgradeType.FIREWALL:
+                playerStats.UpdateHealthStat(classHp);
                 playerStats.UpdateFireWall(value);
                 break;
             case UpgradeType.HP_TO_DMG:
+                playerStats.UpdateHealthStat(classHp);
                 playerStats.UpdateHpToDmg(value);
                 break;
             case UpgradeType.RICOCHET:
+                playerStats.damage += classDamage;
                 playerStats.UpdateRicochet();
                 break;
             case UpgradeType.LUCKY_CHARM:
+                playerStats.UpdateHealthStat(classHp);
                 playerStats.UpdateDumbLuck();
                 break;
             case UpgradeType.DAMAGE_AURA:
+                playerStats.UpdateHealthStat(classHp * 0.5f);
                 playerStats.UpdateDamageAura(value);
                 break;
             case UpgradeType.PARKOUR_BOOTS:
+                playerStats.moveSpeed += classMoveSpeed;
+                playerStats.attackSpeed += classAttackSpeed;
                 playerStats.UpdateParkourBoots(value);
                 break;
             case UpgradeType.POISON_EXPLOSION:
                 playerStats.updateCorpseExplosion(value);
                 break;
             case UpgradeType.GUPPY_TALISMAN:
+                playerStats.moveSpeed += classMoveSpeed;
+                playerStats.attackSpeed += classAttackSpeed;
                 playerStats.UpdateGuppy((int)value);
                 break;
             case UpgradeType.UNLIMITED_ROLLS:
+                playerStats.moveSpeed += classMoveSpeed;
                 playerStats.UpdateUnlimitedRolls();
                 break;
         }

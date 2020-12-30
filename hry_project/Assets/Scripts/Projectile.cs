@@ -13,8 +13,8 @@ public class Projectile : MonoBehaviour
     [SerializeField] float poisonDamage;
     [SerializeField] int poisonTicks;
     [SerializeField] float scopeIntervals = 0.3f;
-    [SerializeField] float brokenScopeModifier = 0.8f;
-    [SerializeField] float SniperScopeModifier = 1.7f;
+    [SerializeField] float brokenScopeModifier = 0.7f;
+    [SerializeField] float SniperScopeModifier = 1.9f;
 
     public bool poisoned;
     [SerializeField] float damage;
@@ -30,7 +30,9 @@ public class Projectile : MonoBehaviour
     bool attackDone = false;
     Rigidbody2D rigidBody;
     Vector2 direction;
-    
+
+   
+
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();

@@ -117,8 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7191956fa9e639d47a495817061a68da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementBuff: 100
-  buffDuration: 4
+  movementBuff: 110
+  buffDuration: 5
 --- !u!58 &975638592478555905
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShamanBuff : MonoBehaviour
 {
     [SerializeField] float movementBuff = 100f;
-    [SerializeField] float buffDuration = 4f;
+    [SerializeField] float buffDuration = 3f;
     GameObject shaman;
     Collider2D buffZone;
 
@@ -38,7 +38,7 @@ public class ShamanBuff : MonoBehaviour
             if (!stats.isBuffed)
             {
                 stats.isBuffed = true;
-                StartCoroutine(stats.HandleBuff(movementBuff,buffDuration));
+                stats.SetBuffed(movementBuff, buffDuration);
             }
         }
     }

@@ -211,7 +211,7 @@ public class Player : MonoBehaviour
                 }
                 //Debug.Log("Shoot direction: " + shootDirection);
                 GameObject shot = Instantiate(projectile, transform.position, Quaternion.identity);
-                shot.GetComponent<Rigidbody2D>().velocity = shootDirection * shot.GetComponent<Projectile>().GetProjectileSPeed();
+                shot.GetComponent<Rigidbody2D>().velocity = shootDirection * playerStats.projectileSpeed;
                 shot.GetComponent<Projectile>().SetDamage(playerStats.GetDamage());
                 shot.GetComponent<Projectile>().SetDirection(shootDirection);
                 shot.GetComponent<Projectile>().SetProjectileSpeed(playerStats.projectileSpeed);

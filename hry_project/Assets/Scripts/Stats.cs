@@ -355,10 +355,19 @@ public class Stats : MonoBehaviour
         }
     }
 
-    public IEnumerator HandleBuff(float movementBuff, float buffDuration)
+    public void SetBuffed(float movementBuff, float buffDuration)
+    {
+        StartCoroutine(HandleBuff(movementBuff, buffDuration));
+    }
+
+    private IEnumerator HandleBuff(float movementBuff, float buffDuration)
     {
         moveSpeed += movementBuff;
+        updateSpriteColor(berserkColor);
+        Debug.Log("BUFF INIT: ");
         yield return new WaitForSeconds(buffDuration);
+        Debug.Log("BUFF DONE");
+        updateSpriteColor(Color.white);
         moveSpeed -= movementBuff;
         isBuffed = false;
     }

@@ -96,12 +96,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10457ac6c3a1b0b45a817ab6c10ec4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthbar: {fileID: 0}
   baseMaxHealth: 100
   baseAttackSpeed: 1
   baseMoveSpeed: 150
   baseDamage: 50
-  isAlive: 1
+  baseNumOfProjectiles: 0
+  baseProjectileSpeed: 0
+  basePierce: 0
+  VFX: []
+  projectileExplosion: {fileID: 0}
+  poisonTrail: {fileID: 0}
+  immuneDuration: 0.2
+  blinkBody: []
+  blinkDuration: 0.1
+  berserkColor: {r: 0.7735849, g: 0.34786987, b: 0.34786987, a: 1}
+  maxHealth: 0
+  attackSpeed: 0
+  moveSpeed: 0
+  damage: 0
+  poisonDamage: 0
+  explosionDamage: 0
+  numOfProjectiles: 0
+  pierceValue: 0
+  ricochetValue: 0
+  poisonTicks: 0
+  projectileSpeed: 0
+  thornsDamage: 0
+  berserkMultiplier: 1
+  chainsMultiplier: 1
+  damageAuraMultiplier: 0
+  parkourMultiplier: 1
+  guppyLives: 0
+  unlimitedRollsMultiplier: 1
+  isBuffed: 0
   currentHealth: 0
+  isAlive: 1
+  hasPoison: 0
+  explodingProjectiles: 0
+  hasPoisonTrail: 0
+  hasBrokenScope: 0
+  hasSniperScope: 0
+  hasSprayAndPray: 0
+  hasThorns: 0
+  hasBerserk: 0
+  hasChains: 0
+  hasFireWall: 0
+  hasHpToDmg: 0
+  hasRicochet: 0
+  hasDumbLuck: 0
+  hasDamageAura: 0
+  hasParkourBoots: 0
+  hasCorpseExplosion: 0
+  hasGuppy: 0
+  hasUnlimitedRolls: 0
 --- !u!70 &6724593409106719361
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

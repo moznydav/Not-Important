@@ -262,6 +262,7 @@ MonoBehaviour:
   blinkBody:
   - {fileID: 1296292511343389069}
   blinkDuration: 0.1
+  berserkColor: {r: 0.6415094, g: 0.25821757, b: 0.25821757, a: 1}
   maxHealth: 0
   attackSpeed: 0
   moveSpeed: 0
@@ -275,6 +276,12 @@ MonoBehaviour:
   projectileSpeed: 0
   thornsDamage: 0
   berserkMultiplier: 1
+  chainsMultiplier: 1
+  damageAuraMultiplier: 0
+  parkourMultiplier: 1
+  guppyLives: 0
+  unlimitedRollsMultiplier: 1
+  isBuffed: 0
   currentHealth: 0
   isAlive: 1
   hasPoison: 0
@@ -289,6 +296,12 @@ MonoBehaviour:
   hasFireWall: 0
   hasHpToDmg: 0
   hasRicochet: 0
+  hasDumbLuck: 0
+  hasDamageAura: 0
+  hasParkourBoots: 0
+  hasCorpseExplosion: 0
+  hasGuppy: 0
+  hasUnlimitedRolls: 0
 --- !u!70 &1692508926896011956
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

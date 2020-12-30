@@ -52,9 +52,10 @@ MonoBehaviour:
   enemyTypes:
   - {fileID: 196022626036479520, guid: 31488a0371cabb44dbaeae6068867ae3, type: 3}
   - {fileID: 8551619868542897456, guid: 1efc1a62e73f0294a861f55b13152c34, type: 3}
-  - {fileID: 1692508926896011952, guid: 878d79d8ceac77a46a54aabd52ee8566, type: 3}
   - {fileID: 6534814302608795115, guid: 2199403c4cf355542a1d43c55d72a015, type: 3}
-  enemyPowers: 01000000020000000200000003000000
+  - {fileID: 1692508926896011952, guid: 878d79d8ceac77a46a54aabd52ee8566, type: 3}
+  - {fileID: 7988984751933178130, guid: 4d7faf50994ee6c4782e1ff040c4f810, type: 3}
+  enemyPowers: 0100000002000000030000000200000002000000
   pauseMenu: {fileID: 0}
   upgradeMenu: {fileID: 0}
   DeathScreen: {fileID: 0}

@@ -6,7 +6,7 @@ public class Shaman : Enemy
 {
     // Config
     [Header("Config")]
-    [SerializeField] float buffCooldown = 8f;
+    [SerializeField] float buffCooldown = 10f;
     [SerializeField] GameObject buff;
     [SerializeField] GameObject buffPlace;
     [SerializeField] float attackCooldown = 0.7f;
@@ -43,7 +43,6 @@ public class Shaman : Enemy
             if (!attacking)
             {
                 anim.SetFloat("Horizontal", GetMoveDirection().x);
-                anim.SetFloat("Magnitude", GetMoveDirection().magnitude);
                 
             }
             if (buffing)
