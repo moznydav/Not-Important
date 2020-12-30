@@ -7,7 +7,7 @@ public class ExplosiveBarrel : Destroyable
     [SerializeField] float damage = 50f;
     [SerializeField] GameObject explosionVFX;
 
-    BoxCollider2D collider;
+    BoxCollider2D barrelCollider;
     SpriteRenderer spriteRenderer;
     AStar pathfinding;
 
@@ -16,7 +16,7 @@ public class ExplosiveBarrel : Destroyable
 
     void Awake()
     {
-        collider = GetComponent<BoxCollider2D>();
+        barrelCollider = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         pathfinding = (AStar) GameObject.FindWithTag(Constants.ASTAR_TAG).GetComponent(typeof(AStar));
     }
@@ -42,7 +42,7 @@ public class ExplosiveBarrel : Destroyable
 
     private IEnumerator HandleDamage()
     {
-        collider.enabled = false;
+        barrelCollider.enabled = false;
         ClearMap();
 
         yield return new WaitForSeconds(.1f);
@@ -65,7 +65,7 @@ public class ExplosiveBarrel : Destroyable
         {
             if (CanHit(item.transform.position))
             {
-                item.Destroy();
+                item.Destroy(); //destroying barrel
             }
         }
     }
