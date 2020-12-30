@@ -42,6 +42,7 @@ public class GameManager : Singleton<GameManager>
         player = GameObject.FindWithTag(Constants.PLAYER_TAG);
         Resume();
         ScheduleWaveStart();
+        NextWaveIn = timeBetweenWaves;
     }
 
     public void Pause()
