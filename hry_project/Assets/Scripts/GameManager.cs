@@ -18,6 +18,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] public GameObject upgradeMenu;
     [SerializeField] public GameObject DeathScreen;
     [SerializeField] public GameObject environmentMenu;
+    [SerializeField] public NextWaveIn nextWaveInObject;
     [SerializeField] List<GameObject> listOfUpgrades;
     [SerializeField] GameObject upgradeChest;
     [SerializeField] int waveToLevelRatio = 2;
@@ -29,7 +30,7 @@ public class GameManager : Singleton<GameManager>
     LevelManager levelManager;
 
     private int activeEnemyTypes = 1;
-    private float NextWaveIn;
+    private float nextWaveIn;
     private int currentWaveNumber;
     [SerializeField] public int currentEnemyCount = 0;
     private int waveNumber = 0;
@@ -42,7 +43,7 @@ public class GameManager : Singleton<GameManager>
         player = GameObject.FindWithTag(Constants.PLAYER_TAG);
         Resume();
         ScheduleWaveStart();
-        NextWaveIn = timeBetweenWaves;
+        nextWaveIn = timeBetweenWaves;
     }
 
     public void Pause()
@@ -98,7 +99,7 @@ public class GameManager : Singleton<GameManager>
 
     void WaveStart()
     {
-        NextWaveIn = timeBetweenWaves;
+        nextWaveIn = timeBetweenWaves;
         waveNumber++;
         if (waveNumber % waveToLevelRatio == 0) {
             Debug.Log("NextLevel");
@@ -194,11 +195,12 @@ public class GameManager : Singleton<GameManager>
 
     void Update()
     {
-        NextWaveIn -= Time.deltaTime;
-        if (NextWaveIn < 0)
+        nextWaveIn -= Time.deltaTime;
+        nextWaveInObject.UpdateTime(nextWaveIn);
+        if (nextWaveIn < 0)
         {
             WaveEnded();
-        } 
+        }
         if (Input.GetButtonDown("Cancel"))
         {
             if (isGamePaused)
