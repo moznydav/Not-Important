@@ -110,20 +110,10 @@ public class LevelManager : MonoBehaviour
         }
     }
     public void ActivateExplosives() {
-        switch (explosivesLevel) {
-            case 0:
-                levels[levelNumber - 1].GetComponent<Level>().explosives[explosivesLevel].SetActive(true);
-                explosivesLevel++;
-                break;
-            case 4:
-                //do nothing or stronger traps
-                break;
-            default:
-                levels[levelNumber - 1].GetComponent<Level>().explosives[explosivesLevel - 1].SetActive(false);
-                levels[levelNumber - 1].GetComponent<Level>().explosives[explosivesLevel].SetActive(true);
-                explosivesLevel++;
-                break;
+        for (int i = 0; i < GetComponent<Level>().explosives.Length; i++) {
+            GetComponent<Level>().explosives[i].SetActive(true);
         }
+        
     }
     void SetUpEnvironment(int levelNumber) {
         if (spikesLevel > 0) {
@@ -134,9 +124,10 @@ public class LevelManager : MonoBehaviour
         }
         if (barricadesLevel > 0) {
             levels[levelNumber - 1].GetComponent<Level>().barricades[barricadesLevel].SetActive(true);
+            UpdatePathfinding(levelNumber);
         }
         if (explosivesLevel > 0) {
-            levels[levelNumber - 1].GetComponent<Level>().explosives[explosivesLevel].SetActive(true);
+            ActivateExplosives();
         }
     }
 }
