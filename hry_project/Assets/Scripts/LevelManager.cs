@@ -54,7 +54,7 @@ public class LevelManager : MonoBehaviour
         if (barricadesLevel == 0) {
             astar.SetNewTileMap(levels[levelNumber - 1].GetComponent<Level>().walls);
         } else {
-            astar.SetNewTileMap(levels[levelNumber - 1].GetComponent<Level>().GetComponent<Barricade>().walls);
+            astar.SetNewTileMap(levels[levelNumber - 1].GetComponent<Level>().barricades[barricadesLevel-1].walls);
         }
     }
 
@@ -110,9 +110,12 @@ public class LevelManager : MonoBehaviour
         }
     }
     public void ActivateExplosives() {
+        Debug.Log("Activated explosives");
         for (int i = 0; i < levels[levelNumber-1].GetComponent<Level>().explosives.Length; i++) {
-            Debug.Log("Happened" + levels[levelNumber - 1].GetComponent<Level>().explosives.Length);
-            levels[levelNumber - 1].GetComponent<Level>().explosives[i].SetActive(true);
+            if(levels[levelNumber - 1].GetComponent<Level>().explosives[i].activeSelf == false) {
+                Debug.Log("Happened " + levels[levelNumber - 1].GetComponent<Level>().explosives.Length);
+                levels[levelNumber - 1].GetComponent<Level>().explosives[i].SetActive(true);
+            }
         }
         
     }
