@@ -14,7 +14,7 @@ public class UpgradeChest : MonoBehaviour
         {
             popUpScreen.SetActive(true);
             arrow.SetActive(false);
-            FindObjectOfType<GameManager>().GetComponent<GameManager>().SetCanUpgrade(true);
+            FindObjectOfType<GameManager>().GetComponent<GameManager>().SetCanUpgrade(true,gameObject);
 
         }
     }
@@ -25,7 +25,7 @@ public class UpgradeChest : MonoBehaviour
         {
             popUpScreen.SetActive(false);
             arrow.SetActive(true);
-            FindObjectOfType<GameManager>().GetComponent<GameManager>().SetCanUpgrade(false);
+            FindObjectOfType<GameManager>().GetComponent<GameManager>().SetCanUpgrade(false,gameObject);
         }
     }
 }

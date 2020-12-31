@@ -12,4 +12,10 @@ public class NextWaveIn : MonoBehaviour
             myText.text = "Next wave in: " + System.Math.Round(time);
         }
     }
+
+    public void SetLastWave()
+    {
+        Text myText = gameObject.GetComponent<Text>();
+        myText.text = "LAST WAVE!";
+    }
 }
