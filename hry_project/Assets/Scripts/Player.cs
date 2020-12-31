@@ -28,6 +28,12 @@ public class Player : MonoBehaviour
     bool isShooting = false;
     bool trailCooldown = false;
     bool auraEnabled = false;
+
+    // Upgrade state
+    public int defenseUpgrades = 0;
+    public int offsenseUpgrades = 0;
+    public int utilityUpgrades = 0;
+
     // Cached variables
 
     public Vector2 moveDirection;
@@ -87,7 +93,7 @@ public class Player : MonoBehaviour
         {
             crossHair.SetActive(false);
         }
-        
+
 
     }
 
@@ -200,7 +206,7 @@ public class Player : MonoBehaviour
             Offset = Offset / projectileSpreadModifier;
             Vector2 shootDirection = aimDirection;
             Vector2 randomOffset = new Vector2(Random.Range(-1f,1f),Random.Range(-1f,1f));
-            
+
 
             int switchIndex = 1;
             int projectileState = 1;
@@ -254,7 +260,7 @@ public class Player : MonoBehaviour
             }
 
 
-            
+
             StartCoroutine(AttackCooldown());
         }
 

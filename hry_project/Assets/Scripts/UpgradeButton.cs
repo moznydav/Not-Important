@@ -10,7 +10,7 @@ public class UpgradeButton : MonoBehaviour
     GameManager gameManager;
     private void Awake()
     {
-        gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();      
+        gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
     }
 
     public void Close()

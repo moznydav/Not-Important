@@ -406,40 +406,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016c6297c46b8aa4aa2bbf7156184e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topIndexes: 02000000050000000800000009000000
-  offensiveUpgrades:
-  - {fileID: 6838375470009203174, guid: 258c4e4af9121c34aaf8fe70ae26906a, type: 3}
-  - {fileID: 6838375470009203174, guid: 036aa2a230ef6c14c89e691697ee9c85, type: 3}
-  - {fileID: 6838375470009203174, guid: b972e24cb10301c4bae48232c31acf23, type: 3}
-  - {fileID: 6838375470009203174, guid: 6644acf6b3e28ab43a9c769bbb0328d9, type: 3}
-  - {fileID: 6838375470009203174, guid: f040914c12d623e46a1c14e6a64d59ee, type: 3}
-  - {fileID: 6838375470009203174, guid: 974e696d927a31749841cf84995d22c5, type: 3}
-  - {fileID: 6838375470009203174, guid: 001a6f1d65ed187418ae4c1dfda5763f, type: 3}
-  - {fileID: 6838375470009203174, guid: 732f34c2ce55c91479ec58dd97b72016, type: 3}
-  - {fileID: 6838375470009203174, guid: df11ec55b9a7b70459ce41df6965a087, type: 3}
-  - {fileID: 6838375470009203174, guid: d649c544e3797de4fbce8884e0e0f9c6, type: 3}
-  DefenceUpgrades:
-  - {fileID: 6838375470009203174, guid: 8fcd318eea0eeec4eb8d914165dd58ce, type: 3}
-  - {fileID: 6838375470009203174, guid: 8fcd318eea0eeec4eb8d914165dd58ce, type: 3}
-  - {fileID: 6838375470009203174, guid: 8fcd318eea0eeec4eb8d914165dd58ce, type: 3}
-  - {fileID: 6838375470009203174, guid: 6fad0109a81017140867fd7c5d376b27, type: 3}
-  - {fileID: 6838375470009203174, guid: 6335bea11df45294299f23e3ff756c6f, type: 3}
-  - {fileID: 6838375470009203174, guid: a827fb3aae1744d478238c1c13d4b431, type: 3}
-  - {fileID: 6838375470009203174, guid: 060cf48c4c23e69489b30b223fc76fb1, type: 3}
-  - {fileID: 6838375470009203174, guid: b3ef3c10e1e5154408218d67bd802c38, type: 3}
-  - {fileID: 6838375470009203174, guid: 6892b795a9aa0284fb4084b664766dc1, type: 3}
-  - {fileID: 6838375470009203174, guid: 9d8a21d71bf9f9c478c83cfa6de7ffe4, type: 3}
-  UtilityUpgrades:
-  - {fileID: 6838375470009203174, guid: 4232351465b09c449a8c5dc2374cfa98, type: 3}
-  - {fileID: 6838375470009203174, guid: 40b03b5bdead30f46ba2be1f33c29171, type: 3}
-  - {fileID: 6838375470009203174, guid: d7baa995c4160334f86f396b328e8bf7, type: 3}
-  - {fileID: 6838375470009203174, guid: 2f4b7d8a4590c8c4db49dfde45f5a83c, type: 3}
-  - {fileID: 6838375470009203174, guid: 265c60463a56be1418e9dac8aa85dfba, type: 3}
-  - {fileID: 6838375470009203174, guid: 1ef60c5d8a89c5344aaaa0bf5bdd240a, type: 3}
-  - {fileID: 6838375470009203174, guid: 559303099816c9e499d6f32e8fd192c3, type: 3}
-  - {fileID: 6838375470009203174, guid: d14c12a270c1eba4a995d38b859929ec, type: 3}
-  - {fileID: 6838375470009203174, guid: 4279777a731d82541a894ba91c296fd4, type: 3}
-  - {fileID: 6838375470009203174, guid: ccf6398a54b320c4cbf55280de0796c3, type: 3}
+  bottomOffensiveIndicies: 
+  bottomDefensiveIndicies: 
+  bottomUtilityIndicies: 
+  offensiveUpgradesTierOne:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  offensiveUpgradesTierTwo: []
+  offensiveUpgradesTierThree: []
+  offensiveUpgradesTierFour: []
+  defenceUpgradesTierOne: []
+  defenceUpgradesTierTwo: []
+  defenceUpgradesTierThree: []
+  defenceUpgradesTierFour: []
+  utilityUpgradesTierOne: []
+  utilityUpgradesTierTwo: []
+  utilityUpgradesTierThree: []
+  utilityUpgradesTierFour: []
   offensivePlace: {fileID: 9154371448986384643}
   healthPlace: {fileID: 2414736883140170104}
   movementPlace: {fileID: 610680704075004205}
@@ -893,15 +877,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 774e346f9135d044caac0e90fa1cd96d, type: 3}
---- !u!1 &2987186240400589247 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6294191560235021667, guid: 774e346f9135d044caac0e90fa1cd96d,
-    type: 3}
-  m_PrefabInstance: {fileID: 9092182635820807388}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2987186240400589246 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6294191560235021666, guid: 774e346f9135d044caac0e90fa1cd96d,
+    type: 3}
+  m_PrefabInstance: {fileID: 9092182635820807388}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2987186240400589247 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6294191560235021667, guid: 774e346f9135d044caac0e90fa1cd96d,
     type: 3}
   m_PrefabInstance: {fileID: 9092182635820807388}
   m_PrefabAsset: {fileID: 0}
