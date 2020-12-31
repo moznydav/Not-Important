@@ -5,14 +5,15 @@ using UnityEngine;
 public class ExplosiveBarrel : Destroyable
 {
     [SerializeField] float damage = 50f;
+    [SerializeField] float radius = 2.0f;
     [SerializeField] GameObject explosionVFX;
+    
 
     BoxCollider2D barrelCollider;
     SpriteRenderer spriteRenderer;
     AStar pathfinding;
 
-    private bool destroyable = true;
-    private float radius = 2.0f;
+    public bool destroyable = true;
 
     void Awake()
     {
@@ -20,11 +21,8 @@ public class ExplosiveBarrel : Destroyable
         spriteRenderer = GetComponent<SpriteRenderer>();
         pathfinding = (AStar) GameObject.FindWithTag(Constants.ASTAR_TAG).GetComponent(typeof(AStar));
     }
-
-    public override void OnDestroy()
-    {
-        if (!destroyable)
-        {
+    public override void OnDisable() {
+        if (!destroyable) {
             return;
         }
 
@@ -33,6 +31,8 @@ public class ExplosiveBarrel : Destroyable
         StartCoroutine(HandleDamage());
         StartCoroutine(HandleExplosion());
     }
+
+
 
     private bool CanHit(Vector3 pos)
     {
@@ -65,6 +65,8 @@ public class ExplosiveBarrel : Destroyable
         {
             if (CanHit(item.transform.position))
             {
+                HandleExplosion();
+                HandleDamage();
                 item.Destroy(); //destroying barrel
             }
         }
@@ -76,6 +78,11 @@ public class ExplosiveBarrel : Destroyable
         yield return new WaitForSeconds(.65f);
 
         Destroy(explosion);
-        base.OnDestroy();
+        base.OnDisable();
+    }
+
+    private void OnEnable() {
+        destroyable = true;
     }
 }
+

@@ -18,13 +18,14 @@ public class Destroyable : MonoBehaviour
 
     public void Destroy()
     {
-        OnDestroy();
+        OnDisable();
     }
 
-    public virtual void OnDestroy()
+    public virtual void OnDisable()
     {
+        Debug.Log("Called Disable");
         ClearMap();
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     public void ClearMap()

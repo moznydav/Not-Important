@@ -44,9 +44,18 @@ public class LevelManager : MonoBehaviour
         //TODO spawners update
         GameManager.Instance.SetupNextSpawners(levels[levelNumber - 1].GetComponent<Level>().enemySpawners);
         //TODO pathfinding update
-        astar.SetNewTileMap(levels[levelNumber - 1].GetComponent<Level>().walls);
+        UpdatePathfinding(levelNumber);
+        
         //environment update
         SetUpEnvironment(levelNumber);
+    }
+
+    void UpdatePathfinding(int levelNumber) {
+        if (barricadesLevel == 0) {
+            astar.SetNewTileMap(levels[levelNumber - 1].GetComponent<Level>().walls);
+        } else {
+            astar.SetNewTileMap(levels[levelNumber - 1].GetComponent<Level>().GetComponent<Barricade>().walls);
+        }
     }
 
     public void ActivateSpikes() {
@@ -86,6 +95,7 @@ public class LevelManager : MonoBehaviour
             case 0:
                 levels[levelNumber - 1].GetComponent<Level>().barricades[barricadesLevel].SetActive(true);
                 barricadesLevel++;
+                UpdatePathfinding(levelNumber);
                 break;
             case 4:
                 //do nothing or stronger traps
@@ -94,7 +104,9 @@ public class LevelManager : MonoBehaviour
                 levels[levelNumber - 1].GetComponent<Level>().barricades[barricadesLevel - 1].SetActive(false);
                 levels[levelNumber - 1].GetComponent<Level>().barricades[barricadesLevel].SetActive(true);
                 barricadesLevel++;
+                UpdatePathfinding(levelNumber);
                 break;
+        
         }
     }
     public void ActivateExplosives() {
