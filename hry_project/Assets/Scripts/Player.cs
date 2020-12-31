@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] float projectileSpreadModifier = 5f;
     [SerializeField] float trailInterval = 1f;
     [SerializeField] GameObject CorpseExplosion;
+    [SerializeField] float crossHairRadius = 5f;
 
     [Header("Parts")]
     [SerializeField] GameObject projectile;
@@ -153,9 +154,25 @@ public class Player : MonoBehaviour
         aimDirection.y = (worldMousePosition.y - transform.position.y);
         aimDirection.Normalize();
         float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
-        crossHair.transform.eulerAngles = new Vector3(0, 0, angle);
+        HandleCrossHair(angle);
 
         anim.SetFloat("Aim Horizontal", aimDirection.x);
+    }
+
+    private void HandleCrossHair(float angle)
+    {
+        crossHair.transform.eulerAngles = new Vector3(0, 0, angle);
+        Vector3 cursorPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+        Vector3 playerPos = transform.position;
+
+        Vector3 playerToCursor = cursorPos - playerPos;
+        Vector3 dir = playerToCursor.normalized;
+        Vector3 cursorVector = dir * crossHairRadius;
+
+        if (playerToCursor.magnitude < cursorVector.magnitude) // detect if mouse is in inner radius
+            cursorVector = playerToCursor;
+
+        crossHair.transform.position = playerPos + cursorVector;
     }
 
     private void HandleShoot()

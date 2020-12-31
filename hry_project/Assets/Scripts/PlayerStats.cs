@@ -11,11 +11,20 @@ public class PlayerStats : Stats
     public RollSupply rollSupply;
     private int rollsRemaining;
     private float lastRegenTime;
+
+    //Upgrade counters
+    public int offenceCounter;
+    public int defenceCounter;
+    public int utilityCounter;
+
     private void Awake() {
         lastRegenTime = Time.time;
         base.InitializeStats();
         rollsRemaining = maxRolls;
         rollSupply.InitializeRollSupply(maxRolls);
+        offenceCounter = 0;
+        DefenceCounter = 0;
+        UtilityCounter = 0;
     }
 
     private void HandleRollRegen()

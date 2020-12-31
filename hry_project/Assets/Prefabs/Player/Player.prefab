@@ -108,7 +108,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6000552227410383354}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &939487147
 SpriteRenderer:
@@ -191,7 +191,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6000552227410383354}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1353885364
 SpriteRenderer:
@@ -287,11 +287,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438411032}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.67, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.72, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 647662019798335062}
+  m_Father: {fileID: 6000552227410383354}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1438411033
@@ -448,10 +448,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 647662019798335062}
+  m_Children: []
   m_Father: {fileID: 6000552227410383354}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1579607771904927055
 SpriteRenderer:
@@ -588,7 +587,7 @@ RectTransform:
   - {fileID: 955110356157733046}
   - {fileID: 2133793864}
   m_Father: {fileID: 6000552227410383354}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -684,37 +683,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
---- !u!1 &4992653142888655057
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 647662019798335062}
-  m_Layer: 9
-  m_Name: Crosshair
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &647662019798335062
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4992653142888655057}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1438411034}
-  m_Father: {fileID: 5257715934522326267}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6000552227410383350
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,6 +715,7 @@ Transform:
   m_LocalPosition: {x: -0.1, y: 0.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1438411034}
   - {fileID: 5257715934522326267}
   - {fileID: 3831899066621219602}
   - {fileID: 939487146}
@@ -839,9 +808,10 @@ MonoBehaviour:
   trailInterval: 0.5
   CorpseExplosion: {fileID: 2775445341446495185, guid: 5c09053a8f508e140a97612f3edd7c45,
     type: 3}
+  crossHairRadius: 5
   projectile: {fileID: 5102771910098208509, guid: 5272e22764d227c4a88eec247a4b7bb1,
     type: 3}
-  crossHair: {fileID: 4992653142888655057}
+  crossHair: {fileID: 1438411032}
   body: {fileID: 362514959755084783}
   legs: {fileID: 8000891693078247934}
   aura: {fileID: 1839679863669474484}
@@ -925,6 +895,9 @@ MonoBehaviour:
   rollRegenTime: 4
   maxRolls: 3
   rollSupply: {fileID: 6000552226187604467}
+  offenceCounter: 0
+  DefenceCounter: 0
+  UtilityCounter: 0
 --- !u!114 &5617675635311616193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -969,7 +942,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6000552227410383354}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3584843980734656987
 SpriteRenderer:
@@ -1256,7 +1229,7 @@ PrefabInstance:
     - target: {fileID: 4767397926252793765, guid: fd17311e4ebdfbf489ca7586eddf3a8a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4767397926252793765, guid: fd17311e4ebdfbf489ca7586eddf3a8a,
         type: 3}
