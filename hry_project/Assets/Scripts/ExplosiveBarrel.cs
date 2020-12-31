@@ -5,9 +5,9 @@ using UnityEngine;
 public class ExplosiveBarrel : Destroyable
 {
     [SerializeField] float damage = 50f;
-    [SerializeField] float radius = 2.0f;
+    [SerializeField] float radius = 3.0f;
     [SerializeField] GameObject explosionVFX;
-    
+
 
     BoxCollider2D barrelCollider;
     SpriteRenderer spriteRenderer;
