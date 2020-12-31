@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
     public bool isGamePaused = false;
-    [SerializeField] float waveInterval;
+    [SerializeField] float wavePauseTime;
     [SerializeField] float enemyPowerMultiplier;
     [SerializeField] EnemySpawner[] enemySpawners;
     [SerializeField] GameObject[] enemyTypes;
@@ -18,9 +18,11 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] public GameObject upgradeMenu;
     [SerializeField] public GameObject DeathScreen;
     [SerializeField] public GameObject environmentMenu;
+    [SerializeField] public NextWaveIn nextWaveInObject;
     [SerializeField] List<GameObject> listOfUpgrades;
     [SerializeField] GameObject upgradeChest;
     [SerializeField] int waveToLevelRatio = 2;
+    [SerializeField] float timeBetweenWaves = 15;
     public bool canUpgrade;
     public bool debugMode = false;
 
@@ -28,11 +30,15 @@ public class GameManager : Singleton<GameManager>
     LevelManager levelManager;
 
     private int activeEnemyTypes = 1;
-    private int currentWaveNumber;
+    private float nextWaveIn;
+     private int currentWaveNumber;
     [SerializeField] public int currentEnemyCount = 0;
-    private int waveNumber = 0;
+    [SerializeField] private int waveNumber = 0;
     GameObject[] chosenTypes;
     private GameObject player;
+    private int chestsPickedUp;
+    private int chestsSpawned;
+    private bool lastWave;
 
 
     void Start() {
@@ -40,6 +46,11 @@ public class GameManager : Singleton<GameManager>
         player = GameObject.FindWithTag(Constants.PLAYER_TAG);
         Resume();
         ScheduleWaveStart();
+        nextWaveIn = timeBetweenWaves;
+        lastWave = false;
+        chestsPickedUp = 0;
+        chestsSpawned = 0;
+        waveNumber = 1;
     }
 
     public void Pause()
@@ -80,9 +91,25 @@ public class GameManager : Singleton<GameManager>
 
     public void WaveEnded()
     {
-        // TODO: Show upgrade menu
         print("Wave " + waveNumber + " ended");
+        waveNumber++;
+        if (waveNumber % waveToLevelRatio == 0)
+        {
+            Debug.Log("NextLevel");
+            levelManager.SetupNextLevel();
+            if (activeEnemyTypes < enemyTypes.Length)
+            {
+                activeEnemyTypes++;
+            }
+
+        }
+
         SpawnChest();
+        if (!lastWave)
+        {
+            ScheduleWaveStart();
+        }
+        
     }
 
     public void EnemyKilled()
@@ -95,15 +122,14 @@ public class GameManager : Singleton<GameManager>
 
     void WaveStart()
     {
-        waveNumber++;
-        if (waveNumber % waveToLevelRatio == 0) {
-            Debug.Log("NextLevel");
-            levelManager.SetupNextLevel();
-            if (activeEnemyTypes < enemyTypes.Length) {
-                activeEnemyTypes++;
-            }
-
+        nextWaveIn = timeBetweenWaves;
+        
+        if (waveNumber % waveToLevelRatio == waveToLevelRatio -1)
+        {
+            lastWave = true;
+            nextWaveInObject.SetLastWave();
         }
+        
         print("Wave " + waveNumber + " started");
 
         int[] chosenPowers = MakeNewChosenTypes(activeEnemyTypes);
@@ -144,7 +170,17 @@ public class GameManager : Singleton<GameManager>
 
     public void ScheduleWaveStart()
     {
-        Invoke("WaveStart", waveInterval);
+        if(lastWave)
+        {
+            if(chestsPickedUp == 2)
+            Invoke("WaveStart", wavePauseTime);
+            chestsPickedUp = 0;
+        }
+        else
+        {
+            Invoke("WaveStart", wavePauseTime);
+        }
+        
     }
 
     public void ActivateUpgradeMenu()
@@ -168,16 +204,23 @@ public class GameManager : Singleton<GameManager>
 
     public void SpawnChest()
     {
-        if (spawnedChest)
+        Debug.Log("Trying to spawn chest");
+        if(waveNumber % 2 == 0 && chestsSpawned < 2)
         {
-            Destroy(spawnedChest);
+            Debug.Log("Chest spawned!");
+            chestsSpawned++;
+            AStar pathfinding = (AStar)GameObject.FindWithTag(Constants.ASTAR_TAG).GetComponent(typeof(AStar));
+            Vector3 playerPosition = GameObject.FindWithTag(Constants.PLAYER_TAG).transform.position;
+            Vector3 chestPosition = pathfinding.FindFreeTileInRange(playerPosition, 5, 7);
+
+            Instantiate(upgradeChest, chestPosition, Quaternion.identity);
         }
+        //if (spawnedChest)
+        //{
+        //    Destroy(spawnedChest);
+        //}
 
-        AStar pathfinding = (AStar)GameObject.FindWithTag(Constants.ASTAR_TAG).GetComponent(typeof(AStar));
-        Vector3 playerPosition = GameObject.FindWithTag(Constants.PLAYER_TAG).transform.position;
-        Vector3 chestPosition = pathfinding.FindFreeTileInRange(playerPosition, 5, 7);
-
-        spawnedChest = Instantiate(upgradeChest, chestPosition, Quaternion.identity);
+        
     }
 
     public void InitDeathScreen()
@@ -188,10 +231,18 @@ public class GameManager : Singleton<GameManager>
         //Time.timeScale = 0f;
     }
 
-
-    // Update is called once per frame
     void Update()
     {
+        if (!lastWave)
+        {
+            nextWaveIn -= Time.deltaTime;
+            nextWaveInObject.UpdateTime(nextWaveIn);
+            if (nextWaveIn < 0)
+            {
+                WaveEnded();
+            }
+        }
+        
         if (Input.GetButtonDown("Cancel"))
         {
             if (isGamePaused)
@@ -209,16 +260,26 @@ public class GameManager : Singleton<GameManager>
                 if (!isGamePaused)
                 {
                     ActivateUpgradeMenu();
+                    chestsPickedUp++;
+                    
                     Destroy(spawnedChest); // start destroy animation
+                    if (lastWave && chestsPickedUp == 2)
+                    {
+                        lastWave = false;
+                        chestsPickedUp = 0;
+                        chestsSpawned = 0;
+                        ScheduleWaveStart();
+                    }
+                    
                 }
                 
             }
         }
         // rework 
-        if (Input.GetButtonDown("Fire3"))
-        {
-            SpawnChest();
-        }
+        //if (Input.GetButtonDown("Fire3"))
+        //{
+        //    SpawnChest();
+        //}
         //testing
         
         if (Input.GetButtonDown("LevelSwitch")) {
@@ -231,8 +292,9 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    public void SetCanUpgrade( bool canUpgrade)
+    public void SetCanUpgrade( bool canUpgrade, GameObject chest)
     {
         this.canUpgrade = canUpgrade;
+        spawnedChest = chest;
     }
 }
