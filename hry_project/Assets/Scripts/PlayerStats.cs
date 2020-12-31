@@ -23,8 +23,8 @@ public class PlayerStats : Stats
         rollsRemaining = maxRolls;
         rollSupply.InitializeRollSupply(maxRolls);
         offenceCounter = 0;
-        DefenceCounter = 0;
-        UtilityCounter = 0;
+        defenceCounter = 0;
+        utilityCounter = 0;
     }
 
     private void HandleRollRegen()
