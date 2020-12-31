@@ -390,8 +390,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7a121c4e3b061f4496fca4a66c4a6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keepDistance: 12
-  keepDistanceError: 12
+  keepDistance: 2
+  keepDistanceError: 2
   player: {fileID: 0}
   rigidBody: {fileID: 0}
   stats: {fileID: 0}
