@@ -110,8 +110,9 @@ public class LevelManager : MonoBehaviour
         }
     }
     public void ActivateExplosives() {
-        for (int i = 0; i < GetComponent<Level>().explosives.Length; i++) {
-            GetComponent<Level>().explosives[i].SetActive(true);
+        for (int i = 0; i < levels[levelNumber-1].GetComponent<Level>().explosives.Length; i++) {
+            Debug.Log("Happened" + levels[levelNumber - 1].GetComponent<Level>().explosives.Length);
+            levels[levelNumber - 1].GetComponent<Level>().explosives[i].SetActive(true);
         }
         
     }
