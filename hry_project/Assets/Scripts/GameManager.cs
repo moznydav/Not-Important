@@ -205,7 +205,7 @@ public class GameManager : Singleton<GameManager>
             upgradeMenu.GetComponent<UpgradeScreen>().Close();
             upgradeMenu.SetActive(false);
         }
-        if ((waveNumber + 2) % waveToEnvironmentRatio == 0)
+        if ((chestsSpawned+1) % 2 == 0)
         {
             environmentMenu.SetActive(true);
             environmentMenu.GetComponent<EnvironmentScreen>().Init();

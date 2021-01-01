@@ -130,13 +130,13 @@ public class LevelManager : MonoBehaviour
     }
     void SetUpEnvironment(int levelNumber) {
         if (spikesLevel > 0) {
-            levels[levelNumber - 1].GetComponent<Level>().spikes[spikesLevel].SetActive(true);
+            levels[levelNumber - 1].GetComponent<Level>().spikes[spikesLevel-1].SetActive(true);
         }
         if (tarPoolsLevel > 0) {
-            levels[levelNumber - 1].GetComponent<Level>().tarPools[tarPoolsLevel].SetActive(true); ;
+            levels[levelNumber - 1].GetComponent<Level>().tarPools[tarPoolsLevel-1].SetActive(true); ;
         }
         if (barricadesLevel > 0) {
-            levels[levelNumber - 1].GetComponent<Level>().barricades[barricadesLevel].SetActive(true);
+            levels[levelNumber - 1].GetComponent<Level>().barricades[barricadesLevel-1].SetActive(true);
             UpdatePathfinding(levelNumber);
         }
     }
