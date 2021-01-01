@@ -235,7 +235,7 @@ PrefabInstance:
       propertyPath: m_Text
       value: 'DAMAGE +
 
-        ATTACK SPEED+'
+        ATTACK SPEED +'
       objectReference: {fileID: 0}
     - target: {fileID: 6294191559353108692, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
