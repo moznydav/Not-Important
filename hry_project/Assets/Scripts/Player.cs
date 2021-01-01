@@ -239,7 +239,7 @@ public class Player : MonoBehaviour
                 shot.GetComponent<Projectile>().SetDirection(shootDirection);
                 shot.GetComponent<Projectile>().SetProjectileSpeed(playerStats.projectileSpeed);
                 shot.GetComponent<Projectile>().SetPierce(playerStats.pierceValue);
-                shot.GetComponent<Projectile>().SetOrigin(gameObject);
+                shot.GetComponent<Projectile>().SetOrigin(playerStats);
                 if (playerStats.hasPoison)
                 {
                     shot.GetComponent<Projectile>().SetPoison(3, (int)playerStats.poisonDamage);

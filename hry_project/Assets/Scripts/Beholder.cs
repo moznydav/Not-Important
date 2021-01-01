@@ -49,7 +49,7 @@ public class Beholder : EnemyShooter
         shot.GetComponent<Rigidbody2D>().velocity = aimDirection * shot.GetComponent<Projectile>().GetProjectileSPeed();
         shot.GetComponent<Projectile>().SetDamage(stats.damage);
         shot.GetComponent<Projectile>().SetDirection(aimDirection);
-        shot.GetComponent<Projectile>().SetOrigin(gameObject);
+        shot.GetComponent<Projectile>().SetOrigin(stats);
         shot.transform.eulerAngles = new Vector3(0, 0, angle);
         legs.GetComponent<Animator>().SetBool("Attacking", false);
         anim.SetBool("Attacking", false);
