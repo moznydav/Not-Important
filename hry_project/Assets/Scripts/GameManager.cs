@@ -93,6 +93,7 @@ public class GameManager : Singleton<GameManager>
     public void WaveEnded()
     {
         print("Wave " + waveNumber + " ended");
+        SpawnChest();
         waveNumber++;
         if (waveNumber % waveToLevelRatio == 0)
         {
@@ -105,7 +106,7 @@ public class GameManager : Singleton<GameManager>
 
         }
 
-        SpawnChest();
+       
         if (!lastWave)
         {
             ScheduleWaveStart();
@@ -220,7 +221,7 @@ public class GameManager : Singleton<GameManager>
     public void SpawnChest()
     {
         Debug.Log("Trying to spawn chest");
-        if(waveNumber % 2 == 0 && chestsSpawned < 2)
+        if((waveNumber % 2 == 0 || lastWave) && chestsSpawned < 2)
         {
             Debug.Log("Chest spawned!");
             chestsSpawned++;

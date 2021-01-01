@@ -192,8 +192,6 @@ public class Enemy : MonoBehaviour
                 player.GetComponent<Player>().SpawnCorpseExplosion(transform.position);
             }
         }
-        
-        
 
         FindObjectOfType<GameManager>().EnemyKilled();
     }
