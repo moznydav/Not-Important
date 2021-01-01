@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ExplosiveBarrel : Destroyable {
-    [SerializeField] float damage = 50f;
+    [SerializeField] float damageValue = 50f;
     [SerializeField] GameObject explosionVFX;
 
     BoxCollider2D collider;
@@ -36,6 +36,8 @@ public class ExplosiveBarrel : Destroyable {
     }
 
     private IEnumerator HandleDamage() {
+        PlayerStats playerstats = FindObjectOfType<PlayerStats>();
+        
         collider.enabled = false;
         ClearMap();
 
@@ -47,7 +49,17 @@ public class ExplosiveBarrel : Destroyable {
 
         foreach (Stats item in entities) {
             if (CanHit(item.transform.position)) {
-                item.DealDamage(damage,null);
+                PlayerStats playercheck = item.GetComponent<PlayerStats>();
+                if (playerstats.hasPoisonTraps) {
+                    if (playercheck) {
+                        item.DealDamage(damageValue, null);
+                    } else {
+                        item.DealDamage(damageValue, null);
+                        item.ApplyPoison(playerstats.poisonTicks, playerstats.poisonDamage);
+                    }
+                } else {
+                    item.DealDamage(damageValue, null);
+                }
             }
         }
 

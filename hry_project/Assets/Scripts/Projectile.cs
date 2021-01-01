@@ -10,8 +10,8 @@ public class Projectile : MonoBehaviour
     [SerializeField] int pierce = 0;
     [SerializeField] float pierceDamageModifier = 0.4f;
     [SerializeField] float knockBackValue = 0.6f;
-    [SerializeField] float poisonDamage;
-    [SerializeField] int poisonTicks;
+    [SerializeField] public float poisonDamage;
+    [SerializeField] public int poisonTicks = 6;
     [SerializeField] float scopeIntervals = 0.1f;
     [SerializeField] float brokenScopeModifier = 6f;
     [SerializeField] float SniperScopeModifier = 5f;

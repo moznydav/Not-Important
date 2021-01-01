@@ -39,7 +39,7 @@ public class Stats : MonoBehaviour
     public int ricochetValue;
     public int poisonTicks;
     public float projectileSpeed;
-    private float poisonIntervals = 1.4f;
+    private float poisonIntervals = 0.5f;
     public float thornsDamage;
     public float berserkMultiplier = 1f;
     public float chainsMultiplier = 1f;
@@ -81,6 +81,7 @@ public class Stats : MonoBehaviour
     public bool hasCorpseExplosion = false;
     public bool hasGuppy = false;
     public bool hasUnlimitedRolls = false;
+    public bool hasPoisonTraps = false; 
 
     private SpriteRenderer[] spriteRenderer;
 
@@ -109,8 +110,8 @@ public class Stats : MonoBehaviour
         numOfProjectiles = baseNumOfProjectiles;
         pierceValue = basePierce;
         projectileSpeed = baseProjectileSpeed;
-        poisonDamage = 0;
-        poisonTicks = 0;
+        poisonDamage = 0; //
+        poisonTicks = 6; //
         ricochetValue = 0;
         explosionDamage = 0.15f;
         damageAuraMultiplier = 0;

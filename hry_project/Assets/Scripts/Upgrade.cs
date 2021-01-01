@@ -189,6 +189,10 @@ public class Upgrade : ScriptableObject
                 playerStats.moveSpeed += classMoveSpeed;
                 playerStats.UpdateUnlimitedRolls();
                 break;
+            case UpgradeType.POISON_TRAPS:
+                playerStats.hasPoisonTraps = true;
+                playerStats.poisonDamage += value;
+                break;
         }
     }
 }

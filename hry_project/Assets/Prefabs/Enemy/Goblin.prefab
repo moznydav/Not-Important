@@ -216,6 +216,7 @@ MonoBehaviour:
   hasCorpseExplosion: 0
   hasGuppy: 0
   hasUnlimitedRolls: 0
+  hasPoisonTraps: 0
 --- !u!70 &196022626036479524
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
