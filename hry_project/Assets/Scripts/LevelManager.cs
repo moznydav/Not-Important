@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] public int barricadesLevel;
 
     [SerializeField] Player player;
+    [SerializeField] GameObject startingPosition;
 
     private bool explosivesFirst = true;
 
@@ -34,10 +35,8 @@ public class LevelManager : MonoBehaviour
 
         } else {
             Debug.Log("Reseting level");
-            //TODO level reset
-           // player.TeleportToMiddle();
-            levelNumber = 0;
-            LevelUpdate(levelNumber);
+            LevelReset();
+            
             
         }
     }
@@ -139,5 +138,20 @@ public class LevelManager : MonoBehaviour
             levels[levelNumber - 1].GetComponent<Level>().barricades[barricadesLevel-1].SetActive(true);
             UpdatePathfinding(levelNumber);
         }
+    }
+
+    void LevelReset() {
+        TeleportToMiddle();
+        EnvironmentReset();
+        levelNumber = 1;
+        LevelUpdate(levelNumber);
+    }
+    void TeleportToMiddle() {
+        player.transform.position = startingPosition.transform.position;
+    }
+    void EnvironmentReset() {
+        spikesLevel = 0;
+        tarPoolsLevel = 0;
+        barricadesLevel = 0;
     }
 }
