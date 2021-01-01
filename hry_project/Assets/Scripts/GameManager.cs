@@ -156,7 +156,7 @@ public class GameManager : Singleton<GameManager>
         int counter = 0;
         while (counter < totalBatches) {
             print("spawning...");
-            StartCoroutine(enemySpawners[index].Spawn(chosenTypes)) ;
+            StartCoroutine(enemySpawners[index].Spawn(chosenTypes, levelManager.runsDone)) ;
             index += 1;
             counter += 1;
             if(index > enemySpawners.Length - 1)

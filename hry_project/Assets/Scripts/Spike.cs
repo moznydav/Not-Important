@@ -8,18 +8,20 @@ public class Spike : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         Stats stats = other.GetComponent<Stats>();
+        PlayerStats playerstats = FindObjectOfType<PlayerStats>();
+        PlayerStats playercheck = other.GetComponent<PlayerStats>();
 
         if (stats) {
-            stats.DealDamage(damageValue,null);
-        }
-
-    }
-
-    private void OnTriggerExit2D(Collider2D other) {
-        Stats stats = other.GetComponent<Stats>();
-
-        if (stats) {
-            stats.DealDamage(damageValue,null);
+            if (playerstats.hasPoisonTraps) {
+                if (playercheck) {
+                    stats.DealDamage(damageValue, null);
+                } else {
+                    stats.DealDamage(damageValue, null);
+                    stats.ApplyPoison(playerstats.poisonTicks, playerstats.poisonDamage);
+                }
+            } else {
+                stats.DealDamage(damageValue, null);
+            }
         }
     }
 }

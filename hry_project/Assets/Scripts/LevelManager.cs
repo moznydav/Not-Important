@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+    [SerializeField] public int runsDone = 0;
     [SerializeField] int levelNumber = 1;
     [SerializeField] int waveNumber;
     [SerializeField] List<GameObject> levels;
@@ -144,6 +145,7 @@ public class LevelManager : MonoBehaviour
         TeleportToMiddle();
         EnvironmentReset();
         levelNumber = 1;
+        runsDone++;
         LevelUpdate(levelNumber);
     }
     void TeleportToMiddle() {
