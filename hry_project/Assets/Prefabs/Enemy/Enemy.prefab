@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: -7929358721699577832, guid: 0774af4d162b6884db7e3bf1bee96233,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &7638966089646652390
@@ -147,8 +147,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6729aad2e64d62d4abe776e13d3387c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 300
   rollSpeed: 2000
+  projectileSpreadModifier: 5
+  trailInterval: 1
+  projectile: {fileID: 0}
+  crossHair: {fileID: 0}
+  body: {fileID: 0}
+  legs: {fileID: 0}
+  moveDirection: {x: 0, y: 0}
 --- !u!95 &4126758898792095326
 Animator:
   serializedVersion: 3
@@ -180,4 +186,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74819e43e22b28119946ea5a67ce6539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 300
+  keepDistance: 5
+  keepDistanceError: 5
+  player: {fileID: 0}
+  rigidBody: {fileID: 0}
+  stats: {fileID: 0}
+  distancing: 0
+  spawning: 0

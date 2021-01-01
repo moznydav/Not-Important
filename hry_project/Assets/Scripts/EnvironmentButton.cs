@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class EnvironmentButton: MonoBehaviour
 {
-    [SerializeField] Button button;
-
     GameManager gameManager;
     LevelManager levelManager;
 
@@ -16,6 +14,7 @@ public class EnvironmentButton: MonoBehaviour
     }
 
     public void ExplosivesButton() {
+        Debug.Log("Pressed explosives button");
         levelManager.ActivateExplosives();
         Close();
     }
@@ -38,8 +37,9 @@ public class EnvironmentButton: MonoBehaviour
         Close();
     }
 
+
     public void Close() {
         gameManager.Resume();
-        levelManager.BarrelsReset();
+        gameManager.ScheduleWaveStart();
     }
 }

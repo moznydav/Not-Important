@@ -69,7 +69,7 @@ public class Enemy : MonoBehaviour
         {
             Move();
         }
-        
+
     }
 
     private bool KeepDistance()
@@ -106,11 +106,11 @@ public class Enemy : MonoBehaviour
         var playerCell = pathfinding.WorldToCell(player.transform.position);
 
         /* Player stands still, no need to recalc */
-        if (lastPlayerCell != null && Utils.AreTuplesSame(lastPlayerCell, playerCell))
+        if (lastPlayerCell != null && Utils.AreTuplesSame(lastPlayerCell, playerCell) && path.Count != 0)
         {
             var enemyCell = pathfinding.WorldToCell(transform.position);
 
-            for (int i = lastPathIndex; i >= 0; i--)
+            for (int i = Math.Max(lastPathIndex, path.Count - 1); i >= 0; i--)
             {
                 var nextCell = pathfinding.WorldToCell(path[i]);
 
