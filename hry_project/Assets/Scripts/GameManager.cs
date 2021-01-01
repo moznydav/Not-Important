@@ -20,13 +20,8 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] public GameObject environmentMenu;
     [SerializeField] List<GameObject> listOfUpgrades;
     [SerializeField] GameObject upgradeChest;
-
-
-    [Header("Wave to X ratios")]
     [SerializeField] int waveToLevelRatio = 2;
-    [SerializeField] int waveToChestRatio = 2;
     [SerializeField] public int waveToEnvironmentRatio = 4;
-
     public bool canUpgrade;
     public bool debugMode = false;
 
@@ -34,8 +29,9 @@ public class GameManager : Singleton<GameManager>
     LevelManager levelManager;
 
     private int activeEnemyTypes = 1;
+    private int currentWaveNumber;
     [SerializeField] public int currentEnemyCount = 0;
-    [SerializeField] public int waveNumber = 0;
+    public int waveNumber = 0;
     GameObject[] chosenTypes;
     private GameObject player;
 
@@ -85,13 +81,9 @@ public class GameManager : Singleton<GameManager>
 
     public void WaveEnded()
     {
+        // TODO: Show upgrade menu
         print("Wave " + waveNumber + " ended");
-        if(waveNumber % waveToChestRatio == 0) {
-            SpawnChest();
-        } else {
-            ScheduleWaveStart();
-        }
-        
+        SpawnChest();
     }
 
     public void EnemyKilled()
@@ -171,8 +163,14 @@ public class GameManager : Singleton<GameManager>
             upgradeMenu.GetComponent<UpgradeScreen>().Close();
             upgradeMenu.SetActive(false);
         }
-        environmentMenu.SetActive(true);
-        environmentMenu.GetComponent<EnvironmentScreen>().Init();
+        if ((waveNumber+2) % waveToEnvironmentRatio == 0) {
+            environmentMenu.SetActive(true);
+            environmentMenu.GetComponent<EnvironmentScreen>().Init();
+        } else {
+            Resume();
+            ScheduleWaveStart();
+        }
+        
     }
 
     public void SpawnChest()

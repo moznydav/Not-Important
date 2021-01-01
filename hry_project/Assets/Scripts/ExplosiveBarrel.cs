@@ -2,26 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExplosiveBarrel : Destroyable
-{
+public class ExplosiveBarrel : Destroyable {
     [SerializeField] float damage = 50f;
-    [SerializeField] float radius = 3.0f;
     [SerializeField] GameObject explosionVFX;
 
-
-    BoxCollider2D barrelCollider;
+    BoxCollider2D collider;
     SpriteRenderer spriteRenderer;
     AStar pathfinding;
 
-    public bool destroyable = true;
+    private bool destroyable = true;
+    private float radius = 2.0f;
 
-    void Awake()
-    {
-        barrelCollider = GetComponent<BoxCollider2D>();
+    void Awake() {
+        collider = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        pathfinding = (AStar) GameObject.FindWithTag(Constants.ASTAR_TAG).GetComponent(typeof(AStar));
+        pathfinding = (AStar)GameObject.FindWithTag(Constants.ASTAR_TAG).GetComponent(typeof(AStar));
     }
-    public override void OnDisable() {
+
+    public override void OnDestroy() {
         if (!destroyable) {
             return;
         }
@@ -32,17 +30,13 @@ public class ExplosiveBarrel : Destroyable
         StartCoroutine(HandleExplosion());
     }
 
-
-
-    private bool CanHit(Vector3 pos)
-    {
+    private bool CanHit(Vector3 pos) {
         Vector3 position = transform.position;
         return Vector3.Distance(pos, position) <= radius && pathfinding.IsPathClear(pos, position, true);
     }
 
-    private IEnumerator HandleDamage()
-    {
-        barrelCollider.enabled = false;
+    private IEnumerator HandleDamage() {
+        collider.enabled = false;
         ClearMap();
 
         yield return new WaitForSeconds(.1f);
@@ -51,38 +45,26 @@ public class ExplosiveBarrel : Destroyable
         yield return new WaitForSeconds(.2f);
         var entities = FindObjectsOfType(typeof(Stats)) as Stats[];
 
-        foreach(Stats item in entities)
-        {
-            if (CanHit(item.transform.position))
-            {
+        foreach (Stats item in entities) {
+            if (CanHit(item.transform.position)) {
                 item.DealDamage(damage);
             }
         }
 
         var destroyables = FindObjectsOfType(typeof(Destroyable)) as Destroyable[];
 
-        foreach(Destroyable item in destroyables)
-        {
-            if (CanHit(item.transform.position))
-            {
-                HandleExplosion();
-                HandleDamage();
-                item.Destroy(); //destroying barrel
+        foreach (Destroyable item in destroyables) {
+            if (CanHit(item.transform.position)) {
+                item.Destroy();
             }
         }
     }
 
-    private IEnumerator HandleExplosion()
-    {
+    private IEnumerator HandleExplosion() {
         GameObject explosion = Instantiate(explosionVFX, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(.65f);
 
         Destroy(explosion);
-        base.OnDisable();
-    }
-
-    private void OnEnable() {
-        destroyable = true;
+        base.OnDestroy();
     }
 }
-

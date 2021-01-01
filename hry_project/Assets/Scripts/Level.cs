@@ -10,7 +10,6 @@ public class Level : MonoBehaviour {
     [SerializeField] public GameObject[] spikes;
     [SerializeField] public GameObject[] tarPools;
     [SerializeField] public Barricade[] barricades;
-    [SerializeField] public GameObject[] explosives;
 
 
 }

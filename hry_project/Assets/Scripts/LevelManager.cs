@@ -11,10 +11,12 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] public int spikesLevel;
     [SerializeField] public int tarPoolsLevel;
-    [SerializeField] public int explosivesLevel;
+    [SerializeField] GameObject[] explosives;
     [SerializeField] public int barricadesLevel;
 
     [SerializeField] Player player;
+
+    private bool explosivesFirst = true;
 
     void Awake() {
         astar = FindObjectOfType<AStar>();
@@ -110,13 +112,20 @@ public class LevelManager : MonoBehaviour
         }
     }
     public void ActivateExplosives() {
-        Debug.Log("Activated explosives");
-        for (int i = 0; i < levels[levelNumber-1].GetComponent<Level>().explosives.Length; i++) {
-            if(levels[levelNumber - 1].GetComponent<Level>().explosives[i].activeSelf == false) {
-                Debug.Log("Happened " + levels[levelNumber - 1].GetComponent<Level>().explosives.Length);
-                levels[levelNumber - 1].GetComponent<Level>().explosives[i].SetActive(true);
+        if (explosivesFirst) {
+            explosives[0].SetActive(true);
+            explosivesFirst = false;
+        } else {
+            for (int i = 0; i < explosives.Length; i++) {
+                Debug.Log("Explosives change");
+                if (explosives[i].activeSelf) {
+                    explosives[i].SetActive(false);
+                    explosives[levelNumber-1].SetActive(true);
+                    break;
+                }
             }
         }
+
         
     }
     void SetUpEnvironment(int levelNumber) {
@@ -129,9 +138,6 @@ public class LevelManager : MonoBehaviour
         if (barricadesLevel > 0) {
             levels[levelNumber - 1].GetComponent<Level>().barricades[barricadesLevel].SetActive(true);
             UpdatePathfinding(levelNumber);
-        }
-        if (explosivesLevel > 0) {
-            ActivateExplosives();
         }
     }
 }
