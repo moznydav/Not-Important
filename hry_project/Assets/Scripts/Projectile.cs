@@ -21,7 +21,7 @@ public class Projectile : MonoBehaviour
 
     public bool exploding;
     GameObject explosion;
-    GameObject origin;
+    Stats origin;
     float explosionDamage;
     bool brokenScope = false;
     bool sniperScope = false;
@@ -91,7 +91,7 @@ public class Projectile : MonoBehaviour
                 {
                     stats.ApplyPoison(poisonTicks, poisonDamage);
                 }
-                stats.DealDamage(damage,origin.GetComponent<Stats>());   
+                stats.DealDamage(damage,origin);   
 
                 if (exploding)
                 {
@@ -195,7 +195,7 @@ public class Projectile : MonoBehaviour
     {
         ricochet = value;
     }
-    public void SetOrigin(GameObject creator)
+    public void SetOrigin(Stats creator)
     {
         origin = creator;
     }
