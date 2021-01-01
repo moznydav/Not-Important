@@ -10,7 +10,6 @@ public class EnvironmentScreen : MonoBehaviour {
 
     [SerializeField] GameObject placeholder1;
     [SerializeField] GameObject placeholder2;
-    [SerializeField] GameObject placeholder3;
     [SerializeField] GameObject placeholder4;
 
     private GameObject option1;
@@ -27,9 +26,6 @@ public class EnvironmentScreen : MonoBehaviour {
 
         randomIndex = Mathf.RoundToInt(Random.Range(0, options.Length));
         option2 = Instantiate(options[randomIndex], placeholder2.transform);
-
-        randomIndex = Mathf.RoundToInt(Random.Range(0, options.Length));
-        option3 = Instantiate(options[randomIndex], placeholder3.transform);
 
         option4 = Instantiate(skipButton, placeholder4.transform);
 
