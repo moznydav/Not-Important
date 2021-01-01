@@ -74,8 +74,8 @@ public class Minotaur: EnemyShooter
 
     private void HandleChargeRun()
     {
-        
-        rigidBody.velocity = (chargeDirection * stats.moveSpeed * Time.deltaTime);
+        chargeDirection.Normalize();
+        rigidBody.velocity = (chargeDirection * stats.moveSpeed * Time.fixedDeltaTime);
     }
 
     private void PrepareDone()
