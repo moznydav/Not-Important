@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] float knockBackValue = 0.6f;
     [SerializeField] float poisonDamage;
     [SerializeField] int poisonTicks;
-    [SerializeField] float scopeIntervals = 0.3f;
+    [SerializeField] float scopeIntervals = 0.1f;
     [SerializeField] float brokenScopeModifier = 0.7f;
     [SerializeField] float SniperScopeModifier = 1.9f;
 
