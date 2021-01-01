@@ -36,21 +36,5 @@ public class EnemyShooter : Enemy
         yield return new WaitForSeconds(attackCooldown);
         attackOnCooldown = false;
     }
-
-    public IEnumerator MeleeDamageCooldown()
-    {
-        yield return new WaitForSeconds(meleeDamageCooldown);
-        attackDone = false;
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        Stats otherStats = other.GetComponent<Stats>();
-        if (otherStats is PlayerStats && !attackDone)
-        {
-            otherStats.DealDamage(stats.damage,stats);
-            StartCoroutine(MeleeDamageCooldown());
-        }
-    }
 }
 

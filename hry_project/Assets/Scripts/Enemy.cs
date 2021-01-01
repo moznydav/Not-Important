@@ -147,7 +147,8 @@ public class Enemy : MonoBehaviour
     {
         if (canRun)
         {
-            rigidBody.velocity = (moveDirection * stats.moveSpeed * Time.deltaTime);
+            Debug.Log("WALKING");
+            rigidBody.velocity = (moveDirection * stats.moveSpeed * Time.fixedDeltaTime);
         }
     }
 
