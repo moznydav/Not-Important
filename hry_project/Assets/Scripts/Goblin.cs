@@ -80,6 +80,7 @@ public class Goblin : Enemy
         if (otherStats is PlayerStats && !attackDone)
         {
             otherStats.DealDamage(stats.damage,stats);
+            attackDone = true;
             StartCoroutine(DamageCooldown());
         }
     }
