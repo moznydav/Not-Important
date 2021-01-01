@@ -21,11 +21,11 @@ public class EnvironmentScreen : MonoBehaviour {
 
     public void Init() {
 
-        int randomIndex = Mathf.RoundToInt(Random.Range(0, options.Length));
-        option1 = Instantiate(options[randomIndex], placeholder1.transform);
+        int randomIndexOne = Mathf.RoundToInt(Random.Range(0, options.Length));
+        option1 = Instantiate(options[randomIndexOne], placeholder1.transform);
 
-        randomIndex = Mathf.RoundToInt(Random.Range(0, options.Length));
-        option2 = Instantiate(options[randomIndex], placeholder2.transform);
+        int randomIndexTwo = Mathf.RoundToInt(Random.Range(0, options.Length));
+        option2 = Instantiate(options[randomIndexTwo], placeholder2.transform);
 
         option4 = Instantiate(skipButton, placeholder4.transform);
 
