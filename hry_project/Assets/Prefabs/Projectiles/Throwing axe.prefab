@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 20
-  lifespan: 1
+  lifespan: 0.5
   ricochet: 0
   pierce: 0
   pierceDamageModifier: 3
