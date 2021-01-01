@@ -15,6 +15,8 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] GameObject[] enemyTypes;
     [SerializeField] int[] enemyPowers;
     [SerializeField] public GameObject pauseMenu;
+    [SerializeField] public GameObject pauseMenuBackground;
+    [SerializeField] public GameObject pauseMenuHelp;
     [SerializeField] public GameObject upgradeMenu;
     [SerializeField] public GameObject DeathScreen;
     [SerializeField] public GameObject environmentMenu;
@@ -54,8 +56,19 @@ public class GameManager : Singleton<GameManager>
         waveNumber = 1;
     }
 
+    public void ShowHelp()
+    {
+        if (isGamePaused)
+        {
+            pauseMenuBackground.SetActive(false);
+            pauseMenuHelp.SetActive(true);
+        }
+    }
+
     public void Pause()
     {
+        pauseMenuBackground.SetActive(true);
+        pauseMenuHelp.SetActive(false);
         canUpgrade = false;
         isGamePaused = true;
         Time.timeScale = 0f;
