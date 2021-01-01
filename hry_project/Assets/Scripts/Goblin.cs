@@ -12,7 +12,7 @@ public class Goblin : Enemy
 
     // Cached variable
     Animator anim;
-    
+
     bool attacking = false;
     bool attackDone = false;
     Vector3 attackDirection = new Vector3(0f, 0f, 0f);
@@ -39,8 +39,12 @@ public class Goblin : Enemy
                     StartCoroutine(StartCooldown());
                 }
             }
+            else
+            {
+                transform.position += attackDirection * loungeSpeed * Time.fixedDeltaTime * Time.deltaTime;
+            }
         }
-        
+
     }
 
     private IEnumerator StartCooldown()
@@ -53,8 +57,8 @@ public class Goblin : Enemy
             attackDirection.z = 0f;
             attackDirection.Normalize();
             anim.SetFloat("Horizontal", attackDirection.x);
-            rigidBody.velocity = new Vector3(attackDirection.x * loungeSpeed * Time.fixedDeltaTime,
-                                         attackDirection.y * loungeSpeed * Time.fixedDeltaTime, 0f);
+
+            transform.position += attackDirection * loungeSpeed * Time.fixedDeltaTime * Time.deltaTime;
             anim.SetBool("Attacking", true);
         }
         yield return new WaitForSeconds(attackCooldown);
