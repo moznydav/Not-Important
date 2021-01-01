@@ -15,7 +15,10 @@ public class UpgradeButton : MonoBehaviour
 
     public void Close()
     {
-        gameManager.ActivateEnvironmentMenu();
-        //gameManager.ScheduleWaveStart();
+        if(gameManager.waveNumber % gameManager.waveToEnvironmentRatio == 0) {
+            gameManager.ActivateEnvironmentMenu();
+        } else {
+            gameManager.ScheduleWaveStart();
+        }
     }
 }

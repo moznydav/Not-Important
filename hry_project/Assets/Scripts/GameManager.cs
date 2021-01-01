@@ -20,7 +20,13 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] public GameObject environmentMenu;
     [SerializeField] List<GameObject> listOfUpgrades;
     [SerializeField] GameObject upgradeChest;
+
+
+    [Header("Wave to X ratios")]
     [SerializeField] int waveToLevelRatio = 2;
+    [SerializeField] int waveToChestRatio = 2;
+    [SerializeField] public int waveToEnvironmentRatio = 4;
+
     public bool canUpgrade;
     public bool debugMode = false;
 
@@ -28,9 +34,8 @@ public class GameManager : Singleton<GameManager>
     LevelManager levelManager;
 
     private int activeEnemyTypes = 1;
-    private int currentWaveNumber;
     [SerializeField] public int currentEnemyCount = 0;
-    private int waveNumber = 0;
+    [SerializeField] public int waveNumber = 0;
     GameObject[] chosenTypes;
     private GameObject player;
 
@@ -80,9 +85,13 @@ public class GameManager : Singleton<GameManager>
 
     public void WaveEnded()
     {
-        // TODO: Show upgrade menu
         print("Wave " + waveNumber + " ended");
-        SpawnChest();
+        if(waveNumber % waveToChestRatio == 0) {
+            SpawnChest();
+        } else {
+            ScheduleWaveStart();
+        }
+        
     }
 
     public void EnemyKilled()
