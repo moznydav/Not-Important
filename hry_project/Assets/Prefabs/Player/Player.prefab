@@ -838,8 +838,8 @@ MonoBehaviour:
   baseMaxHealth: 150
   baseAttackSpeed: 0.8
   baseMoveSpeed: 350
-  baseDamage: 20
-  baseNumOfProjectiles: 3
+  baseDamage: 25
+  baseNumOfProjectiles: 1
   baseProjectileSpeed: 20
   basePierce: 0
   VFX:

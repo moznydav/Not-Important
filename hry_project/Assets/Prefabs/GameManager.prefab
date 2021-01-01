@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGamePaused: 0
   wavePauseTime: 0
-  enemyPowerMultiplier: 2
+  enemyPowerMultiplier: 1.5
   enemySpawners:
   - {fileID: 0}
   - {fileID: 0}
@@ -776,6 +776,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
+      propertyPath: bottomOffensiveIndicies.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
+      propertyPath: bottomDefensiveIndicies.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
+      propertyPath: bottomUtilityIndicies.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
       propertyPath: boundries.Array.data[0]
       value: 3
       objectReference: {fileID: 0}
@@ -927,6 +939,42 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6838375470009203174, guid: ccf6398a54b320c4cbf55280de0796c3,
         type: 3}
+    - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
+      propertyPath: bottomOffensiveIndicies.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
+      propertyPath: bottomOffensiveIndicies.Array.data[1]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
+      propertyPath: bottomOffensiveIndicies.Array.data[2]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
+      propertyPath: bottomDefensiveIndicies.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
+      propertyPath: bottomDefensiveIndicies.Array.data[1]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
+      propertyPath: bottomDefensiveIndicies.Array.data[2]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
+      propertyPath: bottomUtilityIndicies.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
+      propertyPath: bottomUtilityIndicies.Array.data[1]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
+      propertyPath: bottomUtilityIndicies.Array.data[2]
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2987186240400589245, guid: 654892e9a8021654d84f67fa03f988a4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
