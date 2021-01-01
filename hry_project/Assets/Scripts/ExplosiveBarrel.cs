@@ -47,7 +47,7 @@ public class ExplosiveBarrel : Destroyable {
 
         foreach (Stats item in entities) {
             if (CanHit(item.transform.position)) {
-                item.DealDamage(damage);
+                item.DealDamage(damage,null);
             }
         }
 

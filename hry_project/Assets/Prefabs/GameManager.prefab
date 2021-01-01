@@ -61,15 +61,16 @@ MonoBehaviour:
   - {fileID: 1692508926896011952, guid: 878d79d8ceac77a46a54aabd52ee8566, type: 3}
   - {fileID: 7988984751933178130, guid: 4d7faf50994ee6c4782e1ff040c4f810, type: 3}
   enemyPowers: 0100000002000000030000000200000002000000
-  pauseMenu: {fileID: 4719806751617400194}
+  pauseMenu: {fileID: 0}
   upgradeMenu: {fileID: 6672866065917246504}
-  DeathScreen: {fileID: 4325069524820254100}
-  environmentMenu: {fileID: 2501507400068275904}
+  DeathScreen: {fileID: 0}
+  environmentMenu: {fileID: 0}
   nextWaveInObject: {fileID: 4977025826955908467}
   listOfUpgrades: []
   upgradeChest: {fileID: 6652047907670060175, guid: 41c400b2ed1ac5b4c86a007d44a1ab65,
     type: 3}
   waveToLevelRatio: 4
+  waveToEnvironmentRatio: 4
   timeBetweenWaves: 15
   canUpgrade: 0
   debugMode: 0
@@ -562,12 +563,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4adae8395b5f3442ba2ae8123a9157c, type: 3}
---- !u!1 &4719806751617400194 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4680559371431853807, guid: b4adae8395b5f3442ba2ae8123a9157c,
-    type: 3}
-  m_PrefabInstance: {fileID: 104903068586804077}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4719806751617400222 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4680559371431853811, guid: b4adae8395b5f3442ba2ae8123a9157c,
@@ -708,12 +703,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 964074fc218992f4a94c98f4df4d3f54, type: 3}
---- !u!1 &4325069524820254100 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3439981432898224455, guid: 964074fc218992f4a94c98f4df4d3f54,
-    type: 3}
-  m_PrefabInstance: {fileID: 1421166274294176979}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4325069524820254088 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3439981432898224475, guid: 964074fc218992f4a94c98f4df4d3f54,
@@ -745,7 +734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
       propertyPath: defenceUpgradesTierOne.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
       propertyPath: defenceUpgradesTierTwo.Array.size
@@ -941,40 +930,50 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
       propertyPath: bottomOffensiveIndicies.Array.data[0]
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
       propertyPath: bottomOffensiveIndicies.Array.data[1]
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
       propertyPath: bottomOffensiveIndicies.Array.data[2]
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
       propertyPath: bottomDefensiveIndicies.Array.data[0]
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
       propertyPath: bottomDefensiveIndicies.Array.data[1]
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
       propertyPath: bottomDefensiveIndicies.Array.data[2]
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
       propertyPath: bottomUtilityIndicies.Array.data[0]
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
       propertyPath: bottomUtilityIndicies.Array.data[1]
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
       propertyPath: bottomUtilityIndicies.Array.data[2]
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
+      propertyPath: defenceUpgradesTierOne.Array.data[1]
+      value: 
+      objectReference: {fileID: 6838375470009203174, guid: 8fcd318eea0eeec4eb8d914165dd58ce,
+        type: 3}
+    - target: {fileID: 1321109450, guid: 654892e9a8021654d84f67fa03f988a4, type: 3}
+      propertyPath: defenceUpgradesTierOne.Array.data[2]
+      value: 
+      objectReference: {fileID: 6838375470009203174, guid: 8fcd318eea0eeec4eb8d914165dd58ce,
+        type: 3}
     - target: {fileID: 2987186240400589245, guid: 654892e9a8021654d84f67fa03f988a4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1228,12 +1227,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb11461b8be932649b50ca254a9c1d8e, type: 3}
---- !u!1 &2501507400068275904 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7149249461951340495, guid: cb11461b8be932649b50ca254a9c1d8e,
-    type: 3}
-  m_PrefabInstance: {fileID: 4719806751209652495}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &548447474620566695 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5052024109994577320, guid: cb11461b8be932649b50ca254a9c1d8e,

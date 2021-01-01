@@ -35,7 +35,7 @@ public class LevelManager : MonoBehaviour
         } else {
             Debug.Log("Reseting level");
             //TODO level reset
-            player.TeleportToMiddle();
+           // player.TeleportToMiddle();
             levelNumber = 0;
             LevelUpdate(levelNumber);
             

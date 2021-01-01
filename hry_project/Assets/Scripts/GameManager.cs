@@ -22,6 +22,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] List<GameObject> listOfUpgrades;
     [SerializeField] GameObject upgradeChest;
     [SerializeField] int waveToLevelRatio = 2;
+    [SerializeField] int waveToEnvironmentRatio = 4;
     [SerializeField] float timeBetweenWaves = 15;
     public bool canUpgrade;
     public bool debugMode = false;
@@ -173,8 +174,11 @@ public class GameManager : Singleton<GameManager>
         if(lastWave)
         {
             if(chestsPickedUp == 2)
-            Invoke("WaveStart", wavePauseTime);
-            chestsPickedUp = 0;
+            {
+                Invoke("WaveStart", wavePauseTime);
+                chestsPickedUp = 0;
+            }
+            
         }
         else
         {
@@ -193,13 +197,24 @@ public class GameManager : Singleton<GameManager>
 
     }
 
-    public void ActivateEnvironmentMenu() {
-        if (upgradeMenu.activeInHierarchy) {
+    public void ActivateEnvironmentMenu()
+    {
+        if (upgradeMenu.activeInHierarchy)
+        {
             upgradeMenu.GetComponent<UpgradeScreen>().Close();
             upgradeMenu.SetActive(false);
         }
-        environmentMenu.SetActive(true);
-        environmentMenu.GetComponent<EnvironmentScreen>().Init();
+        if ((waveNumber + 2) % waveToEnvironmentRatio == 0)
+        {
+            environmentMenu.SetActive(true);
+            environmentMenu.GetComponent<EnvironmentScreen>().Init();
+        }
+        else
+        {
+            Resume();
+            ScheduleWaveStart();
+        }
+
     }
 
     public void SpawnChest()
