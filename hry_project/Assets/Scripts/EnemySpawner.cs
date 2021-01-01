@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
     }
 
-    public IEnumerator Spawn(GameObject[] types)
+    public IEnumerator Spawn(GameObject[] types, int runsDone)
     {
         Vector2 spawnPosition;
         for (int i = 0; i < types.Length; i++) {
