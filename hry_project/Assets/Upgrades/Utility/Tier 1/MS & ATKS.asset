@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c17a48f51b108046ad55d19e80b9ae0, type: 3}
   m_Name: MS & ATKS
   m_EditorClassIdentifier: 
-  value: 80
+  value: 55
   secondaryValue: -0.01
   upgradeType: 0
