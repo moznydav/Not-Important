@@ -168,8 +168,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Gain an extremely small chance to heal to maximum health upon killing an
-    enemy
+  m_Text: 'Gain an EXTREMELY small chance to heal to maximum health upon killing
+    an enemy
+
+
+    adds health'
 --- !u!114 &7257159742649424035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,22 +362,52 @@ PrefabInstance:
     - target: {fileID: 6294191560235021665, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.4811321
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6294191560235021665, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
       propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.4811321
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6294191560235021665, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.4811321
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6294191560235021665, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
       propertyPath: m_Colors.m_HighlightedColor.a
-      value: 0.8980392
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294191560235021665, guid: 774e346f9135d044caac0e90fa1cd96d,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294191560235021665, guid: 774e346f9135d044caac0e90fa1cd96d,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294191560235021665, guid: 774e346f9135d044caac0e90fa1cd96d,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294191560235021665, guid: 774e346f9135d044caac0e90fa1cd96d,
+        type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294191560235021665, guid: 774e346f9135d044caac0e90fa1cd96d,
+        type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294191560235021665, guid: 774e346f9135d044caac0e90fa1cd96d,
+        type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 6294191560235021666, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}
