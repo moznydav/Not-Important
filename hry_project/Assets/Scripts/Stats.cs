@@ -32,10 +32,10 @@ public class Stats : MonoBehaviour
     [SerializeField] AudioClip playerDamagedSFX;
 
     // Stats
-    public float maxHealth;
+    public float maxHealth = 0;
     public float attackSpeed;
     public float moveSpeed;
-    public float damage;
+    public float damage = 0;
     public float poisonDamage;
     public float explosionDamage;
     public int numOfProjectiles;
@@ -106,10 +106,10 @@ public class Stats : MonoBehaviour
         }
 
         currentHealth = baseMaxHealth;
-        maxHealth = baseMaxHealth;
+        maxHealth += baseMaxHealth;
         attackSpeed = baseAttackSpeed;
         moveSpeed = baseMoveSpeed;
-        damage = baseDamage;
+        damage += baseDamage;
         numOfProjectiles = baseNumOfProjectiles;
         pierceValue = basePierce;
         projectileSpeed = baseProjectileSpeed;

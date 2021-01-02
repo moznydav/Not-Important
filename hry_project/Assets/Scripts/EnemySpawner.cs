@@ -19,8 +19,8 @@ public class EnemySpawner : MonoBehaviour
             gameManager.currentEnemyCount++;
             yield return new WaitForSeconds(Random.Range(0.5f, 1.2f));
             GameObject enemy = Instantiate(types[i], spawnPosition, Quaternion.identity);
-            enemy.GetComponent<Stats>().damage = enemy.GetComponent<Stats>().damage * (runsDone + 1);
-            enemy.GetComponent<Stats>().maxHealth = enemy.GetComponent<Stats>().maxHealth * (runsDone + 1);
+            enemy.GetComponent<Stats>().damage += enemy.GetComponent<Stats>().damage * (runsDone + 2);
+            enemy.GetComponent<Stats>().maxHealth += enemy.GetComponent<Stats>().maxHealth * (runsDone + 2);
             enemy.GetComponent<Stats>().HealToMax();
         }
     }
