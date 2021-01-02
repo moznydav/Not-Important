@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
@@ -19,6 +20,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] public GameObject pauseMenuHelp;
     [SerializeField] public GameObject upgradeMenu;
     [SerializeField] public GameObject DeathScreen;
+    [SerializeField] public Text enemiesKilledText;
     [SerializeField] public GameObject environmentMenu;
     [SerializeField] public NextWaveIn nextWaveInObject;
     [SerializeField] List<GameObject> listOfUpgrades;
@@ -42,7 +44,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private int chestsPickedUp;
     [SerializeField] private int chestsSpawned;
     [SerializeField] public bool lastWave;
-
+    private int enemiesKilled = 0;
 
     void Start() {
         levelManager = FindObjectOfType<LevelManager>();
@@ -131,6 +133,7 @@ public class GameManager : Singleton<GameManager>
     public void EnemyKilled()
     {
         currentEnemyCount -= 1;
+        enemiesKilled++;
         if (currentEnemyCount == 0) {
             WaveEnded();
         }
@@ -257,6 +260,7 @@ public class GameManager : Singleton<GameManager>
     public void InitDeathScreen()
     {
         DeathScreen.SetActive(true);
+        enemiesKilledText.text = "ENEMIES KILLED: " + enemiesKilled;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         //Time.timeScale = 0f;
@@ -320,6 +324,7 @@ public class GameManager : Singleton<GameManager>
         if (!player)
         {
             InitDeathScreen();
+
         }
     }
 

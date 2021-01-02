@@ -58,7 +58,7 @@ public class Goblin : Enemy
             attackDirection.Normalize();
             anim.SetFloat("Horizontal", attackDirection.x);
 
-            transform.position += attackDirection * loungeSpeed * Time.fixedDeltaTime * Time.deltaTime;
+            rigidBody.velocity = attackDirection * loungeSpeed * Time.fixedDeltaTime * Time.deltaTime;
             anim.SetBool("Attacking", true);
         }
         yield return new WaitForSeconds(attackCooldown);

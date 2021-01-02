@@ -99,7 +99,6 @@ public class Stats : MonoBehaviour
         for (int i = 0; i < blinkBody.Length; i++)
         {
             spriteRenderer[i] = blinkBody[i].GetComponent<SpriteRenderer>();
-            Debug.Log(i + " num of sprite renderers");
         }
 
         currentHealth = baseMaxHealth;
@@ -365,9 +364,9 @@ public class Stats : MonoBehaviour
     {
         moveSpeed += movementBuff;
         updateSpriteColor(berserkColor);
-        Debug.Log("BUFF INIT: ");
+        
         yield return new WaitForSeconds(buffDuration);
-        Debug.Log("BUFF DONE");
+        
         updateSpriteColor(Color.white);
         moveSpeed -= movementBuff;
         isBuffed = false;
