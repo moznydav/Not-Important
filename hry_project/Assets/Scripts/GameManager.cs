@@ -34,7 +34,7 @@ public class GameManager : Singleton<GameManager>
     GameObject spawnedChest;
     LevelManager levelManager;
 
-    private int activeEnemyTypes = 1;
+    public int activeEnemyTypes = 1;
     private float nextWaveIn;
      private int currentWaveNumber;
     [SerializeField] public int currentEnemyCount = 0;

@@ -17,12 +17,16 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] Player player;
     [SerializeField] GameObject startingPosition;
+    GameManager gameManager;
 
     private bool explosivesFirst = true;
+
+    
 
     void Awake() {
         astar = FindObjectOfType<AStar>();
         player = FindObjectOfType<Player>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     public void SetupNextLevel() {
@@ -145,8 +149,9 @@ public class LevelManager : MonoBehaviour
         TeleportToMiddle();
         EnvironmentReset();
         levelNumber = 1;
+        gameManager.activeEnemyTypes = 1;
         runsDone++;
-        LevelUpdate(levelNumber);
+        LevelActivationReset();
     }
     void TeleportToMiddle() {
         player.transform.position = startingPosition.transform.position;
@@ -155,5 +160,11 @@ public class LevelManager : MonoBehaviour
         spikesLevel = 0;
         tarPoolsLevel = 0;
         barricadesLevel = 0;
+    }
+
+    void LevelActivationReset() {
+        levels[7].SetActive(false);
+        levels[0].SetActive(true);
+        LevelUpdate(levelNumber);
     }
 }
