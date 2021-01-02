@@ -24,6 +24,7 @@ public class GolemProjectile : MonoBehaviour
             if (stats)
             {
                 stats.DealDamage(damage,origin);
+            GetComponent<Collider2D>().enabled = false;
             }
             // Debug.Log("HIT " + other.name);
     }
