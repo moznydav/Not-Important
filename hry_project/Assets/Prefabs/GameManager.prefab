@@ -395,7 +395,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 70
+    m_FontSize: 60
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 6
@@ -2300,7 +2300,7 @@ PrefabInstance:
     - target: {fileID: 7149249461951340495, guid: cb11461b8be932649b50ca254a9c1d8e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9019453640369612767, guid: cb11461b8be932649b50ca254a9c1d8e,
         type: 3}
