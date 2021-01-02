@@ -124,7 +124,7 @@ public class LevelManager : MonoBehaviour
                 Debug.Log("Explosives change");
                 if (explosives[i].activeSelf) {
                     explosives[i].SetActive(false);
-                    explosives[levelNumber-1].SetActive(true);
+                    explosives[levelNumber-1+(8*runsDone)].SetActive(true);
                     break;
                 }
             }
