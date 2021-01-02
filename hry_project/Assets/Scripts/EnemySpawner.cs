@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour
 
     public IEnumerator Spawn(GameObject[] types, int runsDone)
     {
+        gameManager = FindObjectOfType<GameManager>();
         Vector2 spawnPosition;
         for (int i = 0; i < types.Length; i++) {
             spawnPosition = transform.position + new Vector3(Random.Range(-0.8f, 0.8f), Random.Range(-0.8f, 0.8f), 0);
