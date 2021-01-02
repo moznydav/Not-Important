@@ -156,7 +156,7 @@ public class LevelManager : MonoBehaviour
         levelNumber = 1;
         gameManager.activeEnemyTypes = 1;
         gameManager.waveNumber = 1;
-        gameManager.enemyPowerMultiplier += 0.5f;
+        gameManager.enemyPowerMultiplier += 1.5f;
         runsDone++;
         LevelActivationReset();
     }
