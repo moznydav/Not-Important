@@ -118,8 +118,13 @@ public class PlayerStats : Stats
 
     public void UpdateChains()
     {
-        chainsMultiplier /= 2;
-        hasChains = true;
+        
+        if (hasChains) {
+            chainsMultiplier /= 0.8f;
+        } else {
+            chainsMultiplier /= 2;
+            hasChains = true;
+        }
         rollSupply.gameObject.SetActive(false);      
     }
 
