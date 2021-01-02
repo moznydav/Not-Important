@@ -29,8 +29,6 @@ public class GolemProjectile : MonoBehaviour
             // Debug.Log("HIT " + other.name);
     }
 
-
-
     // Update is called once per frame
     void Update()
     {
