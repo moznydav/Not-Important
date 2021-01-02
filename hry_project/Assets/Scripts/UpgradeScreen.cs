@@ -92,19 +92,19 @@ public class UpgradeScreen : MonoBehaviour
         var currentDefensiveList = defensiveUpgrades[currentDefensiveIndex];
         var currentUtilityList = utilityUpgrades[currentUtilityIndex];
 
-        int randomIndex = Mathf.RoundToInt(Random.Range(0, currentOffsensiveList.Count - 1));
+        int randomIndex = Random.Range(0, currentOffsensiveList.Count);
         currentOffensive = Instantiate(currentOffsensiveList[randomIndex], offensivePlace.transform);
 
         var buttonGM = currentOffensive.transform.Find("Button").gameObject;
         buttonGM.GetComponent<Button>().onClick.AddListener(SelectOffensive);
 
-        randomIndex = Mathf.RoundToInt(Random.Range(0, currentDefensiveList.Count - 1));
+        randomIndex = Random.Range(0, currentDefensiveList.Count);
         currentHealth = Instantiate(currentDefensiveList[randomIndex], healthPlace.transform);
 
         buttonGM = currentHealth.transform.Find("Button").gameObject;
         buttonGM.GetComponent<Button>().onClick.AddListener(SelectDefensive);
 
-        randomIndex = Mathf.RoundToInt(Random.Range(0, currentUtilityList.Count - 1));
+        randomIndex = Random.Range(0, currentUtilityList.Count);
         currentMovement = Instantiate(currentUtilityList[randomIndex], movementPlace.transform);
 
         buttonGM = currentMovement.transform.Find("Button").gameObject;

@@ -40,6 +40,8 @@ public class EnvironmentButton: MonoBehaviour
 
     public void Close() {
         gameManager.Resume();
-        gameManager.ScheduleWaveStart();
+        if (gameManager.currentEnemyCount == 0) {
+            gameManager.ScheduleWaveStart();
+        }
     }
 }

@@ -21,10 +21,14 @@ public class EnvironmentScreen : MonoBehaviour {
 
     public void Init() {
 
-        int randomIndexOne = Mathf.RoundToInt(Random.Range(0, options.Length));
+        int randomIndexOne = Random.Range(0, options.Length);
+        int randomIndexTwo = Random.Range(0, options.Length);
         option1 = Instantiate(options[randomIndexOne], placeholder1.transform);
 
-        int randomIndexTwo = Mathf.RoundToInt(Random.Range(0, options.Length));
+        while (randomIndexTwo == randomIndexOne) {
+            randomIndexTwo = Random.Range(0, options.Length);
+        }
+        
         option2 = Instantiate(options[randomIndexTwo], placeholder2.transform);
 
         option4 = Instantiate(skipButton, placeholder4.transform);
