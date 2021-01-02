@@ -27,7 +27,10 @@ public class Projectile : MonoBehaviour
     bool sniperScope = false;
 
     [Header("SFX stuff")]
+    [SerializeField] AudioSource myAudioSource;
     [SerializeField] bool isPlayers;
+    [SerializeField] float explosionVolume;
+    [SerializeField] float othersVolume;
     [SerializeField] AudioClip bounceSFX;
     [SerializeField] AudioClip hitSFX;
     [SerializeField] AudioClip explosionSFX;
@@ -44,7 +47,7 @@ public class Projectile : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         StartCoroutine(HandleLifeTime());
         if (isPlayers) {
-            AudioSource.PlayClipAtPoint(swingSFX, Camera.main.transform.position);
+            AudioSource.PlayClipAtPoint(swingSFX, Camera.main.transform.position, othersVolume);
         }
     }
 
@@ -76,7 +79,7 @@ public class Projectile : MonoBehaviour
                 direction.Normalize();
                 rigidBody.velocity = direction * projectileSpeed;
                 if (isPlayers) {
-                    AudioSource.PlayClipAtPoint(bounceSFX, Camera.main.transform.position);
+                    AudioSource.PlayClipAtPoint(bounceSFX, Camera.main.transform.position, othersVolume);
                 }
                 attackDone = true;
                 return;
@@ -109,7 +112,7 @@ public class Projectile : MonoBehaviour
                 stats.DealDamage(damage,origin);
                 if(isPlayers && !exploding) {
                     Debug.Log("HIT!");
-                    AudioSource.PlayClipAtPoint(hitSFX, Camera.main.transform.position);
+                    AudioSource.PlayClipAtPoint(hitSFX, Camera.main.transform.position, othersVolume);
                 }
 
                 if (exploding)

@@ -102,6 +102,7 @@ MonoBehaviour:
   explosionVFX: {fileID: 4213693447830417235, guid: 3b0d9408d0498dc8eb9c84519f81a4aa,
     type: 3}
   explosionSFX: {fileID: 8300000, guid: c9dc2f2bd247d0646acae79c31bf684b, type: 3}
+  sFXVolume: 1
 --- !u!61 &5874416912425523140
 BoxCollider2D:
   m_ObjectHideFlags: 0
