@@ -9,6 +9,7 @@ public class ExplosiveBarrel : Destroyable {
     BoxCollider2D collider;
     SpriteRenderer spriteRenderer;
     AStar pathfinding;
+    [SerializeField] AudioClip explosionSFX;
 
     private bool destroyable = true;
     private float radius = 2.0f;
@@ -25,7 +26,7 @@ public class ExplosiveBarrel : Destroyable {
         }
 
         destroyable = false;
-
+        AudioSource.PlayClipAtPoint(explosionSFX, Camera.main.transform.position);
         StartCoroutine(HandleDamage());
         StartCoroutine(HandleExplosion());
     }

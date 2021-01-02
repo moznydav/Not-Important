@@ -148,3 +148,8 @@ MonoBehaviour:
   poisoned: 0
   damage: 0
   exploding: 0
+  isPlayers: 0
+  bounceSFX: {fileID: 8300000, guid: 999d157fff323ea43bce05d7cd0333d1, type: 3}
+  hitSFX: {fileID: 8300000, guid: 7eef6b0e800b8b840a9f8bdb4853b441, type: 3}
+  explosionSFX: {fileID: 8300000, guid: c9dc2f2bd247d0646acae79c31bf684b, type: 3}
+  swingSFX: {fileID: 8300000, guid: 90b653ccf9d88104ba46f7e1d7d9147e, type: 3}

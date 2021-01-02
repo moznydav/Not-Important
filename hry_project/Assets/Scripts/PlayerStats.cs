@@ -13,6 +13,7 @@ public class PlayerStats : Stats
     private float lastRegenTime;
 
     //Upgrade counters
+    [Header("Upgrades counter")]
     public int offenceCounter;
     public int defenceCounter;
     public int utilityCounter;
@@ -68,6 +69,7 @@ public class PlayerStats : Stats
     public void DealDamage(float damage, Stats origin)
     {
         base.DealDamage(damage, origin);
+
         SetImmune(true);
         StartCoroutine(StartImmuneFrames());
         

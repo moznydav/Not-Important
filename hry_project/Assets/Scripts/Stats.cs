@@ -27,6 +27,10 @@ public class Stats : MonoBehaviour
     [SerializeField] float blinkDuration = 0.1f;
     [SerializeField] Color berserkColor;
 
+
+    [Header("SFX stuff")]
+    [SerializeField] AudioClip playerDamagedSFX;
+
     // Stats
     public float maxHealth;
     public float attackSpeed;
@@ -128,7 +132,11 @@ public class Stats : MonoBehaviour
 
     public void DealDamage(float damage, Stats origin)
     {
+        Player player = GetComponent<Player>();
         //TOOD: add GameObject origin parameter
+        if (player) {
+            AudioSource.PlayClipAtPoint(playerDamagedSFX, Camera.main.transform.position);
+        }
         if (!immune && !fireWallImmune)
         {
             if (hasThorns)
@@ -170,7 +178,7 @@ public class Stats : MonoBehaviour
                     guppyLives--;
                     currentHealth = 1;
 
-                    Player player = GetComponent<Player>();
+                    
                     if (player)
                     {
                         player.UpdateCouter(guppyLives.ToString());

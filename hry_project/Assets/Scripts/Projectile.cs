@@ -26,6 +26,12 @@ public class Projectile : MonoBehaviour
     bool brokenScope = false;
     bool sniperScope = false;
 
+    [Header("SFX stuff")]
+    [SerializeField] bool isPlayers;
+    [SerializeField] AudioClip bounceSFX;
+    [SerializeField] AudioClip hitSFX;
+    [SerializeField] AudioClip explosionSFX;
+    [SerializeField] AudioClip swingSFX;
 
     bool attackDone = false;
     Rigidbody2D rigidBody;
@@ -37,10 +43,11 @@ public class Projectile : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         StartCoroutine(HandleLifeTime());
-
+        if (isPlayers) {
+            AudioSource.PlayClipAtPoint(swingSFX, Camera.main.transform.position);
+        }
     }
 
-    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -62,11 +69,15 @@ public class Projectile : MonoBehaviour
             //}
             else if ( ricochet-- > 0)
             {
+
                 var contact = collision.GetContact(0);
 
                 direction = Vector2.Reflect(direction, contact.normal);
                 direction.Normalize();
                 rigidBody.velocity = direction * projectileSpeed;
+                if (isPlayers) {
+                    AudioSource.PlayClipAtPoint(bounceSFX, Camera.main.transform.position);
+                }
                 attackDone = true;
                 return;
             }
@@ -91,12 +102,17 @@ public class Projectile : MonoBehaviour
                 {
                     stats.ApplyPoison(poisonTicks, poisonDamage);
                 }
-                stats.DealDamage(damage,origin);   
+                stats.DealDamage(damage,origin);
+                if(isPlayers && !exploding) {
+                    Debug.Log("HIT!");
+                    AudioSource.PlayClipAtPoint(hitSFX, Camera.main.transform.position);
+                }
 
                 if (exploding)
                 {
                     GameObject BoomBoom = Instantiate(explosion, transform.position, Quaternion.identity);
                     BoomBoom.GetComponent<Explosion>().SetUpExplosion(explosionDamage, poisoned, poisonDamage, poisonTicks);
+                    AudioSource.PlayClipAtPoint(explosionSFX, Camera.main.transform.position);
                 }
                 attackDone = true;
                 other.transform.Translate(direction * knockBackValue);
