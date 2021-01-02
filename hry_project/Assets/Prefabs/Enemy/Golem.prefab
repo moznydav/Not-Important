@@ -213,7 +213,7 @@ MonoBehaviour:
   baseMaxHealth: 150
   baseAttackSpeed: 3
   baseMoveSpeed: 150
-  baseDamage: 75
+  baseDamage: 50
   baseNumOfProjectiles: 0
   baseProjectileSpeed: 0
   basePierce: 0
@@ -226,6 +226,7 @@ MonoBehaviour:
   - {fileID: 6534814302608795115}
   blinkDuration: 0.1
   berserkColor: {r: 0.7735849, g: 0.34786987, b: 0.34786987, a: 1}
+  playerDamagedSFX: {fileID: 0}
   maxHealth: 0
   attackSpeed: 0
   moveSpeed: 0
@@ -265,6 +266,7 @@ MonoBehaviour:
   hasCorpseExplosion: 0
   hasGuppy: 0
   hasUnlimitedRolls: 0
+  hasPoisonTraps: 0
 --- !u!70 &6534814302608795111
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
