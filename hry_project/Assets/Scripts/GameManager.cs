@@ -18,6 +18,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] public GameObject pauseMenu;
     [SerializeField] public GameObject pauseMenuBackground;
     [SerializeField] public GameObject pauseMenuHelp;
+    [SerializeField] Scroll scroll;
     [SerializeField] public GameObject upgradeMenu;
     [SerializeField] public GameObject DeathScreen;
     [SerializeField] public Text enemiesKilledText;
@@ -45,6 +46,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private int chestsSpawned;
     [SerializeField] public bool lastWave;
     private int enemiesKilled = 0;
+    
 
     void Start() {
         levelManager = FindObjectOfType<LevelManager>();
@@ -54,7 +56,7 @@ public class GameManager : Singleton<GameManager>
         nextWaveIn = timeBetweenWaves;
         lastWave = false;
         chestsPickedUp = 0;
-        chestsSpawned = 0;
+        chestsSpawned = 0;  
         waveNumber = 1;
     }
 
@@ -62,8 +64,7 @@ public class GameManager : Singleton<GameManager>
     {
         if (isGamePaused)
         {
-            pauseMenuBackground.SetActive(false);
-            pauseMenuHelp.SetActive(true);
+            scroll.ActivateHelp();
         }
     }
 
