@@ -168,7 +168,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Gain bonus movement speed after roll
+  m_Text: 'Gain bonus movement speed after roll
+
+
+
+
+
+    ...this bonus stacks'
 --- !u!114 &7257159742649424035
 MonoBehaviour:
   m_ObjectHideFlags: 0

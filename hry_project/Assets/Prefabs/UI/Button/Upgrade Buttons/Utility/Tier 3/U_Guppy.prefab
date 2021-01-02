@@ -168,13 +168,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Gain extra lives, but decreases max health greatly
+  m_Text: 'Gain 9 extra lives, but set your max health and current health to 1
 
 
 
-
-    ... extra lives
-    prevent death'
+    ...
+    extra lives prevent death and you can still upgrade your health'
 --- !u!114 &7257159742649424035
 MonoBehaviour:
   m_ObjectHideFlags: 0

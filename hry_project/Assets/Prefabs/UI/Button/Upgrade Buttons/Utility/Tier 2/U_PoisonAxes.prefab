@@ -94,11 +94,13 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Projectiles can poison enemies.
 
+    Adds poison damage
 
 
 
-    ... poison deals damage over time
-    for a short time'
+
+    ... poison
+    deals damage over time for a short time'
 --- !u!114 &7257159742649424035
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -168,7 +168,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Projectiles can pierce additional enemies.
+  m_Text: Projectiles can pierce one additional enemies.
 --- !u!114 &7257159742649424035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,7 +292,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -7296352727235814438, guid: 36d8a303e9ce8c94fae0af17655d2b5c,
+      objectReference: {fileID: 4727061669708367702, guid: 36d8a303e9ce8c94fae0af17655d2b5c,
         type: 3}
     - target: {fileID: 6294191560235021664, guid: 774e346f9135d044caac0e90fa1cd96d,
         type: 3}

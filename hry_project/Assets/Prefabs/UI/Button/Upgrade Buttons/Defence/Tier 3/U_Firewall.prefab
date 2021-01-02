@@ -170,6 +170,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Gain damage immunity every 3 seconds for a short time
 
+
+    Adds health
+
 '
 --- !u!114 &7257159742649424035
 MonoBehaviour:

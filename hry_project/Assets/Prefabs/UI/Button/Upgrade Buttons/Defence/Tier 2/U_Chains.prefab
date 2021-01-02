@@ -170,6 +170,10 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Receive only 50% of the damage taken but you can no longer roll
 
+
+    Adds
+    extra health
+
 '
 --- !u!114 &7257159742649424035
 MonoBehaviour:

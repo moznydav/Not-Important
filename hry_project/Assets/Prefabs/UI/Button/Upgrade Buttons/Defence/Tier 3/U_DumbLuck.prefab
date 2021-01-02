@@ -168,8 +168,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Gain an extremely small chance to heal to maximum health upon killing an
-    enemy
+  m_Text: 'Gain an EXTREMELY small chance to heal to maximum health upon killing
+    an enemy
+
+
+    adds health'
 --- !u!114 &7257159742649424035
 MonoBehaviour:
   m_ObjectHideFlags: 0

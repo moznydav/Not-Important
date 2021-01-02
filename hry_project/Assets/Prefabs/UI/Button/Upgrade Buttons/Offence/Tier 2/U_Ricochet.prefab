@@ -170,7 +170,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Projectiles can bounce off walls
 
-'
+
+    Adds moderate amount of damage'
 --- !u!114 &7257159742649424035
 MonoBehaviour:
   m_ObjectHideFlags: 0

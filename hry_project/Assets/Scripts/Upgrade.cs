@@ -158,7 +158,6 @@ public class Upgrade : ScriptableObject
                 playerStats.UpdatePoisonStat(value);
                 break;
             case UpgradeType.PROJ_EXPLOSION:
-                playerStats.damage += classDamage;
                 playerStats.attackSpeed += classAttackSpeed;
                 playerStats.UpdateExplodingProjectile(value);
                 break;

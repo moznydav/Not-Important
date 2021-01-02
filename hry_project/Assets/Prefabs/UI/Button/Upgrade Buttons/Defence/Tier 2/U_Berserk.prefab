@@ -170,6 +170,11 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Gain damage boost on low health
 
+
+
+    ... low health = 1/3 of your max
+    health
+
 '
 --- !u!114 &7257159742649424035
 MonoBehaviour:

@@ -168,7 +168,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enemies explode on death. This explosion can apply poison
+  m_Text: 'Enemies explode on death. This explosion can apply poison
+
+
+    Adds poison
+    damage'
 --- !u!114 &7257159742649424035
 MonoBehaviour:
   m_ObjectHideFlags: 0
