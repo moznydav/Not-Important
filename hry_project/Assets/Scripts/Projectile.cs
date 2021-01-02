@@ -95,8 +95,12 @@ public class Projectile : MonoBehaviour
         {
             attackDone = true;
             Stats stats = other.GetComponent<Stats>();
+            PlayerStats playerStats = other.GetComponent<PlayerStats>();
+            if (playerStats)
+            {
+                playerStats.DealDamage(damage, origin);
 
-            if (stats)
+            }else if (stats)
             {
                 if (poisoned)
                 {

@@ -836,7 +836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthbar: {fileID: 5617675635311616193}
-  baseMaxHealth: 100
+  baseMaxHealth: 150
   baseAttackSpeed: 0.6
   baseMoveSpeed: 350
   baseDamage: 30
@@ -851,12 +851,13 @@ MonoBehaviour:
     type: 3}
   poisonTrail: {fileID: 3238926035080142752, guid: e8b3777eb2cea1b48b8a5af7a16fe938,
     type: 3}
-  immuneDuration: 0.2
+  immuneDuration: 0.6
   blinkBody:
   - {fileID: 362514959755084783}
   - {fileID: 8000891693078247934}
   blinkDuration: 0.1
   berserkColor: {r: 0.67058825, g: 0.34509805, b: 0.34509805, a: 1}
+  playerDamagedSFX: {fileID: 8300000, guid: ec9af7c06ce7c554289d46d8790a8461, type: 3}
   maxHealth: 0
   attackSpeed: 0
   moveSpeed: 0
@@ -900,7 +901,6 @@ MonoBehaviour:
   rollRegenTime: 4
   maxRolls: 3
   rollSupply: {fileID: 6000552226187604467}
-  playerDamagedSFX: {fileID: 8300000, guid: ec9af7c06ce7c554289d46d8790a8461, type: 3}
   offenceCounter: 0
   defenceCounter: 0
   utilityCounter: 0
