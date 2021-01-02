@@ -102,8 +102,18 @@ public class Projectile : MonoBehaviour
             if (playerStats)
             {
                 playerStats.DealDamage(damage, origin);
+                if (pierce > 0)
+                {
+                    damage *= pierceDamageModifier;
+                    pierce--;
+                }
+                else
+                {
+                    Destroy(gameObject);
+                }
 
-            }else if (stats)
+            }
+            else if (stats)
             {
                 if (poisoned)
                 {

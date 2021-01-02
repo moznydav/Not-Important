@@ -11,7 +11,7 @@ public class GameManager : Singleton<GameManager>
 {
     public bool isGamePaused = false;
     [SerializeField] float wavePauseTime;
-    [SerializeField] float enemyPowerMultiplier;
+    [SerializeField]public float enemyPowerMultiplier;
     [SerializeField] EnemySpawner[] enemySpawners;
     [SerializeField] GameObject[] enemyTypes;
     [SerializeField] int[] enemyPowers;
@@ -39,7 +39,7 @@ public class GameManager : Singleton<GameManager>
     private float nextWaveIn;
      private int currentWaveNumber;
     [SerializeField] public int currentEnemyCount = 0;
-    [SerializeField] private int waveNumber = 0;
+    [SerializeField] public int waveNumber = 0;
     GameObject[] chosenTypes;
     private GameObject player;
     [SerializeField] private int chestsPickedUp;
