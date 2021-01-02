@@ -71,7 +71,14 @@ public class Upgrade : ScriptableObject
                 break;
 
             case UpgradeType.ATTACK_SPEED:
-                playerStats.attackSpeed += value;
+                if (playerStats.attackSpeed + value <= 0)
+                {
+                    playerStats.attackSpeed = 0.01f;
+                }
+                else
+                {
+                    playerStats.attackSpeed += value;
+                }
                 break;
 
             case UpgradeType.MOVE_SPEED:
@@ -80,7 +87,15 @@ public class Upgrade : ScriptableObject
 
             case UpgradeType.DUAL_DMG_ATKSPEED:
                 playerStats.damage += value;
-                playerStats.attackSpeed += secondaryValue;
+               
+                if (playerStats.attackSpeed + secondaryValue <= 0)
+                {
+                    playerStats.attackSpeed = 0.01f;
+                }
+                else
+                {
+                    playerStats.attackSpeed += secondaryValue;
+                }
                 break;
 
             case UpgradeType.DUAL_MS_PROJETILESPEED:
@@ -90,7 +105,15 @@ public class Upgrade : ScriptableObject
 
             case UpgradeType.DUAL_PROJECTILESPEED_ATTACKSPEED:
                 playerStats.projectileSpeed += value;
-                playerStats.attackSpeed += secondaryValue;
+                if (playerStats.attackSpeed + secondaryValue <= 0)
+                {
+                    playerStats.attackSpeed = 0.01f;
+                }
+                else
+                {
+                    playerStats.attackSpeed += secondaryValue;
+                }
+                
                 break;
 
             case UpgradeType.DUAL_DMG_HP: // minor DMG and HP
@@ -99,7 +122,15 @@ public class Upgrade : ScriptableObject
                 break;
 
             case UpgradeType.DUAL_AS_MS: // minor AttackSpeed and Movespeed
-                playerStats.attackSpeed += value;
+               
+                if (playerStats.attackSpeed + value <= 0)
+                {
+                    playerStats.attackSpeed = 0.01f;
+                }
+                else
+                {
+                    playerStats.attackSpeed += value;
+                }
                 playerStats.moveSpeed += secondaryValue;
                 break;
 
@@ -109,7 +140,14 @@ public class Upgrade : ScriptableObject
 
             case UpgradeType.ADD_PROJECTILE: // Add projectile and decreases attackspeed
                 playerStats.AddProjectileStat((int)value);
-                playerStats.attackSpeed += secondaryValue;
+                if (playerStats.attackSpeed + secondaryValue <= 0)
+                {
+                    playerStats.attackSpeed = 0.01f;
+                }
+                else
+                {
+                    playerStats.attackSpeed += secondaryValue;
+                }
                 break;
 
             case UpgradeType.ADD_PIERCE: // Add pierce and decreases DMG
@@ -121,7 +159,7 @@ public class Upgrade : ScriptableObject
                 break;
             case UpgradeType.PROJ_EXPLOSION:
                 playerStats.damage += classDamage;
-                playerStats.attackSpeed -= classAttackSpeed;
+                playerStats.attackSpeed += classAttackSpeed;
                 playerStats.UpdateExplodingProjectile(value);
                 break;
             case UpgradeType.POISON_TRAIL:
@@ -137,8 +175,15 @@ public class Upgrade : ScriptableObject
                 playerStats.hasSniperScope = true;
                 break;
             case UpgradeType.SPRAY_AND_PRAY:
-                playerStats.attackSpeed += value;
-                playerStats.hasSprayAndPray = true;
+                if (playerStats.attackSpeed + value <= 0)
+                {
+                    playerStats.attackSpeed = 0.01f;
+                }
+                else
+                {
+                    playerStats.attackSpeed += value;
+                }
+                playerStats.SetSprayAndPray();
                 break;
             case UpgradeType.THORNS:
                 playerStats.UpdateHealthStat(classHp);
@@ -174,7 +219,15 @@ public class Upgrade : ScriptableObject
                 break;
             case UpgradeType.PARKOUR_BOOTS:
                 playerStats.moveSpeed += classMoveSpeed;
-                playerStats.attackSpeed += classAttackSpeed;
+                if (playerStats.attackSpeed + classAttackSpeed <= 0)
+                {
+                    playerStats.attackSpeed = 0.01f;
+                }
+                else
+                {
+                    playerStats.attackSpeed += classAttackSpeed;
+                }
+                
                 playerStats.UpdateParkourBoots(value);
                 break;
             case UpgradeType.POISON_EXPLOSION:
@@ -182,7 +235,14 @@ public class Upgrade : ScriptableObject
                 break;
             case UpgradeType.GUPPY_TALISMAN:
                 playerStats.moveSpeed += classMoveSpeed;
-                playerStats.attackSpeed += classAttackSpeed;
+                if (playerStats.attackSpeed + classAttackSpeed <= 0)
+                {
+                    playerStats.attackSpeed = 0.01f;
+                }
+                else
+                {
+                    playerStats.attackSpeed += classAttackSpeed;
+                }
                 playerStats.UpdateGuppy((int)value);
                 break;
             case UpgradeType.UNLIMITED_ROLLS:

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SlimePool : MonoBehaviour
 {
-    [SerializeField] float slowValue = 200f; //additive
+    [SerializeField] float slowValue = 100f; //additive
 
     
 

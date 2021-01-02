@@ -100,18 +100,14 @@ public class GameManager : Singleton<GameManager>
         Cursor.visible = true;
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
-
     public void Quit()
     {
         Application.Quit();
     }
-
     public void WaveEnded()
     {
         print("Wave " + waveNumber + " ended");
         waveNumber++;
-        SpawnChest();
-        
         if (waveNumber % waveToLevelRatio == 0)
         {
             Debug.Log("NextLevel");
@@ -123,7 +119,8 @@ public class GameManager : Singleton<GameManager>
 
         }
 
-       
+        SpawnChest();
+
         if (!lastWave)
         {
             ScheduleWaveStart();

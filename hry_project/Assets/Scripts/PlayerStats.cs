@@ -137,4 +137,9 @@ public class PlayerStats : Stats
         }
     }
 
+    public void SetSprayAndPray()
+    {
+        hasSprayAndPray = true;
+        GetComponent<Animator>().SetBool("SprayAndPray", true);
+    }
 }
