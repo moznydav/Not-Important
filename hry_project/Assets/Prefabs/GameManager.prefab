@@ -2157,7 +2157,10 @@ PrefabInstance:
     - target: {fileID: 3005843702536994762, guid: cb11461b8be932649b50ca254a9c1d8e,
         type: 3}
       propertyPath: m_Text
-      value: "Disclaimer:\n Also affects player. Might not always be the best idea"
+      value: 'Disclaimer:
+
+        Also affects player. Might not always be the best
+        idea'
       objectReference: {fileID: 0}
     - target: {fileID: 5052024109994577320, guid: cb11461b8be932649b50ca254a9c1d8e,
         type: 3}
