@@ -149,7 +149,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 41a0e134ccaa7924f8fe1ac853172c27, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -491,7 +491,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1758626483
   m_SortingLayer: 1
-  m_SortingOrder: 5
+  m_SortingOrder: 3
   m_Sprite: {fileID: -6874504565857425583, guid: 9c4c888384532ca4c95f40d114dcb3df,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -835,10 +835,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthbar: {fileID: 5617675635311616193}
-  baseMaxHealth: 150
-  baseAttackSpeed: 0.8
+  baseMaxHealth: 100
+  baseAttackSpeed: 0.6
   baseMoveSpeed: 350
-  baseDamage: 25
+  baseDamage: 30
   baseNumOfProjectiles: 1
   baseProjectileSpeed: 20
   basePierce: 0
@@ -895,6 +895,7 @@ MonoBehaviour:
   hasCorpseExplosion: 0
   hasGuppy: 0
   hasUnlimitedRolls: 0
+  hasPoisonTraps: 0
   rollRegenTime: 4
   maxRolls: 3
   rollSupply: {fileID: 6000552226187604467}
@@ -925,7 +926,7 @@ GameObject:
   - component: {fileID: 3831899066621219602}
   - component: {fileID: 3584843980734656987}
   - component: {fileID: 3893464623970290658}
-  - component: {fileID: 2046334532}
+  - component: {fileID: 1143906794}
   m_Layer: 14
   m_Name: Legs
   m_TagString: Untagged
@@ -986,7 +987,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1758626483
   m_SortingLayer: 1
-  m_SortingOrder: 4
+  m_SortingOrder: 2
   m_Sprite: {fileID: -8187283231347527578, guid: 2245d89c99eb6a048913ed02f6f4640f,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1018,8 +1019,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!70 &2046334532
-CapsuleCollider2D:
+--- !u!61 &1143906794
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1031,9 +1032,19 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.35113382}
-  m_Size: {x: 1.3406572, y: 1.5094347}
-  m_Direction: 0
+  m_Offset: {x: -0.022157669, y: -0.8021202}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.75, y: 2.5}
+    newSize: {x: 3.75, y: 2.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7630987, y: 0.75394726}
+  m_EdgeRadius: 0
 --- !u!1001 &5966404960915313869
 PrefabInstance:
   m_ObjectHideFlags: 0

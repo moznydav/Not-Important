@@ -39,9 +39,9 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private int waveNumber = 0;
     GameObject[] chosenTypes;
     private GameObject player;
-    private int chestsPickedUp;
-    private int chestsSpawned;
-    private bool lastWave;
+    [SerializeField] private int chestsPickedUp;
+    [SerializeField] private int chestsSpawned;
+    [SerializeField] public bool lastWave;
 
 
     void Start() {
@@ -106,8 +106,9 @@ public class GameManager : Singleton<GameManager>
     public void WaveEnded()
     {
         print("Wave " + waveNumber + " ended");
-        SpawnChest();
         waveNumber++;
+        SpawnChest();
+        
         if (waveNumber % waveToLevelRatio == 0)
         {
             Debug.Log("NextLevel");
@@ -142,20 +143,21 @@ public class GameManager : Singleton<GameManager>
         if (waveNumber % waveToLevelRatio == waveToLevelRatio -1)
         {
             lastWave = true;
+            Debug.Log("LAST WAVE");
             nextWaveInObject.SetLastWave();
         }
         
-        print("Wave " + waveNumber + " started");
+       // print("Wave " + waveNumber + " started");
 
         int[] chosenPowers = MakeNewChosenTypes(activeEnemyTypes);
         float desiredTotalPower = waveNumber * enemyPowerMultiplier;
         int totalBatches = (int)Math.Round(desiredTotalPower / chosenPowers.Sum());
-        print("total batches: " + totalBatches);
+       // print("total batches: " + totalBatches);
 
         int index = 0;
         int counter = 0;
         while (counter < totalBatches) {
-            print("spawning...");
+           // print("spawning...");
             StartCoroutine(enemySpawners[index].Spawn(chosenTypes, levelManager.runsDone)) ;
             index += 1;
             counter += 1;
@@ -172,7 +174,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     int[] MakeNewChosenTypes(int length) {
-        Debug.Log("Active enemy types" + length);
+       // Debug.Log("Active enemy types" + length);
         chosenTypes = new GameObject[length];
         int[] chosenPowers = new int[length];
         for(int i = 0; i < length; i++) {
