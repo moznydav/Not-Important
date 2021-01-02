@@ -46,7 +46,7 @@ public class Minotaur: EnemyShooter
                 {
                     anim.SetBool("Charging", true);
                     preparing = true;
-                    // rigidBody.velocity = new Vector3(0f,0f,0f);
+                    rigidBody.velocity = new Vector3(0f,0f,0f);
                     SetCanRun(false);
                     //savedMoveSpeed = stats.moveSpeed;
                     //stats.moveSpeed = 0;
@@ -75,8 +75,8 @@ public class Minotaur: EnemyShooter
     private void HandleChargeRun()
     {
         chargeDirection.Normalize();
-        transform.position += chargeDirection * stats.moveSpeed * Time.fixedDeltaTime * Time.deltaTime;
-        // rigidBody.velocity = (chargeDirection * stats.moveSpeed * Time.fixedDeltaTime);
+        //transform.position += chargeDirection * stats.moveSpeed * Time.fixedDeltaTime * Time.deltaTime;
+        rigidBody.velocity = (chargeDirection * stats.moveSpeed * Time.fixedDeltaTime);
     }
 
     private void PrepareDone()
