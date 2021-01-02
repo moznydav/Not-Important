@@ -136,7 +136,6 @@ public class PlayerStats : Stats
             unlimitedRollsMultiplier *= 0.7f;
         }
     }
-
     public void SetSprayAndPray()
     {
         hasSprayAndPray = true;
