@@ -23,14 +23,15 @@ public class Scroll : MonoBehaviour
         offenseSign.SetActive(true);
         defenseSign.SetActive(true);
         utilitySign.SetActive(true);
-        myText.text = "Health Points: " + playerStats.maxHealth + "\n\n" +
+        myText.text = "Maximum HP: " + playerStats.maxHealth + "\n\n" +
+            "Current HP: " + playerStats.currentHealth + "\n\n" + 
         "Damage: " + playerStats.damage + "\n\n" +
         "Attack Speed: " + 12/playerStats.attackSpeed + "\n\n" +
         "Movement Speed: " + playerStats.moveSpeed + "\n\n" +
         "Poison Damage: " + playerStats.poisonDamage + "\n\n" +
-        "Upgrades:\n\n\n\n    " +
-        player.offsenseUpgrades + "                 " + 
-        player.defenseUpgrades + "                " + 
+        "Upgrades:\n\n\n\n     " +
+        player.offsenseUpgrades + "                   " + 
+        player.defenseUpgrades + "                   " + 
         player.utilityUpgrades;
 
     }
