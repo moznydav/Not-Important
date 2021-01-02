@@ -2149,6 +2149,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 380
       objectReference: {fileID: 0}
+    - target: {fileID: 3005843702536994762, guid: cb11461b8be932649b50ca254a9c1d8e,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005843702536994762, guid: cb11461b8be932649b50ca254a9c1d8e,
+        type: 3}
+      propertyPath: m_Text
+      value: "Disclaimer:\n Also affects player. Might not always be the best idea"
+      objectReference: {fileID: 0}
     - target: {fileID: 5052024109994577320, guid: cb11461b8be932649b50ca254a9c1d8e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2254,6 +2264,31 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7123349576593700758, guid: cb11461b8be932649b50ca254a9c1d8e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123349576593700758, guid: cb11461b8be932649b50ca254a9c1d8e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123349576593700758, guid: cb11461b8be932649b50ca254a9c1d8e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.5999756
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123349576593700758, guid: cb11461b8be932649b50ca254a9c1d8e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -1582.4994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123349576593700758, guid: cb11461b8be932649b50ca254a9c1d8e,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -808.4299
+      objectReference: {fileID: 0}
     - target: {fileID: 7149249461951340495, guid: cb11461b8be932649b50ca254a9c1d8e,
         type: 3}
       propertyPath: m_Name
@@ -2262,7 +2297,12 @@ PrefabInstance:
     - target: {fileID: 7149249461951340495, guid: cb11461b8be932649b50ca254a9c1d8e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9019453640369612767, guid: cb11461b8be932649b50ca254a9c1d8e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb11461b8be932649b50ca254a9c1d8e, type: 3}
