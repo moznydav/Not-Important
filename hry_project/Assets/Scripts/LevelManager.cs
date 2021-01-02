@@ -146,6 +146,11 @@ public class LevelManager : MonoBehaviour
     }
 
     void LevelReset() {
+        var lotOfBlood = FindObjectsOfType<Blood>();
+        foreach(Blood blood in lotOfBlood)
+        {
+            blood.Clean();
+        }
         TeleportToMiddle();
         EnvironmentReset();
         levelNumber = 1;
