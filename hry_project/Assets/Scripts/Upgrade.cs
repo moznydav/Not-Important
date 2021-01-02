@@ -51,7 +51,7 @@ public class Upgrade : ScriptableObject
     private float classDamage = 10f;
     private float classAttackSpeed = -0.05f;
     //Defence
-    private float classHp = 20f;
+    private float classHp = 40f;
     //Utility
     private float classMoveSpeed = 30f;
     private float classProjectileSpeed = 4f;
