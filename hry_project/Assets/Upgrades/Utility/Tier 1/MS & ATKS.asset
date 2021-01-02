@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MS & ATKS
   m_EditorClassIdentifier: 
   value: 55
-  secondaryValue: -0.01
+  secondaryValue: -0.2
   upgradeType: 0
