@@ -41,7 +41,9 @@ public class UpgradeScreen : MonoBehaviour
     private List<GameObject>[] defensiveUpgrades;
     private List<GameObject>[] utilityUpgrades;
 
-
+    int lastOffensiveIndex = -1;
+    int lastDefensiveIndex = -1;
+    int lastUtilityIndex = -1;
     //GameManager gameManager;
     //Set up index handling;
     Player player;
@@ -67,7 +69,7 @@ public class UpgradeScreen : MonoBehaviour
     {
         int level = 0;
 
-        for (int i = 0; i < ranges.Length - 1; i++)
+        for (int i = 0; i < ranges.Length; i++)
         {
             if (upgradeCount >= ranges[i])
             {
@@ -93,18 +95,33 @@ public class UpgradeScreen : MonoBehaviour
         var currentUtilityList = utilityUpgrades[currentUtilityIndex];
 
         int randomIndex = Random.Range(0, currentOffsensiveList.Count);
+        while(randomIndex == lastOffensiveIndex)
+        {
+            randomIndex = Random.Range(0, currentOffsensiveList.Count);
+        }
+        lastOffensiveIndex = randomIndex;
         currentOffensive = Instantiate(currentOffsensiveList[randomIndex], offensivePlace.transform);
 
         var buttonGM = currentOffensive.transform.Find("Button").gameObject;
         buttonGM.GetComponent<Button>().onClick.AddListener(SelectOffensive);
 
         randomIndex = Random.Range(0, currentDefensiveList.Count);
+        while (randomIndex == lastDefensiveIndex)
+        {
+            randomIndex = Random.Range(0, currentDefensiveList.Count);
+        }
+        lastDefensiveIndex = randomIndex;
         currentHealth = Instantiate(currentDefensiveList[randomIndex], healthPlace.transform);
 
         buttonGM = currentHealth.transform.Find("Button").gameObject;
         buttonGM.GetComponent<Button>().onClick.AddListener(SelectDefensive);
 
         randomIndex = Random.Range(0, currentUtilityList.Count);
+        while (randomIndex == lastUtilityIndex)
+        {
+            randomIndex = Random.Range(0, currentUtilityList.Count);
+        }
+        lastUtilityIndex = randomIndex;
         currentMovement = Instantiate(currentUtilityList[randomIndex], movementPlace.transform);
 
         buttonGM = currentMovement.transform.Find("Button").gameObject;
