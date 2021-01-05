@@ -1,0 +1,1546 @@
+fileFormatVersion: 2
+guid: b72a54f2d73f67d44a0436a16d8b5c61
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3021294469876560333
+    second: Mashup_Tileset_0
+  - first:
+      213: -3848114746161972769
+    second: Mashup_Tileset_1
+  - first:
+      213: 6512415801945684925
+    second: Mashup_Tileset_2
+  - first:
+      213: -2416530109561430354
+    second: Mashup_Tileset_3
+  - first:
+      213: 7913332995194520737
+    second: Mashup_Tileset_4
+  - first:
+      213: -4207779278901439679
+    second: Mashup_Tileset_5
+  - first:
+      213: -5285170725312582290
+    second: Mashup_Tileset_6
+  - first:
+      213: -1817612730584098418
+    second: Mashup_Tileset_7
+  - first:
+      213: 145108472445646217
+    second: Mashup_Tileset_8
+  - first:
+      213: 5737511150038174844
+    second: Mashup_Tileset_9
+  - first:
+      213: 5693998551364048333
+    second: Mashup_Tileset_10
+  - first:
+      213: 8553285901225541831
+    second: Mashup_Tileset_11
+  - first:
+      213: 6930605995494481046
+    second: Mashup_Tileset_12
+  - first:
+      213: -4505524899316093414
+    second: Mashup_Tileset_13
+  - first:
+      213: 7505546003709808682
+    second: Mashup_Tileset_14
+  - first:
+      213: 3800147039622212891
+    second: Mashup_Tileset_15
+  - first:
+      213: -9129413264333666785
+    second: Mashup_Tileset_16
+  - first:
+      213: -1951928371105403982
+    second: Mashup_Tileset_17
+  - first:
+      213: -4434037341322708848
+    second: Mashup_Tileset_18
+  - first:
+      213: 1167561393907701640
+    second: Mashup_Tileset_19
+  - first:
+      213: -3825400833591460515
+    second: Mashup_Tileset_20
+  - first:
+      213: -1263648972346690251
+    second: Mashup_Tileset_21
+  - first:
+      213: -4031570064093303620
+    second: Mashup_Tileset_22
+  - first:
+      213: -8274005824141730934
+    second: Mashup_Tileset_23
+  - first:
+      213: 4839709296828638208
+    second: Mashup_Tileset_24
+  - first:
+      213: -8628489806258530379
+    second: Mashup_Tileset_25
+  - first:
+      213: 5832680764287850108
+    second: Mashup_Tileset_26
+  - first:
+      213: 2400907951686118608
+    second: Mashup_Tileset_27
+  - first:
+      213: 1430157765436013205
+    second: Mashup_Tileset_28
+  - first:
+      213: 4168992732921773831
+    second: Mashup_Tileset_29
+  - first:
+      213: -7960904815697103925
+    second: Mashup_Tileset_30
+  - first:
+      213: 5243075837942005297
+    second: Mashup_Tileset_31
+  - first:
+      213: 3048196827953189353
+    second: Mashup_Tileset_32
+  - first:
+      213: 4378368368611320678
+    second: Mashup_Tileset_33
+  - first:
+      213: 6857007556745701945
+    second: Mashup_Tileset_34
+  - first:
+      213: 2700863836341301337
+    second: Mashup_Tileset_35
+  - first:
+      213: 5917912213080160055
+    second: Mashup_Tileset_36
+  - first:
+      213: -4708312385708637706
+    second: Mashup_Tileset_37
+  - first:
+      213: 1903366880659991176
+    second: Mashup_Tileset_38
+  - first:
+      213: 8199736992357253733
+    second: Mashup_Tileset_39
+  - first:
+      213: 1577244092645107914
+    second: Mashup_Tileset_40
+  - first:
+      213: -2471589421901687830
+    second: Mashup_Tileset_41
+  - first:
+      213: 5186158966186030405
+    second: Mashup_Tileset_42
+  - first:
+      213: 8702089970966185434
+    second: Mashup_Tileset_43
+  - first:
+      213: -9178924355279865304
+    second: Mashup_Tileset_44
+  - first:
+      213: 1522781458003279412
+    second: Mashup_Tileset_45
+  - first:
+      213: 5700583000445435891
+    second: Mashup_Tileset_46
+  - first:
+      213: -561249269532465241
+    second: Mashup_Tileset_47
+  - first:
+      213: -7383771839713001126
+    second: Mashup_Tileset_48
+  - first:
+      213: -8726029859629706829
+    second: Mashup_Tileset_49
+  - first:
+      213: -3602840585800794751
+    second: Mashup_Tileset_50
+  - first:
+      213: 8243281547239571454
+    second: Mashup_Tileset_51
+  - first:
+      213: -1670244189311672982
+    second: Mashup_Tileset_52
+  - first:
+      213: 7171303557868921569
+    second: Mashup_Tileset_53
+  - first:
+      213: 1930123332985529458
+    second: Mashup_Tileset_54
+  - first:
+      213: 1798722860970486794
+    second: Mashup_Tileset_55
+  - first:
+      213: -2598117094532748169
+    second: Mashup_Tileset_56
+  - first:
+      213: -644142175716188558
+    second: Mashup_Tileset_57
+  - first:
+      213: -4187425744709288596
+    second: Mashup_Tileset_58
+  - first:
+      213: 951297394542962273
+    second: Mashup_Tileset_59
+  - first:
+      213: -6295819164471021033
+    second: Mashup_Tileset_60
+  - first:
+      213: 1028591407781408303
+    second: Mashup_Tileset_61
+  - first:
+      213: 2637316310083431511
+    second: Mashup_Tileset_62
+  - first:
+      213: -4108893093980651434
+    second: Mashup_Tileset_63
+  - first:
+      213: 975912656587351974
+    second: Mashup_Tileset_64
+  - first:
+      213: 324181565950605221
+    second: Mashup_Tileset_65
+  - first:
+      213: -8828272176822410744
+    second: Mashup_Tileset_66
+  - first:
+      213: 2314990057988310939
+    second: Mashup_Tileset_67
+  - first:
+      213: 347100190656378987
+    second: Mashup_Tileset_68
+  - first:
+      213: -3896482053351315327
+    second: Mashup_Tileset_69
+  - first:
+      213: 5125063000673780442
+    second: Mashup_Tileset_70
+  - first:
+      213: 1053053910384247385
+    second: Mashup_Tileset_71
+  - first:
+      213: 3755636555167800195
+    second: Mashup_Tileset_72
+  - first:
+      213: 4774131238394624404
+    second: Mashup_Tileset_73
+  - first:
+      213: -7519709766330929654
+    second: Mashup_Tileset_74
+  - first:
+      213: -3345802439368948222
+    second: Mashup_Tileset_75
+  - first:
+      213: 487631010708249048
+    second: Mashup_Tileset_76
+  - first:
+      213: 4782388357551546697
+    second: Mashup_Tileset_77
+  - first:
+      213: 7535481091916902408
+    second: Mashup_Tileset_78
+  - first:
+      213: -3528386754032660238
+    second: Mashup_Tileset_79
+  - first:
+      213: -9092521930065021826
+    second: Mashup_Tileset_80
+  - first:
+      213: -7493773623741665883
+    second: Mashup_Tileset_81
+  - first:
+      213: -7103674791642595435
+    second: Mashup_Tileset_82
+  - first:
+      213: 416539957414498672
+    second: Mashup_Tileset_83
+  - first:
+      213: -3713165969373685143
+    second: Mashup_Tileset_84
+  - first:
+      213: 5289459506080554609
+    second: Mashup_Tileset_85
+  - first:
+      213: 584386613611874105
+    second: Mashup_Tileset_86
+  - first:
+      213: 7233664065769156387
+    second: Mashup_Tileset_87
+  - first:
+      213: -6937121948618444381
+    second: Mashup_Tileset_88
+  - first:
+      213: -9087791637580837738
+    second: Mashup_Tileset_89
+  - first:
+      213: 5718891215324427223
+    second: Mashup_Tileset_90
+  - first:
+      213: -4153253458938808435
+    second: Mashup_Tileset_91
+  - first:
+      213: 1568993593365918861
+    second: Mashup_Tileset_92
+  - first:
+      213: 6158195041002340137
+    second: Mashup_Tileset_93
+  - first:
+      213: -6852858213022288208
+    second: Mashup_Tileset_94
+  - first:
+      213: -3210134019906746487
+    second: Mashup_Tileset_95
+  - first:
+      213: -5498163620429001100
+    second: Mashup_Tileset_96
+  - first:
+      213: 1876493319440692107
+    second: Mashup_Tileset_97
+  - first:
+      213: 4073581109837894375
+    second: Mashup_Tileset_98
+  - first:
+      213: -8880624901748129584
+    second: Mashup_Tileset_99
+  - first:
+      213: -7512959664461156839
+    second: Mashup_Tileset_100
+  - first:
+      213: 5907974267975611405
+    second: Mashup_Tileset_101
+  - first:
+      213: 1044555843360002355
+    second: Mashup_Tileset_102
+  - first:
+      213: 861075199564024974
+    second: Mashup_Tileset_103
+  - first:
+      213: 8247064519796039524
+    second: Mashup_Tileset_104
+  - first:
+      213: 8477449928028191330
+    second: Mashup_Tileset_105
+  - first:
+      213: -3996044364812495127
+    second: Mashup_Tileset_106
+  - first:
+      213: 4383244184902473099
+    second: Mashup_Tileset_107
+  - first:
+      213: 1652738478681934625
+    second: Mashup_Tileset_108
+  - first:
+      213: 5777367871861996486
+    second: Mashup_Tileset_109
+  - first:
+      213: -33469202707880795
+    second: Mashup_Tileset_110
+  - first:
+      213: 8935203002977418952
+    second: Mashup_Tileset_111
+  - first:
+      213: -7622375923646104143
+    second: Mashup_Tileset_112
+  - first:
+      213: 945264495074259180
+    second: Mashup_Tileset_113
+  - first:
+      213: -4725708456470688324
+    second: Mashup_Tileset_114
+  - first:
+      213: 645218811202208279
+    second: Mashup_Tileset_115
+  - first:
+      213: 6559829273640300549
+    second: Mashup_Tileset_116
+  - first:
+      213: -4691992320018666330
+    second: Mashup_Tileset_117
+  - first:
+      213: -1451003759847375131
+    second: Mashup_Tileset_118
+  - first:
+      213: 8266316649624289850
+    second: Mashup_Tileset_119
+  - first:
+      213: 2554071742132368020
+    second: Mashup_Tileset_120
+  - first:
+      213: 3100273901778088456
+    second: Mashup_Tileset_121
+  - first:
+      213: 1828396872612364462
+    second: Mashup_Tileset_122
+  - first:
+      213: 2469343061678492458
+    second: Mashup_Tileset_123
+  - first:
+      213: -7442982646669400130
+    second: Mashup_Tileset_124
+  - first:
+      213: 6584984534825942758
+    second: Mashup_Tileset_125
+  - first:
+      213: 7746724875171862826
+    second: Mashup_Tileset_126
+  - first:
+      213: -7971010032695827555
+    second: Mashup_Tileset_127
+  - first:
+      213: -1118204805015273135
+    second: Mashup_Tileset_128
+  - first:
+      213: 1830787631886649210
+    second: Mashup_Tileset_129
+  - first:
+      213: -5185721783220683131
+    second: Mashup_Tileset_130
+  - first:
+      213: -519713086801725921
+    second: Mashup_Tileset_131
+  - first:
+      213: 4596795256849110100
+    second: Mashup_Tileset_132
+  - first:
+      213: 3849268199637468586
+    second: Mashup_Tileset_133
+  - first:
+      213: -6981290921249913412
+    second: Mashup_Tileset_134
+  - first:
+      213: 5273277477097011203
+    second: Mashup_Tileset_135
+  - first:
+      213: -8045690454605651979
+    second: Mashup_Tileset_136
+  - first:
+      213: 1981106471272466691
+    second: Mashup_Tileset_137
+  - first:
+      213: -1332203804655559016
+    second: Mashup_Tileset_138
+  - first:
+      213: -4576187352520960757
+    second: Mashup_Tileset_139
+  - first:
+      213: 4953341547841221578
+    second: Mashup_Tileset_140
+  - first:
+      213: 7361276003667742921
+    second: Mashup_Tileset_141
+  - first:
+      213: -2648496414260555228
+    second: Mashup_Tileset_142
+  - first:
+      213: 6608952388409368340
+    second: Mashup_Tileset_143
+  - first:
+      213: -6264866182872748944
+    second: Mashup_Tileset_144
+  - first:
+      213: 1453562255997368910
+    second: Mashup_Tileset_145
+  - first:
+      213: 5889896784214717803
+    second: Mashup_Tileset_146
+  - first:
+      213: 1971463568253366647
+    second: Mashup_Tileset_147
+  - first:
+      213: -4114617077495231969
+    second: Mashup_Tileset_148
+  - first:
+      213: 7269857555592577467
+    second: Mashup_Tileset_149
+  - first:
+      213: 511592692243636029
+    second: Mashup_Tileset_150
+  - first:
+      213: 3756743507378801771
+    second: Mashup_Tileset_151
+  - first:
+      213: -5779854345365321687
+    second: Mashup_Tileset_152
+  - first:
+      213: -4237697671744894708
+    second: Mashup_Tileset_153
+  - first:
+      213: -2085788125908773107
+    second: Mashup_Tileset_154
+  - first:
+      213: -5265142696717799764
+    second: Mashup_Tileset_155
+  - first:
+      213: -1736675981315839625
+    second: Mashup_Tileset_156
+  - first:
+      213: 3261865014515970562
+    second: Mashup_Tileset_157
+  - first:
+      213: 4099071622315597752
+    second: Mashup_Tileset_158
+  - first:
+      213: -626723511568624433
+    second: Mashup_Tileset_159
+  - first:
+      213: -1455212861987941439
+    second: Mashup_Tileset_0
+  - first:
+      213: -6665288469681200373
+    second: Mashup_Tileset_1
+  - first:
+      213: 3820949795752642577
+    second: Mashup_Tileset_2
+  - first:
+      213: 5448443564653722373
+    second: Mashup_Tileset_3
+  - first:
+      213: -2468760863568853564
+    second: Mashup_Tileset_4
+  - first:
+      213: -7296435506060465348
+    second: Mashup_Tileset_5
+  - first:
+      213: 1570503619922042599
+    second: Mashup_Tileset_6
+  - first:
+      213: 3087106298582401133
+    second: Mashup_Tileset_7
+  - first:
+      213: -7610901847576539211
+    second: Mashup_Tileset_8
+  - first:
+      213: -2755960081010540601
+    second: Mashup_Tileset_9
+  - first:
+      213: 7651410345433583128
+    second: Mashup_Tileset_10
+  - first:
+      213: -2109197596264022789
+    second: Mashup_Tileset_11
+  - first:
+      213: 1536704503057998868
+    second: Mashup_Tileset_12
+  - first:
+      213: 460166648140005780
+    second: Mashup_Tileset_13
+  - first:
+      213: 8863250768520687481
+    second: Mashup_Tileset_14
+  - first:
+      213: -707448411164073676
+    second: Mashup_Tileset_15
+  - first:
+      213: 3076027694012173793
+    second: Mashup_Tileset_16
+  - first:
+      213: -5685888915450559323
+    second: Mashup_Tileset_17
+  - first:
+      213: 6440176020657731492
+    second: Mashup_Tileset_18
+  - first:
+      213: 6502183151394226860
+    second: Mashup_Tileset_19
+  - first:
+      213: -8000993230057630662
+    second: Mashup_Tileset_20
+  - first:
+      213: -1377105528335725069
+    second: Mashup_Tileset_21
+  - first:
+      213: -1590512220755620434
+    second: Mashup_Tileset_22
+  - first:
+      213: 4790767918723891034
+    second: Mashup_Tileset_23
+  - first:
+      213: -4894451720945215055
+    second: Mashup_Tileset_24
+  - first:
+      213: 5818233955939238009
+    second: Mashup_Tileset_25
+  - first:
+      213: 7698336367763551883
+    second: Mashup_Tileset_26
+  - first:
+      213: -677174991552255417
+    second: Mashup_Tileset_27
+  - first:
+      213: 5288735012447201720
+    second: Mashup_Tileset_28
+  - first:
+      213: 820061875386665749
+    second: Mashup_Tileset_29
+  - first:
+      213: 7634082255349664167
+    second: Mashup_Tileset_30
+  - first:
+      213: -4310416621451573305
+    second: Mashup_Tileset_31
+  - first:
+      213: -6683782791124600824
+    second: Mashup_Tileset_32
+  - first:
+      213: 5915690226220299816
+    second: Mashup_Tileset_33
+  - first:
+      213: -2809034502695044197
+    second: Mashup_Tileset_34
+  - first:
+      213: -6085113350803203378
+    second: Mashup_Tileset_35
+  - first:
+      213: -8251902392651941738
+    second: Mashup_Tileset_36
+  - first:
+      213: 4937272802912565755
+    second: Mashup_Tileset_37
+  - first:
+      213: 2892693025672395162
+    second: Mashup_Tileset_38
+  - first:
+      213: -4335644046900221128
+    second: Mashup_Tileset_39
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mashup_Tileset_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c311a0bc9b0ecbe0800000000000000
+      internalID: -1455212861987941439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b03252773732083a0800000000000000
+      internalID: -6665288469681200373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1180070589db60530800000000000000
+      internalID: 3820949795752642577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50bb2f11e82cc9b40800000000000000
+      internalID: 5448443564653722373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c5879b13133dbdd0800000000000000
+      internalID: -2468760863568853564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3be7beb09addba90800000000000000
+      internalID: -7296435506060465348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ee1befa8bc8bc510800000000000000
+      internalID: 1570503619922042599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6000e682da97da20800000000000000
+      internalID: 3087106298582401133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bf06da0815a06690800000000000000
+      internalID: -7610901847576539211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cfb53478ecd0c9d0800000000000000
+      internalID: -2755960081010540601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e41569b254f2a60800000000000000
+      internalID: 7651410345433583128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfc339116ff9ab2e0800000000000000
+      internalID: -2109197596264022789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 414e38d8a98735510800000000000000
+      internalID: 1536704503057998868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_13
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4910edfd027d26600800000000000000
+      internalID: 460166648140005780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_14
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f22ec4d97900b70800000000000000
+      internalID: 8863250768520687481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_15
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 431a6a31b63ae26f0800000000000000
+      internalID: -707448411164073676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ed0cd4e3ee30ba20800000000000000
+      internalID: 3076027694012173793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_17
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a40d32182aa711b0800000000000000
+      internalID: -5685888915450559323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a7fa4228f9106950800000000000000
+      internalID: 6440176020657731492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca2026b40256c3a50800000000000000
+      internalID: 6502183151394226860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_20
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a341c106c03c6f090800000000000000
+      internalID: -8000993230057630662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_21
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fd825571d983ece0800000000000000
+      internalID: -1377105528335725069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_22
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ead81f6ef8d5de9e0800000000000000
+      internalID: -1590512220755620434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_23
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5fffdc1a0a3c7240800000000000000
+      internalID: 4790767918723891034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b9d2ca771a631cb0800000000000000
+      internalID: -4894451720945215055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_25
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 970cfd3e4f48eb050800000000000000
+      internalID: 5818233955939238009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b867402932cf5da60800000000000000
+      internalID: 7698336367763551883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_27
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74aefb9dee03a96f0800000000000000
+      internalID: -677174991552255417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b92610197c556940800000000000000
+      internalID: 5288735012447201720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_29
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b43484ee1716b00800000000000000
+      internalID: 820061875386665749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_30
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a9ca383d55b1f960800000000000000
+      internalID: 7634082255349664167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_31
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c7807c9be25e24c0800000000000000
+      internalID: -4310416621451573305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8083623b6fe6e33a0800000000000000
+      internalID: -6683782791124600824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_33
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8267c170be0c81250800000000000000
+      internalID: 5915690226220299816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_34
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9bbb01b00e4409d0800000000000000
+      internalID: -2809034502695044197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_35
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca5363d5a55d8ba0800000000000000
+      internalID: -6085113350803203378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_36
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 698f8cc8e7a5b7d80800000000000000
+      internalID: -8251902392651941738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_37
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf9fcc89477b48440800000000000000
+      internalID: 4937272802912565755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_38
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a99f37f0bf8e42820800000000000000
+      internalID: 2892693025672395162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mashup_Tileset_39
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83ba9f7e5b2b4d3c0800000000000000
+      internalID: -4335644046900221128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: e6e9f78791f08b04a8a634d045819cd8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
