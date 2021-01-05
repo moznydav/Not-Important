@@ -1,12 +1,14 @@
 {
-  "title": "Pacman",
-  "team": 3,
+  "title": "Not Important",
+  "team": 10,
   "authors": [
-    {"fullname": "Jan Example", "email": "exampjan@fel.cvut.cz"},
-    {"fullname": "Aleš Vopršálek", "email": "voprsale@fit.cvut.cz"}
+    {"fullname": "Matěj Gargula", "email": "gargumat@fel.cvut.cz"},
+    {"fullname": "David Možný", "email": "moznydav@fit.cvut.cz"},
+    {"fullname": "Lukáš Zahradník", "email": "zahralu5@fel.cvut.cz"},
+    {"fullname": "Cyril Janeček", "email": "janeccyr@fel.cvut.cz" },
   ],
-  "term": 121,
-  "summary": "An amazing arcade game, where you navigate your character through a maze, eating pac-dots and hiding from evil ghosts.",
-  "opensource": true,
-  "url": "http://pacman.com"
+  "term": 201,
+  "summary": "A difficult action, rogue-like game with some RPG features",
+  "opensource": false,
+  "url": ""
 }
